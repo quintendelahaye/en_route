@@ -29,7 +29,9 @@ module.exports = function(grunt) {
           force: true
         }
       }
-    },
+    }
+
+  });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
