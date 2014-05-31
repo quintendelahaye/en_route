@@ -1,0 +1,24 @@
+{
+  "name": "en_route",
+  "version": "1.0.0",
+  "description": "en route",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quintendelahaye/en_route.git"
+  },
+  "author": "Quinten Delahaye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quintendelahaye/en_route/issues"
+  },
+  "homepage": "https://github.com/quintendelahaye/en_route",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-compass": "~0.8.0"
+  }
+}
