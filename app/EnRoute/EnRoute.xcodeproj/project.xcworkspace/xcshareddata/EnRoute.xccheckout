@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EA49C497-D314-4EF9-9C76-094B47ABA195</string>
+	<key>IDESourceControlProjectName</key>
+	<string>EnRoute</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>77C17FF9-DBA5-43D7-A8A5-48C6FA3DA77C</key>
+		<string>https://github.com/quintendelahaye/en_route.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>app/EnRoute/EnRoute.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>77C17FF9-DBA5-43D7-A8A5-48C6FA3DA77C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/quintendelahaye/en_route.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>77C17FF9-DBA5-43D7-A8A5-48C6FA3DA77C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>77C17FF9-DBA5-43D7-A8A5-48C6FA3DA77C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>en_route</string>
+		</dict>
+	</array>
+</dict>
+</plist>
