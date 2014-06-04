@@ -13,7 +13,7 @@ class UsersDAO{
 
 	public function getUserByGroupnameAndPassword($groupname, $password){
 		$sql = "SELECT *
-				FROM enroute_users
+				FROM enroute_groups
 				WHERE groupname = :groupname
 				AND password = :password";
 		$stmt = $this->pdo->prepare($sql);
@@ -30,7 +30,7 @@ class UsersDAO{
 	}
 
 	public function insertUser($groupname,$password){
-		$sql = "INSERT INTO enroute_users(groupname, password)
+		$sql = "INSERT INTO enroute_groups(groupname, password)
 				VALUES (:groupname,:password)";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(":groupname",$groupname);
@@ -43,7 +43,7 @@ class UsersDAO{
 
 	public function getUser($id){
 		$sql = "SELECT * 
-				FROM `enroute_users`
+				FROM enroute_groups
 				WHERE id = :id";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':id', $id);
