@@ -21,7 +21,6 @@
         // Custom initialization
         NSLog(@"[LoginViewController] init");
         self.title = @"Login";
-        self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -51,7 +50,7 @@
         
         NSLog(@"[LoginViewController] login not empty");
         
-        NSString *path = [NSString stringWithFormat:@"http://localhost/MAIV/en_route/site/api/users/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
+        NSString *path = [NSString stringWithFormat:@"http://localhost/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         

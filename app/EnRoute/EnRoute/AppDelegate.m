@@ -20,18 +20,25 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.mainVC = [[MainViewController alloc]initWithNibName:nil bundle:nil];
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:self.mainVC];
-    navController.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
-    navController.navigationBar.barTintColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-    navController.navigationBar.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-    navController.navigationBar.alpha = 1;
+    if([[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"] == 0){
+            self.mainVC = [[MainViewController alloc]initWithNibName:nil bundle:nil];
+            self.navController = [[UINavigationController alloc]initWithRootViewController:self.mainVC];
+    }else{
+        self.startScreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
+        self.navController = [[UINavigationController alloc] initWithRootViewController:self.startScreenVC];
+    }
+    
+
+    self.navController.navigationBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+    self.navController.navigationBar.barTintColor = [UIColor colorWithRed:199/255.0f green:229/255.0f blue:223/255.0f alpha:1];
+    self.navController.navigationBar.backgroundColor = [UIColor colorWithRed:199/255.0f green:229/255.0f blue:223/255.0f alpha:1];
+    self.navController.navigationBar.alpha = 1;
 //    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],UITextAttributeTextColor,[UIColor whiteColor], UITextAttributeTextShadowColor,[NSValue valueWithUIOffset:UIOffsetMake(0, 0)], UITextAttributeTextShadowOffset, [UIFont fontWithName:BEBAS_NEUE size:25], UITextAttributeFont,nil]];
 //    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:[UIImage imageNamed:@"btn_back"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-2048.f, 0) forBarMetrics:UIBarMetricsDefault];
     
     
-    self.window.rootViewController = navController;
+    self.window.rootViewController = self.navController;
     
 //    self.mainVC = [[MainViewController alloc] initWithNibName:nil bundle:nil];
 

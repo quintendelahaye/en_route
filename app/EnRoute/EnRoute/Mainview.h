@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogoView.h"
 
 @interface Mainview : UIView
 
 @property (strong,nonatomic)UIButton *btnLogin;
 @property (strong,nonatomic)UIButton *btnRegister;
+@property (strong,nonatomic)LogoView *logoView;
+@property (strong,nonatomic)UIImageView *background;
+@property (strong,nonatomic)CALayer *imageLayer;
+@property (strong,nonatomic)CALayer *maskLayer;
+@property (strong,nonatomic)UILabel *lblTitel;
 
 @end

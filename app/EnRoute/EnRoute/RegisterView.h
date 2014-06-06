@@ -15,9 +15,10 @@
 @property (strong,nonatomic)UITextField *txtUsername;
 
 @property (strong,nonatomic)UITextField *txtPassword;
-@property (strong,nonatomic)UITextField *txtPassword2;
+@property (strong,nonatomic)UITextField *txtGroupName;
 
 @property (strong,nonatomic)UIButton *btnLogin;
+
 -(void)showError;
 
 

@@ -15,6 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor colorWithRed:244/250.0f green:234/250.0f blue:198/250.0f alpha:1];        
         [self createBackground];
         [self createTextfields];
         [self createButton];
@@ -32,22 +33,24 @@
     
     UIImage *textFieldImage = [UIImage imageNamed:@"login-textfield-bg"];
     
-    self.txtUsername = [[UITextField alloc] initWithFrame:CGRectMake(self.background.frame.origin.x + 12, self.frame.size.height/2 - self.background.frame.size.height/2 -40, self.frame.size.width - 35, 44)];
-    self.txtUsername.placeholder = @"Group Name";
+    self.txtGroupName = [[UITextField alloc] initWithFrame:CGRectMake(20,  100, self.frame.size.width - 40, 44)];
+    self.txtGroupName.placeholder = @"Groepsnaam";
+    self.txtGroupName.background = textFieldImage;
+    self.txtGroupName.secureTextEntry = YES;
+    [self addSubview:self.txtGroupName];
+    
+    self.txtUsername = [[UITextField alloc] initWithFrame:CGRectMake(20, self.txtGroupName.frame.origin.y + 52, self.frame.size.width - 40, 44)];
+    self.txtUsername.placeholder = @"Naam";
     self.txtUsername.background = textFieldImage;
     [self addSubview:self.txtUsername];
     
-    self.txtPassword = [[UITextField alloc] initWithFrame:CGRectMake(self.background.frame.origin.x + 12,  self.frame.size.height/2 - self.background.frame.size.height/2 +20, self.frame.size.width - 35, 44)];
-    self.txtPassword.placeholder = @"Password";
+    self.txtPassword = [[UITextField alloc] initWithFrame:CGRectMake(20,  self.txtUsername.frame.origin.y + 52, self.frame.size.width - 40, 44)];
+    self.txtPassword.placeholder = @"Wachtwoord";
     self.txtPassword.background = textFieldImage;
     self.txtPassword.secureTextEntry = YES;
     [self addSubview:self.txtPassword];
     
-    self.txtPassword2 = [[UITextField alloc] initWithFrame:CGRectMake(self.background.frame.origin.x + 12,  self.frame.size.height/2 - self.background.frame.size.height/2 +80, self.frame.size.width - 35, 44)];
-    self.txtPassword2.placeholder = @"Password Again";
-    self.txtPassword2.background = textFieldImage;
-    self.txtPassword2.secureTextEntry = YES;
-    [self addSubview:self.txtPassword2];
+
 }
 
 -(void)createButton{

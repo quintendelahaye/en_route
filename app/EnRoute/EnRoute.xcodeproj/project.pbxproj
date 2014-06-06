@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7FA8AAA86A924BEE9BC90550 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34EDA34CD43640E7BEA2098E /* libPods.a */; };
+		8147353D194069CD003B23CC /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8147353C194069CD003B23CC /* images.xcassets */; };
+		8147354019406EB0003B23CC /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8147353F19406EB0003B23CC /* LogoView.m */; };
+		8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8147354119409C14003B23CC /* Corki-Rounded.otf */; };
+		814735451940B71F003B23CC /* MenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 814735441940B71F003B23CC /* MenuView.m */; };
 		815C2FFE193B6F10004E3C5C /* Mainview.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C2FFD193B6F10004E3C5C /* Mainview.m */; };
 		815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C3000193B6F1A004E3C5C /* MainViewController.m */; };
 		815C3004193BA472004E3C5C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815C3003193BA472004E3C5C /* LoginViewController.m */; };
@@ -24,7 +28,6 @@
 		817C3F02193B6E8600DA6563 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F01193B6E8600DA6563 /* main.m */; };
 		817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F05193B6E8600DA6563 /* AppDelegate.m */; };
 		817C3F09193B6E8600DA6563 /* EnRoute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F07193B6E8600DA6563 /* EnRoute.xcdatamodeld */; };
-		817C3F0B193B6E8600DA6563 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 817C3F0A193B6E8600DA6563 /* Images.xcassets */; };
 		817C3F12193B6E8600DA6563 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3F11193B6E8600DA6563 /* XCTest.framework */; };
 		817C3F13193B6E8600DA6563 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF3193B6E8600DA6563 /* Foundation.framework */; };
 		817C3F14193B6E8600DA6563 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF7193B6E8600DA6563 /* UIKit.framework */; };
@@ -45,6 +48,12 @@
 
 /* Begin PBXFileReference section */
 		34EDA34CD43640E7BEA2098E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8147353C194069CD003B23CC /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		8147353E19406EB0003B23CC /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
+		8147353F19406EB0003B23CC /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
+		8147354119409C14003B23CC /* Corki-Rounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Corki-Rounded.otf"; sourceTree = "<group>"; };
+		814735431940B71F003B23CC /* MenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuView.h; sourceTree = "<group>"; };
+		814735441940B71F003B23CC /* MenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuView.m; sourceTree = "<group>"; };
 		815C2FFC193B6F10004E3C5C /* Mainview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mainview.h; sourceTree = "<group>"; };
 		815C2FFD193B6F10004E3C5C /* Mainview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mainview.m; sourceTree = "<group>"; };
 		815C2FFF193B6F1A004E3C5C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -73,7 +82,6 @@
 		817C3F04193B6E8600DA6563 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		817C3F05193B6E8600DA6563 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		817C3F08193B6E8600DA6563 /* EnRoute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EnRoute.xcdatamodel; sourceTree = "<group>"; };
-		817C3F0A193B6E8600DA6563 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		817C3F10193B6E8600DA6563 /* EnRouteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnRouteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		817C3F11193B6E8600DA6563 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		817C3F1A193B6E8600DA6563 /* EnRouteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnRouteTests-Info.plist"; sourceTree = "<group>"; };
@@ -180,16 +188,20 @@
 			children = (
 				817C3F04193B6E8600DA6563 /* AppDelegate.h */,
 				817C3F05193B6E8600DA6563 /* AppDelegate.m */,
-				817C3F0A193B6E8600DA6563 /* Images.xcassets */,
 				817C3F07193B6E8600DA6563 /* EnRoute.xcdatamodeld */,
+				8147353C194069CD003B23CC /* images.xcassets */,
 				817C3EFC193B6E8600DA6563 /* Supporting Files */,
 				815C2FFF193B6F1A004E3C5C /* MainViewController.h */,
 				815C3000193B6F1A004E3C5C /* MainViewController.m */,
 				815C2FFC193B6F10004E3C5C /* Mainview.h */,
 				815C2FFD193B6F10004E3C5C /* Mainview.m */,
+				8147353E19406EB0003B23CC /* LogoView.h */,
+				8147353F19406EB0003B23CC /* LogoView.m */,
 				815C300F193BA4B3004E3C5C /* Login */,
 				815C3010193BA4BA004E3C5C /* Register */,
 				815C3018193BB789004E3C5C /* StartScreen */,
+				814735431940B71F003B23CC /* MenuView.h */,
+				814735441940B71F003B23CC /* MenuView.m */,
 			);
 			path = EnRoute;
 			sourceTree = "<group>";
@@ -199,6 +211,7 @@
 			children = (
 				817C3EFD193B6E8600DA6563 /* EnRoute-Info.plist */,
 				817C3EFE193B6E8600DA6563 /* InfoPlist.strings */,
+				8147354119409C14003B23CC /* Corki-Rounded.otf */,
 				817C3F01193B6E8600DA6563 /* main.m */,
 				817C3F03193B6E8600DA6563 /* EnRoute-Prefix.pch */,
 			);
@@ -301,7 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				817C3F00193B6E8600DA6563 /* InfoPlist.strings in Resources */,
-				817C3F0B193B6E8600DA6563 /* Images.xcassets in Resources */,
+				8147353D194069CD003B23CC /* images.xcassets in Resources */,
+				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +376,8 @@
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
+				8147354019406EB0003B23CC /* LogoView.m in Sources */,
+				814735451940B71F003B23CC /* MenuView.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,
 				815C3013193BB71E004E3C5C /* StartScreenViewController.m in Sources */,
 			);

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
+#import "StartScreenViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -21,5 +22,7 @@
 - (NSURL *)applicationDocumentsDirectory;
 
 @property (strong,nonatomic)MainViewController *mainVC;
+@property (strong,nonatomic)StartScreenViewController *startScreenVC;
+@property (strong,nonatomic)UINavigationController *navController;
 
 @end

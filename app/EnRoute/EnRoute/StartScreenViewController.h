@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "StartScreenView.h"
+#import "MenuView.h"
 
 @interface StartScreenViewController : UIViewController
 
 @property (strong,nonatomic)StartScreenView *view;
+@property (strong,nonatomic)MenuView *menu;
 
 @end

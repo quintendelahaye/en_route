@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor colorWithRed:244/250.0f green:234/250.0f blue:198/250.0f alpha:1];
         
         UIImage *logo = [UIImage imageNamed:@"en_route_logo"];
         UIImageView *logoView = [[UIImageView alloc] initWithImage:logo];
@@ -34,6 +34,14 @@
         [self.btnRegister setTitle:@"Tutorial" forState:UIControlStateNormal];
         [self addSubview:self.btnRegister];
         
+//        UIImage *logOutImage = [UIImage imageNamed:@"afmeldKnop"];
+//        self.afmeldKnop = [[UIButton alloc] init];
+//        self.afmeldKnop.frame = CGRectMake(0, self.frame.size.height - logOutImage.size.height, logOutImage.size.width, logOutImage.size.height);
+//        [self.afmeldKnop setImage:logOutImage forState:UIControlStateNormal];
+//        [self addSubview:self.afmeldKnop];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissMenu:) name:@"LOGOUT_CANCEL_TAPPED" object:nil];
+        // DEALLOC?
         
     }
     return self;
@@ -45,6 +53,24 @@
     self.lblTitel.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
     self.lblTitel.text = [NSString stringWithFormat:@"Logged in as %@",user];
     [self addSubview:self.lblTitel];
+}
+
+-(void)showMenu{
+    CGRect bounds = [[UIScreen mainScreen] bounds];
+    self.menu = [[MenuView alloc] initWithFrame:bounds];
+    [self addSubview:self.menu];
+    self.menu.frame = CGRectMake(0, -self.frame.size.height, self.frame.size.width, self.frame.size.height);
+    [UIView animateWithDuration:0.5 animations:^{
+        self.menu.frame = CGRectMake(0, -150, self.frame.size.width, self.frame.size.height);
+    }];
+}
+
+-(void)dismissMenu:(id)sender{
+    [UIView animateWithDuration:0.5 animations:^{
+        self.menu.frame = CGRectMake(0, -self.frame.size.height, self.frame.size.width, self.frame.size.height);
+    }completion:^(BOOL finished) {
+        [self.menu removeFromSuperview];
+    }];
 }
 
 /*

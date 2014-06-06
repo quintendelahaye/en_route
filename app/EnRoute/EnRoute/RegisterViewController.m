@@ -22,7 +22,6 @@
         // Custom initialization
         NSLog(@"[RegisterViewController] init");
         self.title = @"Register";
-        self.view.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -31,42 +30,50 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
     [self.view.btnLogin addTarget:self action:@selector(loginTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
--(void)loginTapped:(id)sender{
-    NSLog(@"[LoginViewController] login tapped");
-    if([self.view.txtUsername.text length] != 0 && [self.view.txtPassword.text length] != 0 && [self.view.txtPassword2.text length] != 0 && [self.view.txtPassword.text isEqualToString:self.view.txtPassword2.text]){
+
+-(void)loginTapped:(id)sender{ 
+//    NSLog(@"[LoginViewController] login tapped");
+    
+    if([self.view.txtUsername.text length] != 0 && [self.view.txtPassword.text length] != 0 && [self.view.txtGroupName.text length] != 0){
         
         NSLog(@"[RegisterViewController] login correct");
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSDictionary *parameters = @{@"groupname": self.view.txtUsername.text,
                                      @"password":self.view.txtPassword.text};
-        [manager POST:@"http://localhost/MAIV/en_route/site/api/users" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
-            [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInUser"];
-            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+        [manager POST:@"http://localhost/MAIV/en_route/site/api/groups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            NSLog(@"JSON: %@", responseObject);
+            
+            [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInGroup"];
+//            [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
+            
             StartScreenViewController *startscreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
             [startscreenVC.view loggedInWithUser:[responseObject objectForKey:@"groupname"]];
             [self.navigationController pushViewController:startscreenVC animated:YES];
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
             NSLog(@"Error: %@", error);
-            [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
+//            [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
+            [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"loggedInGroup"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+//            [[NSUserDefaults standardUserDefaults] synchronize];
+            
         }];
+        
+        
         
         [self.view.txtUsername removeFromSuperview];
         [self.view.txtPassword removeFromSuperview];
-        [self.view.txtPassword2 removeFromSuperview];
+        [self.view.txtGroupName removeFromSuperview];
         [self.view.btnLogin removeFromSuperview];
         [self.view.background removeFromSuperview];
         
@@ -74,11 +81,15 @@
         NSLog(@"[RegisterViewController] login incorrect");
         [self.view showError];
     }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    
 }
 
 -(void)dismissKeyboard {
     [self.view.txtPassword resignFirstResponder];
-    [self.view.txtPassword2 resignFirstResponder];
+    [self.view.txtGroupName resignFirstResponder];
     [self.view.txtUsername resignFirstResponder];
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "StartScreenViewController.h"
+#import "MainViewController.h"
 
 @interface StartScreenViewController ()
 
@@ -19,8 +20,23 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(menuTapped:)];
+        NSLog(@"is logged in --> %hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"]);
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:@"LOGOUT_TAPPED" object:nil];
     }
     return self;
+}
+
+-(void)menuTapped:(id)sender{
+    [self.view showMenu];
+}
+
+-(void)logout:(id)sender{
+    [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"loggedInUser"];
+    [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    MainViewController *mainVC = [[MainViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:mainVC animated:YES];
 }
 
 - (void)viewDidLoad
@@ -38,16 +54,6 @@
 -(void)loadView{
     CGRect bounds = [[UIScreen mainScreen]bounds];
     self.view = [[StartScreenView alloc] initWithFrame:bounds];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [super viewWillDisappear:animated];
 }
 
 /*
