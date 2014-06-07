@@ -20,9 +20,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(menuTapped:)];
+        UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"menu"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(menuTapped:)forControlEvents:UIControlEventTouchUpInside];
+        [button setFrame:CGRectMake(0, 0, 25, 31)];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
+        self.navigationItem.leftBarButtonItem = barButton;
+        
+        //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:uibar target:self action:@selector(menuTapped:)];
         NSLog(@"is logged in --> %hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"]);
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:@"LOGOUT_TAPPED" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginChanged:) name:@"LOGIN_CHANGED" object:nil];
     }
     return self;
 }
@@ -43,6 +51,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.view.btnStart addTarget:self action:@selector(startTour:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)startTour:(id)sender{
+    NSLog(@"bla");
+    TourViewController *tourVC = [[TourViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:tourVC animated:NO];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,8 +67,19 @@
 }
 
 -(void)loadView{
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"] == 0) {
+        MainViewController *mainVC = [[MainViewController alloc]initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:mainVC animated:NO];
+    }
     CGRect bounds = [[UIScreen mainScreen]bounds];
     self.view = [[StartScreenView alloc] initWithFrame:bounds];
+}
+
+- (void)loginChanged:(id)sender{
+    if ([[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"] == 0) {
+        CGRect bounds = [[UIScreen mainScreen]bounds];
+        self.view = [[StartScreenView alloc] initWithFrame:bounds];
+    }
 }
 
 /*

@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>CB88D583-C9B4-40F9-AD18-C7D15566FCB9</string>
+	<string>84D74CBA-8501-4353-90A4-A68E3DEAF357</string>
 	<key>IDESourceControlProjectName</key>
 	<string>EnRoute</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>93C58249-7236-4322-A793-BC9A30B654A9</key>
-		<string>https://github.com/quintendelahaye/en_route.git</string>
+		<key>C4E59D7A-2CB1-462B-B045-79A2EB2BE7E7</key>
+		<string>https://github.com/quintendelahaye/en_route</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>app/EnRoute/EnRoute.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>93C58249-7236-4322-A793-BC9A30B654A9</key>
+		<key>C4E59D7A-2CB1-462B-B045-79A2EB2BE7E7</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/quintendelahaye/en_route.git</string>
+	<string>https://github.com/quintendelahaye/en_route</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>93C58249-7236-4322-A793-BC9A30B654A9</string>
+	<string>C4E59D7A-2CB1-462B-B045-79A2EB2BE7E7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>93C58249-7236-4322-A793-BC9A30B654A9</string>
+			<string>C4E59D7A-2CB1-462B-B045-79A2EB2BE7E7</string>
 			<key>IDESourceControlWCCName</key>
 			<string>en_route</string>
 		</dict>

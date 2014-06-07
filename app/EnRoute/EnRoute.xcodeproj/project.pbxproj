@@ -34,6 +34,11 @@
 		817C3F15193B6E8600DA6563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF9193B6E8600DA6563 /* CoreData.framework */; };
 		817C3F1D193B6E8600DA6563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 817C3F1B193B6E8600DA6563 /* InfoPlist.strings */; };
 		817C3F1F193B6E8600DA6563 /* EnRouteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F1E193B6E8600DA6563 /* EnRouteTests.m */; };
+		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
+		A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */; };
+		A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */; };
+		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
+		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +93,17 @@
 		817C3F1C193B6E8600DA6563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C3F1E193B6E8600DA6563 /* EnRouteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnRouteTests.m; sourceTree = "<group>"; };
 		8B5516BAB8A141499873FBF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A0A0BC781942E7DA004158EA /* TourDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDelegate.h; sourceTree = "<group>"; };
+		A0A0BC7F1942EBF2004158EA /* Mission1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1ViewController.h; sourceTree = "<group>"; };
+		A0A0BC801942EBF2004158EA /* Mission1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ViewController.m; sourceTree = "<group>"; };
+		A0A0BC821942EC1A004158EA /* Mission1IntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1IntroductionView.h; sourceTree = "<group>"; };
+		A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1IntroductionView.m; sourceTree = "<group>"; };
+		A0A0BC8C1942EF5A004158EA /* UIColor+Extentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extentions.h"; sourceTree = "<group>"; };
+		A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extentions.m"; sourceTree = "<group>"; };
+		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
+		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
+		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
+		A0DAC6311942558A0011695B /* TourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +218,10 @@
 				815C3018193BB789004E3C5C /* StartScreen */,
 				814735431940B71F003B23CC /* MenuView.h */,
 				814735441940B71F003B23CC /* MenuView.m */,
+				A0DAC633194255900011695B /* Tour */,
+				A0A0BC851942EC21004158EA /* Mission1 */,
+				A0A0BC8C1942EF5A004158EA /* UIColor+Extentions.h */,
+				A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */,
 			);
 			path = EnRoute;
 			sourceTree = "<group>";
@@ -234,6 +254,29 @@
 				817C3F1B193B6E8600DA6563 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0A0BC851942EC21004158EA /* Mission1 */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0BC7F1942EBF2004158EA /* Mission1ViewController.h */,
+				A0A0BC801942EBF2004158EA /* Mission1ViewController.m */,
+				A0A0BC821942EC1A004158EA /* Mission1IntroductionView.h */,
+				A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */,
+			);
+			name = Mission1;
+			sourceTree = "<group>";
+		};
+		A0DAC633194255900011695B /* Tour */ = {
+			isa = PBXGroup;
+			children = (
+				A0DAC62D194255760011695B /* TourViewController.h */,
+				A0DAC62E194255760011695B /* TourViewController.m */,
+				A0DAC6301942558A0011695B /* TourView.h */,
+				A0DAC6311942558A0011695B /* TourView.m */,
+				A0A0BC781942E7DA004158EA /* TourDelegate.h */,
+			);
+			name = Tour;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,10 +417,15 @@
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
 				815C3016193BB760004E3C5C /* StartScreenView.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
+				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
+				A0DAC6321942558A0011695B /* TourView.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
 				8147354019406EB0003B23CC /* LogoView.m in Sources */,
+				A0DAC62F194255760011695B /* TourViewController.m in Sources */,
 				814735451940B71F003B23CC /* MenuView.m in Sources */,
+				A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */,
+				A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,
 				815C3013193BB71E004E3C5C /* StartScreenViewController.m in Sources */,
 			);

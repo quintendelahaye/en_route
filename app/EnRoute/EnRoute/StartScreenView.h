@@ -11,8 +11,8 @@
 
 @interface StartScreenView : UIView
 
-@property (strong,nonatomic)UIButton *btnLogin;
-@property (strong,nonatomic)UIButton *btnRegister;
+@property (strong,nonatomic)UIButton *btnStart;
+@property (strong,nonatomic)UIButton *btnHandleiding;
 @property (strong,nonatomic)UILabel *lblTitel;
 -(void)loggedInWithUser: (NSString*)user;
 @property (strong,nonatomic)UIButton *afmeldKnop;

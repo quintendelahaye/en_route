@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "StartScreenView.h"
 #import "MenuView.h"
+#import "MainViewController.h"
+#import "TourViewController.h"
 
 @interface StartScreenViewController : UIViewController
 

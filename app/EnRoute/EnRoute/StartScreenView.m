@@ -22,17 +22,17 @@
         logoView.frame = CGRectMake(self.frame.size.width/2 - logo.size.width/2, 100, logo.size.width, logo.size.height);
         [self addSubview:logoView];
         
-        self.btnLogin = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnLogin.frame = CGRectMake(self.frame.size.width/2 - 100, 410, 200, 50);
-        self.btnLogin.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-        [self.btnLogin setTitle:@"Start Tour" forState:UIControlStateNormal];
-        [self addSubview:self.btnLogin];
+        self.btnStart = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnStart.frame = CGRectMake(self.frame.size.width/2 - 100, 410, 200, 50);
+        self.btnStart.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
+        [self.btnStart setTitle:@"Start Tour" forState:UIControlStateNormal];
+        [self addSubview:self.btnStart];
         
-        self.btnRegister = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnRegister.frame = CGRectMake(self.frame.size.width/2 - 100, 470, 200, 50);
-        self.btnRegister.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-        [self.btnRegister setTitle:@"Tutorial" forState:UIControlStateNormal];
-        [self addSubview:self.btnRegister];
+        self.btnHandleiding = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.btnHandleiding.frame = CGRectMake(self.frame.size.width/2 - 100, 470, 200, 50);
+        self.btnHandleiding.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
+        [self.btnHandleiding setTitle:@"Handleiding" forState:UIControlStateNormal];
+        [self addSubview:self.btnHandleiding];
         
 //        UIImage *logOutImage = [UIImage imageNamed:@"afmeldKnop"];
 //        self.afmeldKnop = [[UIButton alloc] init];

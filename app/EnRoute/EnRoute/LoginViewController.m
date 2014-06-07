@@ -20,6 +20,7 @@
     if (self) {
         // Custom initialization
         NSLog(@"[LoginViewController] init");
+        
         self.title = @"Login";
     }
     return self;
@@ -50,7 +51,7 @@
         
         NSLog(@"[LoginViewController] login not empty");
         
-        NSString *path = [NSString stringWithFormat:@"http://localhost/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
+        NSString *path = [NSString stringWithFormat:@"http://192.168.10.197/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
@@ -71,9 +72,10 @@
                 [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
-                StartScreenViewController *startScreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
+                [self.navigationController popToRootViewControllerAnimated:NO];
+                /*StartScreenViewController *startScreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
                 [startScreenVC.view loggedInWithUser:[responseObject objectForKey:@"groupname"]];
-                [self.navigationController pushViewController:startScreenVC animated:YES];
+                [self.navigationController pushViewController:startScreenVC animated:YES];*/
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error){
             NSLog(@"error loading data");
