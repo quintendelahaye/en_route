@@ -22,8 +22,17 @@
         NSLog(@"[LoginViewController] init");
         
         self.title = @"Login";
+        
+        self.navigationItem.backBarButtonItem = nil;
+        UIImage *temp = [[UIImage imageNamed:@"backButton"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
+        UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:temp style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonTapped:)];
+        self.navigationItem.leftBarButtonItem = barButtonItem;
     }
     return self;
+}
+
+-(void)backButtonTapped:(id)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
