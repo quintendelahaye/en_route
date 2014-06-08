@@ -39,6 +39,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.delegate = self;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"map"];
+    [self.view addSubview:title];
 }
 
 - (void)annotationSelected:(NSString *)title{

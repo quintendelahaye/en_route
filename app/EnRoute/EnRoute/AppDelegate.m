@@ -33,6 +33,18 @@
     //self.navController.navigationBar.barTintColor = [UIColor colorWithRed:199/255.0f green:229/255.0f blue:223/255.0f alpha:1];
     
     [self.navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navController.navigationBar.subviews enumerateObjectsUsingBlock:
+     ^(id obj, NSUInteger idx, BOOL *stop) {
+         if ([obj isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]){
+             UIView* v = obj;
+             if ([v.subviews count] > 0) {
+                 [[v.subviews objectAtIndex:0] removeFromSuperview];
+                 *stop=YES;
+             }
+         }
+     }];
+    
     //[self.navController.navigationBar setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"navController"]]];
     //self.navController.navigationBar.backgroundColor = [UIColor colorWithRed:199/255.0f green:229/255.0f blue:223/255.0f alpha:1];
     self.navController.navigationBar.alpha = 1;

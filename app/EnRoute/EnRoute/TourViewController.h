@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TourView.h"
 #import "Mission1ViewController.h"
+#import "TitleView.h"
 
 @interface TourViewController : UIViewController <TourDelegate>
 

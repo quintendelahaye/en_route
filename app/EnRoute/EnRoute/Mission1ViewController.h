@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Mission1IntroductionView.h"
+#import "TitleView.h"
 
 @interface Mission1ViewController : UIViewController
 
