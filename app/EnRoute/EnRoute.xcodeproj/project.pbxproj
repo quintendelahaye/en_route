@@ -38,6 +38,7 @@
 		A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */; };
 		A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */; };
 		A0A0BC9419445A63004158EA /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9319445A63004158EA /* TitleView.m */; };
+		A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9A19447F5F004158EA /* UIElementFactory.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extentions.m"; sourceTree = "<group>"; };
 		A0A0BC9219445A63004158EA /* TitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleView.h; sourceTree = "<group>"; };
 		A0A0BC9319445A63004158EA /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
+		A0A0BC9919447F5F004158EA /* UIElementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIElementFactory.h; sourceTree = "<group>"; };
+		A0A0BC9A19447F5F004158EA /* UIElementFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIElementFactory.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */,
 				A0A0BC9219445A63004158EA /* TitleView.h */,
 				A0A0BC9319445A63004158EA /* TitleView.m */,
+				A0A0BC9919447F5F004158EA /* UIElementFactory.h */,
+				A0A0BC9A19447F5F004158EA /* UIElementFactory.m */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -433,6 +438,7 @@
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
+				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
 				A0DAC6321942558A0011695B /* TourView.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
 				8147354019406EB0003B23CC /* LogoView.m in Sources */,

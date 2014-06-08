@@ -11,5 +11,6 @@
 @interface UIColor (Extentions)
 
 + (UIColor *)lightYellowColor;
++ (UIColor *)niceRedColor;
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIColor+Extentions.h"
+#import "UIElementFactory.h"
 
 @interface Mission1IntroductionView : UIView
 
