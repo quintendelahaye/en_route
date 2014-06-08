@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.part = 1;
     }
     return self;
 }
@@ -35,7 +36,129 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"opdracht collage"];
+    TitleView *titleResult = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"jullie collage"];
     [self.view addSubview:title];
+    self.resultView = [[Mission1ResultView alloc]initWithFrame:bounds];
+    [self.resultView addSubview:titleResult];
+    [self.view.btnStart addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)showCamera:(id)sender{
+    NSLog(@"[OverviewVC] Show camera");
+    
+    self.picker = [[UIImagePickerController alloc]init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        NSLog(@"[OverviewVC] Camera device available");
+        NSArray *availableMediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+        self.picker.mediaTypes = availableMediaTypes;
+        self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        CGRect bounds = [UIScreen mainScreen].bounds;
+        self.cameraOverlay = [[Mission1CameraView alloc]initWithFrame:bounds andPart:self.part];
+        self.cameraOverlay.part1.image = self.canvas;
+        self.cameraOverlay.part2.image = self.frame;
+        self.picker.cameraOverlayView = self.cameraOverlay;
+        self.picker.showsCameraControls = NO;
+        
+        [self.cameraOverlay.picture addTarget:self action:@selector(picture:) forControlEvents:UIControlEventTouchUpInside];
+        
+    }else{
+        NSLog(@"[OverviewVC] No camera device available");
+        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:self.picker animated:NO completion:^{}];
+    
+    self.picker.delegate = self;
+}
+
+- (void)picture:(id)selector{
+    [self.picker takePicture];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"[OverviewVC] Did finish picking media: %@", info);
+    
+    UIImage *picture = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    UIImage *bla = [UIImage imageNamed:@"mission1_mask_bg"];
+    
+    UIImage *cropje = [self imageWithImage:picture scaledToSize:bla.size];
+    
+    switch (self.part) {
+        case 1:
+            self.canvas = [self maskImage:cropje withMask:[UIImage imageNamed:@"mission1_mask_canvas"]];
+            break;
+        case 2:
+            self.frame = [self maskImage:cropje withMask:[UIImage imageNamed:@"mission1_mask_frame"]];
+            break;
+        case 3:
+            self.bg = [self maskImage:cropje withMask:[UIImage imageNamed:@"mission1_mask_bg"]];
+            self.collage = [self createCollage];
+            [self.view addSubview:self.resultView];
+            self.resultView.imageView.image = self.collage;
+            //[self.view addUpload];
+            //[self.view.upload addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
+            break;
+            
+        default:
+            break;
+    }
+    
+    if (self.part != 3) {
+        [picker dismissViewControllerAnimated:NO completion:^{
+            self.part++;
+            [self showCamera:self];
+        }];
+    }else{
+        [picker dismissViewControllerAnimated:NO completion:^{
+            self.part = 1;
+            self.bg = [UIImage alloc];
+            self.frame = [UIImage alloc];
+        }];
+    }
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;{
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(newSize, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(newSize);
+    }
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
+    
+	CGImageRef maskRef = maskImage.CGImage;
+    
+    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskRef),
+                                        CGImageGetHeight(maskRef),
+                                        CGImageGetBitsPerComponent(maskRef),
+                                        CGImageGetBitsPerPixel(maskRef),
+                                        CGImageGetBytesPerRow(maskRef),
+                                        CGImageGetDataProvider(maskRef), NULL, false);
+    
+    CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
+    return [UIImage imageWithCGImage:masked];
+}
+
+-(UIImage *)createCollage{
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(self.bg.size, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(self.bg.size);
+    }
+    [self.bg drawInRect:CGRectMake(0, 0, self.bg.size.width, self.bg.size.height)];
+    [self.frame drawInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [self.canvas drawInRect:CGRectMake(0, 0, self.canvas.size.width, self.canvas.size.height)];
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resultImage;
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,13 +10,13 @@
 
 @implementation UIElementFactory
 
-+(UIButton *)createButtonWithImageName:(NSString*)image {
++(UIButton *)createButtonWithImageName:(NSString*)image andPoint:(CGPoint)point{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     UIImage *imageButton = [UIImage imageNamed:image];
     [button setBackgroundImage:imageButton forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:[image stringByAppendingString:@"_Pushed"]] forState:UIControlStateHighlighted];
-    [button setFrame:CGRectMake(0, 0, imageButton.size.width,imageButton.size.height)];
+    [button setFrame:CGRectMake(point.x, point.y, imageButton.size.width,imageButton.size.height)];
     
     return button;
 }

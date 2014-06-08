@@ -39,6 +39,8 @@
 		A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */; };
 		A0A0BC9419445A63004158EA /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9319445A63004158EA /* TitleView.m */; };
 		A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9A19447F5F004158EA /* UIElementFactory.m */; };
+		A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */; };
+		A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BCA0194513A1004158EA /* Mission1ResultView.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,10 @@
 		A0A0BC9319445A63004158EA /* TitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		A0A0BC9919447F5F004158EA /* UIElementFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIElementFactory.h; sourceTree = "<group>"; };
 		A0A0BC9A19447F5F004158EA /* UIElementFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIElementFactory.m; sourceTree = "<group>"; };
+		A0A0BC9C1944B96C004158EA /* Mission1CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1CameraView.h; sourceTree = "<group>"; };
+		A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1CameraView.m; sourceTree = "<group>"; };
+		A0A0BC9F194513A1004158EA /* Mission1ResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1ResultView.h; sourceTree = "<group>"; };
+		A0A0BCA0194513A1004158EA /* Mission1ResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ResultView.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
@@ -268,6 +274,10 @@
 				A0A0BC801942EBF2004158EA /* Mission1ViewController.m */,
 				A0A0BC821942EC1A004158EA /* Mission1IntroductionView.h */,
 				A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */,
+				A0A0BC9C1944B96C004158EA /* Mission1CameraView.h */,
+				A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */,
+				A0A0BC9F194513A1004158EA /* Mission1ResultView.h */,
+				A0A0BCA0194513A1004158EA /* Mission1ResultView.m */,
 			);
 			name = Mission1;
 			sourceTree = "<group>";
@@ -431,6 +441,7 @@
 				817C3F09193B6E8600DA6563 /* EnRoute.xcdatamodeld in Sources */,
 				815C2FFE193B6F10004E3C5C /* Mainview.m in Sources */,
 				815C300A193BA48F004E3C5C /* LoginView.m in Sources */,
+				A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */,
 				815C3004193BA472004E3C5C /* LoginViewController.m in Sources */,
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
 				815C3016193BB760004E3C5C /* StartScreenView.m in Sources */,
@@ -441,6 +452,7 @@
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
 				A0DAC6321942558A0011695B /* TourView.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
+				A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */,
 				8147354019406EB0003B23CC /* LogoView.m in Sources */,
 				A0DAC62F194255760011695B /* TourViewController.m in Sources */,
 				814735451940B71F003B23CC /* MenuView.m in Sources */,

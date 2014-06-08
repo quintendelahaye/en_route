@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface UIElementFactory : NSObject
-+(UIButton *)createButtonWithImageName:(NSString*)image;
++(UIButton *)createButtonWithImageName:(NSString*)image andPoint:(CGPoint)point;
 +(UILabel*)createLabelWithFont:(NSString*)fontName andSize:(int)size andText:(NSString*)text andFrame:(CGRect)frame andColor:(UIColor*)color andTextalignment:(NSTextAlignment*)alignment;
 @end

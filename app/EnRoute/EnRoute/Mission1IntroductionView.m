@@ -40,7 +40,7 @@
         [self addSubview:example];
         
         //startbutton
-        self.btnStart = [UIElementFactory createButtonWithImageName:@"red_Start_Medium"];
+        self.btnStart = [UIElementFactory createButtonWithImageName:@"red_Start_Medium" andPoint:CGPointMake(20, 400)];
         self.btnStart.center = CGPointMake(self.frame.size.width/2, 456);
         [self addSubview:self.btnStart];
     }
