@@ -48,9 +48,18 @@
 - (void)annotationSelected:(NSString *)title{
     if ([title  isEqual: @"opdracht1"]) {
         NSLog(@"show opdracht 1");
-        Mission1ViewController *mission1VC = [[Mission1ViewController alloc]initWithNibName:nil bundle:nil];
-        [self.navigationController pushViewController:mission1VC animated:YES];
+        self.mission1VC = [[Mission1ViewController alloc]initWithNibName:nil bundle:nil];
+        self.mission1VC.delegate = self;
+        [self.navigationController pushViewController:self.mission1VC animated:YES];
     }
+}
+
+- (void)Mission1Finished{
+    //UnlockedView
+    UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
+    self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height)];
+    self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
+    [self.view addSubview:self.unlockedView];
 }
 
 - (void)didReceiveMemoryWarning

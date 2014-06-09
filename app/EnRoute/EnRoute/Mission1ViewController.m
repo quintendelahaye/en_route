@@ -93,6 +93,7 @@
 
 - (void)done:(id)selector{
     [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate Mission1Finished];
 }
 
 - (void)picture:(id)selector{

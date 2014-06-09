@@ -34,6 +34,7 @@
 		817C3F15193B6E8600DA6563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF9193B6E8600DA6563 /* CoreData.framework */; };
 		817C3F1D193B6E8600DA6563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 817C3F1B193B6E8600DA6563 /* InfoPlist.strings */; };
 		817C3F1F193B6E8600DA6563 /* EnRouteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F1E193B6E8600DA6563 /* EnRouteTests.m */; };
+		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
 		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
 		A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */; };
 		A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */; };
@@ -97,6 +98,9 @@
 		817C3F1C193B6E8600DA6563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C3F1E193B6E8600DA6563 /* EnRouteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnRouteTests.m; sourceTree = "<group>"; };
 		8B5516BAB8A141499873FBF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
+		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
+		A05129A81945EF1C00709BCB /* Mission1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1Delegate.h; sourceTree = "<group>"; };
 		A0A0BC781942E7DA004158EA /* TourDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDelegate.h; sourceTree = "<group>"; };
 		A0A0BC7F1942EBF2004158EA /* Mission1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1ViewController.h; sourceTree = "<group>"; };
 		A0A0BC801942EBF2004158EA /* Mission1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ViewController.m; sourceTree = "<group>"; };
@@ -278,6 +282,7 @@
 				A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */,
 				A0A0BC9F194513A1004158EA /* Mission1ResultView.h */,
 				A0A0BCA0194513A1004158EA /* Mission1ResultView.m */,
+				A05129A81945EF1C00709BCB /* Mission1Delegate.h */,
 			);
 			name = Mission1;
 			sourceTree = "<group>";
@@ -298,6 +303,8 @@
 		A0DAC633194255900011695B /* Tour */ = {
 			isa = PBXGroup;
 			children = (
+				A05129A51945ED8A00709BCB /* UnlockedView.h */,
+				A05129A61945ED8A00709BCB /* UnlockedView.m */,
 				A0DAC62D194255760011695B /* TourViewController.h */,
 				A0DAC62E194255760011695B /* TourViewController.m */,
 				A0DAC6301942558A0011695B /* TourView.h */,
@@ -445,6 +452,7 @@
 				815C3004193BA472004E3C5C /* LoginViewController.m in Sources */,
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
 				815C3016193BB760004E3C5C /* StartScreenView.m in Sources */,
+				A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */,
 				A0A0BC9419445A63004158EA /* TitleView.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,

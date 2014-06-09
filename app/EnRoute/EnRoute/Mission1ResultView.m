@@ -26,7 +26,7 @@
         bg.image = bgImg;
         [self addSubview:bg];
         
-        NSString *text = @"De foto werd opgeslagen! Wil je er nog een maken?";
+        NSString *text = @"De foto werd opgeslagen! Wil je er nog een maken of verder gaan? ";
         UILabel *explanation = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:text andFrame:CGRectMake(50, 366, 222, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentLeft];
         [self addSubview:explanation];
         
