@@ -41,6 +41,8 @@
     self.resultView = [[Mission1ResultView alloc]initWithFrame:bounds];
     [self.resultView addSubview:titleResult];
     [self.view.btnStart addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
+    [self.resultView.redo addTarget:self action:@selector(showCamera:) forControlEvents:UIControlEventTouchUpInside];
+    [self.resultView.ok  addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)showCamera:(id)sender{
@@ -59,9 +61,10 @@
         self.cameraOverlay.part2.image = self.frame;
         self.picker.cameraOverlayView = self.cameraOverlay;
         self.picker.showsCameraControls = NO;
+        self.picker.allowsEditing = NO;
         
         [self.cameraOverlay.picture addTarget:self action:@selector(picture:) forControlEvents:UIControlEventTouchUpInside];
-        
+        [self.cameraOverlay.back addTarget:self action:@selector(prev:) forControlEvents:UIControlEventTouchUpInside];
     }else{
         NSLog(@"[OverviewVC] No camera device available");
         self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
@@ -70,6 +73,26 @@
     [self presentViewController:self.picker animated:NO completion:^{}];
     
     self.picker.delegate = self;
+}
+
+- (void)prev:(id)selector{
+    if (self.part == 1) {
+        [self.picker dismissViewControllerAnimated:NO completion:^{}];
+    }else{
+        if (self.part == 2) {
+            self.canvas = [UIImage alloc];
+        }else if (self.part == 3){
+            self.frame = [UIImage alloc];
+        }
+        [self.picker dismissViewControllerAnimated:NO completion:^{
+            self.part--;
+            [self showCamera:self];
+        }];
+    }
+}
+
+- (void)done:(id)selector{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)picture:(id)selector{
@@ -94,11 +117,10 @@
             break;
         case 3:
             self.bg = [self maskImage:cropje withMask:[UIImage imageNamed:@"mission1_mask_bg"]];
-            self.collage = [self createCollage];
+            self.collage = [self squareImageWithImage:[self createCollage] scaledToSize:CGSizeMake(self.bg.size.width, self.bg.size.width)];
             [self.view addSubview:self.resultView];
             self.resultView.imageView.image = self.collage;
-            //[self.view addUpload];
-            //[self.view.upload addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
+            //uploaden
             break;
             
         default:
@@ -115,8 +137,51 @@
             self.part = 1;
             self.bg = [UIImage alloc];
             self.frame = [UIImage alloc];
+            self.canvas = [UIImage alloc];
         }];
     }
+}
+
+- (UIImage *)squareImageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    double ratio;
+    double delta;
+    CGPoint offset;
+    
+    //make a new square size, that is the resized imaged width
+    CGSize sz = CGSizeMake(newSize.width, newSize.width);
+    
+    //figure out if the picture is landscape or portrait, then
+    //calculate scale factor and offset
+    if (image.size.width > image.size.height) {
+        ratio = newSize.width / image.size.width;
+        delta = (ratio*image.size.width - ratio*image.size.height);
+        offset = CGPointMake(delta/2, 0);
+    } else {
+        ratio = newSize.width / image.size.height;
+        delta = (ratio*image.size.height - ratio*image.size.width);
+        offset = CGPointMake(0, delta/2);
+    }
+    
+    //make the final clipping rect based on the calculated values
+    CGRect clipRect = CGRectMake(-offset.x, -offset.y,
+                                 (ratio * image.size.width) + delta,
+                                 (ratio * image.size.height) + delta);
+    
+    
+    //start a new context, with scale factor 0.0 so retina displays get
+    //high quality image
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(sz, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(sz);
+    }
+    UIRectClip(clipRect);
+    [image drawInRect:clipRect];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;{

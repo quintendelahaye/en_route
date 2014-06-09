@@ -62,6 +62,9 @@
         
         self.picture = [UIElementFactory createButtonWithImageName:@"btn_picture" andPoint:CGPointMake(129, 396)];
         [self addSubview:self.picture];
+        
+        self.back = [UIElementFactory createButtonWithImageName:@"btn_back" andPoint:CGPointMake(20, 20)];
+        [self addSubview:self.back];
     }
     return self;
 }

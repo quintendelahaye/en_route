@@ -13,6 +13,7 @@
 @interface Mission1CameraView : UIView
 
 @property (nonatomic, strong) UIButton *picture;
+@property (nonatomic, strong) UIButton *back;
 @property (nonatomic, strong) UIImageView *part1;
 @property (nonatomic, strong) UIImageView *part2;
 

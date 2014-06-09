@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "UIColor+Extentions.h"
+#import "UIElementFactory.h"
 
 @interface Mission1ResultView : UIView
 
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIButton *redo;
+@property (nonatomic, strong) UIButton *ok;
 
 @end
