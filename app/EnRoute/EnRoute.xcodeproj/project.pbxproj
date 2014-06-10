@@ -34,7 +34,9 @@
 		817C3F15193B6E8600DA6563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF9193B6E8600DA6563 /* CoreData.framework */; };
 		817C3F1D193B6E8600DA6563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 817C3F1B193B6E8600DA6563 /* InfoPlist.strings */; };
 		817C3F1F193B6E8600DA6563 /* EnRouteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F1E193B6E8600DA6563 /* EnRouteTests.m */; };
+		A04559B819460C7F00561159 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = A04559B719460C7F00561159 /* BebasNeue.otf */; };
 		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
+		A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FB5C619467476000E0A54 /* MenuViewController.m */; };
 		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
 		A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */; };
 		A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */; };
@@ -42,6 +44,7 @@
 		A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9A19447F5F004158EA /* UIElementFactory.m */; };
 		A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */; };
 		A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BCA0194513A1004158EA /* Mission1ResultView.m */; };
+		A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77419472B2A008D2DD2 /* MemberView.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 /* End PBXBuildFile section */
@@ -98,9 +101,12 @@
 		817C3F1C193B6E8600DA6563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C3F1E193B6E8600DA6563 /* EnRouteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnRouteTests.m; sourceTree = "<group>"; };
 		8B5516BAB8A141499873FBF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A04559B719460C7F00561159 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
 		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
 		A05129A81945EF1C00709BCB /* Mission1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1Delegate.h; sourceTree = "<group>"; };
+		A09FB5C519467476000E0A54 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		A09FB5C619467476000E0A54 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		A0A0BC781942E7DA004158EA /* TourDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourDelegate.h; sourceTree = "<group>"; };
 		A0A0BC7F1942EBF2004158EA /* Mission1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1ViewController.h; sourceTree = "<group>"; };
 		A0A0BC801942EBF2004158EA /* Mission1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ViewController.m; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 		A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1CameraView.m; sourceTree = "<group>"; };
 		A0A0BC9F194513A1004158EA /* Mission1ResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1ResultView.h; sourceTree = "<group>"; };
 		A0A0BCA0194513A1004158EA /* Mission1ResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ResultView.m; sourceTree = "<group>"; };
+		A0B9F77319472B2A008D2DD2 /* MemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberView.h; sourceTree = "<group>"; };
+		A0B9F77419472B2A008D2DD2 /* MemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberView.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
@@ -167,6 +175,8 @@
 				815C3006193BA47D004E3C5C /* RegisterViewController.m */,
 				815C300B193BA49C004E3C5C /* RegisterView.h */,
 				815C300C193BA49C004E3C5C /* RegisterView.m */,
+				A0B9F77319472B2A008D2DD2 /* MemberView.h */,
+				A0B9F77419472B2A008D2DD2 /* MemberView.m */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -218,6 +228,7 @@
 		817C3EFB193B6E8600DA6563 /* EnRoute */ = {
 			isa = PBXGroup;
 			children = (
+				A09FB5C41946744E000E0A54 /* menu */,
 				817C3F04193B6E8600DA6563 /* AppDelegate.h */,
 				817C3F05193B6E8600DA6563 /* AppDelegate.m */,
 				817C3F07193B6E8600DA6563 /* EnRoute.xcdatamodeld */,
@@ -232,8 +243,6 @@
 				815C300F193BA4B3004E3C5C /* Login */,
 				815C3010193BA4BA004E3C5C /* Register */,
 				815C3018193BB789004E3C5C /* StartScreen */,
-				814735431940B71F003B23CC /* MenuView.h */,
-				814735441940B71F003B23CC /* MenuView.m */,
 				A0DAC633194255900011695B /* Tour */,
 				A0A0BC851942EC21004158EA /* Mission1 */,
 				A0A0BC9519445A69004158EA /* Extentions */,
@@ -244,6 +253,7 @@
 		817C3EFC193B6E8600DA6563 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A04559B719460C7F00561159 /* BebasNeue.otf */,
 				817C3EFD193B6E8600DA6563 /* EnRoute-Info.plist */,
 				817C3EFE193B6E8600DA6563 /* InfoPlist.strings */,
 				8147354119409C14003B23CC /* Corki-Rounded.otf */,
@@ -269,6 +279,17 @@
 				817C3F1B193B6E8600DA6563 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A09FB5C41946744E000E0A54 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				814735431940B71F003B23CC /* MenuView.h */,
+				814735441940B71F003B23CC /* MenuView.m */,
+				A09FB5C519467476000E0A54 /* MenuViewController.h */,
+				A09FB5C619467476000E0A54 /* MenuViewController.m */,
+			);
+			name = menu;
 			sourceTree = "<group>";
 		};
 		A0A0BC851942EC21004158EA /* Mission1 */ = {
@@ -393,6 +414,7 @@
 			files = (
 				817C3F00193B6E8600DA6563 /* InfoPlist.strings in Resources */,
 				8147353D194069CD003B23CC /* images.xcassets in Resources */,
+				A04559B819460C7F00561159 /* BebasNeue.otf in Resources */,
 				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +477,7 @@
 				A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */,
 				A0A0BC9419445A63004158EA /* TitleView.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
+				A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
@@ -464,6 +487,7 @@
 				8147354019406EB0003B23CC /* LogoView.m in Sources */,
 				A0DAC62F194255760011695B /* TourViewController.m in Sources */,
 				814735451940B71F003B23CC /* MenuView.m in Sources */,
+				A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */,
 				A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */,
 				A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,

@@ -22,17 +22,8 @@
         logoView.frame = CGRectMake(self.frame.size.width/2 - logo.size.width/2, 100, logo.size.width, logo.size.height);
         [self addSubview:logoView];
         
-        self.btnStart = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnStart.frame = CGRectMake(self.frame.size.width/2 - 100, 410, 200, 50);
-        self.btnStart.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-        [self.btnStart setTitle:@"Start Tour" forState:UIControlStateNormal];
-        [self addSubview:self.btnStart];
-        
-        self.btnHandleiding = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.btnHandleiding.frame = CGRectMake(self.frame.size.width/2 - 100, 470, 200, 50);
-        self.btnHandleiding.backgroundColor = [UIColor colorWithRed:228/255.0f green:102/255.0f blue:64/255.0f alpha:1];
-        [self.btnHandleiding setTitle:@"Handleiding" forState:UIControlStateNormal];
-        [self addSubview:self.btnHandleiding];
+        [self createButtons];
+        [self createBackground];
         
 //        UIImage *logOutImage = [UIImage imageNamed:@"afmeldKnop"];
 //        self.afmeldKnop = [[UIButton alloc] init];
@@ -47,6 +38,32 @@
     return self;
 }
 
+-(void)createBackground{
+    UIImageView *startImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"img_start"]];
+    startImg.frame = CGRectMake(self.frame.size.width/2 - startImg.frame.size.width/2, 30, startImg.frame.size.width, startImg.frame.size.height);
+    [self addSubview:startImg];
+    
+    self.lblTitel = [[UILabel alloc] initWithFrame:CGRectMake(65, startImg.frame.origin.y + startImg.frame.size.height/2 + 120, 400, 50)];
+    self.lblTitel.text = @"OUD & NIEUW";
+    self.lblTitel.font = [UIFont fontWithName:CORKI size:50];
+    [self addSubview:self.lblTitel];
+    
+    self.lblTeamName = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - startImg.frame.size.width/2, startImg.frame.origin.y + startImg.frame.size.height/2 + 46, startImg.frame.size.width, 50)];
+    self.lblTeamName.text = @"teamnaam enzo";
+    self.lblTeamName.textAlignment = NSTextAlignmentCenter;
+    self.lblTeamName.font = [UIFont fontWithName:BEBAS size:30];
+    self.lblTeamName.textColor = [UIColor colorWithRed:244/250.0f green:234/250.0f blue:198/250.0f alpha:1];
+    [self addSubview:self.lblTeamName];
+}
+
+-(void)createButtons{
+    self.btnHandleiding = [UIElementFactory createButtonWithImageName:@"handleidingKnop" andPoint:CGPointMake(20, 320)];
+    [self addSubview:self.btnHandleiding];
+    
+    self.btnStart = [UIElementFactory createButtonWithImageName:@"startKnop" andPoint:CGPointMake(20, self.btnHandleiding.frame.origin.y + self.btnHandleiding.frame.size.height + 20 )];
+    [self addSubview:self.btnStart];
+    
+}
 
 -(void)loggedInWithUser:(NSString*)user{
     self.lblTitel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
@@ -55,7 +72,7 @@
     [self addSubview:self.lblTitel];
 }
 
--(void)showMenu{
+/*-(void)showMenu{
     CGRect bounds = [[UIScreen mainScreen] bounds];
     self.menu = [[MenuView alloc] initWithFrame:bounds];
     [self addSubview:self.menu];
@@ -63,7 +80,7 @@
     [UIView animateWithDuration:0.5 animations:^{
         self.menu.frame = CGRectMake(0, -150, self.frame.size.width, self.frame.size.height);
     }];
-}
+}*/
 
 -(void)dismissMenu:(id)sender{
     [UIView animateWithDuration:0.5 animations:^{

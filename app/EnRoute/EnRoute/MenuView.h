@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIElementFactory.h"
 
 @interface MenuView : UIView<UIAlertViewDelegate>
 
 @property (strong,nonatomic)UIButton *afmeldKnop;
 @property (nonatomic, assign)id<UIAlertViewDelegate>delegate;
+
+@property(nonatomic, strong)UIButton *btnMap;
+@property(nonatomic, strong)UIButton *btnHandleiding;
+@property(nonatomic, strong)UIButton *btnWerken;
+@property(nonatomic, strong)UIButton *btnstop;
+
 @end

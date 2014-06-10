@@ -30,11 +30,13 @@ PODS:
     - FMDB (= 2.0)
     - GRMustache (= 6.8.3)
     - SMCalloutView (= 1.1)
+  - SBJson (4.0.1)
   - SMCalloutView (1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - MapBox
+  - SBJson (~> 4.0.0)
 
 SPEC CHECKSUMS:
   AFNetworking: ab63e259fe91eef4519b371ef0a4955af0e73e64
@@ -42,6 +44,7 @@ SPEC CHECKSUMS:
   GRMustache: ab96109b7ba4b9568425bea40d6cd2cdc7582b6c
   JRSwizzle: 30da7a2c539a4ebf954b16d15f6dd8221c9f6fa5
   MapBox: 01bd6999838d8dfbe8b48d33cae01ffcec8a7ab7
+  SBJson: d71212c078abf4679d54b0d0565260c474e46235
   SMCalloutView: b1c20930f57bc4470f5477979e2decf066397c82
 
 COCOAPODS: 0.33.1

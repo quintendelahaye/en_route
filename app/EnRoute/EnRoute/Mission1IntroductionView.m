@@ -23,7 +23,7 @@
         subTitle.image = subTitleImg;
         [self addSubview:subTitle];
         
-        //tekst
+        //tekst - label
         NSString *text = @"Neem 3 foto’s. Deze foto’s worden in een collage gegoten. Zorg voor een duidelijk verschil tussen oud en modern in je foto’s.";
         UILabel *explanation = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:text andFrame:CGRectMake(45, 77, 230, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentLeft];
         [self addSubview:explanation];

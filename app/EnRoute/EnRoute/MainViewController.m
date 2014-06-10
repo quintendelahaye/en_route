@@ -20,7 +20,7 @@
     if (self) {
         // Custom initialization
         NSLog(@"[MainViewController] init");
-//        [self enumerateFonts];
+        [self enumerateFonts];
         ;
         NSLog(@"is logged in --> %hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"]);
 
@@ -38,6 +38,7 @@
 
 -(void)loginButtonTapped:(id)sender{
     LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:nil bundle:nil];
+    //TourViewController *tourVC = [[TourViewController alloc]initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 
@@ -45,8 +46,6 @@
     RegisterViewController *registerVC = [[RegisterViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {

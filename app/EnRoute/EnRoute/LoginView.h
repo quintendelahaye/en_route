@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIElementFactory.h"
 
 @interface LoginView : UIView
 
@@ -15,6 +16,8 @@
 @property (strong,nonatomic)UITextField *txtPassword;
 @property (strong,nonatomic)UIButton *btnLogin;
 
--(void)showError;
+@property (nonatomic, strong) UIImageView *feedbackMessage;
+
+-(void)showTextfieldFeedback;
 
 @end

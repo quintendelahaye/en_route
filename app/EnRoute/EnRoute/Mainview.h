@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LogoView.h"
+#import "UIElementFactory.h"
 
 @interface Mainview : UIView
 

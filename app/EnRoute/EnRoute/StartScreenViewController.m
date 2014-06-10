@@ -36,7 +36,14 @@
 }
 
 -(void)menuTapped:(id)sender{
-    [self.view showMenu];
+    //[self.view showMenu];
+    
+    MenuViewController *menuVC = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+    //[self.navigationController pushViewController:menuVC animated:NO];
+    //[self presentViewController:menuVC animated:YES completion:^{}];
+    [self addChildViewController:menuVC];
+    [self.view addSubview:menuVC.view];
+    [menuVC didMoveToParentViewController:self];
 }
 
 -(void)logout:(id)sender{

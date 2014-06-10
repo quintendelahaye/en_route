@@ -21,8 +21,6 @@
         // Custom initialization
         NSLog(@"[LoginViewController] init");
         
-        self.title = @"Login";
-        
         self.navigationItem.backBarButtonItem = nil;
         UIImage *temp = [[UIImage imageNamed:@"backButton"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
         UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:temp style:UIBarButtonItemStyleBordered target:self action:@selector(backButtonTapped:)];
@@ -40,6 +38,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view.btnLogin addTarget:self action:@selector(loginTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //title ---------
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    
+    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"aanmelden"];
+    [self.view addSubview:title];
+    
+    [self.view.txtUsername addTarget:self action:@selector(textFieldUserNameActive:) forControlEvents:UIControlEventEditingDidBegin];
+}
+
+-(void)textFieldUserNameActive:(id)sender{
+    NSLog(@"typing");
+    [self.view showTextfieldFeedback];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,7 +72,7 @@
         
         NSLog(@"[LoginViewController] login not empty");
         
-        NSString *path = [NSString stringWithFormat:@"http://192.168.10.197/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
+        NSString *path = [NSString stringWithFormat:@"http://169.254.113.111/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
@@ -72,7 +84,7 @@
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation,id responseObject){
             NSLog(@"loaded data = %@",responseObject);
             if([responseObject count] == 0){
-                [self.view showError];
+                [self.view showTextfieldFeedback];
                 [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
             }else{
@@ -99,7 +111,7 @@
         [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.view showError];
+        [self.view feedbackMessage];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

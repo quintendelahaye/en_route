@@ -29,7 +29,17 @@ $app->post('/groups/?', function() use ($app, $groupsDAO){
     if(empty($post)){
         $post = (array) json_decode($app->request()->getBody());
     }
-    echo json_encode($groupsDAO->insertUser($post['groupname'],$post['password']));
+    echo json_encode($groupsDAO->insertGroup($post['groupname'],$post['password']));
+    exit();
+});
+
+$app->post('/user/?', function() use ($app, $groupsDAO){
+    header("Content-Type: application/json");
+    $post = $app->request->post();
+    if(empty($post)){
+        $post = (array) json_decode($app->request()->getBody());
+    }
+    echo json_encode($groupsDAO->insertUser($post['groupid'],$post['user']));
     exit();
 });
 

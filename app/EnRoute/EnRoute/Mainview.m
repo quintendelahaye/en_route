@@ -46,16 +46,10 @@
             xPos += 250;
         }
         
-        UIImage *loginImage = [UIImage imageNamed:@"aanmeldKnop"];
-        self.btnLogin = [[UIButton alloc] init];
-        self.btnLogin.frame = CGRectMake(self.frame.size.width/2 - loginImage.size.width/2, self.frame.size.height - 40 - loginImage.size.height*2, loginImage.size.width, loginImage.size.height);
-        [self.btnLogin setImage:loginImage forState:UIControlStateNormal];
+        self.btnLogin = [UIElementFactory createButtonWithImageName:@"aanmeldKnop" andPoint:CGPointMake(20, 380)];
         [self addSubview:self.btnLogin];
         
-        UIImage *registerImage = [UIImage imageNamed:@"registreerKnop"];
-        self.btnRegister = [[UIButton alloc]init];
-        self.btnRegister.frame = CGRectMake(self.frame.size.width/2 - registerImage.size.width/2, self.frame.size.height - registerImage.size.height - 20, registerImage.size.width, registerImage.size.height);
-        [self.btnRegister setImage:registerImage forState:UIControlStateNormal];
+        self.btnRegister = [UIElementFactory createButtonWithImageName:@"registreerKnop" andPoint:CGPointMake(20, self.btnLogin.frame.origin.y + self.btnLogin.frame.size.height + 20 )];
         [self addSubview:self.btnRegister];
         
     }

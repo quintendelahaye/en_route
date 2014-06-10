@@ -18,4 +18,8 @@
     return [UIColor colorWithRed:233/250.0f green:92/250.0f blue:84/250.0f alpha:1];
 }
 
++ (UIColor *)niceGreenColor {
+    return [UIColor colorWithRed:106/250.0f green:148/250.0f blue:140/250.0f alpha:1];
+}
+
 @end

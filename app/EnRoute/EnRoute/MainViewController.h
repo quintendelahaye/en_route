@@ -10,6 +10,7 @@
 #import "Mainview.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "TourViewController.h"
 
 @interface MainViewController : UIViewController
 

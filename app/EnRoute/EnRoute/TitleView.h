@@ -10,5 +10,7 @@
 #import "UIColor+Extentions.h"
 
 @interface TitleView : UIView
+
+@property (nonatomic, strong) UILabel *lblTitle;
 - (id)initWithFrame:(CGRect)frame andTitle:(NSString*)title;
 @end

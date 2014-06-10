@@ -15,6 +15,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        [self createButtons];
+        
         self.backgroundColor = [UIColor colorWithRed:230/250.0f green:234/250.0f blue:198/250.0f alpha:1];
         
         UIImage *logOutImage = [UIImage imageNamed:@"afmeldKnop"];
@@ -37,6 +40,11 @@
                                           cancelButtonTitle:@"Nee"
                                           otherButtonTitles:@"Ja",nil];
     [alert show];
+}
+
+-(void)createButtons{
+    self.btnMap = [UIElementFactory createButtonWithImageName:@"btnMenuMap" andPoint:CGPointMake(20, 30 )];
+    [self addSubview:self.btnMap];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex

@@ -17,5 +17,6 @@
     #import <CoreData/CoreData.h>
 
     #define CORKI @"Corki-Rounded"
+    #define BEBAS @"BebasNeue"
 
 #endif

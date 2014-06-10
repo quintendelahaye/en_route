@@ -17,6 +17,7 @@
         // Initialization code
         
         CGRect titleFrame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+        CGRect labelFrame = CGRectMake(0, 0, frame.size.width, 22);
         
         //title_bg
         UIImageView *bgTitle = [[UIImageView alloc]initWithFrame:titleFrame];
@@ -26,14 +27,14 @@
         
         //title
         NSString *strTitle = [title uppercaseString];
-        //UIFont *fontNaam = [UIFont fontWithName:BEBAS_NEUE size:30];
-        UILabel *lblTitle = [[UILabel alloc]initWithFrame:titleFrame];
-        //lblNaam.font = fontNaam;
-        lblTitle.textAlignment = NSTextAlignmentCenter;
-        lblTitle.numberOfLines = 0;
-        lblTitle.text = strTitle;
-        lblTitle.textColor = [UIColor lightYellowColor];
-        [self addSubview:lblTitle];
+        UIFont *fontNaam = [UIFont fontWithName:BEBAS size:22];
+        self.lblTitle = [[UILabel alloc]initWithFrame:labelFrame];
+        self.lblTitle.font = fontNaam;
+        self.lblTitle.textAlignment = NSTextAlignmentCenter;
+        self.lblTitle.numberOfLines = 0;
+        self.lblTitle.text = strTitle;
+        self.lblTitle.textColor = [UIColor lightYellowColor];
+        [self addSubview:self.lblTitle];
         
     }
     return self;
