@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,53 +20,361 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
 @font-face {
-  font-family: "Bariol-webfont";
-  src: url("../fonts/bariol_regular-webfont.eot");
-  src: url("../fonts/bariol_regular-webfont.eot#iefix") format("embedded-opentype"), url("../fonts/bariol_regular-webfont.ttf") format("truetype"), url("../fonts/bariol_regular-webfont.woff") format("woff"), url("../fonts/bariol_regular-webfont.svg#bariol") format("svg");
+  font-family: "bebas-neue";
+  src: url("../fonts/bebasneue/bebasneue-webfont.eot");
+  src: url("../fonts/bebasneue/bebasneue-webfont.eot#?iefix") format("embedded-opentype"), url("../fonts/bebasneue/bebasneue-webfont.woff") format("woff"), url("../fonts/bebasneue/bebasneue-webfont.ttf") format("truetype"), url("../fonts/bebasneue/bebasneue-webfont.svg#Ubuntu-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "corki";
+  src: url("../fonts/corki/corki-tuscan-webfont.eot");
+  src: url("../fonts/corki/corki-tuscan-webfont.eot#?iefix") format("embedded-opentype"), url("../fonts/corki/corki-tuscan-webfont.woff") format("woff"), url("../fonts/corki/corki-tuscan-webfont.ttf") format("truetype"), url("../fonts/corki/corki-tuscan-webfont.svg#Ubuntu-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 13, ../_scss/screen.scss */
+body {
+  font-size: 62.5%;
+  font-family: corki, arial, sans-serif;
+  background-color: #f4eac6;
+}
+
+/* line 19, ../_scss/screen.scss */
+#container {
+  position: relative;
+}
+/* line 22, ../_scss/screen.scss */
+#container #header {
+  min-height: 400px;
+}
+
+/* line 28, ../_scss/screen.scss */
+h1 a {
+  background: url("../images/title_enroute.png") no-repeat;
+  width: 262px;
+  height: 170px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  margin-left: -131px;
+  z-index: 5;
+}
+/* line 38, ../_scss/screen.scss */
+h1 a span {
+  visibility: hidden;
+}
+
+@keyframes scaleanimation {
+  /* line 50, ../_scss/screen.scss */
+  from {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+  }
+
+  /* line 57, ../_scss/screen.scss */
+  to {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+  }
+}
+
+@-webkit-keyframes scaleanimation {
+  /* line 68, ../_scss/screen.scss */
+  from {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+  }
+
+  /* line 75, ../_scss/screen.scss */
+  to {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+  }
+}
+
+/* line 83, ../_scss/screen.scss */
+h2 span, h3 span {
+  display: none;
+}
+
+/* line 87, ../_scss/screen.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 91, ../_scss/screen.scss */
+#headerNav {
+  background-color: #c7e5df;
+  width: 100%;
+  height: 100px;
+  border-bottom: 4px solid black;
+  font-family: bebas-neue;
+  font-size: 1.8em;
+  position: fixed;
+  z-index: 4;
+}
+/* line 102, ../_scss/screen.scss */
+#headerNav #navigationContent {
+  width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 43px;
+}
+/* line 108, ../_scss/screen.scss */
+#headerNav #navigationContent ul:first-child {
+  padding-left: 60px;
+}
+/* line 110, ../_scss/screen.scss */
+#headerNav #navigationContent ul:first-child li {
+  margin-right: 80px;
+}
+/* line 116, ../_scss/screen.scss */
+#headerNav #navigationContent ul:last-child li {
+  margin-left: 60px;
+}
+/* line 121, ../_scss/screen.scss */
+#headerNav #navigationContent ul {
+  display: block;
+  margin-left: 30px;
+}
+/* line 124, ../_scss/screen.scss */
+#headerNav #navigationContent ul li {
+  display: inline-block;
+}
+/* line 127, ../_scss/screen.scss */
+#headerNav #navigationContent ul li a {
+  height: 18px;
+  display: block;
+}
+/* line 132, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnHome {
+  background: url("../images/nav/btn_home.png") 0 0;
+  width: 95px;
+}
+/* line 135, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnHome:hover {
+  background: url("../images/nav/btn_home.png") 0 -18px;
+}
+/* line 140, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnWork {
+  background: url("../images/nav/btn_work.png") 0 0;
+  width: 114px;
+}
+/* line 143, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnWork:hover {
+  background: url("../images/nav/btn_work.png") 0 -18px;
+}
+/* line 148, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnAbout {
+  background: url("../images/nav/btn_about.png") 0 0;
+  width: 166px;
+}
+/* line 151, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnAbout:hover {
+  background: url("../images/nav/btn_about.png") 0 -18px;
+}
+/* line 156, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnRegist {
+  background: url("../images/nav/btn_regist.png") 0 0;
+  width: 149px;
+}
+/* line 159, ../_scss/screen.scss */
+#headerNav #navigationContent ul li #btnRegist:hover {
+  background: url("../images/nav/btn_regist.png") 0 -18px;
+}
+/* line 164, ../_scss/screen.scss */
+#headerNav #navigationContent ul li a span {
+  visibility: hidden;
+}
+
+/* line 172, ../_scss/screen.scss */
+.introTextBg {
+  background: url("../images/bg_intro.png");
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  text-align: center;
+}
+/* line 181, ../_scss/screen.scss */
+.introTextBg p {
+  padding-top: 95px;
+  font-size: 2.2em;
+}
+/* line 184, ../_scss/screen.scss */
+.introTextBg p mark {
+  background-color: #e95c54;
+  color: #ffffff;
+  padding: 5px;
+  line-height: 180%;
+}
+/* line 191, ../_scss/screen.scss */
+.introTextBg h4 {
+  background: url("../images/img_oldvsnew.png") no-repeat;
+  width: 157px;
+  height: 84px;
+  margin: 30px auto 0px auto;
+}
+/* line 196, ../_scss/screen.scss */
+.introTextBg h4 span {
+  visibility: hidden;
+}
+
+/* line 202, ../_scss/screen.scss */
+.left {
+  float: left;
+}
+
+/* line 206, ../_scss/screen.scss */
+.right {
+  float: right;
+}
+
+/* line 210, ../_scss/screen.scss */
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 30px;
+  border-top: 4px solid black;
+  background-color: #c7e5df;
+  z-index: 3;
+}
+/* line 221, ../_scss/screen.scss */
+footer #footerContent {
+  position: relative;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: bebas-neue;
+}
+/* line 227, ../_scss/screen.scss */
+footer #footerContent h4 {
+  position: absolute;
+  top: -17px;
+  left: 0px;
+  width: 60px;
+  font-size: 1.4em;
+  color: black;
+  background-color: #f4eac6;
+  border: 4px solid black;
+  padding: 5px;
+  display: block;
+  text-align: center;
+}
+/* line 240, ../_scss/screen.scss */
+footer #footerContent ul {
+  margin-left: 140px;
+  padding-top: 6px;
+}
+/* line 243, ../_scss/screen.scss */
+footer #footerContent ul li {
+  display: inline;
+  color: #558178;
+  font-size: 1.6em;
+  margin-right: 40px;
+}
+/* line 248, ../_scss/screen.scss */
+footer #footerContent ul li img {
+  margin-right: 10px;
+}
+/* line 251, ../_scss/screen.scss */
+footer #footerContent ul li a {
+  color: #34524c;
+}
+/* line 256, ../_scss/screen.scss */
+footer #footerContent ul .fbicon, footer #footerContent ul .twtricon {
+  position: absolute;
+  top: 5px;
+}
+/* line 261, ../_scss/screen.scss */
+footer #footerContent ul .fbicon {
+  right: 40px;
+}
+/* line 265, ../_scss/screen.scss */
+footer #footerContent ul .twtricon {
+  right: -5px;
+}
+
+/* line 272, ../_scss/screen.scss */
+.skyline {
+  background: url("../images/skyline.png");
+  width: 100%;
+  height: 620px;
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  opacity: 0.07;
+  z-index: 0;
+}
+
+/* line 284, ../_scss/screen.scss */
+#worksContainer {
+  margin-top: 50px;
+  width: 900px;
+}
+/* line 288, ../_scss/screen.scss */
+#worksContainer #works h3 {
+  display: block;
+  border: black 4px solid;
+  padding: 10px;
+  font-size: 4em;
 }

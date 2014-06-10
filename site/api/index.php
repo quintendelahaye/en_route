@@ -13,15 +13,11 @@ $app = new \Slim\Slim();
 
 $groupsDAO = new GroupsDAO();
 
-//HIERO
-
 $app->get("/groups/:groupname/:password/?", function($groupname,$password) use ($groupsDAO){
 	header("Content-Type:application/json");
 	echo json_encode($groupsDAO->getUserByGroupnameAndPassword($groupname,$password));
 	exit();
 });
-
-
 
 $app->post('/groups/?', function() use ($app, $groupsDAO){
     header("Content-Type: application/json");
