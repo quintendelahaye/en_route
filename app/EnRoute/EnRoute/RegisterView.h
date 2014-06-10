@@ -22,6 +22,7 @@
 
 @property (strong,nonatomic)UIButton *btnRegist;
 @property (nonatomic, strong) UIButton *btnAdd;
+@property (nonatomic, strong) UIButton *btnStart;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 -(void)showError;

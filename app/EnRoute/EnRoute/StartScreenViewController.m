@@ -35,6 +35,11 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    self.view.lblTeamName.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"loggedInGroup"];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
+}
+
 -(void)menuTapped:(id)sender{
     //[self.view showMenu];
     

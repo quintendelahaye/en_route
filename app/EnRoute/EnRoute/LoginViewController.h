@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LoginView.h"
 #import <AFNetworking.h>
-#import "StartScreenViewController.h"
+#import "NameViewController.h"
 @interface LoginViewController : UIViewController
 
 @property (strong,nonatomic)LoginView *view;

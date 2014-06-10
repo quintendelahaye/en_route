@@ -30,12 +30,13 @@ class GroupsDAO{
 	}
 
 	public function insertGroup($groupname,$password){
-		$sql = "INSERT INTO enroute_groups(groupname, password)
-				VALUES (:groupname,:password)";
+		$sql = "INSERT INTO enroute_groups(groupname, password, created_date)
+				VALUES (:groupname,:password,:created_date)";
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(":groupname",$groupname);
 		$securepassword = sha1(CONFIG::SALT.$password);
         $stmt->bindValue(":password",$securepassword);
+        $stmt->bindValue(":created_date",date('Y-m-d H:i:s'));
 		if($stmt->execute()){
 			return $this->getGroup($this->pdo->lastInsertId());
 		}

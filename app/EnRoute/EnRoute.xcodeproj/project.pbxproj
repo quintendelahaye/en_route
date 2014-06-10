@@ -45,6 +45,8 @@
 		A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC9D1944B96C004158EA /* Mission1CameraView.m */; };
 		A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BCA0194513A1004158EA /* Mission1ResultView.m */; };
 		A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77419472B2A008D2DD2 /* MemberView.m */; };
+		A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F7771947AB56008D2DD2 /* NameViewController.m */; };
+		A0B9F77B1947AB6A008D2DD2 /* NameView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77A1947AB6A008D2DD2 /* NameView.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 /* End PBXBuildFile section */
@@ -124,6 +126,10 @@
 		A0A0BCA0194513A1004158EA /* Mission1ResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission1ResultView.m; sourceTree = "<group>"; };
 		A0B9F77319472B2A008D2DD2 /* MemberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberView.h; sourceTree = "<group>"; };
 		A0B9F77419472B2A008D2DD2 /* MemberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberView.m; sourceTree = "<group>"; };
+		A0B9F7761947AB56008D2DD2 /* NameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameViewController.h; sourceTree = "<group>"; };
+		A0B9F7771947AB56008D2DD2 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
+		A0B9F7791947AB6A008D2DD2 /* NameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameView.h; sourceTree = "<group>"; };
+		A0B9F77A1947AB6A008D2DD2 /* NameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameView.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 				815C3003193BA472004E3C5C /* LoginViewController.m */,
 				815C3008193BA48F004E3C5C /* LoginView.h */,
 				815C3009193BA48F004E3C5C /* LoginView.m */,
+				A0B9F7761947AB56008D2DD2 /* NameViewController.h */,
+				A0B9F7771947AB56008D2DD2 /* NameViewController.m */,
+				A0B9F7791947AB6A008D2DD2 /* NameView.h */,
+				A0B9F77A1947AB6A008D2DD2 /* NameView.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -470,6 +480,7 @@
 				817C3F09193B6E8600DA6563 /* EnRoute.xcdatamodeld in Sources */,
 				815C2FFE193B6F10004E3C5C /* Mainview.m in Sources */,
 				815C300A193BA48F004E3C5C /* LoginView.m in Sources */,
+				A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */,
 				A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */,
 				815C3004193BA472004E3C5C /* LoginViewController.m in Sources */,
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
@@ -486,6 +497,7 @@
 				A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */,
 				8147354019406EB0003B23CC /* LogoView.m in Sources */,
 				A0DAC62F194255760011695B /* TourViewController.m in Sources */,
+				A0B9F77B1947AB6A008D2DD2 /* NameView.m in Sources */,
 				814735451940B71F003B23CC /* MenuView.m in Sources */,
 				A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */,
 				A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */,

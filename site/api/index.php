@@ -5,6 +5,7 @@ define("WWW_ROOT",dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR);
 require_once WWW_ROOT. "api" .DIRECTORY_SEPARATOR. 'Slim'. DIRECTORY_SEPARATOR .'Slim.php';
 
 require_once WWW_ROOT. "dao" .DIRECTORY_SEPARATOR. 'GroupsDAO.php';
+require_once WWW_ROOT. "dao" .DIRECTORY_SEPARATOR. 'MembersDAO.php';
 
 
 \Slim\Slim::registerAutoloader();
@@ -12,6 +13,7 @@ require_once WWW_ROOT. "dao" .DIRECTORY_SEPARATOR. 'GroupsDAO.php';
 $app = new \Slim\Slim();
 
 $groupsDAO = new GroupsDAO();
+$membersDAO = new MembersDAO();
 
 $app->get("/groups/:groupname/:password/?", function($groupname,$password) use ($groupsDAO){
 	header("Content-Type:application/json");
@@ -36,6 +38,26 @@ $app->post('/user/?', function() use ($app, $groupsDAO){
         $post = (array) json_decode($app->request()->getBody());
     }
     echo json_encode($groupsDAO->insertUser($post['groupid'],$post['user']));
+    exit();
+});
+
+
+
+$app->post('/users/?', function() use ($app, $membersDAO){
+    header("Content-Type: application/json");
+    $post = $app->request->post();
+    if(empty($post)){
+        $post = (array) json_decode($app->request()->getBody());
+    }
+    $error = false;
+    foreach ($post['members'] as $value){
+        if (!$membersDAO->insertMember($value,$post['groupid'])) {
+            $error = true;
+        }
+    }
+    if (!$error) {
+        echo json_encode($post);
+    }
     exit();
 });
 

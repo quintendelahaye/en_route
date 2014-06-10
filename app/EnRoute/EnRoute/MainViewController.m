@@ -20,8 +20,6 @@
     if (self) {
         // Custom initialization
         NSLog(@"[MainViewController] init");
-        [self enumerateFonts];
-        ;
         NSLog(@"is logged in --> %hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"]);
 
     }
@@ -68,17 +66,6 @@
     [super viewWillDisappear:animated];
 }
 
--(void)enumerateFonts{
-    NSLog(@"--Start enumeration--");
-    for(NSString *fontFamilyStrings in [UIFont familyNames]){
-        NSLog(@"font family = %@",fontFamilyStrings);
-        for(NSString *fontstrings in [UIFont fontNamesForFamilyName:fontFamilyStrings]){
-            NSLog(@"--font: %@",fontstrings);
-        }
-        
-    }
-    NSLog(@"--Sop enumeration--");
-}
 
 /*
 #pragma mark - Navigation

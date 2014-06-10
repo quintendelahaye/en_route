@@ -43,7 +43,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
-    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"aanmelden"];
+    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:[[NSUserDefaults standardUserDefaults]objectForKey:@"loggedInGroup"]];
     [self.view addSubview:title];
     
     [self.view.txtUsername addTarget:self action:@selector(textFieldUserNameActive:) forControlEvents:UIControlEventEditingDidBegin];
@@ -89,14 +89,12 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
             }else{
                 NSLog(@"dict = %@",[responseObject objectForKey:@"groupname"]);
-                [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInUser"];
-                [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+                //[[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInUser"];
+                //[[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
-                [self.navigationController popToRootViewControllerAnimated:NO];
-                /*StartScreenViewController *startScreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
-                [startScreenVC.view loggedInWithUser:[responseObject objectForKey:@"groupname"]];
-                [self.navigationController pushViewController:startScreenVC animated:YES];*/
+                NameViewController *nameVC = [[NameViewController alloc] initWithNibName:nil bundle:nil];
+                [self.navigationController pushViewController:nameVC animated:YES];
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error){
             NSLog(@"error loading data");

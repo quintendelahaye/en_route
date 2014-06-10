@@ -31,7 +31,9 @@ class MembersDAO{
 		$stmt->bindValue(":group_id",$group_id);
         $stmt->bindValue(":member_name",$member_name);
 		if($stmt->execute()){
-			return $this->getMember($this->pdo->lastInsertId());
+			return true;
+		}else{
+			return false;
 		}
 	}
 

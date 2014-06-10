@@ -52,6 +52,8 @@
     [self.view addSubview:self.titleView];
 }
 
+
+
 -(void)registTapped:(id)sender{
 //    NSLog(@"[LoginViewController] login tapped");
     
@@ -60,7 +62,7 @@
         NSLog(@"[RegisterViewController] login correct");
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        NSDictionary *parameters = @{@"groupname": self.view.txtUsername.text,
+        NSDictionary *parameters = @{@"groupname": self.view.txtGroupName.text,
                                      @"password":self.view.txtPassword.text};
         [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/groups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", [responseObject objectForKey:@"id"]);
@@ -72,7 +74,6 @@
             [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/user" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"DEUTSCHLAND");
                 NSLog(@"JSON: %@", responseObject);
-                //[[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
                 [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"userid"];
                 
             }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -87,28 +88,16 @@
             [self.view showAddMembersWithGroupname:[responseObject objectForKey:@"groupname"]];
             [self.view.btnAdd addTarget:self action:@selector(addMember:) forControlEvents:UIControlEventTouchUpInside];
             self.members = [[NSMutableArray alloc]init];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
             
-//            StartScreenViewController *startscreenVC = [[StartScreenViewController alloc] initWithNibName:nil bundle:nil];
-//            [startscreenVC.view loggedInWithUser:[responseObject objectForKey:@"groupname"]];
-//            [self.navigationController pushViewController:startscreenVC animated:YES];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
             NSLog(@"Error: %@", error);
             [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
             [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:@"loggedInGroup"];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
         }];
-        
-        
-//        [self.view.txtUsername removeFromSuperview];
-//        [self.view.txtPassword removeFromSuperview];
-//        [self.view.txtGroupName removeFromSuperview];
-//        [self.view.btnRegist removeFromSuperview];
-//        [self.view.background removeFromSuperview];
         
     }else{
         NSLog(@"[RegisterViewController] login incorrect");
@@ -121,12 +110,48 @@
 }
 
 - (void)addMember:(id)selector{
-    NSLog(@"MIEuw");
-    NSString *memberName = self.view.textfieldMember.text;
-    [self.members addObject:memberName];
-    int yPos = 57 * (self.members.count -1);
-    MemberView *memberView = [[MemberView alloc]initWithName:memberName andCGPoint:CGPointMake(0, yPos)];
-    [self.view.scrollView addSubview:memberView];
+    if (self.view.textfieldMember.text && self.view.textfieldMember.text.length > 0)
+    {
+        /* empty - do something */
+        NSLog(@"ddd");
+        NSString *memberName = self.view.textfieldMember.text;
+        [self.members addObject:memberName];
+        int yPos = 57 * (self.members.count -1);
+        MemberView *memberView = [[MemberView alloc]initWithName:memberName andCGPoint:CGPointMake(0, yPos)];
+        [self.view.scrollView addSubview:memberView];
+        [self.view.btnAdd setFrame:CGRectMake(self.view.btnAdd.frame.origin.x, yPos+63, self.view.btnAdd.frame.size.width, self.view.btnAdd.frame.size.height)];
+        [self.view.textfieldMember setFrame:CGRectMake(0, yPos+63, self.view.textfieldMember.frame.size.width, self.view.textfieldMember.frame.size.height)];
+        [self.view.btnStart setFrame:CGRectMake(0, yPos+130, self.view.btnStart.frame.size.width, self.view.btnStart.frame.size.height)];
+        [self.view.textfieldMember setText:@""];
+        [self.view.scrollView setContentSize:CGSizeMake(0, yPos +340)];
+        if (self.members.count>2) {
+            CGPoint bottomOffset = CGPointMake(0, self.view.scrollView.contentSize.height - self.view.scrollView.bounds.size.height);
+            [self.view.scrollView setContentOffset:bottomOffset animated:YES];
+        }
+        if (self.members.count == 1) {
+            self.view.btnStart = [UIElementFactory createButtonWithImageName:@"btn_start" andPoint:CGPointMake(0, yPos + 130)];
+            [self.view.scrollView addSubview:self.view.btnStart];
+            [self.view.btnStart addTarget:self action:@selector(startTapped:) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
+}
+
+-(void)startTapped:(id)sender{
+    NSLog(@"start");
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *groupid = [[NSUserDefaults standardUserDefaults]objectForKey:@"groupid"];
+    NSDictionary *parameters = @{@"groupid": groupid,
+                                 @"members": self.members};
+    NSLog(@"parameters: %@",parameters);
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/users" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"success: %@",responseObject);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
+        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 -(void)dismissKeyboard {
