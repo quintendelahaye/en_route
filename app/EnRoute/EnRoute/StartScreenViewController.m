@@ -64,12 +64,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view.btnStart addTarget:self action:@selector(startTour:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.btnHandleiding addTarget:self action:@selector(startTutorial:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)startTour:(id)sender{
     NSLog(@"bla");
     TourViewController *tourVC = [[TourViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:tourVC animated:NO];
+}
+
+- (void)startTutorial:(id)sender{
+    TutorialViewController *tutorialVC = [[TutorialViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:tutorialVC animated:NO];
 }
 
 - (void)didReceiveMemoryWarning

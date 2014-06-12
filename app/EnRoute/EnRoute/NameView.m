@@ -31,9 +31,18 @@
         [self.dropdown setTitle:@"..." forState:UIControlStateNormal];
         [self.dropdown setTitleColor:[UIColor niceGreenColor] forState:UIControlStateNormal];
         [self addSubview:self.dropdown];
-        
     }
     return self;
+}
+
+- (void)createScrollView{
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 202, 270, 332)];
+    [self addSubview:self.scrollView];
+}
+
+- (void)createStart{
+    self.btnStart = [UIElementFactory createButtonWithImageName:@"btn_start" andPoint:CGPointMake(20, 215)];
+    [self addSubview:self.btnStart];
 }
 
 /*

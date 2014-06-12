@@ -50,6 +50,7 @@
 
     self.titleView = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"registreren"];
     [self.view addSubview:self.titleView];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 
@@ -64,14 +65,14 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSDictionary *parameters = @{@"groupname": self.view.txtGroupName.text,
                                      @"password":self.view.txtPassword.text};
-        [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/groups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/groups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", [responseObject objectForKey:@"id"]);
             NSString *groupid = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"id"]];
-            NSDictionary *parameters = @{@"groupid": groupid, @"user":self.view.txtGroupName.text};
+            NSDictionary *parameters = @{@"groupid": groupid, @"user":self.view.txtUsername.text};
             NSLog(@"parameters: %@", parameters);
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-            [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/user" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/user" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"DEUTSCHLAND");
                 NSLog(@"JSON: %@", responseObject);
                 [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"userid"];
@@ -85,6 +86,7 @@
             
             [[NSUserDefaults standardUserDefaults] synchronize];
             
+            self.navigationItem.leftBarButtonItem = nil;
             [self.view showAddMembersWithGroupname:[responseObject objectForKey:@"groupname"]];
             [self.view.btnAdd addTarget:self action:@selector(addMember:) forControlEvents:UIControlEventTouchUpInside];
             self.members = [[NSMutableArray alloc]init];
@@ -144,7 +146,7 @@
                                  @"members": self.members};
     NSLog(@"parameters: %@",parameters);
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"http://169.254.113.111/MAIV/en_route/site/api/users" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/users" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"success: %@",responseObject);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];

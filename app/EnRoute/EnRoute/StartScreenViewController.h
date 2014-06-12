@@ -12,6 +12,7 @@
 #import "MainViewController.h"
 #import "TourViewController.h"
 #import "MenuViewController.h"
+#import "TutorialViewController.h"
 
 @interface StartScreenViewController : UIViewController
 

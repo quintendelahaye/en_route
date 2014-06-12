@@ -43,7 +43,7 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
-    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:[[NSUserDefaults standardUserDefaults]objectForKey:@"loggedInGroup"]];
+    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"aanmelden"];
     [self.view addSubview:title];
     
     [self.view.txtUsername addTarget:self action:@selector(textFieldUserNameActive:) forControlEvents:UIControlEventEditingDidBegin];
@@ -72,7 +72,7 @@
         
         NSLog(@"[LoginViewController] login not empty");
         
-        NSString *path = [NSString stringWithFormat:@"http://169.254.113.111/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
+        NSString *path = [NSString stringWithFormat:@"http://169.254.216.138/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         
@@ -88,9 +88,10 @@
                 [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
             }else{
-                NSLog(@"dict = %@",[responseObject objectForKey:@"groupname"]);
-                //[[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInUser"];
+                //NSLog(@"dict = %@",[responseObject objectForKey:@"groupname"]);
+                [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"groupname"] forKey:@"loggedInGroup"];
                 //[[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+                [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"groupid"];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
                 NameViewController *nameVC = [[NameViewController alloc] initWithNibName:nil bundle:nil];

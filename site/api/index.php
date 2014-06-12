@@ -41,7 +41,11 @@ $app->post('/user/?', function() use ($app, $groupsDAO){
     exit();
 });
 
-
+$app->get("/users/:groupid/?", function($groupid) use ($membersDAO){
+    header("Content-Type:application/json");
+    echo json_encode($membersDAO->getMembers($groupid));
+    exit();
+});
 
 $app->post('/users/?', function() use ($app, $membersDAO){
     header("Content-Type: application/json");

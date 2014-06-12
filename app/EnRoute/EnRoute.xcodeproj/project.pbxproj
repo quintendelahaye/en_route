@@ -47,8 +47,18 @@
 		A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77419472B2A008D2DD2 /* MemberView.m */; };
 		A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F7771947AB56008D2DD2 /* NameViewController.m */; };
 		A0B9F77B1947AB6A008D2DD2 /* NameView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77A1947AB6A008D2DD2 /* NameView.m */; };
+		A0CE70951948947E00652565 /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70941948947E00652565 /* MemberViewController.m */; };
+		A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A019489A6500652565 /* TutorialViewController.m */; };
+		A0CE70A419489A7C00652565 /* TutorialView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A319489A7C00652565 /* TutorialView.m */; };
+		A0CE70B41948B95700652565 /* handleiding_stap01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */; };
+		A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */; };
+		A0CE70B61948B95700652565 /* handleiding_stap03.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */; };
+		A0CE70B71948B95700652565 /* handleiding_stap04.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */; };
+		A0CE70BD1948C19200652565 /* TutorialScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70BC1948C19200652565 /* TutorialScreenView.m */; };
+		A0CE70C01948F77600652565 /* PageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70BF1948F77600652565 /* PageControl.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
+		A0F2768219485ABC008AB4E6 /* DropItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F2768119485ABC008AB4E6 /* DropItemButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,10 +140,26 @@
 		A0B9F7771947AB56008D2DD2 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		A0B9F7791947AB6A008D2DD2 /* NameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameView.h; sourceTree = "<group>"; };
 		A0B9F77A1947AB6A008D2DD2 /* NameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameView.m; sourceTree = "<group>"; };
+		A0CE70931948947E00652565 /* MemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberViewController.h; sourceTree = "<group>"; };
+		A0CE70941948947E00652565 /* MemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberViewController.m; sourceTree = "<group>"; };
+		A0CE709F19489A6500652565 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
+		A0CE70A019489A6500652565 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
+		A0CE70A219489A7C00652565 /* TutorialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialView.h; sourceTree = "<group>"; };
+		A0CE70A319489A7C00652565 /* TutorialView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialView.m; sourceTree = "<group>"; };
+		A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap01.mp4; sourceTree = "<group>"; };
+		A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap02.mp4; sourceTree = "<group>"; };
+		A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap03.mp4; sourceTree = "<group>"; };
+		A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap04.mp4; sourceTree = "<group>"; };
+		A0CE70BB1948C19200652565 /* TutorialScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialScreenView.h; sourceTree = "<group>"; };
+		A0CE70BC1948C19200652565 /* TutorialScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialScreenView.m; sourceTree = "<group>"; };
+		A0CE70BE1948F77600652565 /* PageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControl.h; sourceTree = "<group>"; };
+		A0CE70BF1948F77600652565 /* PageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControl.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
 		A0DAC6311942558A0011695B /* TourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourView.m; sourceTree = "<group>"; };
+		A0F2768019485ABC008AB4E6 /* DropItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropItemButton.h; sourceTree = "<group>"; };
+		A0F2768119485ABC008AB4E6 /* DropItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropItemButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +200,8 @@
 				A0B9F7771947AB56008D2DD2 /* NameViewController.m */,
 				A0B9F7791947AB6A008D2DD2 /* NameView.h */,
 				A0B9F77A1947AB6A008D2DD2 /* NameView.m */,
+				A0F2768019485ABC008AB4E6 /* DropItemButton.h */,
+				A0F2768119485ABC008AB4E6 /* DropItemButton.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -187,6 +215,8 @@
 				815C300C193BA49C004E3C5C /* RegisterView.m */,
 				A0B9F77319472B2A008D2DD2 /* MemberView.h */,
 				A0B9F77419472B2A008D2DD2 /* MemberView.m */,
+				A0CE70931948947E00652565 /* MemberViewController.h */,
+				A0CE70941948947E00652565 /* MemberViewController.m */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -241,6 +271,7 @@
 				A09FB5C41946744E000E0A54 /* menu */,
 				817C3F04193B6E8600DA6563 /* AppDelegate.h */,
 				817C3F05193B6E8600DA6563 /* AppDelegate.m */,
+				A0CE70961948989700652565 /* InstructionMovies */,
 				817C3F07193B6E8600DA6563 /* EnRoute.xcdatamodeld */,
 				8147353C194069CD003B23CC /* images.xcassets */,
 				817C3EFC193B6E8600DA6563 /* Supporting Files */,
@@ -253,6 +284,7 @@
 				815C300F193BA4B3004E3C5C /* Login */,
 				815C3010193BA4BA004E3C5C /* Register */,
 				815C3018193BB789004E3C5C /* StartScreen */,
+				A0CE70A519489A8200652565 /* Tutorial */,
 				A0DAC633194255900011695B /* Tour */,
 				A0A0BC851942EC21004158EA /* Mission1 */,
 				A0A0BC9519445A69004158EA /* Extentions */,
@@ -327,8 +359,35 @@
 				A0A0BC9319445A63004158EA /* TitleView.m */,
 				A0A0BC9919447F5F004158EA /* UIElementFactory.h */,
 				A0A0BC9A19447F5F004158EA /* UIElementFactory.m */,
+				A0CE70BE1948F77600652565 /* PageControl.h */,
+				A0CE70BF1948F77600652565 /* PageControl.m */,
 			);
 			name = Extentions;
+			sourceTree = "<group>";
+		};
+		A0CE70961948989700652565 /* InstructionMovies */ = {
+			isa = PBXGroup;
+			children = (
+				A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */,
+				A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */,
+				A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */,
+				A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */,
+			);
+			name = InstructionMovies;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A0CE70A519489A8200652565 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				A0CE709F19489A6500652565 /* TutorialViewController.h */,
+				A0CE70A019489A6500652565 /* TutorialViewController.m */,
+				A0CE70A219489A7C00652565 /* TutorialView.h */,
+				A0CE70A319489A7C00652565 /* TutorialView.m */,
+				A0CE70BB1948C19200652565 /* TutorialScreenView.h */,
+				A0CE70BC1948C19200652565 /* TutorialScreenView.m */,
+			);
+			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		A0DAC633194255900011695B /* Tour */ = {
@@ -422,10 +481,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CE70B41948B95700652565 /* handleiding_stap01.mp4 in Resources */,
+				A0CE70B61948B95700652565 /* handleiding_stap03.mp4 in Resources */,
 				817C3F00193B6E8600DA6563 /* InfoPlist.strings in Resources */,
 				8147353D194069CD003B23CC /* images.xcassets in Resources */,
 				A04559B819460C7F00561159 /* BebasNeue.otf in Resources */,
 				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
+				A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */,
+				A0CE70B71948B95700652565 /* handleiding_stap04.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,15 +546,20 @@
 				A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */,
 				A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */,
 				815C3004193BA472004E3C5C /* LoginViewController.m in Sources */,
+				A0CE70C01948F77600652565 /* PageControl.m in Sources */,
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
 				815C3016193BB760004E3C5C /* StartScreenView.m in Sources */,
 				A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */,
 				A0A0BC9419445A63004158EA /* TitleView.m in Sources */,
+				A0CE70A419489A7C00652565 /* TutorialView.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
 				A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
+				A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */,
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
+				A0F2768219485ABC008AB4E6 /* DropItemButton.m in Sources */,
+				A0CE70951948947E00652565 /* MemberViewController.m in Sources */,
 				A0DAC6321942558A0011695B /* TourView.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
 				A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */,
@@ -503,6 +571,7 @@
 				A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */,
 				A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,
+				A0CE70BD1948C19200652565 /* TutorialScreenView.m in Sources */,
 				815C3013193BB71E004E3C5C /* StartScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

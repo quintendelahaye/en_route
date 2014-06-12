@@ -11,10 +11,12 @@ class MembersDAO{
 		$this->pdo = DatabasePDO::getInstance();
 	}
 
-	public function getMembers(){
+	public function getMembers($group_id){
 		$sql = "SELECT *
-				FROM enroute_members";				
-		$stmt = $this->pdo->prepare($sql);		
+				FROM enroute_members
+				WHERE group_id = :group_id";				
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(":group_id", $group_id);		
 		if($stmt->execute()){
 			$members = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if(!empty($members)){

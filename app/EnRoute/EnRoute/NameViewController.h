@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "NameView.h"
 #import "TitleView.h"
+#import <AFNetworking.h>
+#import "DropItemButton.h"
+#import "UIColor+Extentions.h"
 
 @interface NameViewController : UIViewController
 
 @property (nonatomic, strong) NameView *view;
+@property (nonatomic, strong) NSDictionary *members;
+
+@property (nonatomic, assign) int selectedId;
 
 @end

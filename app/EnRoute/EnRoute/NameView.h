@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "UIColor+Extentions.h"
+#import "UIElementFactory.h"
 
 @interface NameView : UIView
 
 @property (nonatomic, strong) UIButton *dropdown;
-
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIButton *btnStart;
+- (void)createScrollView;
+- (void)createStart;
 @end
