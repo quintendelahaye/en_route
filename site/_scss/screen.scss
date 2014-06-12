@@ -9,6 +9,7 @@ $brownishYellowColor: #f4eac6;
 $darkBlueColor: #558178;
 $darkerBlueColor: #34524c;
 $redColor: #e95c54;
+$border:4px solid $blackColor;
 
 body{
   font-size:62.5%;
@@ -34,7 +35,7 @@ h1{
     left: 50%;
     margin-left: -131px;
 
-    z-index: 5;
+    z-index: 50;
     span{
       visibility: hidden;
     }
@@ -97,7 +98,7 @@ a{
   font-size: 1.8em;
   position: fixed;
 
-  z-index: 4;
+  z-index: 40;
 
   #navigationContent{
     width: 1150px;
@@ -173,20 +174,15 @@ a{
   background: url("../images/bg_intro.png");
   width: 100%;
   height: 300px;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 2;
+  z-index: 20;
   text-align: center;
   p{
     padding-top: 95px;
     font-size: 2.2em;
-    mark{
-      background-color: $redColor;
-      color: #ffffff;
-      padding: 5px;
-      line-height:180%
-    }
+    line-height:140%;
   }
   h4{
     background: url("../images/img_oldvsnew.png")no-repeat;
@@ -216,7 +212,7 @@ footer{
   height: 30px;
   border-top:  4px solid $blackColor;
   background-color: $blueColor;
-  z-index: 3;
+  z-index: 30;
 
   #footerContent{
     position: relative;
@@ -282,15 +278,572 @@ footer{
 }
 
 #worksContainer{
-  margin-top: 50px;
-  width: 900px;
+  margin: 20px auto 10px auto;
+  width: 800px;
   #works{
+    header{
+      text-align: center;
+      padding-top: 5px;
+    }
     h3{
+      width: 200px;
       display: block;
       border: $blackColor 4px solid;
-      padding: 10px;
-      font-size: 4em;
+      padding-left: 5px;
+      padding-right: 5px;
+      font-size: 2.4em;
+      font-family: bebas-neue;
+    }
+    .work{
+      border-top: $blackColor solid 4px;
+      margin-top: 80px;
+      position: relative;
+      header{
+        position: absolute;
+        top: -22px;
+        left: 45px;
+        padding: 10px;
+        font-size: 2.1em;
+        text-align: center;
+        background-color: $brownishYellowColor;
+        h4{
+          font-family: bebas-neue;
+        }
+      }
+      .explaination{
+        font-size: 1.8em;
+        margin-top: 15px;
+        margin-left: 55px;
+        line-height: 130%;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+#collageContainer{
+  margin-top: 20px;
+  .collagePicContainer{
+    display: inline-block;
+    position: relative;
+    margin-right: auto;
+    padding-left: 35px;
+    z-index: 6;
+
+    figure img{
+      border:$border;
+      background-clip: border-box;
+      -moz-background-clip: border-box;
+      -webkit-background-clip: border-box;
+      -o-background-clip: border-box;
+    }
+    &:hover .overimgTop a ,&:hover .overimgBottom a{
+      display: block;
     }
   }
 
+  .overimgTop a, .overimgBottom a{
+    color: white;
+    display: none;
+    position: absolute;
+    width: 145px;
+    opacity: 0.95;
+    left:39px;
+    text-align: center;
+
+    animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+
+    span{
+      animation: fadein 0.5s;
+      -moz-animation: fadein 0.5s;
+      -webkit-animation: fadein 0.5s;
+      -o-animation: fadein 0.5s;
+      -ms-animation: fadein 0.5s;
+    }
+  }
+
+  .overimgTop a{
+    background: url("../images/1_collage/over_top.png");
+    top: 4px;
+    z-index: 7;
+    padding-top: 30px;
+    height: 56px;
+    font-family: bebas-neue;
+    font-size: 2em;
+
+    animation: overslideintop 0.5s;
+    -moz-animation: overslideintop 0.5s;
+    -webkit-animation: overslideintop 0.5s;
+    -o-animation: overslideintop 0.5s;
+    -ms-animation: overslideintop 0.5s;
+  }
+
+  .overimgBottom a{
+    background: url("../images/1_collage/over_bottom.png");
+    bottom: 6px;
+    z-index: 8;
+    height: 28px;
+    font-size: 1.6em;
+    padding-top: 18px;
+
+    animation: overslideinbottom 0.5s;
+    -moz-animation: overslideinbottom 0.5s;
+    -webkit-animation: overslideinbottom 0.5s;
+    -o-animation: overslideinbottom 0.5s;
+    -ms-animation: overslideinbottom 0.5s;
+  }
+
+  .iconCalender{
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    background: url("../images/1_collage/icon_calender.png")no-repeat;
+    width: 23px;
+    height: 25px;
+  }
+}
+
+@keyframes overslideintop{
+  from{
+    height: 0;
+  }
+  to{
+    height: 56px;
+  }
+}
+
+@-webkit-keyframes overslideintop{
+    from{
+       height: 0;
+     }
+     to{
+         height: 56px;
+     }
+}
+
+@keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein{
+    from{
+      opacity: 0;
+     }
+     to{
+       opacity: 1;
+     }
+}
+
+@keyframes overslideinbottom{
+  from{
+    height: 0;
+  }
+  to{
+    height: 28px;
+  }
+}
+
+@-webkit-keyframes overslideinbottom{
+  from{
+     height: 0;
+   }
+   to{
+       height: 28px;
+   }
+}
+
+.btnMore{
+  background: url("../images/btn_blue.png")no-repeat 0px 0px;
+  width: 232px;
+  height: 39px;
+  display: block;
+  margin: 50px auto 0px auto;
+  font-family: bebas-neue;
+  font-size: 2em;
+  padding-top: 12px;
+  color: $darkerBlueColor;
+  text-align: center;
+
+  &:hover{
+    background: url("../images/btn_blue.png")no-repeat 0px -51px;
+  }
+}
+
+mark{
+  background-color: $redColor;
+  color: #ffffff;
+  padding: 3px;
+}
+
+#dialectsContainer{
+  margin-top: 20px;
+  .dateDialects{
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    bottom: -22px;
+    p{
+      padding-top: 3px;
+      color: $redColor;
+      font-size: 1.6em;
+    }
+    right: 7px;
+  }
+  .dialectContainer{
+    display: inline-block;
+    position: relative;
+    margin-right: auto;
+    padding-left: 35px;
+    z-index: 6;
+
+    figure img{
+      border:$border;
+      background-clip: border-box;
+      -moz-background-clip: border-box;
+      -webkit-background-clip: border-box;
+      -o-background-clip: border-box;
+    }
+    &:hover .overimgTop a ,&:hover .overimgBottom a{
+      display: block;
+    }
+  }
+
+  .overimgTop a, .overimgBottom a{
+    color: white;
+    display: none;
+    position: absolute;
+    width: 197px;
+    opacity: 0.95;
+    left:43px;
+    text-align: center;
+
+    animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+
+    span{
+      animation: fadein 0.5s;
+      -moz-animation: fadein 0.5s;
+      -webkit-animation: fadein 0.5s;
+      -o-animation: fadein 0.5s;
+      -ms-animation: fadein 0.5s;
+    }
+  }
+
+  .overimgTop a{
+    background: url("../images/2_dialecten/over_top.png");
+    top: 8px;
+    z-index: 7;
+    height: 130px;
+    font-family: bebas-neue;
+    font-size: 2em;
+    img{
+      margin-top: 34px;
+
+      animation: speakerAnimation 0.5s;
+      -moz-animation: speakerAnimation 0.5s;
+      -webkit-animation: speakerAnimation 0.5s;
+      -o-animation: speakerAnimation 0.5s;
+      -ms-animation: speakerAnimation 0.5s;
+    }
+    animation: slideintop 0.5s;
+    -moz-animation: slideintop 0.5s;
+    -webkit-animation: slideintop 0.5s;
+    -o-animation: slideintop 0.5s;
+    -ms-animation: slideintop 0.5s;
+  }
+
+  .overimgBottom a{
+    background: url("../images/2_dialecten/over_bottom.png");
+    bottom: 10px;
+    z-index: 8;
+    height: 39px;
+    font-size: 2em;
+    padding-top: 20px;
+    font-family: bebas-neue;
+
+    animation: slideinbottom 0.5s;
+    -moz-animation: slideinbottom 0.5s;
+    -webkit-animation: slideinbottom 0.5s;
+    -o-animation: slideinbottom 0.5s;
+    -ms-animation: slideinbottom 0.5s;
+  }
+}
+
+@keyframes slideintop{
+  from{
+    height: 0;
+  }
+  to{
+    height: 130px;
+  }
+}
+
+@-webkit-keyframes slideintop{
+    from{
+       height: 0;
+     }
+     to{
+         height: 130px;
+     }
+}
+
+@keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein{
+    from{
+      opacity: 0;
+     }
+     to{
+       opacity: 1;
+     }
+}
+
+@keyframes slideinbottom{
+  from{
+    height: 0;
+  }
+  to{
+    height: 39px;
+  }
+}
+
+@-webkit-keyframes slideinbottom{
+  from{
+     height: 0;
+   }
+   to{
+       height: 39px;
+   }
+}
+
+@keyframes speakerAnimation{
+  from{
+    opacity: 0;
+    width: 34px;
+  }
+  to{
+    opacity: 1;
+    width: 68px;
+  }
+}
+
+@-webkit-keyframes speakerAnimation{
+    from{
+      opacity: 0;
+      width: 34px;
+     }
+     to{
+       opacity: 1;
+       width: 68px;
+     }
+}
+
+.number{
+  font-size: 3em;
+  position: absolute;
+  top: -28px;
+  left: -1px;
+}
+
+#fashionContainer{
+  width: 600px;
+  min-height: 180px;
+  margin: 90px auto 0px auto;
+  #dress{
+    background: url("../images/3_mode/dress.png")no-repeat;
+    width: 150px;
+    height: 226px;
+    position: absolute;
+    top: 80px;
+    left: 100px;
+    z-index: 9;
+  }
+  #textContainer{
+    background-color: #ffffff;
+    padding: 10px;
+    border:$border;
+    width: 120px;
+    z-index: 10;
+    position: relative;
+    h4{
+      font-family: bebas-neue;
+      font-size: 2.5em;
+    }
+    p{
+      color: $redColor;
+      font-size: 1.74em;
+    }
+    #labels{
+      background: url("../images/3_mode/labels.png")no-repeat;
+      width: 355px;
+      height: 166px;
+      position: absolute;
+      top: -40px;
+      left: 143px;
+      z-index: 11;
+    }
+    #amountOfShops{
+      position: absolute;
+      top: 80px;
+      left: 240px;
+      z-index: 12;
+      width: 400px;
+      li{
+        color: white;
+        font-size: 3.5em;
+        display: inline-block;
+        text-align: center;
+        margin-right: 63px;
+      }
+    }
+
+    #shops{
+      position: absolute;
+      top: 135px;
+      left: 221px;
+      width: 400px;
+      li{
+        width: 75px;
+        color: $blackColor;
+        font-size: 1.8em;
+        display: inline-block;
+        text-align: center;
+        margin-right: 26px;
+      }
+    }
+  }
+}
+
+#imageContainer{
+  width: 600px;
+  min-height: 230px;
+  margin: 90px auto 0px auto;
+  position: relative;
+  h4{
+    width: 300px;
+    border-bottom: $border;
+    font-size: 2em;
+    padding-bottom: 5px;
+    margin-top: 50px;
+  }
+  h4:first-child{
+    font-family: bebas-neue;
+    margin-top: 100px;
+  }
+  h4:last-of-type{
+    text-align: right;
+    color: $redColor;
+    img{
+      padding-right: 10px;
+    }
+  }
+  #statuePicContainer{
+    position: relative;
+    &:hover .overimgStatueTop a ,&:hover .overimgStatueBottom a{
+      display: block;
+    }
+  }
+  #statuePic{
+    position: absolute;
+    top: -50px;
+    left: 185px;
+    img{
+    border:$border;
+    }
+  }
+}
+
+.overimgStatueTop a, .overimgStatueBottom a{
+  color: white;
+  display: none;
+  position: absolute;
+  width: 223px;
+  opacity: 0.95;
+  left:189px;
+  text-align: center;
+
+  animation-timing-function: ease-in;
+  -moz-animation-timing-function: ease-in;
+  -webkit-animation-timing-function: ease-in;
+
+  span{
+    animation: fadein 0.5s;
+    -moz-animation: fadein 0.5s;
+    -webkit-animation: fadein 0.5s;
+    -o-animation: fadein 0.5s;
+    -ms-animation: fadein 0.5s;
+  }
+}
+
+.overimgStatueTop a{
+  background: url("../images/4_standbeelden/over_statueTop.png")no-repeat;
+  top: -46px;
+  z-index: 7;
+  height: 189px;
+  font-family: bebas-neue;
+  font-size: 2.3em;
+  animation: slideintopStatue 0.5s;
+  -moz-animation: slideintopStatue 0.5s;
+  -webkit-animation: slideintopStatue 0.5s;
+  -o-animation: slideintopStatue 0.5s;
+  -ms-animation: slideintopStatue 0.5s;
+}
+
+.overimgStatueBottom a{
+  background: url("../images/2_dialecten/over_bottom.png");
+  bottom: -243px;
+  z-index: 8;
+  height: 39px;
+  padding-top: 20px;
+
+  animation: slideinbottom 0.5s;
+  -moz-animation: slideinbottom 0.5s;
+  -webkit-animation: slideinbottom 0.5s;
+  -o-animation: slideinbottom 0.5s;
+  -ms-animation: slideinbottom 0.5s;
+
+  img{
+    animation: fadein 0.8s;
+    -moz-animation: fadein 0.8s;
+    -webkit-animation: fadein 0.8s;
+    -o-animation: fadein 0.8s;
+    -ms-animation: fadein 0.8s;
+  }
+}
+
+@keyframes slideintopStatue{
+  from{
+    height: 0;
+  }
+  to{
+    height: 189px;
+  }
+}
+
+@-webkit-keyframes slideintopStatue{
+  from{
+     height: 0;
+   }
+   to{
+       height: 189px;
+   }
+}
+
+.clear{
+  clear: both;
 }
