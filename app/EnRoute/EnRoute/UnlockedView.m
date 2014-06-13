@@ -10,11 +10,24 @@
 
 @implementation UnlockedView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame andText:(NSString*)text andLast:(BOOL)last
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        UILabel *titel = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:@"opdracht voltooid!" andFrame:CGRectMake(81, 15, 115, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
+        [self addSubview:titel];
+        
+        UILabel *textLabel = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:text andFrame:CGRectMake(36, 105, 200, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
+        [self addSubview:textLabel];
+        
+        if (last) {
+            NSLog(@"last");
+        }else{
+            self.mode = [UIElementFactory createButtonWithImageName:@"modebuurt" andPoint:CGPointMake(20, 190)];
+            [self addSubview:self.mode];
+            self.kunst = [UIElementFactory createButtonWithImageName:@"kunstbuurt" andPoint:CGPointMake(20, 190)];
+        }
     }
     return self;
 }

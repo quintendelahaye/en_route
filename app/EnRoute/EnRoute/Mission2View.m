@@ -42,6 +42,7 @@
         [self addSubview:self.lblTodo];
         self.picture = [UIElementFactory createButtonWithImageName:@"btn_picture" andPoint:CGPointMake(129, 420)];
         [self addSubview:self.picture];
+        self.klaar = [UIElementFactory createButtonWithImageName:@"klaar" andPoint:CGPointMake(135, 432)];
     }
     return self;
 }

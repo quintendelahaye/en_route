@@ -42,6 +42,7 @@
 }
 
 - (void)updateTodo{
+    [self removeReady];
     NSString *todo = @"Je bent klaar met deze opdracht. Dien in of neem iets opnieuw op";
     int count = 0;
     for (NSString *key in self.records) {
@@ -69,9 +70,17 @@
             todo = @"Je moet nog een achtergrond foto nemen.";
         }else{
             todo = [todo stringByAppendingString:@"."];
+            [self.view addSubview:self.view.klaar];
+            self.view.picture.center = CGPointMake(75, 460);
+            [self.view.klaar addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
         }
     }
     [self.view changeLblTodoWithText:todo];
+}
+
+- (void)removeReady{
+    [self.view.klaar removeFromSuperview];
+    self.view.picture.center = CGPointMake(160, 460);
 }
 
 - (void)viewDidLoad
@@ -143,6 +152,79 @@
     }else{
         [self playRecordWithUrl:[self.records objectForKey:@"3"]];
     }
+}
+
+- (void)upload:(id)sender{
+    NSLog(@"startUpload");
+    
+    NSLog(@"De foto wordt geupload");
+    NSData *imageData = UIImageJPEGRepresentation([self addText], 0.4);
+    NSString *urlString = @"http://169.254.216.138/MAIV/en_route/site/upload/mission2.php";
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = @"---------------------------14737809831466499882746641449";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"userfile[]\"; filename=\"%@\"\r\n", @"picture.jpg"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[NSData dataWithData:imageData]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    for (NSString *key in self.records) {
+        NSString * fileName1 = [[self.records objectForKey:key] lastPathComponent];
+        NSData * attachedFile1 = [NSData dataWithContentsOfFile:[self.records objectForKey:key]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Disposition:form-data;name=\"userfile[]\"; filename=\"%@\"\r\n", fileName1] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[[NSString stringWithFormat:@"Content-Type:application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+        [body appendData:[NSData dataWithData:attachedFile1]];
+        [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    
+    // text parameter
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"groupid\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *parameterValue1= [[NSUserDefaults standardUserDefaults]objectForKey:@"groupid"];
+    [body appendData:[parameterValue1 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"userid\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *parameterValue2= [[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    [body appendData:[parameterValue2 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    
+    [request setHTTPBody:body];
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"Image Return String: %@", returnString);
+
+    
+}
+
+-(UIImage *)addText{
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(self.view.capturedPicture.image.size, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(self.view.capturedPicture.image.size);
+    }
+    UIImage *songTekst = [UIImage imageNamed:@"mission2_song"];
+    [self.view.capturedPicture.image drawInRect:CGRectMake(0, 0, self.view.capturedPicture.image.size.width, self.view.capturedPicture.image.size.height)];
+    [songTekst drawInRect:CGRectMake(0, 0, songTekst.size.width, songTekst.size.height)];
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resultImage;
 }
 
 - (void)hideRemove3:(id)sender{

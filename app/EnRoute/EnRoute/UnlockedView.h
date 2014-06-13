@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIElementFactory.h"
 
 @interface UnlockedView : UIView
+
+@property (nonatomic, strong) UIButton *mode;
+@property (nonatomic, strong) UIButton *kunst;
 
 @end

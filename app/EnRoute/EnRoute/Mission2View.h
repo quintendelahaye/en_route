@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+Extentions.h"
 #import "WordView.h"
-#import "UIElementFactory.h";
+#import "UIElementFactory.h"
 
 @interface Mission2View : UIView
 
@@ -18,6 +18,7 @@
 @property (nonatomic, strong) WordView *word3;
 @property (nonatomic, strong) UILabel *lblTodo;
 @property (nonatomic, strong) UIButton *picture;
+@property (nonatomic, strong) UIButton *klaar;
 @property (nonatomic, strong) UIImageView *capturedPicture;
 @property (nonatomic, strong) UIImageView *bg;
 
