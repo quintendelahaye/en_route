@@ -13,7 +13,7 @@
 	<title>En Route - oud en nieuw in Antwerpen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 <body>
 
@@ -52,7 +52,7 @@
         <div class="searchField" data-0="margin-top:33px;" data-100="margin-top:10px;">
             <form>
                 <a href="#" class="search"><span>search</span></a>
-                <input type="text" placeholder="zoek je team of klas"/>
+                <input type="text" placeholder="zoek je team of school"/>
                 <div><input type="submit" name="btnSubmitZoek" id="btnSubmitZoek" value="Zoek" /></div>
             </form>
         </div>

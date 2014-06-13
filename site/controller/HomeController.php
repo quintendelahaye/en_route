@@ -10,10 +10,13 @@
         {
             parent::__construct();
 
+            require_once WWW_ROOT . 'dao' . DS . 'Mission1DAO.php';
+            $this->mission1DAO = new Mission1DAO();
         }
 
         public function home()
         {
-
+            $collagepictures = $this->mission1DAO->getPicturesAndGroupNames();
+            $this->set("collagepictures", $collagepictures);
         }
     }

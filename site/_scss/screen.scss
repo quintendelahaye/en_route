@@ -277,8 +277,7 @@ footer{
       width: 200px;
       display: block;
       border: $blackColor 4px solid;
-      padding-left: 5px;
-      padding-right: 5px;
+      padding: 5px;
       text-align: center;
       font-size: 2.4em;
       font-family: bebas-neue;
@@ -298,6 +297,30 @@ footer{
         h4{
           font-family: bebas-neue;
           color: $redColor;
+        }
+      }
+    }
+
+    #collage{
+      #detailCollage{
+        width: 400px;
+        margin: 30px auto 60px auto;
+        img{
+          width: 300px;
+          height: 300px;
+          margin: 10px 0px 0px 15px;
+
+          border:$border;
+          background-clip: border-box;
+          -moz-background-clip: border-box;
+          -webkit-background-clip: border-box;
+          -o-background-clip: border-box;
+        }
+        p{
+          text-align: center;
+          font-size: 2.2em;
+          width: 300px;
+          padding: 0px;
         }
       }
     }
@@ -321,10 +344,14 @@ footer{
     display: inline-block;
     position: relative;
     margin-right: auto;
+    margin-bottom: 10px;
     padding-left: 35px;
     z-index: 6;
 
     figure img{
+      width: 145px;
+      height: 145px;
+
       border:$border;
       background-clip: border-box;
       -moz-background-clip: border-box;
@@ -882,9 +909,11 @@ footer{
 #topBtn{
   @include box-sizing("border-box");
   width: 700px;
-  margin: 140px auto 30px auto;
+  height: 50px;
+  margin: 80px auto 20px auto;
   position: relative;
   border-top: $border;
+  display: block;
 
   .btnTop{
     background: url("../images/btn_top.png")no-repeat 0px 0px;
@@ -948,8 +977,8 @@ footer{
 
 #missionNav{
   @include box-sizing("border-box");
-    margin: 0px auto 20px auto;
-    width: 800px;
+    margin: 50px auto 20px auto;
+    width: 650px;
 
   #leftNav{
     #allMissions{
@@ -957,7 +986,7 @@ footer{
       width: 148px;
       height: 39px;
       display: block;
-      &:hover{
+      &:hover, #allMissionsActive{
         background: url("../images/btn_all.png")no-repeat 0px -39px;
       }
       span{
@@ -975,7 +1004,58 @@ footer{
       font-size: 1.9em;
     }
   }
+  #rightNav{
+    width: 500px;
+    ul{
+      li{
+        display: inline-block;
+        margin: 5px;
+          span{
+            visibility: hidden;
+          }
+      }
+      #mission1, #mission2, #mission3, #mission4, #mission5, #mission6{
+        width: 148px;
+        height: 32px;
+        display: block;
+      }
+      #mission1{
+        background: url("../images/btn_opdracht1.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht1.png")no-repeat 0px -32px;}
+      }
+      #mission2{
+        background: url("../images/btn_opdracht2.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht2.png")no-repeat 0px -32px;}
+      }
+      #mission3{
+        background: url("../images/btn_opdracht3.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht3.png")no-repeat 0px -32px;}
+      }
+      #mission4{
+        background: url("../images/btn_opdracht4.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht4.png")no-repeat 0px -32px;}
+      }
+      #mission5{
+        background: url("../images/btn_opdracht5.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht5.png")no-repeat 0px -32px;}
+      }
+      #mission6{
+        background: url("../images/btn_opdracht6.png")no-repeat 0px 0px;
+        &:hover{background: url("../images/btn_opdracht6.png")no-repeat 0px -32px;}
+      }
+    }
+  }
 }
+
+#allMissionsActive{ background: url("../images/btn_all.png")no-repeat 0px -39px; width: 148px; height: 39px; display: block; span{visibility: hidden;}}
+
+.activeMission1, .activeMission2, .activeMission3, .activeMission4, .activeMission5, .activeMission6{ display: block; width: 148px; height: 32px; }
+.activeMission1{background: url("../images/btn_opdracht1.png")no-repeat 0px -32px;}
+.activeMission2{background: url("../images/btn_opdracht2.png")no-repeat 0px -32px;}
+.activeMission3{background: url("../images/btn_opdracht3.png")no-repeat 0px -32px;}
+.activeMission4{background: url("../images/btn_opdracht4.png")no-repeat 0px -32px;}
+.activeMission5{background: url("../images/btn_opdracht5.png")no-repeat 0px -32px;}
+.activeMission6{background: url("../images/btn_opdracht6.png")no-repeat 0px -32px;}
 
 //----------- media ---------------------------------------------------------------------------------------------------------
 
@@ -1079,6 +1159,25 @@ footer{
         }
       }
     }
+
+  #worksContainer{
+    width: 600px;
+  }
+
+  #missionNav{
+    width: 550px;
+    #rightNav{
+      margin-top: 0px;
+      width: 390px;
+      ul{
+        margin-left: 20px;
+        li{
+          width: 180px;
+            margin: 0px 0px 15px 0px;
+          }
+      }
+    }
+  }
 }
 
 @media  only screen and (max-width: 400px) {
@@ -1278,6 +1377,22 @@ footer{
       input[type=text]{
         width:50px;
         height:20px;
+      }
+    }
+  }
+
+  #missionNav{
+    margin: 0px 0px 20px 30px;
+    width: 370px;
+    #rightNav{
+      margin-top: 20px;
+      width: 390px;
+      ul{
+        margin-left: 20px;
+        li{
+          width: 180px;
+            margin: 5px 0px 15px 0px;
+          }
       }
     }
   }

@@ -13,28 +13,15 @@
             <header><h4>opdracht collage</h4></header>
             <p class="explaination">Voor deze opdracht moesten de jongeren een collage maken uit 3 <span>foto’s</span>, de foto’s tonen een groot contrast tussen <span>oud en nieuw</span>.</p>
             <ul id="collageContainer">
-                <li class="collagePicContainer">
-                    <div class="overimgTop"><a href="#"><p>de rakkers</p></a></div>
-                    <div class="overimgBottom"><a href="#"><div class="iconCalender">&nbsp</div><p>12/05/14</p></a></div>
-                    <figure><img src="images/1_collage/foto3.png" alt="foto3"/></figure>
-                </li>
-                <li class="collagePicContainer">
-                    <div class="overimgTop"><a href="#"><p>de rakkers</p></a></div>
-                    <div class="overimgBottom"><a href="#"><div class="iconCalender">&nbsp</div><p>12/05/14</p></a></div>
-                    <figure><img src="images/1_collage/foto3.png" alt="foto3"/></figure>
-                </li>
-                <li class="collagePicContainer">
-                    <div class="overimgTop"><a href="#"><p>de rakkers</p></a></div>
-                    <div class="overimgBottom"><a href="#"><div class="iconCalender">&nbsp</div><p>12/05/14</p></a></div>
-                    <figure><img src="images/1_collage/foto3.png" alt="foto3"/></figure>
-                </li>
-                <li class="collagePicContainer">
-                    <div class="overimgTop"><a href="#"><p>de rakkers</p></a></div>
-                    <div class="overimgBottom"><a href="#"><div class="iconCalender">&nbsp</div><p>12/05/14</p></a></div>
-                    <figure><img src="images/1_collage/foto3.png" alt="foto3"/></figure>
-                </li>
+                <?php foreach($collagepictures as $collagepicture): ?>
+                    <li class="collagePicContainer">
+                       <div class="overimgTop"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
+                       <div class="overimgBottom"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
+                       <figure><img src="upload/mission1/<?php echo $collagepicture["image_name"]; ?>" alt="foto3"/></figure>
+                    </li>
+                <?php endforeach; ?>
             </ul>
-            <a href="#" class="btnMore">Bekijk meer collages</a>
+            <a href="index.php?page=works&mission=1" class="btnMore">Bekijk meer collages</a>
         </section>
         <section class="work">
             <p class="number">2</p>

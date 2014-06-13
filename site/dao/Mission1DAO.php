@@ -27,18 +27,53 @@ class Mission1DAO{
     }
 
     public function getPicturesByAmount()
+    {
+        $sql = "SELECT id, COUNT(*) AS NumberOfPictures
+                        FROM enroute_opdracht1";
+        $stmt = $this->pdo->prepare($sql);
+        if($stmt->execute())
         {
-            $sql = "SELECT id, COUNT(*) AS NumberOfPictures
-                            FROM enroute_opdracht1";
+            $pictures = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(!empty($pictures))
+            {
+                return $pictures;
+            }
+        }
+        return false;
+    }
+
+    public function getPicturesAndGroupNames(){
+        $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
+                FROM enroute_opdracht1
+                INNER JOIN enroute_groups
+                ON enroute_opdracht1.id = enroute_groups.id";
+        $stmt = $this->pdo->prepare($sql);
+         if($stmt->execute()){
+             $collagepictures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             if(!empty($collagepictures)){
+                 return $collagepictures;
+             }
+         }
+         return false;
+    }
+
+    public function getPictureAndGroupNameByPictureId($id){
+            $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
+                    FROM enroute_opdracht1
+                    INNER JOIN enroute_groups
+                    ON enroute_opdracht1.id = enroute_groups.id
+                    WHERE enroute_opdracht1.id = :id";
             $stmt = $this->pdo->prepare($sql);
+            $stmt->bindValue(':id', $id);
             if($stmt->execute())
             {
-                $pictures = $stmt->fetch(PDO::FETCH_ASSOC);
-                if(!empty($pictures))
+                $collage = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if(!empty($collage))
                 {
-                    return $pictures;
+                    return $collage;
                 }
+                return false;
             }
-            return false;
         }
 }
