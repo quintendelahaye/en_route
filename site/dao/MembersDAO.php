@@ -1,6 +1,7 @@
 <?php 
 
-require_once '../classes' . DIRECTORY_SEPARATOR . 'DatabasePDO.php';
+//require_once '../classes' . DIRECTORY_SEPARATOR . 'DatabasePDO.php';
+require_once WWW_ROOT . 'classes' . DIRECTORY_SEPARATOR . 'DatabasePDO.php';
 
 class MembersDAO{
 
