@@ -42,6 +42,24 @@
         [self.mapView addAnnotation:self.annotion];
         
         
+        NSArray *locations2 = [NSArray arrayWithObjects:[[CLLocation alloc] initWithLatitude:50.881 longitude:3.32],
+                              [[CLLocation alloc] initWithLatitude:50.881 longitude:3.39],
+                              [[CLLocation alloc] initWithLatitude:50.889 longitude:3.39],
+                              [[CLLocation alloc] initWithLatitude:50.889 longitude:3.32],
+                              [[CLLocation alloc] initWithLatitude:50.881 longitude:3.32],nil];
+        
+        self.annotion2 = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                   coordinate:((CLLocation *)[locations2 objectAtIndex:0]).coordinate
+                                                     andTitle:@"Home"];
+        
+        self.annotion2.userInfo = locations2;
+        self.annotion2.title = @"opdracht2";
+        
+        [self.annotion2 setBoundingBoxFromLocations:locations2];
+        
+        [self.mapView addAnnotation:self.annotion2];
+        
+        
         self.mapView.zoom = 12;
     }
     return self;

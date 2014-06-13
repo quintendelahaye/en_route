@@ -53,11 +53,23 @@
 		A0CE70B41948B95700652565 /* handleiding_stap01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */; };
 		A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */; };
 		A0CE70B61948B95700652565 /* handleiding_stap03.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */; };
-		A0CE70B71948B95700652565 /* handleiding_stap04.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */; };
 		A0CE70BD1948C19200652565 /* TutorialScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70BC1948C19200652565 /* TutorialScreenView.m */; };
 		A0CE70C01948F77600652565 /* PageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70BF1948F77600652565 /* PageControl.m */; };
+		A0CE70C2194992AF00652565 /* handleiding_stap04.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70C1194992AF00652565 /* handleiding_stap04.mp4 */; };
+		A0CE70C51949D68500652565 /* Mission2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70C41949D68500652565 /* Mission2ViewController.m */; };
+		A0CE70C91949D73C00652565 /* TutorialMission2View.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70C81949D73C00652565 /* TutorialMission2View.m */; };
+		A0CE70CC1949D78E00652565 /* TutorialMission2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70CB1949D78E00652565 /* TutorialMission2ViewController.m */; };
+		A0CE70CF1949F2CA00652565 /* Mission2View.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70CE1949F2CA00652565 /* Mission2View.m */; };
+		A0CE70D2194A018200652565 /* WordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70D1194A018200652565 /* WordView.m */; };
+		A0CE7101194A5A2F00652565 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7100194A5A2F00652565 /* CoreMedia.framework */; };
+		A0CE7103194A5A4700652565 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7102194A5A4700652565 /* CoreVideo.framework */; };
+		A0CE7105194A5A5400652565 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7104194A5A5400652565 /* OpenGLES.framework */; };
+		A0CE7107194A5A6300652565 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7106194A5A6300652565 /* AVFoundation.framework */; };
+		A0CE7109194A5A7B00652565 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7108194A5A7B00652565 /* QuartzCore.framework */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
+		A0F12C3A194A742E00BE8798 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F12C39194A742E00BE8798 /* PhotoViewController.m */; };
+		A0F12C3E194AF8C200BE8798 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F12C3D194AF8C200BE8798 /* RecordView.m */; };
 		A0F2768219485ABC008AB4E6 /* DropItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F2768119485ABC008AB4E6 /* DropItemButton.m */; };
 /* End PBXBuildFile section */
 
@@ -149,15 +161,35 @@
 		A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap01.mp4; sourceTree = "<group>"; };
 		A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap02.mp4; sourceTree = "<group>"; };
 		A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap03.mp4; sourceTree = "<group>"; };
-		A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap04.mp4; sourceTree = "<group>"; };
 		A0CE70BB1948C19200652565 /* TutorialScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialScreenView.h; sourceTree = "<group>"; };
 		A0CE70BC1948C19200652565 /* TutorialScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialScreenView.m; sourceTree = "<group>"; };
 		A0CE70BE1948F77600652565 /* PageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageControl.h; sourceTree = "<group>"; };
 		A0CE70BF1948F77600652565 /* PageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageControl.m; sourceTree = "<group>"; };
+		A0CE70C1194992AF00652565 /* handleiding_stap04.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = handleiding_stap04.mp4; sourceTree = "<group>"; };
+		A0CE70C31949D68500652565 /* Mission2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission2ViewController.h; sourceTree = "<group>"; };
+		A0CE70C41949D68500652565 /* Mission2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission2ViewController.m; sourceTree = "<group>"; };
+		A0CE70C71949D73C00652565 /* TutorialMission2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialMission2View.h; sourceTree = "<group>"; };
+		A0CE70C81949D73C00652565 /* TutorialMission2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialMission2View.m; sourceTree = "<group>"; };
+		A0CE70CA1949D78E00652565 /* TutorialMission2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialMission2ViewController.h; sourceTree = "<group>"; };
+		A0CE70CB1949D78E00652565 /* TutorialMission2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialMission2ViewController.m; sourceTree = "<group>"; };
+		A0CE70CD1949F2CA00652565 /* Mission2View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission2View.h; sourceTree = "<group>"; };
+		A0CE70CE1949F2CA00652565 /* Mission2View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission2View.m; sourceTree = "<group>"; };
+		A0CE70D0194A018200652565 /* WordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordView.h; sourceTree = "<group>"; };
+		A0CE70D1194A018200652565 /* WordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordView.m; sourceTree = "<group>"; };
+		A0CE7100194A5A2F00652565 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A0CE7102194A5A4700652565 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A0CE7104194A5A5400652565 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A0CE7106194A5A6300652565 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A0CE7108194A5A7B00652565 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
 		A0DAC6311942558A0011695B /* TourView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourView.m; sourceTree = "<group>"; };
+		A0F12C38194A742E00BE8798 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		A0F12C39194A742E00BE8798 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		A0F12C3B194AF45600BE8798 /* PhotoViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewDelegate.h; sourceTree = "<group>"; };
+		A0F12C3C194AF8C200BE8798 /* RecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
+		A0F12C3D194AF8C200BE8798 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		A0F2768019485ABC008AB4E6 /* DropItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropItemButton.h; sourceTree = "<group>"; };
 		A0F2768119485ABC008AB4E6 /* DropItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropItemButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +199,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CE7109194A5A7B00652565 /* QuartzCore.framework in Frameworks */,
+				A0CE7107194A5A6300652565 /* AVFoundation.framework in Frameworks */,
+				A0CE7105194A5A5400652565 /* OpenGLES.framework in Frameworks */,
+				A0CE7103194A5A4700652565 /* CoreVideo.framework in Frameworks */,
+				A0CE7101194A5A2F00652565 /* CoreMedia.framework in Frameworks */,
 				817C3EF6193B6E8600DA6563 /* CoreGraphics.framework in Frameworks */,
 				817C3EFA193B6E8600DA6563 /* CoreData.framework in Frameworks */,
 				817C3EF8193B6E8600DA6563 /* UIKit.framework in Frameworks */,
@@ -255,6 +292,11 @@
 		817C3EF2193B6E8600DA6563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0CE7108194A5A7B00652565 /* QuartzCore.framework */,
+				A0CE7106194A5A6300652565 /* AVFoundation.framework */,
+				A0CE7104194A5A5400652565 /* OpenGLES.framework */,
+				A0CE7102194A5A4700652565 /* CoreVideo.framework */,
+				A0CE7100194A5A2F00652565 /* CoreMedia.framework */,
 				817C3EF3193B6E8600DA6563 /* Foundation.framework */,
 				817C3EF5193B6E8600DA6563 /* CoreGraphics.framework */,
 				817C3EF7193B6E8600DA6563 /* UIKit.framework */,
@@ -287,6 +329,7 @@
 				A0CE70A519489A8200652565 /* Tutorial */,
 				A0DAC633194255900011695B /* Tour */,
 				A0A0BC851942EC21004158EA /* Mission1 */,
+				A0CE70C61949D68D00652565 /* Mission2 */,
 				A0A0BC9519445A69004158EA /* Extentions */,
 			);
 			path = EnRoute;
@@ -353,6 +396,8 @@
 		A0A0BC9519445A69004158EA /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				A0CE70BB1948C19200652565 /* TutorialScreenView.h */,
+				A0CE70BC1948C19200652565 /* TutorialScreenView.m */,
 				A0A0BC8C1942EF5A004158EA /* UIColor+Extentions.h */,
 				A0A0BC8D1942EF5A004158EA /* UIColor+Extentions.m */,
 				A0A0BC9219445A63004158EA /* TitleView.h */,
@@ -371,7 +416,7 @@
 				A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */,
 				A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */,
 				A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */,
-				A0CE70B31948B95700652565 /* handleiding_stap04.mp4 */,
+				A0CE70C1194992AF00652565 /* handleiding_stap04.mp4 */,
 			);
 			name = InstructionMovies;
 			path = ..;
@@ -384,10 +429,30 @@
 				A0CE70A019489A6500652565 /* TutorialViewController.m */,
 				A0CE70A219489A7C00652565 /* TutorialView.h */,
 				A0CE70A319489A7C00652565 /* TutorialView.m */,
-				A0CE70BB1948C19200652565 /* TutorialScreenView.h */,
-				A0CE70BC1948C19200652565 /* TutorialScreenView.m */,
 			);
 			name = Tutorial;
+			sourceTree = "<group>";
+		};
+		A0CE70C61949D68D00652565 /* Mission2 */ = {
+			isa = PBXGroup;
+			children = (
+				A0CE70CA1949D78E00652565 /* TutorialMission2ViewController.h */,
+				A0CE70CB1949D78E00652565 /* TutorialMission2ViewController.m */,
+				A0CE70C71949D73C00652565 /* TutorialMission2View.h */,
+				A0CE70C81949D73C00652565 /* TutorialMission2View.m */,
+				A0CE70C31949D68500652565 /* Mission2ViewController.h */,
+				A0CE70C41949D68500652565 /* Mission2ViewController.m */,
+				A0CE70CD1949F2CA00652565 /* Mission2View.h */,
+				A0CE70CE1949F2CA00652565 /* Mission2View.m */,
+				A0CE70D0194A018200652565 /* WordView.h */,
+				A0CE70D1194A018200652565 /* WordView.m */,
+				A0F12C38194A742E00BE8798 /* PhotoViewController.h */,
+				A0F12C39194A742E00BE8798 /* PhotoViewController.m */,
+				A0F12C3B194AF45600BE8798 /* PhotoViewDelegate.h */,
+				A0F12C3C194AF8C200BE8798 /* RecordView.h */,
+				A0F12C3D194AF8C200BE8798 /* RecordView.m */,
+			);
+			name = Mission2;
 			sourceTree = "<group>";
 		};
 		A0DAC633194255900011695B /* Tour */ = {
@@ -488,7 +553,7 @@
 				A04559B819460C7F00561159 /* BebasNeue.otf in Resources */,
 				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
 				A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */,
-				A0CE70B71948B95700652565 /* handleiding_stap04.mp4 in Resources */,
+				A0CE70C2194992AF00652565 /* handleiding_stap04.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,15 +609,19 @@
 				815C2FFE193B6F10004E3C5C /* Mainview.m in Sources */,
 				815C300A193BA48F004E3C5C /* LoginView.m in Sources */,
 				A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */,
+				A0CE70CF1949F2CA00652565 /* Mission2View.m in Sources */,
 				A0A0BC9E1944B96C004158EA /* Mission1CameraView.m in Sources */,
 				815C3004193BA472004E3C5C /* LoginViewController.m in Sources */,
 				A0CE70C01948F77600652565 /* PageControl.m in Sources */,
 				817C3F06193B6E8600DA6563 /* AppDelegate.m in Sources */,
+				A0CE70C91949D73C00652565 /* TutorialMission2View.m in Sources */,
+				A0CE70C51949D68500652565 /* Mission2ViewController.m in Sources */,
 				815C3016193BB760004E3C5C /* StartScreenView.m in Sources */,
 				A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */,
 				A0A0BC9419445A63004158EA /* TitleView.m in Sources */,
 				A0CE70A419489A7C00652565 /* TutorialView.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
+				A0CE70D2194A018200652565 /* WordView.m in Sources */,
 				A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
@@ -569,7 +638,10 @@
 				814735451940B71F003B23CC /* MenuView.m in Sources */,
 				A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */,
 				A0A0BC8E1942EF5A004158EA /* UIColor+Extentions.m in Sources */,
+				A0F12C3E194AF8C200BE8798 /* RecordView.m in Sources */,
+				A0F12C3A194A742E00BE8798 /* PhotoViewController.m in Sources */,
 				A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */,
+				A0CE70CC1949D78E00652565 /* TutorialMission2ViewController.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,
 				A0CE70BD1948C19200652565 /* TutorialScreenView.m in Sources */,
 				815C3013193BB71E004E3C5C /* StartScreenViewController.m in Sources */,
@@ -646,6 +718,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -678,6 +754,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -692,6 +772,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnRoute/EnRoute-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+					"\"${PODS_ROOT}/Headers/GRMustache\"",
+					"\"${PODS_ROOT}/Headers/JRSwizzle\"",
+					"\"${PODS_ROOT}/Headers/MapBox\"",
+					"\"${PODS_ROOT}/Headers/SBJson\"",
+					"\"${PODS_ROOT}/Headers/SMCalloutView\"",
+				);
 				INFOPLIST_FILE = "EnRoute/EnRoute-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -706,6 +796,16 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EnRoute/EnRoute-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/FMDB\"",
+					"\"${PODS_ROOT}/Headers/GRMustache\"",
+					"\"${PODS_ROOT}/Headers/JRSwizzle\"",
+					"\"${PODS_ROOT}/Headers/MapBox\"",
+					"\"${PODS_ROOT}/Headers/SBJson\"",
+					"\"${PODS_ROOT}/Headers/SMCalloutView\"",
+				);
 				INFOPLIST_FILE = "EnRoute/EnRoute-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

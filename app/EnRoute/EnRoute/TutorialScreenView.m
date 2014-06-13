@@ -28,18 +28,17 @@
     return self;
 }
 
-- (void)createHead:(int)head andExplanation:(NSString*)explanation{
-    NSString *headText = [NSString stringWithFormat:@"Deel%i",head];
-    self.head = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:headText andFrame:CGRectMake(145, 35, 44, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
+- (void)createHead:(NSString*)head andExplanation:(NSString*)explanation andImagename:(NSString*)imagename{
+    
+    self.head = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:head andFrame:CGRectMake(145, 35, 44, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
     [self addSubview:self.head];
     
-    self.explanation = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:explanation andFrame:CGRectMake(63, 70, 205, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
+    self.explanation = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:explanation andFrame:CGRectMake(63, 60, 205, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
     [self addSubview:self.explanation];
     
-    NSString *pict = [NSString stringWithFormat:@"handleiding_stap0%i",head];
-    UIImage *picture = [UIImage imageNamed:pict];
+    UIImage *picture = [UIImage imageNamed:imagename];
     UIImageView *pictureView = [[UIImageView alloc]initWithImage:picture];
-    pictureView.center = CGPointMake(160, 280);
+    pictureView.center = CGPointMake(160, 270);
     [self addSubview:pictureView];
 }
 

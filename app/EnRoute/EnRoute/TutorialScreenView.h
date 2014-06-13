@@ -14,6 +14,6 @@
 @property (nonatomic, strong) UILabel *head;
 @property (nonatomic, strong) UILabel *explanation;
 
-- (void)createHead:(int)head andExplanation:(NSString*)explanation;
+- (void)createHead:(NSString*)head andExplanation:(NSString*)explanation andImagename:(NSString*)imagename;
 
 @end

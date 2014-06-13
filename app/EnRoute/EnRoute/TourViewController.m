@@ -53,6 +53,11 @@
         self.mission1VC = [[Mission1ViewController alloc]initWithNibName:nil bundle:nil];
         self.mission1VC.delegate = self;
         [self.navigationController pushViewController:self.mission1VC animated:YES];
+    } else if([title  isEqual: @"opdracht2"]){
+        NSLog(@"show opdracht 2");
+        self.tutorialMission2VC = [[TutorialMission2ViewController alloc]initWithNibName:nil bundle:nil];
+        //self.tutorialMission2VC.delegate = self;
+        [self.navigationController pushViewController:self.tutorialMission2VC animated:YES];
     }
 }
 

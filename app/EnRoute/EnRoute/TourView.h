@@ -18,6 +18,7 @@
 
 @property (nonatomic, strong) RMMapView *mapView;
 @property (nonatomic, strong) RMAnnotation *annotion;
+@property (nonatomic, strong) RMAnnotation *annotion2;
 @property (nonatomic, weak) id<TourDelegate> delegate;
 
 @end
