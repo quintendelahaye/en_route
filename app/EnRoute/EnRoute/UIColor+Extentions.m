@@ -26,4 +26,8 @@
     return [UIColor colorWithRed:134/250.0f green:189/250.0f blue:178/250.0f alpha:1];
 }
 
++ (UIColor *)nicerDarkGreenColor {
+    return [UIColor colorWithRed:88/250.0f green:128/250.0f blue:120/250.0f alpha:1];
+}
+
 @end

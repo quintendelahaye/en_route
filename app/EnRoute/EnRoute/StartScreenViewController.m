@@ -38,6 +38,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     self.view.lblTeamName.text = [[NSUserDefaults standardUserDefaults]objectForKey:@"loggedInGroup"];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
+    [self.view.btnStart addTarget:self action:@selector(startTour:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.btnHandleiding addTarget:self action:@selector(startTutorial:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)menuTapped:(id)sender{

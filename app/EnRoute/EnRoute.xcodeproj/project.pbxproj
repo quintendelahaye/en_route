@@ -36,6 +36,10 @@
 		817C3F1F193B6E8600DA6563 /* EnRouteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F1E193B6E8600DA6563 /* EnRouteTests.m */; };
 		A00893FD194BCA20008DD457 /* markers.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A00893FC194BCA20008DD457 /* markers.geojson */; };
 		A04559B819460C7F00561159 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = A04559B719460C7F00561159 /* BebasNeue.otf */; };
+		A04B1630194C5458005BD69D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A04B162F194C5458005BD69D /* CoreLocation.framework */; };
+		A04B1634194C7E0B005BD69D /* Mission3ExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04B1633194C7E0B005BD69D /* Mission3ExplanationViewController.m */; };
+		A04B1637194C7E1E005BD69D /* Mission3ExplanationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */; };
+		A04B1639194C8BED005BD69D /* upload.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A04B1638194C8BED005BD69D /* upload.mp4 */; };
 		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
 		A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FB5C619467476000E0A54 /* MenuViewController.m */; };
 		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
@@ -129,6 +133,12 @@
 		A00893F7194B95F7008DD457 /* Mission2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission2Delegate.h; sourceTree = "<group>"; };
 		A00893FC194BCA20008DD457 /* markers.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = markers.geojson; sourceTree = "<group>"; };
 		A04559B719460C7F00561159 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
+		A04B162F194C5458005BD69D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A04B1632194C7E0B005BD69D /* Mission3ExplanationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3ExplanationViewController.h; sourceTree = "<group>"; };
+		A04B1633194C7E0B005BD69D /* Mission3ExplanationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission3ExplanationViewController.m; sourceTree = "<group>"; };
+		A04B1635194C7E1E005BD69D /* Mission3ExplanationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3ExplanationView.h; sourceTree = "<group>"; };
+		A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission3ExplanationView.m; sourceTree = "<group>"; };
+		A04B1638194C8BED005BD69D /* upload.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = upload.mp4; sourceTree = "<group>"; };
 		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
 		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
 		A05129A81945EF1C00709BCB /* Mission1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1Delegate.h; sourceTree = "<group>"; };
@@ -202,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04B1630194C5458005BD69D /* CoreLocation.framework in Frameworks */,
 				A0CE7109194A5A7B00652565 /* QuartzCore.framework in Frameworks */,
 				A0CE7107194A5A6300652565 /* AVFoundation.framework in Frameworks */,
 				A0CE7105194A5A5400652565 /* OpenGLES.framework in Frameworks */,
@@ -295,6 +306,7 @@
 		817C3EF2193B6E8600DA6563 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A04B162F194C5458005BD69D /* CoreLocation.framework */,
 				A0CE7108194A5A7B00652565 /* QuartzCore.framework */,
 				A0CE7106194A5A6300652565 /* AVFoundation.framework */,
 				A0CE7104194A5A5400652565 /* OpenGLES.framework */,
@@ -333,6 +345,7 @@
 				A0DAC633194255900011695B /* Tour */,
 				A0A0BC851942EC21004158EA /* Mission1 */,
 				A0CE70C61949D68D00652565 /* Mission2 */,
+				A04B1631194C7DD8005BD69D /* Mission3 */,
 				A0A0BC9519445A69004158EA /* Extentions */,
 			);
 			path = EnRoute;
@@ -368,6 +381,17 @@
 				817C3F1B193B6E8600DA6563 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A04B1631194C7DD8005BD69D /* Mission3 */ = {
+			isa = PBXGroup;
+			children = (
+				A04B1632194C7E0B005BD69D /* Mission3ExplanationViewController.h */,
+				A04B1633194C7E0B005BD69D /* Mission3ExplanationViewController.m */,
+				A04B1635194C7E1E005BD69D /* Mission3ExplanationView.h */,
+				A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */,
+			);
+			name = Mission3;
 			sourceTree = "<group>";
 		};
 		A09FB5C41946744E000E0A54 /* menu */ = {
@@ -421,6 +445,7 @@
 				A0CE70B11948B95700652565 /* handleiding_stap02.mp4 */,
 				A0CE70B21948B95700652565 /* handleiding_stap03.mp4 */,
 				A0CE70C1194992AF00652565 /* handleiding_stap04.mp4 */,
+				A04B1638194C8BED005BD69D /* upload.mp4 */,
 			);
 			name = InstructionMovies;
 			path = ..;
@@ -559,6 +584,7 @@
 				A04559B819460C7F00561159 /* BebasNeue.otf in Resources */,
 				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
 				A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */,
+				A04B1639194C8BED005BD69D /* upload.mp4 in Resources */,
 				A0CE70C2194992AF00652565 /* handleiding_stap04.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +659,8 @@
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
 				A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */,
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
+				A04B1634194C7E0B005BD69D /* Mission3ExplanationViewController.m in Sources */,
+				A04B1637194C7E1E005BD69D /* Mission3ExplanationView.m in Sources */,
 				A0F2768219485ABC008AB4E6 /* DropItemButton.m in Sources */,
 				A0CE70951948947E00652565 /* MemberViewController.m in Sources */,
 				A0DAC6321942558A0011695B /* TourView.m in Sources */,

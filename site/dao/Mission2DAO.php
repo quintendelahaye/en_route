@@ -26,13 +26,13 @@ class Mission2DAO{
         }
     }
 
-    public function insertSound($group_id, $member_id, $word_id, $sound_name){
-        $sql = "INSERT INTO enroute_opdracht2_sound(group_id, member_id, word_id, sound_name)
-                VALUES (:group_id,:member_id,:word_id, :sound_name)";
+    public function insertSound($group_id, $member_id, $word, $sound_name){
+        $sql = "INSERT INTO enroute_opdracht2_sound(group_id, member_id, word, sound_name)
+                VALUES (:group_id,:member_id,:word, :sound_name)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(":group_id",$group_id);
         $stmt->bindValue(":member_id",$member_id);
-        $stmt->bindValue(":word_id",$word_id);
+        $stmt->bindValue(":word",$word);
         $stmt->bindValue(":sound_name",$sound_name);
         if($stmt->execute()){
             return true;

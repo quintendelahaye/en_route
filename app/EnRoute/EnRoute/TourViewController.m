@@ -48,7 +48,7 @@
 }
 
 - (void)annotationSelected:(NSString *)title{
-    if ([title  isEqual: @"opdracht1"]) {
+    if ([title  isEqual: @"opdracht1"]||[title  isEqual: @"opdracht1_marker"]) {
         NSLog(@"show opdracht 1");
         self.mission1VC = [[Mission1ViewController alloc]initWithNibName:nil bundle:nil];
         self.mission1VC.delegate = self;
@@ -58,6 +58,11 @@
         self.tutorialMission2VC = [[TutorialMission2ViewController alloc]initWithNibName:nil bundle:nil];
         //self.tutorialMission2VC.delegate = self;
         [self.navigationController pushViewController:self.tutorialMission2VC animated:YES];
+    } else if([title  isEqual: @"opdracht3"]){
+        NSLog(@"show opdracht 3");
+        self.mission3ExplanationVC = [[Mission3ExplanationViewController alloc]initWithNibName:nil bundle:nil];
+        //self.tutorialMission2VC.delegate = self;
+        [self.navigationController pushViewController:self.mission3ExplanationVC animated:YES];
     }
 }
 

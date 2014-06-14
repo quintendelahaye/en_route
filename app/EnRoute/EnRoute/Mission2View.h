@@ -10,6 +10,8 @@
 #import "UIColor+Extentions.h"
 #import "WordView.h"
 #import "UIElementFactory.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import "AVFoundation/AVFoundation.h"
 
 @interface Mission2View : UIView
 
@@ -21,7 +23,9 @@
 @property (nonatomic, strong) UIButton *klaar;
 @property (nonatomic, strong) UIImageView *capturedPicture;
 @property (nonatomic, strong) UIImageView *bg;
+@property (nonatomic, strong) MPMoviePlayerController *videoController;
 
 - (void)changeLblTodoWithText:(NSString*)text;
+- (void)createVideo;
 
 @end

@@ -17,12 +17,22 @@
         RMMapboxSource *source = [[RMMapboxSource alloc]initWithMapID:@"thomasverleye.ie4bbml9"];
         
         self.mapView = [[RMMapView alloc]initWithFrame:frame andTilesource:source centerCoordinate:CLLocationCoordinate2DMake(51.2162362,4.4025798) zoomLevel:18 maxZoomLevel:20 minZoomLevel:11 backgroundImage:nil];
-        
+        self.mapView.showsUserLocation = YES;
         self.mapView.delegate = self;
         
         [self addSubview:self.mapView];
         
         
+        
+        
+        //cllocation
+        self.locationManager = [[CLLocationManager alloc]init];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = 1;
+        self.locationManager.activityType = CLActivityTypeOther;
+        self.locationManager.delegate = self;
+        
+        [self.locationManager startUpdatingLocation];
         
         
         
@@ -56,43 +66,29 @@
         }
         
         
+        //Add markers!
+        RMAnnotation *annotation1 = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                               coordinate:CLLocationCoordinate2DMake(51.2162362,4.4025798)
+                                                                 andTitle:@"kavka"];
+        [self.mapView addAnnotation:annotation1];
         
         
-        /*NSArray *locations = [NSArray arrayWithObjects:[[CLLocation alloc] initWithLatitude:50.891 longitude:3.32],
-                              [[CLLocation alloc] initWithLatitude:50.891 longitude:3.39],
-                              [[CLLocation alloc] initWithLatitude:50.899 longitude:3.39],
-                              [[CLLocation alloc] initWithLatitude:50.899 longitude:3.32],
-                              [[CLLocation alloc] initWithLatitude:50.891 longitude:3.32],nil];
-        
-        self.annotion = [[RMAnnotation alloc] initWithMapView:self.mapView
-                                                   coordinate:((CLLocation *)[locations objectAtIndex:0]).coordinate
-                                                     andTitle:@"Home"];
-        
-        self.annotion.userInfo = locations;
-        self.annotion.title = @"opdracht1";
-        
-        [self.annotion setBoundingBoxFromLocations:locations];
-        
-        [self.mapView addAnnotation:self.annotion];
+        RMAnnotation *annotation2 = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                               coordinate:CLLocationCoordinate2DMake(51.2199838,4.4021755)
+                                                                 andTitle:@"opdracht1_marker"];
+        [self.mapView addAnnotation:annotation2];
         
         
-        NSArray *locations2 = [NSArray arrayWithObjects:[[CLLocation alloc] initWithLatitude:50.881 longitude:3.32],
-                              [[CLLocation alloc] initWithLatitude:50.881 longitude:3.39],
-                              [[CLLocation alloc] initWithLatitude:50.889 longitude:3.39],
-                              [[CLLocation alloc] initWithLatitude:50.889 longitude:3.32],
-                              [[CLLocation alloc] initWithLatitude:50.881 longitude:3.32],nil];
+        RMAnnotation *annotation3 = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                               coordinate:CLLocationCoordinate2DMake(51.2161293,4.3980323)
+                                                                 andTitle:@"opdracht2_marker"];
+        [self.mapView addAnnotation:annotation3];
         
-        self.annotion2 = [[RMAnnotation alloc] initWithMapView:self.mapView
-                                                   coordinate:((CLLocation *)[locations2 objectAtIndex:0]).coordinate
-                                                     andTitle:@"Home"];
         
-        self.annotion2.userInfo = locations2;
-        self.annotion2.title = @"opdracht2";
-        
-        [self.annotion2 setBoundingBoxFromLocations:locations2];
-        
-        [self.mapView addAnnotation:self.annotion2];*/
-        
+        RMAnnotation *annotation4 = [[RMAnnotation alloc] initWithMapView:self.mapView
+                                                               coordinate:CLLocationCoordinate2DMake(51.2181592,4.4100586)
+                                                                 andTitle:@"opdracht3_marker"];
+        [self.mapView addAnnotation:annotation4];
         
         self.mapView.zoom = 14;
     }
@@ -101,20 +97,48 @@
 
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
 {
-    if (annotation.isUserLocationAnnotation)
-        return nil;
-    
     NSLog(@"LOUD NOISES");
-    RMShape *shape = [[RMShape alloc]initWithView:self.mapView];
-    //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
-    shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon"]];
-    shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
-    for (CLLocation *location in annotation.userInfo){
-        [shape addLineToCoordinate:location.coordinate];
+    if ([annotation.title  isEqual: @"opdracht1"] || [annotation.title  isEqual: @"opdracht2"] || [annotation.title  isEqual: @"opdracht3"]) {
+        RMShape *shape = [[RMShape alloc]initWithView:self.mapView];
+        if ([annotation.title  isEqual: @"opdracht1"]) {
+            //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
+            shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon_unlocked"]];
+            shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
+            for (CLLocation *location in annotation.userInfo){
+                [shape addLineToCoordinate:location.coordinate];
+            }
+        }else{
+            //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
+            shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon"]];
+            shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
+            for (CLLocation *location in annotation.userInfo){
+                [shape addLineToCoordinate:location.coordinate];
+            }
+        }
+        return shape;
+    }else{
+        RMMarker *marker;
+        if (annotation.isUserLocationAnnotation){
+            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"userLocation"]];
+        }
+        if ([annotation.title  isEqual: @"kavka"]) {
+            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"kavka"]];
+        }
+        if ([annotation.title  isEqual: @"opdracht1_marker"]) {
+            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_unlocked"]];
+        }
+        if ([annotation.title  isEqual: @"opdracht2_marker"]) {
+            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+        }
+        if ([annotation.title  isEqual: @"opdracht3_marker"]) {
+            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+        }
+        return marker;
     }
     
     
-    return shape;
+    
+    return nil;
 }
 
 - (void)mapView:(RMMapView *)mapView didSelectAnnotation:(RMAnnotation *)annotation{

@@ -18,13 +18,17 @@ for ($i=0; $i < 4; $i++) {
 		    echo "error";
 		}
 	}else{
+		$word = "";
 		if ($i == 1) {
+			$word = "schelde";
 			$sound_name = "schelde".$_POST["groupid"];
 			$file = "schelde".$_POST["groupid"].".m4a";
 		} elseif ($i == 2) {
+			$word = "beiaard";
 			$sound_name = "beiaard".$_POST["groupid"];
 			$file = "beiaard".$_POST["groupid"].".m4a";
 		} elseif ($i == 3) {
+			$word = "bank";
 			$sound_name = "bank".$_POST["groupid"];
 			$file = "bank".$_POST["groupid"].".m4a";
 		}
@@ -33,7 +37,7 @@ for ($i=0; $i < 4; $i++) {
 		if (move_uploaded_file($_FILES['userfile']['tmp_name'][$i], $uploadfile)) {
 		    echo $file;
 		    //nieuwe image updaten in de database
-		    $mission2DAO->insertSound($_POST["groupid"], $_POST["userid"], $i, $sound_name);
+		    $mission2DAO->insertSound($_POST["groupid"], $_POST["userid"], $word, $sound_name);
 		}
 		else {
 		   echo "error";

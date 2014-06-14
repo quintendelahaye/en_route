@@ -56,7 +56,7 @@
 }
 
 - (void)Mission2Finished{
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     [self.delegate Mission2Finished];
 }
 

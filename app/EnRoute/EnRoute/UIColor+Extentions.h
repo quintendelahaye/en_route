@@ -14,5 +14,6 @@
 + (UIColor *)niceRedColor;
 + (UIColor *)niceGreenColor;
 + (UIColor *)niceDarkGreenColor;
++ (UIColor *)nicerDarkGreenColor;
 
 @end

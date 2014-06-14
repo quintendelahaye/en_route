@@ -28,6 +28,7 @@
         [self.records setObject:@"" forKey:[NSString stringWithFormat:@"%i",2]];
         [self.records setObject:@"" forKey:[NSString stringWithFormat:@"%i",3]];
         self.photoIsCaptured = NO;
+        self.klaarPressed = NO;
     }
     return self;
 }
@@ -73,6 +74,7 @@
             [self.view addSubview:self.view.klaar];
             self.view.picture.center = CGPointMake(75, 460);
             [self.view.klaar addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view.klaar addTarget:self action:@selector(uploadDown:) forControlEvents:UIControlEventTouchDown];
         }
     }
     [self.view changeLblTodoWithText:todo];
@@ -154,10 +156,20 @@
     }
 }
 
-- (void)upload:(id)sender{
-    NSLog(@"startUpload");
+- (void)uploadDown:(id)sender{
+    NSLog(@"DOWN");
+    UIView *loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 522)];
+    loadingView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"uploadbg"]];
+    [self.view addSubview:loadingView];
+    if (!self.klaarPressed) {
+        [self.view createVideo];
+    }
     
-    NSLog(@"De foto wordt geupload");
+    self.klaarPressed = YES;
+    
+}
+
+- (void)upload:(id)sender{
     NSData *imageData = UIImageJPEGRepresentation([self addText], 0.4);
     NSString *urlString = @"http://169.254.216.138/MAIV/en_route/site/upload/mission2.php";
     
@@ -209,10 +221,10 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"Image Return String: %@", returnString);
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     [self.delegate Mission2Finished];
-    
 }
+
 
 -(UIImage *)addText{
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {

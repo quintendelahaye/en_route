@@ -53,6 +53,28 @@
     [self addSubview:self.lblTodo];
 }
 
+- (void)createVideo{
+    NSString *movName = @"upload";
+    NSString* outputPath = [[NSBundle mainBundle] pathForResource:movName ofType:@"mp4"];
+    NSLog(@"%@",movName);
+    
+    self.videoController = [[MPMoviePlayerController alloc] init];
+    self.videoController.movieSourceType = MPMovieSourceTypeFile;
+    
+    UIImage *placeholderimg = [UIImage imageNamed:@"placeholder01"];
+    UIImageView *placeholder = [[UIImageView alloc]initWithImage:placeholderimg];
+    
+    NSURL *mov2 = [NSURL fileURLWithPath:outputPath];
+    [self.videoController setContentURL:mov2];
+    [self.videoController.view setFrame:CGRectMake (25, 118, 270, 245)];
+    self.videoController.controlStyle = MPMovieControlStyleNone;
+    self.videoController.repeatMode = YES;
+    [self.videoController.backgroundView addSubview:placeholder];
+    [self addSubview:self.videoController.view];
+    
+    [self.videoController play];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

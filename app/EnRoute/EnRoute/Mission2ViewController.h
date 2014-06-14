@@ -31,4 +31,6 @@
 @property (nonatomic, assign) BOOL photoIsCaptured;
 @property (nonatomic, weak) id<Mission2Delegate> delegate;
 
+@property (nonatomic, assign) BOOL klaarPressed;
+
 @end
