@@ -1,4 +1,4 @@
-<article id="worksContainer">
+<article id="skrollr-body" class="worksContainer">
     <header>
         <h2><span>gemaakte kunstwerken</span></h2>
     </header>
@@ -12,7 +12,7 @@
             <div class="number"><p>1</p></div>
             <header><h4>opdracht collage</h4></header>
             <p class="explaination">Voor deze opdracht moesten de jongeren een collage maken uit 3 <span>foto’s</span>, de foto’s tonen een groot contrast tussen <span>oud en nieuw</span>.</p>
-            <ul id="collageContainer">
+            <ul class="collageContainer">
                 <?php foreach($collagepictures as $collagepicture): ?>
                     <li class="collagePicContainer">
                        <div class="overimgTop"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
@@ -21,7 +21,7 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <a href="index.php?page=works&mission=1" class="btnMore">Bekijk meer collages</a>
+            <a href="index.php?page=works&mission=1&id=1#detailCollage" class="btnMore">Bekijk meer collages</a>
         </section>
         <section class="work">
             <p class="number">2</p>
@@ -48,7 +48,7 @@
                     <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right" >21/04/14</p></div>
                 </li>
             </ul>
-            <a href="#" class="btnMore">Bekijk soundboard</a>
+            <a href="index.php?page=works&mission=2#soundBoard" class="btnMore">Bekijk soundboard</a>
         </section>
         <section class="work">
             <p class="number">3</p>
@@ -74,7 +74,7 @@
                 <div id="dress">&nbsp;</div>
             </div>
             <div class="clear">&nbsp;</div>
-            <a href="#" class="btnMore">Bekijk alle resultaten</a>
+            <a href="index.php?page=works&mission=3#allShops" class="btnMore">Bekijk alle resultaten</a>
         </section>
         <section class="work">
             <p class="number">4</p>
@@ -85,19 +85,20 @@
                 <h4 class="left">vti Kortrijk</h4>
                 <h4 class="right"><img src="images/4_standbeelden/icon_map.png" alt="map"/>Rubens, Groenplaats</h4>
             </div>
-            <a href="#" class="btnMore">Bekijk alle foto's</a>
+            <a href="index.php?page=works&mission=4&id=1#detailGroup" class="btnMore">Bekijk alle foto's</a>
         </section>
         <section class="work">
             <p class="number">5</p>
             <header><h4>opdracht vintage</h4></header>
             <p class="explaination">In Antwerpen lopen er veel mensen rond met een <span>vintage</span> accessoire of kledij.<br/> Neem een foto van de personen en leg de <span>focus</span> op het vintage element.</p>
             <div id="vintageContainer">
-                <div class="left" id="frameLeft"><a href="#"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
-                <div class="bigFrame"><a href="#"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
-                <div class="right" id="frameRight"><a href="#"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
+                <div class="left" id="frameLeft"><a href="index.php?page=works&mission=5#vintageContainer"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
+                <div class="bigFrame"><a href="index.php?page=works&mission=5#vintageContainer"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
+                <div class="right" id="frameRight"><a href="index.php?page=works&mission=5#vintageContainer"><img src="images/5_vintage/img_big.png" alt="group"/></a></div>
                 <div class="clear">&nbsp;</div>
             </div>
-            <a href="#" class="btnMore">Bekijk alle foto's</a>
+            <div class="clear">&nbsp;</div>
+            <a href="index.php?page=works&mission=5#vintageContainer" class="btnMore">Bekijk alle foto's</a>
         </section>
         <section class="work">
             <p class="number">6</p>
@@ -106,11 +107,11 @@
             <div id="lostPicContainer">
                 <figure><img src="images/6_verdwijnen/photo1.png" alt="photo1"/></figure>
                 <div class="lines">
-                    <p class="new">"Dit wordt vervangen door een iPad"</p>
+                    <p class="new">"Dit wordt een iPad"</p>
                     <h4>VTI Kortrijk</h4>
                 </div>
             </div>
-            <a href="#" class="btnMore">Bekijk de vervangingen</a>
+            <a href="index.php?page=works&mission=6&id=1#lostPicContainer" class="btnMore">Bekijk de vervangingen</a>
         </section>
     </section>
     <div id="topBtn">

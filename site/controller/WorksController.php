@@ -18,6 +18,18 @@
 
             require_once WWW_ROOT . 'dao' . DS . 'Mission2DAO.php';
             $this->mission2DAO = new Mission2DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'Mission3DAO.php';
+            $this->mission3DAO = new Mission3DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'Mission4DAO.php';
+            $this->mission4DAO = new Mission4DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'Mission5DAO.php';
+            $this->mission5DAO = new Mission5DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'Mission6DAO.php';
+            $this->mission6DAO = new Mission6DAO();
         }
 
         public function works()
@@ -37,6 +49,8 @@
             $mission5 = false;
             $mission6 = false;
             $collage = "";
+            $group = "";
+            $oldvsnew = "";
 
             if(!empty($_GET["mission"]))
             {
@@ -61,6 +75,10 @@
                 elseif($activeMission == 4){
                     $title = "opdracht standbeeld";
                     $mission4 = true;
+                    if(!empty($_GET["id"]))
+                    {
+                        $group = $this->mission4DAO->getGroupPicByGroup($_GET["id"]);
+                    }
                 }
                 elseif($activeMission == 5){
                     $title = "opdracht vintage";
@@ -69,6 +87,9 @@
                 elseif($activeMission == 6){
                     $title = "opdracht verdwijnen";
                     $mission6 = true;
+                    if(!empty($_GET["id"])){
+                        $oldvsnew = $this->mission6DAO->getAllPicsByPictureId($_GET["id"]);
+                    }
                 }
                 else{
                     $title = "alle werken";
@@ -105,6 +126,25 @@
             $sounds = $this->mission2DAO->getAllSounds();
             $this->set("sounds", $sounds);
 
+            //mission3------------------------------
+            $topShops = $this->mission3DAO->getTop3Shops();
+            $this->set("topShops", $topShops);
+
+            $shops = $this->mission3DAO->getAllShopsAndAmount();
+            $this->set("shops", $shops);
+
+            //mission4------------------------------
+            $grouppics = $this->mission4DAO->getAllGroupPics();
+            $this->set("grouppics", $grouppics);
+
+            //mission5------------------------------
+            $vintagepics = $this->mission5DAO->getAllVintagePics();
+            $this->set("vintagepics", $vintagepics);
+
+            //mission6------------------------------
+            $oldvsnewpics = $this->mission6DAO->getAllPics();
+            $this->set("oldvsnewpics", $oldvsnewpics);
+
             $this->set("mission1", $mission1);
             $this->set("mission2", $mission2);
             $this->set("mission3", $mission3);
@@ -113,5 +153,7 @@
             $this->set("mission6", $mission6);
 
             $this->set("collage", $collage);
+            $this->set("group", $group);
+            $this->set("oldvsnew", $oldvsnew);
         }
     }

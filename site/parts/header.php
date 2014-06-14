@@ -12,6 +12,7 @@
 	<meta charset="UTF-8">
 	<title>En Route - oud en nieuw in Antwerpen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="js/skrollr/skrollr.js"></script>
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>

@@ -255,7 +255,7 @@ footer{
   min-height: 200px;
 }
 
-#worksContainer{
+.worksContainer{
   @include box-sizing("border-box");
   margin: 20px auto 20px auto;
   width: 800px;
@@ -327,17 +327,40 @@ footer{
   }
 }
 
+#detailGroup{
+  @include box-sizing("border-box");
+  margin: 30px auto 60px auto;
+  width: 500px;
+  img{
+    width: 500px;
+    height: 500px;
+    margin: 10px auto 10px auto;
+
+    border:$border;
+    background-clip: border-box;
+    -moz-background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -o-background-clip: border-box;
+  }
+  p{
+    text-align: center;
+    font-size: 2.5em;
+    width: 500px;
+    span{
+      font-family: bebas-neue;
+    }
+  }
+}
+
 .explaination{
   @include box-sizing("border-box");
   width: 710px;
   font-size: 1.8em;
-  margin-top: 15px;
-  margin-left: 55px;
   line-height: 130%;
-  margin-bottom: 40px;
+  margin: 15px 0px 40px 55px;
 }
 
-#collageContainer{
+.collageContainer{
   @include box-sizing("border-box");
   margin-top: 20px;
   .collagePicContainer{
@@ -598,6 +621,7 @@ footer{
 }
 
 #soundBoard{
+  @include box-sizing("border-box");
   width: 740px;
   margin-left: auto;
   margin-right: auto;
@@ -749,10 +773,11 @@ footer{
       width: 400px;
       li{
         color: white;
+        width: 30px;
         font-size: 3.5em;
         display: inline-block;
         text-align: center;
-        margin-right: 63px;
+        margin-right: 70px;
       }
     }
 
@@ -769,6 +794,23 @@ footer{
         text-align: center;
         margin-right: 26px;
       }
+    }
+  }
+}
+
+#allShops{
+  @include box-sizing("border-box");
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  li{
+    font-size: 2.2em;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    span{
+      font-family: bebas-neue;
+      font-size: 0.8em;
     }
   }
 }
@@ -824,14 +866,15 @@ footer{
 #vintageContainer{
   @include box-sizing("border-box");
   width: 700px;
-  margin: 100px auto 100px auto;
+  min-height: 250px;
+  margin: 30px auto 20px auto;
   position: relative;
   .bigFrame{
     background: url("../images/5_vintage/frame_big.png")no-repeat;
     width: 286px;
     height: 285px;
     position: absolute;
-    top: -50px;
+    top: -20px;
     left: 210px;
     img{
       margin-top: 44px;
@@ -877,10 +920,32 @@ footer{
       transform: rotate(-10deg);
     }
   }
-  #frameLeft{
-  }
-  #frameRight{
 
+  .frame{
+    background: url("../images/5_vintage/frame_list.png")no-repeat;
+    width: 151px;
+    height: 150px;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    img{
+      margin-top: 22px;
+      margin-left: 22px;
+      width: 107px;
+      height: 106px;
+
+      background-clip: border-box;
+      -moz-background-clip: border-box;
+      -webkit-background-clip: border-box;
+      -o-background-clip: border-box;
+    }
+    &:hover{
+      -webkit-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1); /* Chrome 4+, Op 15+, Saf 3.1, iOS Saf 3.2+ */
+      -moz-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1); /* Fx 3.5-15 */
+      -ms-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1); /* IE 9 */
+      -o-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1); /* Op 10.5-12 */
+      transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+    }
   }
 }
 
@@ -890,11 +955,11 @@ footer{
   figure{
     img{
       border: $border;
-      margin-top: 0px;
+      margin-top: 20px;
       margin-left: 50px;
 
-      width: 248px;
-      height: 187px;
+      width: 308px;
+      height: 247px;
 
       background-clip: border-box;
       -moz-background-clip: border-box;
@@ -916,6 +981,7 @@ footer{
       text-align: right;
       position: absolute;
       right: 0px;
+      width: 300px;
     }
 
     p{
@@ -938,7 +1004,6 @@ footer{
   height: 50px;
   margin: 80px auto 20px auto;
   position: relative;
-  border-top: $border;
   display: block;
 
   .btnTop{
@@ -1169,7 +1234,7 @@ footer{
 
 @media  only screen and (max-width: 700px) {
 
-  #worksContainer{
+  .worksContainer{
     width: 700px;
 
   }
@@ -1186,7 +1251,7 @@ footer{
       }
     }
 
-  #worksContainer{
+  .worksContainer{
     width: 600px;
   }
 
@@ -1219,7 +1284,7 @@ footer{
      font-size: 1.8em;
    }
   }
-  #worksContainer{
+  .worksContainer{
     width: 350px;
   }
 
@@ -1228,7 +1293,7 @@ footer{
     margin-left: 20px;
   }
 
-  #collageContainer{
+  .collageContainer{
     .collagePicContainer{
       padding: 0px 10px 10px 10px;
     }
@@ -1254,27 +1319,33 @@ footer{
     .dateDialects{
       font-size: 1.3em;
     }
-    }
+  }
 
   #fashionContainer{
-    width: 300px;
-    margin-bottom: 30px;
+    margin: 0;
+    display: block;
+    min-height: 250px;
+    width: 140px;
     #dress{
       top: 180px;
-      left: 165px;
+      left: 220px;
     }
     #textContainer{
+      margin-top: 40px;
+      width: 120px;
       top: -70px;
       #labels{
         top: 80px;
         left:-55px;
       }
       #amountOfShops{
+        width: 320px;
         top: 200px;
         left: 43px;
       }
 
       #shops{
+        width: 320px;
         top: 250px;
         left: 25px;
       }
@@ -1312,27 +1383,28 @@ footer{
   }
 
   #vintageContainer{
-    width: 400px;
-    min-height: 500px;
+    width: 370px;
+    min-height: 600px;
+    margin-bottom: -100px;
     .bigFrame{
-      top: 100px;
+      top: 165px;
       left: 30px;
     }
     #frameLeft, #frameRight{
       position: absolute;
     }
     #frameLeft{
-        top: -80px;
+        top: -20px;
         left: 0px;
     }
     #frameRight{
-        top: 380px;
+        top: 450px;
         right: 50px;
     }
   }
 
   #lostPicContainer{
-    width: 400px;
+    width: 300px;
     figure{
       img{
         margin-left: 68px;
@@ -1422,4 +1494,32 @@ footer{
       }
     }
   }
+
+  #soundBoard{
+    width: 360px;
+     li{
+       margin-top: 20px;
+     }
+  }
+
+  #allShops{
+    width: 350px;
+    margin-top: 20px;
+    margin-left: 10px;
+    li{
+      margin-bottom: 10px;
+    }
+  }
+
+  #detailGroup{
+    width: 400px;
+    img{
+      width: 350px;
+      height: 350px;
+    }
+    p{
+      width: 400px;
+    }
+  }
+
 }

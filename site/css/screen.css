@@ -312,29 +312,29 @@ footer #footerContent ul .twtricon {
   min-height: 200px;
 }
 
-#worksContainer {
+.worksContainer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 20px auto 20px auto;
   width: 800px;
 }
-#worksContainer #homeheader p {
+.worksContainer #homeheader p {
   font-size: 2em;
   color: #e95c54;
   text-align: left;
   padding-top: 10px;
   padding-left: 36px;
 }
-#worksContainer #works {
+.worksContainer #works {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#worksContainer #works span {
+.worksContainer #works span {
   color: #558178;
 }
-#worksContainer #works h3 {
+.worksContainer #works h3 {
   width: 200px;
   display: block;
   border: black 4px solid;
@@ -343,12 +343,12 @@ footer #footerContent ul .twtricon {
   font-size: 2.4em;
   font-family: bebas-neue;
 }
-#worksContainer #works .work {
+.worksContainer #works .work {
   border-top: black solid 4px;
   margin-top: 80px;
   position: relative;
 }
-#worksContainer #works .work header {
+.worksContainer #works .work header {
   position: absolute;
   top: -22px;
   left: 45px;
@@ -357,15 +357,15 @@ footer #footerContent ul .twtricon {
   text-align: center;
   background-color: #f4eac6;
 }
-#worksContainer #works .work header h4 {
+.worksContainer #works .work header h4 {
   font-family: bebas-neue;
   color: #e95c54;
 }
-#worksContainer #works #collage #detailCollage {
+.worksContainer #works #collage #detailCollage {
   width: 400px;
   margin: 30px auto 60px auto;
 }
-#worksContainer #works #collage #detailCollage img {
+.worksContainer #works #collage #detailCollage img {
   width: 300px;
   height: 300px;
   margin: 10px 0px 0px 15px;
@@ -375,11 +375,37 @@ footer #footerContent ul .twtricon {
   -webkit-background-clip: border-box;
   -o-background-clip: border-box;
 }
-#worksContainer #works #collage #detailCollage p {
+.worksContainer #works #collage #detailCollage p {
   text-align: center;
   font-size: 2.2em;
   width: 300px;
   padding: 0px;
+}
+
+#detailGroup {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 30px auto 60px auto;
+  width: 500px;
+}
+#detailGroup img {
+  width: 500px;
+  height: 500px;
+  margin: 10px auto 10px auto;
+  border: 4px solid black;
+  background-clip: border-box;
+  -moz-background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -o-background-clip: border-box;
+}
+#detailGroup p {
+  text-align: center;
+  font-size: 2.5em;
+  width: 500px;
+}
+#detailGroup p span {
+  font-family: bebas-neue;
 }
 
 .explaination {
@@ -388,19 +414,17 @@ footer #footerContent ul .twtricon {
   box-sizing: border-box;
   width: 710px;
   font-size: 1.8em;
-  margin-top: 15px;
-  margin-left: 55px;
   line-height: 130%;
-  margin-bottom: 40px;
+  margin: 15px 0px 40px 55px;
 }
 
-#collageContainer {
+.collageContainer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin-top: 20px;
 }
-#collageContainer .collagePicContainer {
+.collageContainer .collagePicContainer {
   display: inline-block;
   position: relative;
   margin-right: auto;
@@ -408,7 +432,7 @@ footer #footerContent ul .twtricon {
   padding-left: 35px;
   z-index: 6;
 }
-#collageContainer .collagePicContainer figure img {
+.collageContainer .collagePicContainer figure img {
   width: 145px;
   height: 145px;
   border: 4px solid black;
@@ -417,10 +441,10 @@ footer #footerContent ul .twtricon {
   -webkit-background-clip: border-box;
   -o-background-clip: border-box;
 }
-#collageContainer .collagePicContainer:hover .overimgTop a, #collageContainer .collagePicContainer:hover .overimgBottom a {
+.collageContainer .collagePicContainer:hover .overimgTop a, .collageContainer .collagePicContainer:hover .overimgBottom a {
   display: block;
 }
-#collageContainer .overimgTop a, #collageContainer .overimgBottom a {
+.collageContainer .overimgTop a, .collageContainer .overimgBottom a {
   color: white;
   display: none;
   position: absolute;
@@ -432,7 +456,7 @@ footer #footerContent ul .twtricon {
   -moz-animation-timing-function: ease-in;
   -webkit-animation-timing-function: ease-in;
 }
-#collageContainer .overimgTop a p, #collageContainer .overimgTop a .iconCalender, #collageContainer .overimgBottom a p, #collageContainer .overimgBottom a .iconCalender {
+.collageContainer .overimgTop a p, .collageContainer .overimgTop a .iconCalender, .collageContainer .overimgBottom a p, .collageContainer .overimgBottom a .iconCalender {
   color: #ffffff;
   animation: fadein 0.5s;
   -moz-animation: fadein 0.5s;
@@ -440,7 +464,7 @@ footer #footerContent ul .twtricon {
   -o-animation: fadein 0.5s;
   -ms-animation: fadein 0.5s;
 }
-#collageContainer .overimgTop a {
+.collageContainer .overimgTop a {
   background: url("../images/1_collage/over_top.png");
   top: 4px;
   z-index: 7;
@@ -454,7 +478,7 @@ footer #footerContent ul .twtricon {
   -o-animation: overslideintop 0.5s;
   -ms-animation: overslideintop 0.5s;
 }
-#collageContainer .overimgBottom a {
+.collageContainer .overimgBottom a {
   background: url("../images/1_collage/over_bottom.png");
   bottom: 6px;
   z-index: 8;
@@ -467,7 +491,7 @@ footer #footerContent ul .twtricon {
   -o-animation: overslideinbottom 0.5s;
   -ms-animation: overslideinbottom 0.5s;
 }
-#collageContainer .iconCalender {
+.collageContainer .iconCalender {
   position: absolute;
   bottom: 8px;
   left: 10px;
@@ -645,6 +669,9 @@ footer #footerContent ul .twtricon {
 }
 
 #soundBoard {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 740px;
   margin-left: auto;
   margin-right: auto;
@@ -811,10 +838,11 @@ footer #footerContent ul .twtricon {
 }
 #fashionContainer #textContainer #amountOfShops li {
   color: white;
+  width: 30px;
   font-size: 3.5em;
   display: inline-block;
   text-align: center;
-  margin-right: 63px;
+  margin-right: 70px;
 }
 #fashionContainer #textContainer #shops {
   position: absolute;
@@ -829,6 +857,25 @@ footer #footerContent ul .twtricon {
   display: inline-block;
   text-align: center;
   margin-right: 26px;
+}
+
+#allShops {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#allShops li {
+  font-size: 2.2em;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+#allShops li span {
+  font-family: bebas-neue;
+  font-size: 0.8em;
 }
 
 #imageContainer {
@@ -884,7 +931,8 @@ footer #footerContent ul .twtricon {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 700px;
-  margin: 100px auto 100px auto;
+  min-height: 250px;
+  margin: 30px auto 20px auto;
   position: relative;
 }
 #vintageContainer .bigFrame {
@@ -892,7 +940,7 @@ footer #footerContent ul .twtricon {
   width: 286px;
   height: 285px;
   position: absolute;
-  top: -50px;
+  top: -20px;
   left: 210px;
 }
 #vintageContainer .bigFrame img {
@@ -934,6 +982,35 @@ footer #footerContent ul .twtricon {
   -ms-transform: rotate(-10deg);
   transform: rotate(-10deg);
 }
+#vintageContainer .frame {
+  background: url("../images/5_vintage/frame_list.png") no-repeat;
+  width: 151px;
+  height: 150px;
+  display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+#vintageContainer .frame img {
+  margin-top: 22px;
+  margin-left: 22px;
+  width: 107px;
+  height: 106px;
+  background-clip: border-box;
+  -moz-background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -o-background-clip: border-box;
+}
+#vintageContainer .frame:hover {
+  -webkit-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+  /* Chrome 4+, Op 15+, Saf 3.1, iOS Saf 3.2+ */
+  -moz-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+  /* Fx 3.5-15 */
+  -ms-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+  /* IE 9 */
+  -o-transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+  /* Op 10.5-12 */
+  transform: rotate(-10deg) scaleX(1.1) scaleY(1.1);
+}
 
 #lostPicContainer {
   -webkit-box-sizing: border-box;
@@ -943,10 +1020,10 @@ footer #footerContent ul .twtricon {
 }
 #lostPicContainer figure img {
   border: 4px solid black;
-  margin-top: 0px;
+  margin-top: 20px;
   margin-left: 50px;
-  width: 248px;
-  height: 187px;
+  width: 308px;
+  height: 247px;
   background-clip: border-box;
   -moz-background-clip: border-box;
   -webkit-background-clip: border-box;
@@ -965,6 +1042,7 @@ footer #footerContent ul .twtricon {
   text-align: right;
   position: absolute;
   right: 0px;
+  width: 300px;
 }
 #lostPicContainer .lines p {
   color: #e95c54;
@@ -985,7 +1063,6 @@ footer #footerContent ul .twtricon {
   height: 50px;
   margin: 80px auto 20px auto;
   position: relative;
-  border-top: 4px solid black;
   display: block;
 }
 #topBtn .btnTop {
@@ -1238,7 +1315,7 @@ footer #footerContent ul .twtricon {
   }
 }
 @media only screen and (max-width: 700px) {
-  #worksContainer {
+  .worksContainer {
     width: 700px;
   }
 }
@@ -1251,7 +1328,7 @@ footer #footerContent ul .twtricon {
     height: 20px;
   }
 
-  #worksContainer {
+  .worksContainer {
     width: 600px;
   }
 
@@ -1280,7 +1357,7 @@ footer #footerContent ul .twtricon {
     font-size: 1.8em;
   }
 
-  #worksContainer {
+  .worksContainer {
     width: 350px;
   }
 
@@ -1289,13 +1366,13 @@ footer #footerContent ul .twtricon {
     margin-left: 20px;
   }
 
-  #collageContainer .collagePicContainer {
+  .collageContainer .collagePicContainer {
     padding: 0px 10px 10px 10px;
   }
-  #collageContainer .overimgTop a, #collageContainer .overimgBottom a {
+  .collageContainer .overimgTop a, .collageContainer .overimgBottom a {
     left: 14px;
   }
-  #collageContainer .overimgBottom a {
+  .collageContainer .overimgBottom a {
     bottom: 16px;
   }
 
@@ -1315,14 +1392,18 @@ footer #footerContent ul .twtricon {
   }
 
   #fashionContainer {
-    width: 300px;
-    margin-bottom: 30px;
+    margin: 0;
+    display: block;
+    min-height: 250px;
+    width: 140px;
   }
   #fashionContainer #dress {
     top: 180px;
-    left: 165px;
+    left: 220px;
   }
   #fashionContainer #textContainer {
+    margin-top: 40px;
+    width: 120px;
     top: -70px;
   }
   #fashionContainer #textContainer #labels {
@@ -1330,10 +1411,12 @@ footer #footerContent ul .twtricon {
     left: -55px;
   }
   #fashionContainer #textContainer #amountOfShops {
+    width: 320px;
     top: 200px;
     left: 43px;
   }
   #fashionContainer #textContainer #shops {
+    width: 320px;
     top: 250px;
     left: 25px;
   }
@@ -1369,27 +1452,28 @@ footer #footerContent ul .twtricon {
   }
 
   #vintageContainer {
-    width: 400px;
-    min-height: 500px;
+    width: 370px;
+    min-height: 600px;
+    margin-bottom: -100px;
   }
   #vintageContainer .bigFrame {
-    top: 100px;
+    top: 165px;
     left: 30px;
   }
   #vintageContainer #frameLeft, #vintageContainer #frameRight {
     position: absolute;
   }
   #vintageContainer #frameLeft {
-    top: -80px;
+    top: -20px;
     left: 0px;
   }
   #vintageContainer #frameRight {
-    top: 380px;
+    top: 450px;
     right: 50px;
   }
 
   #lostPicContainer {
-    width: 400px;
+    width: 300px;
   }
   #lostPicContainer figure img {
     margin-left: 68px;
@@ -1472,5 +1556,32 @@ footer #footerContent ul .twtricon {
   #missionNav #rightNav ul li {
     width: 180px;
     margin: 5px 0px 15px 0px;
+  }
+
+  #soundBoard {
+    width: 360px;
+  }
+  #soundBoard li {
+    margin-top: 20px;
+  }
+
+  #allShops {
+    width: 350px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  #allShops li {
+    margin-bottom: 10px;
+  }
+
+  #detailGroup {
+    width: 400px;
+  }
+  #detailGroup img {
+    width: 350px;
+    height: 350px;
+  }
+  #detailGroup p {
+    width: 400px;
   }
 }

@@ -18,7 +18,7 @@
   }
 </script>
      <script type="text/javascript" src="js/app.js"></script>
-     <script type="text/javascript" src="js/skrollr/skrollr.js"></script>
+     <!--<script type="text/javascript" src="js/skrollr/skrollr.js"></script>-->
     <script type="text/javascript">
         skrollr.init();
     </script>
