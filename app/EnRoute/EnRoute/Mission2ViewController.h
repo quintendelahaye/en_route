@@ -16,7 +16,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "Mission2Delegate.h"
 
-@interface Mission2ViewController : UIViewController<PhotoViewDelegate>
+@interface Mission2ViewController : UIViewController<PhotoViewDelegate,VideoDelegate>
 
 @property (nonatomic, strong) Mission2View *view;
 @property (nonatomic, strong) PhotoViewController *photoVC;

@@ -73,7 +73,7 @@
             todo = [todo stringByAppendingString:@"."];
             [self.view addSubview:self.view.klaar];
             self.view.picture.center = CGPointMake(75, 460);
-            [self.view.klaar addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
+            //[self.view.klaar addTarget:self action:@selector(upload:) forControlEvents:UIControlEventTouchUpInside];
             [self.view.klaar addTarget:self action:@selector(uploadDown:) forControlEvents:UIControlEventTouchDown];
         }
     }
@@ -98,6 +98,7 @@
     [self.view.word2.word addTarget:self action:@selector(showRecordView2:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.word3.word addTarget:self action:@selector(showRecordView3:) forControlEvents:UIControlEventTouchUpInside];
     [self updateTodo];
+    self.view.delegate = self;
 }
 
 - (void)showRecordView1:(id)sender{
@@ -169,7 +170,7 @@
     
 }
 
-- (void)upload:(id)sender{
+- (void)videoPlaying{
     NSData *imageData = UIImageJPEGRepresentation([self addText], 0.4);
     NSString *urlString = @"http://169.254.216.138/MAIV/en_route/site/upload/mission2.php";
     

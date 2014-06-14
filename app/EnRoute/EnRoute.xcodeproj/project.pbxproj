@@ -40,6 +40,8 @@
 		A04B1634194C7E0B005BD69D /* Mission3ExplanationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04B1633194C7E0B005BD69D /* Mission3ExplanationViewController.m */; };
 		A04B1637194C7E1E005BD69D /* Mission3ExplanationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */; };
 		A04B1639194C8BED005BD69D /* upload.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A04B1638194C8BED005BD69D /* upload.mp4 */; };
+		A04FF4F6194CD6D400570BB3 /* Mission3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04FF4F5194CD6D400570BB3 /* Mission3ViewController.m */; };
+		A04FF4F9194CD6EC00570BB3 /* Mission3View.m in Sources */ = {isa = PBXBuildFile; fileRef = A04FF4F8194CD6EC00570BB3 /* Mission3View.m */; };
 		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
 		A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FB5C619467476000E0A54 /* MenuViewController.m */; };
 		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
@@ -52,7 +54,6 @@
 		A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77419472B2A008D2DD2 /* MemberView.m */; };
 		A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F7771947AB56008D2DD2 /* NameViewController.m */; };
 		A0B9F77B1947AB6A008D2DD2 /* NameView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77A1947AB6A008D2DD2 /* NameView.m */; };
-		A0CE70951948947E00652565 /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70941948947E00652565 /* MemberViewController.m */; };
 		A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A019489A6500652565 /* TutorialViewController.m */; };
 		A0CE70A419489A7C00652565 /* TutorialView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A319489A7C00652565 /* TutorialView.m */; };
 		A0CE70B41948B95700652565 /* handleiding_stap01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */; };
@@ -139,6 +140,11 @@
 		A04B1635194C7E1E005BD69D /* Mission3ExplanationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3ExplanationView.h; sourceTree = "<group>"; };
 		A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission3ExplanationView.m; sourceTree = "<group>"; };
 		A04B1638194C8BED005BD69D /* upload.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = upload.mp4; sourceTree = "<group>"; };
+		A04FF4F3194CD16F00570BB3 /* VideoDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoDelegate.h; sourceTree = "<group>"; };
+		A04FF4F4194CD6D400570BB3 /* Mission3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3ViewController.h; sourceTree = "<group>"; };
+		A04FF4F5194CD6D400570BB3 /* Mission3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission3ViewController.m; sourceTree = "<group>"; };
+		A04FF4F7194CD6EC00570BB3 /* Mission3View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3View.h; sourceTree = "<group>"; };
+		A04FF4F8194CD6EC00570BB3 /* Mission3View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mission3View.m; sourceTree = "<group>"; };
 		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
 		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
 		A05129A81945EF1C00709BCB /* Mission1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1Delegate.h; sourceTree = "<group>"; };
@@ -165,8 +171,6 @@
 		A0B9F7771947AB56008D2DD2 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		A0B9F7791947AB6A008D2DD2 /* NameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameView.h; sourceTree = "<group>"; };
 		A0B9F77A1947AB6A008D2DD2 /* NameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameView.m; sourceTree = "<group>"; };
-		A0CE70931948947E00652565 /* MemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberViewController.h; sourceTree = "<group>"; };
-		A0CE70941948947E00652565 /* MemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemberViewController.m; sourceTree = "<group>"; };
 		A0CE709F19489A6500652565 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		A0CE70A019489A6500652565 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		A0CE70A219489A7C00652565 /* TutorialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialView.h; sourceTree = "<group>"; };
@@ -266,8 +270,6 @@
 				815C300C193BA49C004E3C5C /* RegisterView.m */,
 				A0B9F77319472B2A008D2DD2 /* MemberView.h */,
 				A0B9F77419472B2A008D2DD2 /* MemberView.m */,
-				A0CE70931948947E00652565 /* MemberViewController.h */,
-				A0CE70941948947E00652565 /* MemberViewController.m */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -390,6 +392,10 @@
 				A04B1633194C7E0B005BD69D /* Mission3ExplanationViewController.m */,
 				A04B1635194C7E1E005BD69D /* Mission3ExplanationView.h */,
 				A04B1636194C7E1E005BD69D /* Mission3ExplanationView.m */,
+				A04FF4F4194CD6D400570BB3 /* Mission3ViewController.h */,
+				A04FF4F5194CD6D400570BB3 /* Mission3ViewController.m */,
+				A04FF4F7194CD6EC00570BB3 /* Mission3View.h */,
+				A04FF4F8194CD6EC00570BB3 /* Mission3View.m */,
 			);
 			name = Mission3;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				A0F12C3C194AF8C200BE8798 /* RecordView.h */,
 				A0F12C3D194AF8C200BE8798 /* RecordView.m */,
 				A00893F7194B95F7008DD457 /* Mission2Delegate.h */,
+				A04FF4F3194CD16F00570BB3 /* VideoDelegate.h */,
 			);
 			name = Mission2;
 			sourceTree = "<group>";
@@ -658,11 +665,11 @@
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
 				A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */,
+				A04FF4F6194CD6D400570BB3 /* Mission3ViewController.m in Sources */,
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
 				A04B1634194C7E0B005BD69D /* Mission3ExplanationViewController.m in Sources */,
 				A04B1637194C7E1E005BD69D /* Mission3ExplanationView.m in Sources */,
 				A0F2768219485ABC008AB4E6 /* DropItemButton.m in Sources */,
-				A0CE70951948947E00652565 /* MemberViewController.m in Sources */,
 				A0DAC6321942558A0011695B /* TourView.m in Sources */,
 				815C3001193B6F1A004E3C5C /* MainViewController.m in Sources */,
 				A0A0BCA1194513A1004158EA /* Mission1ResultView.m in Sources */,
@@ -677,6 +684,7 @@
 				A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */,
 				A0CE70CC1949D78E00652565 /* TutorialMission2ViewController.m in Sources */,
 				817C3F02193B6E8600DA6563 /* main.m in Sources */,
+				A04FF4F9194CD6EC00570BB3 /* Mission3View.m in Sources */,
 				A0CE70BD1948C19200652565 /* TutorialScreenView.m in Sources */,
 				815C3013193BB71E004E3C5C /* StartScreenViewController.m in Sources */,
 			);

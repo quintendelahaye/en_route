@@ -50,6 +50,8 @@
 
 - (void)startOpdracht:(id)sender{
     NSLog(@"Start Opdracht3");
+    self.mission3VC = [[Mission3ViewController alloc]initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:self.mission3VC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

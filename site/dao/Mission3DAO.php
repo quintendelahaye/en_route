@@ -11,6 +11,19 @@ class Mission3DAO{
         $this->pdo = DatabasePDO::getInstance();
     }
 
+    public function insertShop($group_id,$shop_name){
+        $sql = "INSERT INTO enroute_opdracht3(group_id, shop_name)
+                VALUES (:group_id,:shop_name)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":group_id",$group_id);
+        $stmt->bindValue(":shop_name",$shop_name);
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function getAllShopsAndAmount(){
         $sql = "SELECT shop_name, COUNT(*) AS numberOFShops
                 FROM enroute_opdracht3

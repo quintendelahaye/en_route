@@ -12,6 +12,7 @@
 #import "UIElementFactory.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "AVFoundation/AVFoundation.h"
+#import "VideoDelegate.h"
 
 @interface Mission2View : UIView
 
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) UIImageView *capturedPicture;
 @property (nonatomic, strong) UIImageView *bg;
 @property (nonatomic, strong) MPMoviePlayerController *videoController;
+@property (nonatomic, weak) id<VideoDelegate> delegate;
 
 - (void)changeLblTodoWithText:(NSString*)text;
 - (void)createVideo;

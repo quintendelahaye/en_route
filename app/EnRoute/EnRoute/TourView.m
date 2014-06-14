@@ -90,7 +90,7 @@
                                                                  andTitle:@"opdracht3_marker"];
         [self.mapView addAnnotation:annotation4];
         
-        self.mapView.zoom = 14;
+        self.mapView.zoom = 15;
     }
     return self;
 }

@@ -54,6 +54,10 @@
     self.lblTeamName.font = [UIFont fontWithName:BEBAS size:30];
     self.lblTeamName.textColor = [UIColor colorWithRed:244/250.0f green:234/250.0f blue:198/250.0f alpha:1];
     [self addSubview:self.lblTeamName];
+    
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, 3)];
+    line.backgroundColor = [UIColor blackColor];
+    [self addSubview:line];
 }
 
 -(void)createButtons{

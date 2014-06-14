@@ -72,7 +72,17 @@
     [self.videoController.backgroundView addSubview:placeholder];
     [self addSubview:self.videoController.view];
     
+    [self.videoController prepareToPlay];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(moviePlayerLoadStateChanged:)
+                                                 name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
+}
+
+- (void)moviePlayerLoadStateChanged:(id)sender{
+    NSLog(@"ti gelukt");
     [self.videoController play];
+    [self.delegate videoPlaying];
 }
 
 /*
