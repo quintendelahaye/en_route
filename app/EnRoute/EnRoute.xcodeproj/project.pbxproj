@@ -34,6 +34,7 @@
 		817C3F15193B6E8600DA6563 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817C3EF9193B6E8600DA6563 /* CoreData.framework */; };
 		817C3F1D193B6E8600DA6563 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 817C3F1B193B6E8600DA6563 /* InfoPlist.strings */; };
 		817C3F1F193B6E8600DA6563 /* EnRouteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C3F1E193B6E8600DA6563 /* EnRouteTests.m */; };
+		A00893FD194BCA20008DD457 /* markers.geojson in Resources */ = {isa = PBXBuildFile; fileRef = A00893FC194BCA20008DD457 /* markers.geojson */; };
 		A04559B819460C7F00561159 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = A04559B719460C7F00561159 /* BebasNeue.otf */; };
 		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
 		A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FB5C619467476000E0A54 /* MenuViewController.m */; };
@@ -125,6 +126,8 @@
 		817C3F1C193B6E8600DA6563 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		817C3F1E193B6E8600DA6563 /* EnRouteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnRouteTests.m; sourceTree = "<group>"; };
 		8B5516BAB8A141499873FBF1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A00893F7194B95F7008DD457 /* Mission2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission2Delegate.h; sourceTree = "<group>"; };
+		A00893FC194BCA20008DD457 /* markers.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = markers.geojson; sourceTree = "<group>"; };
 		A04559B719460C7F00561159 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BebasNeue.otf; sourceTree = "<group>"; };
 		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
 		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 		817C3EFC193B6E8600DA6563 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A00893FC194BCA20008DD457 /* markers.geojson */,
 				A04559B719460C7F00561159 /* BebasNeue.otf */,
 				817C3EFD193B6E8600DA6563 /* EnRoute-Info.plist */,
 				817C3EFE193B6E8600DA6563 /* InfoPlist.strings */,
@@ -451,6 +455,7 @@
 				A0F12C3B194AF45600BE8798 /* PhotoViewDelegate.h */,
 				A0F12C3C194AF8C200BE8798 /* RecordView.h */,
 				A0F12C3D194AF8C200BE8798 /* RecordView.m */,
+				A00893F7194B95F7008DD457 /* Mission2Delegate.h */,
 			);
 			name = Mission2;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				A0CE70B61948B95700652565 /* handleiding_stap03.mp4 in Resources */,
 				817C3F00193B6E8600DA6563 /* InfoPlist.strings in Resources */,
 				8147353D194069CD003B23CC /* images.xcassets in Resources */,
+				A00893FD194BCA20008DD457 /* markers.geojson in Resources */,
 				A04559B819460C7F00561159 /* BebasNeue.otf in Resources */,
 				8147354219409C14003B23CC /* Corki-Rounded.otf in Resources */,
 				A0CE70B51948B95700652565 /* handleiding_stap02.mp4 in Resources */,

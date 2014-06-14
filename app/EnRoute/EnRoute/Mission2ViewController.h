@@ -14,6 +14,7 @@
 #import "UIElementFactory.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioServices.h>
+#import "Mission2Delegate.h"
 
 @interface Mission2ViewController : UIViewController<PhotoViewDelegate>
 
@@ -28,5 +29,6 @@
 @property (nonatomic, strong) NSMutableDictionary *records;
 
 @property (nonatomic, assign) BOOL photoIsCaptured;
+@property (nonatomic, weak) id<Mission2Delegate> delegate;
 
 @end

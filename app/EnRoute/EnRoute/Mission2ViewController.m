@@ -209,7 +209,8 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"Image Return String: %@", returnString);
-
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.delegate Mission2Finished];
     
 }
 

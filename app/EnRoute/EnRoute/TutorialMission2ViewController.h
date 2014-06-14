@@ -10,10 +10,12 @@
 #import "TutorialMission2View.h"
 #import "TitleView.h"
 #import "Mission2ViewController.h"
+#import "Mission2Delegate.h"
 
-@interface TutorialMission2ViewController : UIViewController <UIScrollViewDelegate>
+@interface TutorialMission2ViewController : UIViewController <UIScrollViewDelegate,Mission2Delegate>
 
 @property (nonatomic, strong) TutorialMission2View *view;
 @property (nonatomic, strong) Mission2ViewController *mission2VC;
+@property (nonatomic, weak) id<Mission2Delegate> delegate;
 
 @end

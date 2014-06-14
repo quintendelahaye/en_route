@@ -52,6 +52,12 @@
     NSLog(@"show mission2");
     self.mission2VC = [[Mission2ViewController alloc]initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:self.mission2VC animated:YES];
+    self.mission2VC.delegate = self;
+}
+
+- (void)Mission2Finished{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.delegate Mission2Finished];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{

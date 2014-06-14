@@ -64,8 +64,7 @@
 - (void)Mission1Finished{
     //UnlockedView
     UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
-    self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height)];
-    self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
+    self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Jullie kunnen kiezen welk deel jullie nu eerst gaan bezoeken." andLast:NO];
     [self.view addSubview:self.unlockedView];
 }
 

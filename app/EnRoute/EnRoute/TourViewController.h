@@ -13,7 +13,7 @@
 #import "TitleView.h"
 #import "TutorialMission2ViewController.h"
 
-@interface TourViewController : UIViewController <TourDelegate,Mission1Delegate>
+@interface TourViewController : UIViewController <TourDelegate,Mission1Delegate,Mission2Delegate>
 
 @property (nonatomic, strong) TourView *view;
 @property (nonatomic, strong) Mission1ViewController *mission1VC;
