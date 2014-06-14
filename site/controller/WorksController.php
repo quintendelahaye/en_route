@@ -15,6 +15,9 @@
 
             require_once WWW_ROOT . 'dao' . DS . 'Mission1DAO.php';
             $this->mission1DAO = new Mission1DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'Mission2DAO.php';
+            $this->mission2DAO = new Mission2DAO();
         }
 
         public function works()
@@ -22,17 +25,18 @@
             $activeMission = "";
             $mission = "";
             $title = "";
+
+            $missions = $this->missionsDAO->getMissions();
+            $this->set("missions", $missions);
+
+            //mission1------------------------------
             $mission1 = false;
             $mission2 = false;
             $mission3 = false;
             $mission4 = false;
             $mission5 = false;
             $mission6 = false;
-
             $collage = "";
-
-            $missions = $this->missionsDAO->getMissions();
-            $this->set("missions", $missions);
 
             if(!empty($_GET["mission"]))
             {
@@ -90,8 +94,16 @@
             $this->set("mission", $mission);
             $this->set("title", $title);
 
+            //mission1------------------------------
             $collagepictures = $this->mission1DAO->getPicturesAndGroupNames();
             $this->set("collagepictures", $collagepictures);
+
+            //mission2------------------------------
+            $soundsAndBgs = $this->mission2DAO->getAllSoundsAndPictures();
+            $this->set("soundsAndBgs", $soundsAndBgs);
+
+            $sounds = $this->mission2DAO->getAllSounds();
+            $this->set("sounds", $sounds);
 
             $this->set("mission1", $mission1);
             $this->set("mission2", $mission2);

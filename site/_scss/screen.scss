@@ -521,6 +521,9 @@ footer{
     z-index: 6;
 
     figure img{
+
+      width: 197px;
+      height: 197px;
       border:$border;
       background-clip: border-box;
       -moz-background-clip: border-box;
@@ -538,7 +541,7 @@ footer{
     position: absolute;
     width: 197px;
     opacity: 0.95;
-    left:43px;
+    left:39px;
     text-align: center;
 
     animation-timing-function: ease-in;
@@ -556,7 +559,7 @@ footer{
 
   .overimgTop a{
     background: url("../images/2_dialecten/over_top.png");
-    top: 8px;
+    top: 4px;
     z-index: 7;
     height: 130px;
     font-family: bebas-neue;
@@ -579,7 +582,7 @@ footer{
 
   .overimgBottom a{
     background: url("../images/2_dialecten/over_bottom.png");
-    bottom: 10px;
+    bottom: 6px;
     z-index: 8;
     height: 39px;
     font-size: 2em;
@@ -592,6 +595,29 @@ footer{
     -o-animation: slideinbottom 0.5s;
     -ms-animation: slideinbottom 0.5s;
   }
+}
+
+#soundBoard{
+  width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+   li{
+     width: 157px;
+     height: 39px;
+     margin-top: 10px;
+     margin-right: 20px;
+       display: inline-block;
+       background: url("../images/btn_sound.png")no-repeat 0px 0px;
+       &:hover{ background: url("../images/btn_sound.png")no-repeat 0px -39px; }
+     a{
+       font-family: bebas-neue;
+       color: white;
+       font-size: 2em;
+       display: block;
+       padding-top: 8px;
+       padding-left: 10px;
+     }
+   }
 }
 
 @keyframes slideintop{

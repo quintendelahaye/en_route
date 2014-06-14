@@ -69,26 +69,24 @@
             <p class="explaination">De teams krijgen de opdracht om bepaalde <span>trefwoorden</span> uit een Antwerps liedje te laten inspreken door <span>Antwerpenaren</span> met een
             zeer hard <span>accent</span>, ook moeten ze een <span>achtergrondfoto</span> nemen die perfect past bij hun stukje liedje.</p>
             <ul id="dialectsContainer">
-                <li class="dialectContainer">
-                    <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                    <div class="overimgBottom"><a href="#"><p>beiaard</p></a></div>
-                    <a href="#"><figure><img src="images/2_dialecten/photo1.png" alt="foto1"/></figure></a>
-                    <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right" >21/04/14</p></div>
-                </li>
-                <li class="dialectContainer">
-                    <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                    <div class="overimgBottom"><a href="#"><p>lievrouwke</p></a></div>
-                    <a href="#"><figure><img src="images/2_dialecten/photo2.png" alt="foto2"/></figure></a>
-                    <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right" >21/04/14</p></div>
-                </li>
-                <li class="dialectContainer">
-                    <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                    <div class="overimgBottom"><a href="#"><p>katteke</p></a></div>
-                    <a href="#"><figure><img src="images/2_dialecten/photo3.png" alt="foto3"/></figure></a>
-                    <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right" >21/04/14</p></div>
-                </li>
+                <?php foreach($soundsAndBgs as $soundAndImage): ?>
+                    <li class="dialectContainer">
+                        <audio>
+                        	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
+                        	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
+                        </audio>
+                        <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
+                        <div class="overimgBottom"><a href="#"><p><?php echo $soundAndImage["word"]; ?></p></a></div>
+                        <a class="sound" id="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>" href="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>"><figure><img src="upload/mission2/image<?php echo $soundAndImage["group_id"]; ?>.jpg" alt="foto1"/></figure></a>
+                        <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right"><?php echo date('d/m/y', strtotime($soundAndImage['created_date'])); ?></p></div>
+                    </li>
+                <?php endforeach; ?>
             </ul>
-            <a href="#" class="btnMore">Bekijk soundboard</a>
+            <ul id="soundBoard">
+                <?php foreach($sounds as $sound): ?>
+                    <li><a href="#" class="btnSound"><?php echo $sound["word"]; ?></a></li>
+                <?php endforeach; ?>
+            </ul>
         </section>
         <?php endif; ?>
         <?php if($mission3): ?>

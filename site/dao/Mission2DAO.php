@@ -40,4 +40,33 @@ class Mission2DAO{
             return false;
         }
     }
+
+    public function getAllSoundsAndPictures(){
+        $sql = "SELECT enroute_opdracht2_sound.*, enroute_groups.*
+                FROM enroute_opdracht2_sound
+                INNER JOIN enroute_groups
+                ON enroute_opdracht2_sound.group_id = enroute_groups.id
+                ORDER BY enroute_opdracht2_sound.id DESC";
+        $stmt = $this->pdo->prepare($sql);
+        if($stmt->execute()){
+            $soundsAndBgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($soundsAndBgs)){
+                return $soundsAndBgs;
+            }
+            return false;
+        }
+    }
+
+    public function getAllSounds(){
+        $sql = "SELECT *
+                FROM enroute_opdracht2_sound";
+        $stmt = $this->pdo->prepare($sql);
+        if($stmt->execute()){
+            $sounds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($sounds)){
+                return $sounds;
+            }
+            return false;
+        }
+    }
 }

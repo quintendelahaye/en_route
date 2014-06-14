@@ -58,22 +58,22 @@ class Mission1DAO{
     }
 
     public function getPictureAndGroupNameByPictureId($id){
-            $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
-                    FROM enroute_opdracht1
-                    INNER JOIN enroute_groups
-                    ON enroute_opdracht1.id = enroute_groups.id
-                    WHERE enroute_opdracht1.id = :id";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindValue(':id', $id);
-            if($stmt->execute())
-            {
-                $collage = $stmt->fetch(PDO::FETCH_ASSOC);
+        $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
+                FROM enroute_opdracht1
+                INNER JOIN enroute_groups
+                ON enroute_opdracht1.id = enroute_groups.id
+                WHERE enroute_opdracht1.id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':id', $id);
+        if($stmt->execute())
+        {
+            $collage = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                if(!empty($collage))
-                {
-                    return $collage;
-                }
-                return false;
+            if(!empty($collage))
+            {
+                return $collage;
             }
+            return false;
         }
+    }
 }
