@@ -46,7 +46,7 @@ class Mission2DAO{
                 FROM enroute_opdracht2_sound
                 INNER JOIN enroute_groups
                 ON enroute_opdracht2_sound.group_id = enroute_groups.id
-                ORDER BY enroute_opdracht2_sound.id DESC";
+                GROUP BY enroute_opdracht2_sound.group_id";
         $stmt = $this->pdo->prepare($sql);
         if($stmt->execute()){
             $soundsAndBgs = $stmt->fetchAll(PDO::FETCH_ASSOC);

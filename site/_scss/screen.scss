@@ -952,6 +952,7 @@ footer{
 #lostPicContainer{
   @include box-sizing("border-box");
   position: relative;
+  width: 700px;
   figure{
     img{
       border: $border;
@@ -966,6 +967,15 @@ footer{
       -webkit-background-clip: border-box;
       -o-background-clip: border-box;
     }
+  }
+  .street{
+    position: absolute;
+    bottom: 10px;
+    left: 195px;
+    text-align: right;
+    color: white;
+    font-family: bebas-neue;
+    font-size: 2.4em;
   }
   .lines{
     background: url("../images/6_verdwijnen/lines.png")no-repeat;
@@ -1404,26 +1414,34 @@ footer{
   }
 
   #lostPicContainer{
-    width: 300px;
+    width: 280px;
+    margin: 0;
+    padding: 0;
     figure{
       img{
-        margin-left: 68px;
+        margin-left: 30px;
 
         width: 208px;
         height: 147px;
       }
     }
+    .street{
+      bottom: 10px;
+      left: 130px;
+      text-align: right;
+      color: white;
+      font-family: bebas-neue;
+      font-size: 2em;
+    }
     .lines{
+      top: 50px;
+      left: -100px;
 
-      position: absolute;
-      top: 17px;
-      left: -50px;
-
-      -webkit-transform: rotate(-30deg) scale(.6); /* Chrome 4+, Op 15+, Saf 3.1, iOS Saf 3.2+ */
-      -moz-transform: rotate(-30deg) scale(.6); /* Fx 3.5-15 */
-      -ms-transform: rotate(-30deg) scale(.6); /* IE 9 */
-      -o-transform: rotate(-30deg) scale(.6); /* Op 10.5-12 */
-      transform: rotate(-30deg) scale(.6); /* Fx 16+, IE 10+ */
+      -webkit-transform: rotate(-25deg) scale(.6); /* Chrome 4+, Op 15+, Saf 3.1, iOS Saf 3.2+ */
+      -moz-transform: rotate(-25deg) scale(.6); /* Fx 3.5-15 */
+      -ms-transform: rotate(-25deg) scale(.6); /* IE 9 */
+      -o-transform: rotate(-25deg) scale(.6); /* Op 10.5-12 */
+      transform: rotate(-25deg) scale(.6); /* Fx 16+, IE 10+ */
 
 
       p{

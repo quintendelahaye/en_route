@@ -1017,6 +1017,7 @@ footer #footerContent ul .twtricon {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
+  width: 700px;
 }
 #lostPicContainer figure img {
   border: 4px solid black;
@@ -1028,6 +1029,15 @@ footer #footerContent ul .twtricon {
   -moz-background-clip: border-box;
   -webkit-background-clip: border-box;
   -o-background-clip: border-box;
+}
+#lostPicContainer .street {
+  position: absolute;
+  bottom: 10px;
+  left: 195px;
+  text-align: right;
+  color: white;
+  font-family: bebas-neue;
+  font-size: 2.4em;
 }
 #lostPicContainer .lines {
   background: url("../images/6_verdwijnen/lines.png") no-repeat;
@@ -1473,26 +1483,35 @@ footer #footerContent ul .twtricon {
   }
 
   #lostPicContainer {
-    width: 300px;
+    width: 280px;
+    margin: 0;
+    padding: 0;
   }
   #lostPicContainer figure img {
-    margin-left: 68px;
+    margin-left: 30px;
     width: 208px;
     height: 147px;
   }
+  #lostPicContainer .street {
+    bottom: 10px;
+    left: 130px;
+    text-align: right;
+    color: white;
+    font-family: bebas-neue;
+    font-size: 2em;
+  }
   #lostPicContainer .lines {
-    position: absolute;
-    top: 17px;
-    left: -50px;
-    -webkit-transform: rotate(-30deg) scale(0.6);
+    top: 50px;
+    left: -100px;
+    -webkit-transform: rotate(-25deg) scale(0.6);
     /* Chrome 4+, Op 15+, Saf 3.1, iOS Saf 3.2+ */
-    -moz-transform: rotate(-30deg) scale(0.6);
+    -moz-transform: rotate(-25deg) scale(0.6);
     /* Fx 3.5-15 */
-    -ms-transform: rotate(-30deg) scale(0.6);
+    -ms-transform: rotate(-25deg) scale(0.6);
     /* IE 9 */
-    -o-transform: rotate(-30deg) scale(0.6);
+    -o-transform: rotate(-25deg) scale(0.6);
     /* Op 10.5-12 */
-    transform: rotate(-30deg) scale(0.6);
+    transform: rotate(-25deg) scale(0.6);
     /* Fx 16+, IE 10+ */
   }
   #lostPicContainer .lines p {

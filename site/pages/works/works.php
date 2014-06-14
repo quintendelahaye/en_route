@@ -189,6 +189,7 @@
                         <p class="new">"Dit wordt <?php echo $oldvsnew["new"]; ?>"</p>
                         <h4><span>team: </span><?php echo $oldvsnew["groupname"]; ?></h4>
                     </div>
+                    <p class="street"><?php echo $oldvsnew["street_name"]; ?></p>
                 </div>
                 <?php endif; ?>
         </section>
