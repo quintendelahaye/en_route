@@ -23,5 +23,6 @@
 @property (nonatomic, strong) Mission1CameraView *cameraOverlay;
 
 @property (nonatomic, assign) BOOL resultVisible;
+@property (nonatomic, assign) BOOL resultAccepted;
 
 @end

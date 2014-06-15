@@ -64,8 +64,8 @@
         //self.tutorialMission2VC.delegate = self;
         //[self.navigationController pushViewController:self.mission3ExplanationVC animated:YES];
         
-        self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
-        [self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
+        self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];
+        [self.navigationController pushViewController:self.timeChallenge3VC animated:YES];
     }
 }
 

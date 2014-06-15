@@ -22,18 +22,14 @@
         self.navigationItem.backBarButtonItem = nil;
         self.secondsLeft = 10;
         self.resultVisible = NO;
-        self.part = part;
+        self.resultAccepted = NO;
     }
     return self;
 }
 
 -(void)loadView{
     CGRect bounds = [UIScreen mainScreen].bounds;
-    if (self.part == 4) {
-        self.view = [[TimeChallengeExplanationView alloc]initWithFrame:bounds andHead:@"Beeld" andExplanation:@"Tijd voor een groepsfoto! Zoek het dichtsbijzijnde standbeeld, beeld deze uit samen met je groep en laat een foto nemen." andRemark:@"Je hebt 5 minuten de tijd!" andImage:[UIImage imageNamed:@"timeChallenge_pic1"]];
-    } else if (self.part == 5){
-        self.view = [[TimeChallengeExplanationView alloc]initWithFrame:bounds andHead:@"Vintage" andExplanation:@"Voor een moderne tijd als deze lopen er toch veel mensen rond met een oude kledingstijl, neem een foto van een persoon met oude kledij of accessoire." andRemark:@"Je hebt 5 minuten de tijd!" andImage:[UIImage imageNamed:@"timeChallenge_pic2"]];
-    }
+    self.view = [[TimeChallengeExplanationView alloc]initWithFrame:bounds andHead:@"Foetsie" andExplanation:@"In de stad zijn er verschillende elementen die binnenkort of over een aantal jaar zullen verdwijnen. Fotografeer 1 element dat binnenkort foetsie zal zijn." andRemark:@"Je hebt 5 minuten de tijd!" andImage:[UIImage imageNamed:@"timeChallenge_pic3"]];
 }
 
 - (void)viewDidLoad
@@ -43,19 +39,12 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
-    NSString *titleText = @"";
-    if (self.part == 4) {
-        titleText = @"opdracht beeld";
-    }else{
-        titleText = @"opdracht vintage";
-    }
-    
-    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:titleText];
+    TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"opdracht foetsie"];
     [self.view addSubview:title];
     self.navigationItem.hidesBackButton = YES;
     [self.view.btnStart addTarget:self action:@selector(startChallenge:) forControlEvents:UIControlEventTouchUpInside];
     
-    TitleView *titleResult = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:titleText];
+    TitleView *titleResult = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"opdracht foetsie"];
     self.resultView = [[TimeChallengeResultView alloc]initWithFrame:bounds];
     [self.resultView addSubview:titleResult];
     [self.resultView.redo addTarget:self action:@selector(startChallenge:) forControlEvents:UIControlEventTouchUpInside];
@@ -73,7 +62,7 @@
         self.picker.mediaTypes = availableMediaTypes;
         self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
         CGRect bounds = [UIScreen mainScreen].bounds;
-        self.cameraOverlay = [[Mission1CameraView alloc]initWithFrame:bounds andPart:self.part];
+        self.cameraOverlay = [[Mission1CameraView alloc]initWithFrame:bounds andPart:6];
         self.picker.cameraOverlayView = self.cameraOverlay;
         self.picker.showsCameraControls = NO;
         self.picker.allowsEditing = NO;
@@ -98,9 +87,23 @@
 -(void)done:(id)sender{
     [self.timer invalidate];
     self.timer = nil;
+    if (self.resultAccepted) {
+        //controleren als textfield leeg is of niet
+        //upload
+    } else {
+        [self.resultView mission3];
+        [self.resultView.ok  addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
+        [self.resultView.bgTime removeFromSuperview];
+        [self.resultView.lblTime removeFromSuperview];
+    }
+    
+    self.resultAccepted = YES;
+}
+
+-(void)upload{
     NSLog(@"De foto wordt geupload");
     NSData *imageData = UIImageJPEGRepresentation(self.resultView.imageView.image, 0.4);
-    NSString *urlString = [NSString stringWithFormat:@"http://169.254.216.138/MAIV/en_route/site/upload/mission%i.php",self.part];
+    NSString *urlString = [NSString stringWithFormat:@"http://169.254.216.138/MAIV/en_route/site/upload/mission%i.php",6];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];
@@ -247,7 +250,7 @@
     }
     if (self.secondsLeft < 0) {
         //failstamp toevoegen
-        [self done:self];
+        //[self done:self];
         
         [self.timer invalidate];
         self.timer = nil;

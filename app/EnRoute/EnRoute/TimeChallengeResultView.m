@@ -27,17 +27,17 @@
         [self addSubview:bg];
         
         NSString *text = @"Is deze foto goed of wil je deze opnieuw nemen?";
-        UILabel *explanation = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:text andFrame:CGRectMake(50, 366, 222, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentLeft];
-        [self addSubview:explanation];
+        self.lblText = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:text andFrame:CGRectMake(50, 366, 222, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentLeft];
+        [self addSubview:self.lblText];
         
         NSString *title = @"klaar!";
         UILabel *lblTitle = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:title andFrame:CGRectMake(145, 340, 40, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
         
         [self addSubview:lblTitle];
         
-        UIImageView *timerBg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"timerbg"]];
-        timerBg.center = CGPointMake(self.frame.size.width/2, 287);
-        [self addSubview:timerBg];
+        self.bgTime = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"timerbg"]];
+        self.bgTime.center = CGPointMake(self.frame.size.width/2, 287);
+        [self addSubview:self.bgTime];
         self.lblTime = [UIElementFactory createLabelWithFont:CORKI andSize:22 andText:@"05:00" andFrame:CGRectMake(0, 0, 60, 0) andColor:[UIColor lightYellowColor] andTextalignment:NSTextAlignmentCenter];
         self.lblTime.frame = CGRectMake(0, 0, 60, 33);
         self.lblTime.center = CGPointMake(self.frame.size.width/2, 287);
@@ -50,6 +50,23 @@
         [self addSubview:self.ok];
     }
     return self;
+}
+
+- (void)mission3{
+    [self.redo removeFromSuperview];
+    [self.ok removeFromSuperview];
+    self.lblText.text = @"Wat zal dit worden volgens jullie?";
+    
+    UIImage *textFieldImage = [UIImage imageNamed:@"bg_textfield_persoon"];
+    
+    self.txtElement = [[UITextField alloc]initWithFrame:CGRectMake(20, 432, 203, 50)];
+    self.txtElement.placeholder = @"VERVANGING";
+    self.txtElement.background = textFieldImage;
+    self.txtElement.font = [UIFont fontWithName:BEBAS size:20];
+    self.txtElement.textAlignment = NSTextAlignmentCenter;
+    [self addSubview:self.txtElement];
+    self.ok = [UIElementFactory createButtonWithImageName:@"btn_ok" andPoint:CGPointMake(233, 432)];
+    [self addSubview:self.ok];
 }
 
 /*

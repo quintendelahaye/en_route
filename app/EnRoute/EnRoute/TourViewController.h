@@ -14,6 +14,7 @@
 #import "TutorialMission2ViewController.h"
 #import "Mission3ExplanationViewController.h"
 #import "TimeChallenge1ViewController.h"
+#import "TimeChallenge3ViewController.h"
 
 @interface TourViewController : UIViewController <TourDelegate,Mission1Delegate,Mission2Delegate>
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) Mission3ExplanationViewController *mission3ExplanationVC;
 @property (nonatomic, strong) TimeChallenge1ViewController *timeChallenge1VC;
 @property (nonatomic, strong) TimeChallenge1ViewController *timeChallenge2VC;
+@property (nonatomic, strong) TimeChallenge3ViewController *timeChallenge3VC;
 
 @property (nonatomic, strong) UnlockedView *unlockedView;
 

@@ -16,5 +16,10 @@
 @property (nonatomic, strong) UIButton *redo;
 @property (nonatomic, strong) UIButton *ok;
 @property (nonatomic, strong) UILabel *lblTime;
+@property (nonatomic, strong) UIImageView *bgTime;
+@property (nonatomic, strong) UILabel *lblText;
+@property (nonatomic, strong) UITextField *txtElement;
+
+- (void)mission3;
 
 @end

@@ -66,6 +66,12 @@
             UILabel *lblTitle = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:title andFrame:CGRectMake(135, 465, 50, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
             
             [self addSubview:lblTitle];
+        } else if (part == 6){
+            text = @"Fotografeer 1 element dat binnenkort foetsie zal zijn.";
+            NSString *title = @"Foetsie";
+            UILabel *lblTitle = [UIElementFactory createLabelWithFont:CORKI andSize:20 andText:title andFrame:CGRectMake(135, 465, 50, 0) andColor:[UIColor blackColor] andTextalignment:NSTextAlignmentCenter];
+            
+            [self addSubview:lblTitle];
         }
         
         //neem een foto van een persoon met oude kledij of accessoire.
