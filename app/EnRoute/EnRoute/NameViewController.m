@@ -19,7 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        NSString *path = [NSString stringWithFormat:@"http://169.254.216.138/MAIV/en_route/site/api/users/%@", [[NSUserDefaults standardUserDefaults]objectForKey:@"groupid"]];
+        NSString *path = [NSString stringWithFormat:@"%@users/%@",API, [[NSUserDefaults standardUserDefaults]objectForKey:@"groupid"]];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         

@@ -72,7 +72,7 @@
         
         NSLog(@"[LoginViewController] login not empty");
         
-        NSString *path = [NSString stringWithFormat:@"http://169.254.216.138/MAIV/en_route/site/api/groups/%@/%@",self.view.txtUsername.text, self.view.txtPassword.text];
+        NSString *path = [NSString stringWithFormat:@"%@groups/%@/%@",API,self.view.txtUsername.text, self.view.txtPassword.text];
         NSURL *url = [NSURL URLWithString:path];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         

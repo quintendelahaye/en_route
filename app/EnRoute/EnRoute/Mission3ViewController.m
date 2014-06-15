@@ -91,7 +91,7 @@
                                  @"shops": self.winkels};
     NSLog(@"parameters: %@",parameters);
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/mission3" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:[NSString stringWithFormat:@"%@mission3",API] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"success: %@",responseObject);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];

@@ -172,7 +172,7 @@
 
 - (void)videoPlaying{
     NSData *imageData = UIImageJPEGRepresentation([self addText], 0.4);
-    NSString *urlString = @"http://169.254.216.138/MAIV/en_route/site/upload/mission2.php";
+    NSString *urlString = [NSString stringWithFormat:@"%@mission2.php",UPLOAD];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];

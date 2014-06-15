@@ -65,14 +65,14 @@
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         NSDictionary *parameters = @{@"groupname": self.view.txtGroupName.text,
                                      @"password":self.view.txtPassword.text};
-        [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/groups" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [manager POST:[NSString stringWithFormat:@"%@groups",API] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSLog(@"JSON: %@", [responseObject objectForKey:@"id"]);
             NSString *groupid = [NSString stringWithFormat:@"%@",[responseObject objectForKey:@"id"]];
             NSDictionary *parameters = @{@"groupid": groupid, @"user":self.view.txtUsername.text};
             NSLog(@"parameters: %@", parameters);
             
             AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-            [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/user" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [manager POST:[NSString stringWithFormat:@"%@user",API]  parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 NSLog(@"DEUTSCHLAND");
                 NSLog(@"JSON: %@", responseObject);
                 [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"userid"];
@@ -146,7 +146,7 @@
                                  @"members": self.members};
     NSLog(@"parameters: %@",parameters);
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager POST:@"http://169.254.216.138/MAIV/en_route/site/api/users" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager POST:[NSString stringWithFormat:@"%@users",API]  parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"success: %@",responseObject);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];

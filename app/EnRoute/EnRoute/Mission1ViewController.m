@@ -156,7 +156,7 @@
 - (void)uploadPhoto{
     NSLog(@"De foto wordt geupload");
     NSData *imageData = UIImageJPEGRepresentation(self.collage, 0.4);
-    NSString *urlString = @"http://169.254.216.138/MAIV/en_route/site/upload/mission1.php";
+    NSString *urlString = [NSString stringWithFormat:@"%@mission1.php",UPLOAD];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:urlString]];

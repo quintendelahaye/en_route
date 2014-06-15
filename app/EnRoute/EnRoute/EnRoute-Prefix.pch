@@ -18,5 +18,7 @@
 
     #define CORKI @"Corki-Rounded"
     #define BEBAS @"BebasNeue"
+    #define API @"http://169.254.216.138/MAIV/en_route/site/api/"
+    #define UPLOAD @"http://169.254.216.138/MAIV/en_route/site/upload/"
 
 #endif
