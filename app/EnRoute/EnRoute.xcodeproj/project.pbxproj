@@ -54,6 +54,8 @@
 		A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77419472B2A008D2DD2 /* MemberView.m */; };
 		A0B9F7781947AB56008D2DD2 /* NameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F7771947AB56008D2DD2 /* NameViewController.m */; };
 		A0B9F77B1947AB6A008D2DD2 /* NameView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B9F77A1947AB6A008D2DD2 /* NameView.m */; };
+		A0BB4A8E194D00790061EEAA /* TimeChallenge1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB4A8D194D00790061EEAA /* TimeChallenge1ViewController.m */; };
+		A0BB4A94194D01DE0061EEAA /* TimeChallengeExplanationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BB4A93194D01DE0061EEAA /* TimeChallengeExplanationView.m */; };
 		A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A019489A6500652565 /* TutorialViewController.m */; };
 		A0CE70A419489A7C00652565 /* TutorialView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CE70A319489A7C00652565 /* TutorialView.m */; };
 		A0CE70B41948B95700652565 /* handleiding_stap01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A0CE70B01948B95700652565 /* handleiding_stap01.mp4 */; };
@@ -72,6 +74,8 @@
 		A0CE7105194A5A5400652565 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7104194A5A5400652565 /* OpenGLES.framework */; };
 		A0CE7107194A5A6300652565 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7106194A5A6300652565 /* AVFoundation.framework */; };
 		A0CE7109194A5A7B00652565 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CE7108194A5A7B00652565 /* QuartzCore.framework */; };
+		A0D76E99194D803900247CEC /* TimeChallengeResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D76E98194D803900247CEC /* TimeChallengeResultView.m */; };
+		A0D76E9D194DA06100247CEC /* TimeChallenge3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D76E9C194DA06100247CEC /* TimeChallenge3ViewController.m */; };
 		A0DAC62F194255760011695B /* TourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC62E194255760011695B /* TourViewController.m */; };
 		A0DAC6321942558A0011695B /* TourView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0DAC6311942558A0011695B /* TourView.m */; };
 		A0F12C3A194A742E00BE8798 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F12C39194A742E00BE8798 /* PhotoViewController.m */; };
@@ -171,6 +175,10 @@
 		A0B9F7771947AB56008D2DD2 /* NameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameViewController.m; sourceTree = "<group>"; };
 		A0B9F7791947AB6A008D2DD2 /* NameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameView.h; sourceTree = "<group>"; };
 		A0B9F77A1947AB6A008D2DD2 /* NameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameView.m; sourceTree = "<group>"; };
+		A0BB4A8C194D00790061EEAA /* TimeChallenge1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeChallenge1ViewController.h; sourceTree = "<group>"; };
+		A0BB4A8D194D00790061EEAA /* TimeChallenge1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeChallenge1ViewController.m; sourceTree = "<group>"; };
+		A0BB4A92194D01DE0061EEAA /* TimeChallengeExplanationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeChallengeExplanationView.h; sourceTree = "<group>"; };
+		A0BB4A93194D01DE0061EEAA /* TimeChallengeExplanationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeChallengeExplanationView.m; sourceTree = "<group>"; };
 		A0CE709F19489A6500652565 /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		A0CE70A019489A6500652565 /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		A0CE70A219489A7C00652565 /* TutorialView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialView.h; sourceTree = "<group>"; };
@@ -198,6 +206,10 @@
 		A0CE7104194A5A5400652565 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		A0CE7106194A5A6300652565 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A0CE7108194A5A7B00652565 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A0D76E97194D803900247CEC /* TimeChallengeResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeChallengeResultView.h; sourceTree = "<group>"; };
+		A0D76E98194D803900247CEC /* TimeChallengeResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeChallengeResultView.m; sourceTree = "<group>"; };
+		A0D76E9B194DA06100247CEC /* TimeChallenge3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeChallenge3ViewController.h; sourceTree = "<group>"; };
+		A0D76E9C194DA06100247CEC /* TimeChallenge3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeChallenge3ViewController.m; sourceTree = "<group>"; };
 		A0DAC62D194255760011695B /* TourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourViewController.h; sourceTree = "<group>"; };
 		A0DAC62E194255760011695B /* TourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourViewController.m; sourceTree = "<group>"; };
 		A0DAC6301942558A0011695B /* TourView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourView.h; sourceTree = "<group>"; };
@@ -348,6 +360,8 @@
 				A0A0BC851942EC21004158EA /* Mission1 */,
 				A0CE70C61949D68D00652565 /* Mission2 */,
 				A04B1631194C7DD8005BD69D /* Mission3 */,
+				A0BB4A8B194D003D0061EEAA /* TimeChallenge1&2 */,
+				A0D76E9A194DA03400247CEC /* TimeChallenge3 */,
 				A0A0BC9519445A69004158EA /* Extentions */,
 			);
 			path = EnRoute;
@@ -440,8 +454,21 @@
 				A0A0BC9A19447F5F004158EA /* UIElementFactory.m */,
 				A0CE70BE1948F77600652565 /* PageControl.h */,
 				A0CE70BF1948F77600652565 /* PageControl.m */,
+				A0BB4A92194D01DE0061EEAA /* TimeChallengeExplanationView.h */,
+				A0BB4A93194D01DE0061EEAA /* TimeChallengeExplanationView.m */,
+				A0D76E97194D803900247CEC /* TimeChallengeResultView.h */,
+				A0D76E98194D803900247CEC /* TimeChallengeResultView.m */,
 			);
 			name = Extentions;
+			sourceTree = "<group>";
+		};
+		A0BB4A8B194D003D0061EEAA /* TimeChallenge1&2 */ = {
+			isa = PBXGroup;
+			children = (
+				A0BB4A8C194D00790061EEAA /* TimeChallenge1ViewController.h */,
+				A0BB4A8D194D00790061EEAA /* TimeChallenge1ViewController.m */,
+			);
+			name = "TimeChallenge1&2";
 			sourceTree = "<group>";
 		};
 		A0CE70961948989700652565 /* InstructionMovies */ = {
@@ -490,6 +517,15 @@
 				A04FF4F3194CD16F00570BB3 /* VideoDelegate.h */,
 			);
 			name = Mission2;
+			sourceTree = "<group>";
+		};
+		A0D76E9A194DA03400247CEC /* TimeChallenge3 */ = {
+			isa = PBXGroup;
+			children = (
+				A0D76E9B194DA06100247CEC /* TimeChallenge3ViewController.h */,
+				A0D76E9C194DA06100247CEC /* TimeChallenge3ViewController.m */,
+			);
+			name = TimeChallenge3;
 			sourceTree = "<group>";
 		};
 		A0DAC633194255900011695B /* Tour */ = {
@@ -644,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BB4A94194D01DE0061EEAA /* TimeChallengeExplanationView.m in Sources */,
 				817C3F09193B6E8600DA6563 /* EnRoute.xcdatamodeld in Sources */,
 				815C2FFE193B6F10004E3C5C /* Mainview.m in Sources */,
 				815C300A193BA48F004E3C5C /* LoginView.m in Sources */,
@@ -659,13 +696,16 @@
 				A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */,
 				A0A0BC9419445A63004158EA /* TitleView.m in Sources */,
 				A0CE70A419489A7C00652565 /* TutorialView.m in Sources */,
+				A0BB4A8E194D00790061EEAA /* TimeChallenge1ViewController.m in Sources */,
 				815C300D193BA49C004E3C5C /* RegisterView.m in Sources */,
 				A0CE70D2194A018200652565 /* WordView.m in Sources */,
 				A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
+				A0D76E9D194DA06100247CEC /* TimeChallenge3ViewController.m in Sources */,
 				A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */,
 				A04FF4F6194CD6D400570BB3 /* Mission3ViewController.m in Sources */,
+				A0D76E99194D803900247CEC /* TimeChallengeResultView.m in Sources */,
 				A0A0BC9B19447F5F004158EA /* UIElementFactory.m in Sources */,
 				A04B1634194C7E0B005BD69D /* Mission3ExplanationViewController.m in Sources */,
 				A04B1637194C7E1E005BD69D /* Mission3ExplanationView.m in Sources */,

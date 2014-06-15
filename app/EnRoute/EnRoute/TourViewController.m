@@ -60,9 +60,12 @@
         [self.navigationController pushViewController:self.tutorialMission2VC animated:YES];
     } else if([title  isEqual: @"opdracht3"]){
         NSLog(@"show opdracht 3");
-        self.mission3ExplanationVC = [[Mission3ExplanationViewController alloc]initWithNibName:nil bundle:nil];
+        //self.mission3ExplanationVC = [[Mission3ExplanationViewController alloc]initWithNibName:nil bundle:nil];
         //self.tutorialMission2VC.delegate = self;
-        [self.navigationController pushViewController:self.mission3ExplanationVC animated:YES];
+        //[self.navigationController pushViewController:self.mission3ExplanationVC animated:YES];
+        
+        self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
+        [self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
     }
 }
 

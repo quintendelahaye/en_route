@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIButton *back;
 @property (nonatomic, strong) UIImageView *part1;
 @property (nonatomic, strong) UIImageView *part2;
+@property (nonatomic, strong) UILabel *lblTime;
 
 - (id)initWithFrame:(CGRect)frame andPart:(int)part;
 
