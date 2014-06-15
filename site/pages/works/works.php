@@ -15,9 +15,9 @@
                 <?php endif; ?>
                 <select>
                   <option value=""> -- kies je school -- </option>
-                  <option value="1">Howest</option>
-                  <option value="1">St-Godelieve</option>
-                  <option value="1">Audi</option>
+                    <?php foreach($schools as $school): ?>
+                        <option value="<?php echo $school["id"];?>"><?php echo $school["school_name"];?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div id="rightNav" class="right">
@@ -167,12 +167,6 @@
             <p class="number">6</p>
             <header><h4>opdracht verdwijnen</h4></header>
             <p class="explaination">De groepen moeten op zoek gaan naar objecten en elementen in de stad die binnenkort zullen <span>verdwijnen</span>.<br/> Ze nemen een foto en <span>verzinnen</span> wat er in de plaats zou kunnen komen.</p>
-
-                <!--<figure><img src="images/6_verdwijnen/photo1.png" alt="photo1"/></figure>
-                <div class="lines">
-                    <p class="new">"Dit wordt vervangen door een iPad"</p>
-                    <h4>VTI Kortrijk</h4>
-                </div>-->
                 <ul class="collageContainer">
                     <?php foreach($oldvsnewpics as $oldvsnewpic): ?>
                         <li class="collagePicContainer">

@@ -83,4 +83,67 @@ class GroupsDAO{
 		}
 		return array();
 	}
+
+    public function getAllSchools(){
+        $sql = "select * from enroute_schools
+                where visited <= cast((now()) as date)
+                and visited <= cast((now() + interval 1 day) as date);";
+        $stmt = $this->pdo->prepare($sql);
+         if($stmt->execute()){
+             $schools = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             if(!empty($schools)){
+                 return $schools;
+             }
+         }
+         return false;
+    }
+
+    public function getSchoolById($id){
+    	$sql = "SELECT * FROM enroute_schools
+    			WHERE id = :id";
+		$stmt = $this->pdo->prepare($sql);
+		$stmt->bindValue(':id', $id);
+		if($stmt->execute())
+        {
+            $school = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(!empty($school)){
+                return $school;
+            }
+        }
+        return array();
+    }
+
+    public function getGroupsBySchool($visited){
+        $sql = "SELECT enroute_groups.id,enroute_groups.groupname, enroute_groups.created_date, enroute_schools.school_name, enroute_schools.visited
+                FROM enroute_groups
+                INNER JOIN enroute_schools
+                ON enroute_groups.created_date = enroute_schools.visited
+                WHERE enroute_schools.visited = :visited";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':visited', $visited);
+        if($stmt->execute()){
+          $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          if(!empty($groups)){
+              return $groups;
+          }
+        }
+        return false;
+    }
+
+    public function getMembersByGroupId($group_id){
+        $sql = "SELECT enroute_members.group_id, enroute_members.member_name, enroute_groups.id, enroute_groups.groupname
+                FROM enroute_members
+                INNER JOIN enroute_groups
+                ON enroute_members.group_id = enroute_groups.id
+                WHERE enroute_members.group_id = :group_id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':group_id', $group_id);
+        if($stmt->execute()){
+          $groups = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          if(!empty($groups)){
+              return $groups;
+          }
+        }
+        return false;
+    }
 }

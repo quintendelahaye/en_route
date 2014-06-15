@@ -53,4 +53,20 @@ class Mission3DAO{
             return false;
         }
     }
+
+    public function getAllShopsAndAmountByGroup($group_id){
+        $sql = "SELECT shop_name,group_id, COUNT(*) AS numberOFShops
+                FROM enroute_opdracht3
+                WHERE group_id = :group_id
+                GROUP BY shop_name";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":group_id",$group_id);
+        if($stmt->execute()){
+            $shopsByGroup = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($shopsByGroup)){
+                return $shopsByGroup;
+            }
+            return false;
+        }
+    }
 }

@@ -319,6 +319,9 @@ footer #footerContent ul .twtricon {
   margin: 20px auto 20px auto;
   width: 800px;
 }
+.worksContainer #navmissions {
+  margin-bottom: 40px;
+}
 .worksContainer #homeheader p {
   font-size: 2em;
   color: #e95c54;
@@ -334,6 +337,23 @@ footer #footerContent ul .twtricon {
 .worksContainer #works span {
   color: #558178;
 }
+.worksContainer #works ol {
+  width: 720px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.worksContainer #works ol li {
+  margin-bottom: 10px;
+}
+.worksContainer #works ol li a {
+  color: #558178;
+  font-size: 2em;
+  font-family: bebas-neue;
+}
+.worksContainer #works ol li a:hover {
+  color: #34524c;
+}
 .worksContainer #works h3 {
   width: 200px;
   display: block;
@@ -345,7 +365,8 @@ footer #footerContent ul .twtricon {
 }
 .worksContainer #works .work {
   border-top: black solid 4px;
-  margin-top: 80px;
+  margin-top: 50px;
+  margin-bottom: 0px;
   position: relative;
 }
 .worksContainer #works .work header {
@@ -1099,6 +1120,20 @@ footer #footerContent ul .twtricon {
   right: 0px;
   margin: 33px 100px 0px 0px;
 }
+.searchField ol {
+  background-color: #f6f6f8;
+}
+.searchField ol li {
+  padding: 10px;
+}
+.searchField ol li a {
+  color: #e95c54;
+  font-size: 1.4em;
+  font-family: bebas-neue;
+}
+.searchField ol li a:hover {
+  color: black;
+}
 .searchField form {
   position: relative;
 }
@@ -1255,6 +1290,38 @@ footer #footerContent ul .twtricon {
 
 .activeMission6 {
   background: url("../images/btn_opdracht6.png") no-repeat 0px -32px;
+}
+
+#groups {
+  width: 650px;
+  margin: 20px auto 20px auto;
+}
+#groups li {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  text-align: center;
+  font-family: bebas-neue;
+  font-size: 1.6em;
+}
+#groups li .btnTeam {
+  padding-top: 6px;
+  background: url("../images/btn_teams.png") no-repeat 0px 0px;
+  width: 148px;
+  height: 26px;
+  display: block;
+  color: #558178;
+}
+#groups li .btnTeam:hover {
+  background: url("../images/btn_teams.png") no-repeat 0px -32px;
+  color: white;
+}
+#groups #members {
+  margin-top: 10px;
+}
+#groups #members li {
+  font-size: 2em;
+  color: #34524c;
 }
 
 @media only screen and (max-width: 1300px) {

@@ -259,6 +259,11 @@ footer{
   @include box-sizing("border-box");
   margin: 20px auto 20px auto;
   width: 800px;
+
+  #navmissions{
+    margin-bottom: 40px;
+  }
+
   #homeheader{
     p{
       font-size: 2em;
@@ -273,6 +278,23 @@ footer{
     span{
       color: $darkBlueColor;
     }
+    ol{
+      width: 720px;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      li{
+        margin-bottom: 10px;
+        a{
+          color: $darkBlueColor;
+          font-size: 2em;
+          font-family: bebas-neue;
+          &:hover{
+            color: $darkerBlueColor;
+          }
+        }
+      }
+    }
     h3{
       width: 200px;
       display: block;
@@ -284,7 +306,8 @@ footer{
     }
     .work{
       border-top: $blackColor solid 4px;
-      margin-top: 80px;
+      margin-top: 50px;
+      margin-bottom: 0px;
       position: relative;
       header{
         position: absolute;
@@ -1038,6 +1061,21 @@ footer{
   position: fixed;
   right: 0px;
   margin: 33px 100px 0px 0px;
+
+  ol{
+    background-color: #f6f6f8;
+    li{
+      padding: 10px;
+      a{
+        color: $redColor;
+        font-size: 1.4em;
+        font-family: bebas-neue;
+        &:hover{
+          color: black;
+        }
+      }
+    }
+  }
     form{
       .search {
         background: url('../images/icon_search.png') no-repeat;
@@ -1157,6 +1195,38 @@ footer{
 .activeMission4{background: url("../images/btn_opdracht4.png")no-repeat 0px -32px;}
 .activeMission5{background: url("../images/btn_opdracht5.png")no-repeat 0px -32px;}
 .activeMission6{background: url("../images/btn_opdracht6.png")no-repeat 0px -32px;}
+
+#groups{
+  width: 650px;
+  margin: 20px auto 20px auto;
+  li{
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-align: center;
+    font-family: bebas-neue;
+    font-size: 1.6em;
+    .btnTeam{
+      padding-top: 6px;
+      background: url("../images/btn_teams.png")no-repeat 0px 0px;
+      width: 148px;
+      height: 26px;
+      display: block;
+      color: $darkBlueColor;
+     &:hover{
+       background: url("../images/btn_teams.png")no-repeat 0px -32px;
+       color: white;
+     }
+    }
+  }
+  #members{
+    margin-top: 10px;
+    li{
+      font-size: 2em;
+      color: $darkerBlueColor;
+    }
+  }
+}
 
 //----------- media ---------------------------------------------------------------------------------------------------------
 

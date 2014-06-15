@@ -30,6 +30,9 @@
 
             require_once WWW_ROOT . 'dao' . DS . 'Mission6DAO.php';
             $this->mission6DAO = new Mission6DAO();
+
+            require_once WWW_ROOT . 'dao' . DS . 'GroupsDAO.php';
+            $this->groupsDAO = new GroupsDAO();
         }
 
         public function works()
@@ -37,6 +40,9 @@
             $activeMission = "";
             $mission = "";
             $title = "";
+
+            $schools = $this->groupsDAO->getAllSchools();
+            $this->set("schools", $schools);
 
             $missions = $this->missionsDAO->getMissions();
             $this->set("missions", $missions);
@@ -155,5 +161,63 @@
             $this->set("collage", $collage);
             $this->set("group", $group);
             $this->set("oldvsnew", $oldvsnew);
+        }
+
+        public function detail(){
+            if(empty($_GET['id'])) {
+                $this->redirect("index.php");
+            }
+
+            $school = $this->groupsDAO->getSchoolById($_GET['id']);
+            if(empty($school)) {
+                $this->addError("Ongeldige post!");
+                $this->redirect("index.php");
+            }
+            $this->set('school', $school);
+
+            $arrGroups = array();
+
+            $groups = $this->groupsDAO->getGroupsBySchool($school["visited"]);
+            $this->set('groups', $groups);
+
+            foreach($groups as $group){
+                array_push($arrGroups, $group["id"]);
+            }
+
+            if(!empty($_GET['team'])) {
+                $members = $this->groupsDAO->getMembersByGroupId($_GET["team"]);
+                $this->set('members', $members);
+            }
+
+            $mission1 = false;
+            $collage = "";
+
+            if(!empty($_GET["mission"]))
+            {
+                if($_GET["mission"] == 1){
+                    $mission1 = true;
+                    if(!empty($_GET["picid"]))
+                    {
+                        $collage = $this->mission1DAO->getPictureAndGroupNameByPictureId($_GET["picid"]);
+                    }
+                }
+            }
+
+            $mission1Collages = $this->mission1DAO->getPictureAndGroupNameBySchool($arrGroups);
+            $this->set('mission1Collages', $mission1Collages);
+
+            $mission2Sounds = $this->mission2DAO->getPictureAndGroupNameBySchool($arrGroups);
+            $this->set('mission2Sounds', $mission2Sounds);
+
+            $mission3Shops = $this->mission3DAO->getTop3Shops();
+            $this->set("mission3Shops", $mission3Shops);
+
+            $shopsByGroup = $this->mission3DAO->getAllShopsAndAmountByGroup($_GET['id']);
+            $this->set("shopsByGroup", $shopsByGroup);
+
+            $this->set('arrGroups', $arrGroups);
+
+            $this->set("mission1", $mission1);
+            $this->set("collage", $collage);
         }
     }

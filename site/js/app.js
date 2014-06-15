@@ -28,6 +28,8 @@ function init()
        arrSounds.push($(this).attr('id'));
         $(this).click(playSound);
     });
+
+    $("#txtSearch").on("input change", changeHandler);
 }
 
 function changeSound(event){
@@ -40,4 +42,20 @@ function playSound(event){
     event.preventDefault();
     sound = $('#soundBoard audio')[$.inArray((event.currentTarget.id), arrSounds)];
     sound.play();
+}
+
+function changeHandler(){
+    console.log($("#search").serializeArray());
+    var $_POST = $("#search").serializeArray();
+    $.post("index.php?page=search",$_POST).done(getSearchDataHandler);
+}
+
+function getSearchDataHandler(data){
+    var $ol = $(data).find("ol");
+    if($("#search_title").length != 0){
+        $("#skrollr-body").remove();
+        $(".nav").after(data);
+    }
+    $("#search+ol").remove();
+    $("#search").after($ol);
 }

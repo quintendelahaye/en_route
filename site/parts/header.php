@@ -51,9 +51,9 @@
             <?php endforeach; ?>
         </ul>
         <div class="searchField" data-0="margin-top:33px;" data-100="margin-top:10px;">
-            <form>
+            <form method="post" action="index.php?page=search" id="search" autoComplete="off">
                 <a href="#" class="search"><span>search</span></a>
-                <input type="text" placeholder="zoek je team of school"/>
+                <input type="text" placeholder="zoek je team of school" id="txtSearch" name="txtSearch"/>
                 <div><input type="submit" name="btnSubmitZoek" id="btnSubmitZoek" value="Zoek" /></div>
             </form>
         </div>
