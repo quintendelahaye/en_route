@@ -597,6 +597,10 @@ footer #footerContent ul .twtricon {
   background: url("../images/btn_blue.png") no-repeat 0px -51px;
 }
 
+.btnSubscribe {
+  background: url("../images/btn_subscribe.png") no-repeat 0px 0px;
+}
+
 #dialectsContainer {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1321,6 +1325,12 @@ footer #footerContent ul .twtricon {
   font-size: 3em;
 }
 
+iframe {
+  margin: 20px auto 20px auto;
+  width: 800px;
+  height: 451px;
+}
+
 @media only screen and (max-width: 1300px) {
   nav ul li a {
     font-size: 1.8em;
@@ -1391,6 +1401,10 @@ footer #footerContent ul .twtricon {
 @media only screen and (max-width: 700px) {
   .worksContainer {
     width: 700px;
+  }
+  .worksContainer iframe {
+    width: 420px;
+    height: 226px;
   }
 }
 @media only screen and (max-width: 640px) {
@@ -1555,14 +1569,6 @@ footer #footerContent ul .twtricon {
     margin-left: 30px;
     width: 208px;
     height: 147px;
-  }
-  #lostPicContainer .street {
-    bottom: 10px;
-    left: 130px;
-    text-align: right;
-    color: white;
-    font-family: bebas-neue;
-    font-size: 2em;
   }
   #lostPicContainer .lines {
     top: 50px;

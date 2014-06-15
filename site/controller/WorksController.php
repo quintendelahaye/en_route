@@ -214,8 +214,11 @@
             $mission3Shops = $this->mission3DAO->getTop3Shops();
             $this->set("mission3Shops", $mission3Shops);
 
-            $shopsByGroup = $this->mission3DAO->getAllShopsAndAmountByGroup($_GET['id']);
-            $this->set("shopsByGroup", $shopsByGroup);
+            $shopsBySchool = $this->mission3DAO->getShopsBySchool($arrGroups);
+            $this->set("shopsBySchool", $shopsBySchool);
+
+            $topShops = $this->mission3DAO->getTop3Shops();
+            $this->set("topShops", $topShops);
 
             $groupPictures = $this->mission4DAO->getGroupPictureBySchool($arrGroups);
             $this->set('groupPictures', $groupPictures);

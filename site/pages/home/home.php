@@ -113,7 +113,6 @@
                     <p class="new">"Dit wordt een iPad"</p>
                     <h4><span>team: </span>de abrikoosjes</h4>
                 </div>
-                <p class="street">groenplaats</p>
             </div>
             <a href="index.php?page=works&mission=6&id=1#lostPicContainer" class="btnMore">Bekijk de vervangingen</a>
         </section>

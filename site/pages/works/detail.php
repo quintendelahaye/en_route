@@ -70,8 +70,8 @@
                                 <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
                                 <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
                             </audio>
-                            <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                            <div class="overimgBottom"><a href="#"><p><?php echo $soundAndImage["groupname"]; ?></p></a></div>
+                            <div class="overimgTop"><a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=2#dialectsContainer" class="soundImg" ><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
+                            <div class="overimgBottom"><a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=2#dialectsContainer"><p><?php echo $soundAndImage["groupname"]; ?></p></a></div>
                             <a class="sound" id="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>" href="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>"><figure><img src="upload/mission2/image<?php echo $soundAndImage["group_id"]; ?>.jpg" alt="foto1"/></figure></a>
                             <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right"><?php echo date('d/m/y', strtotime($soundAndImage['created_date'])); ?></p></div>
                         </li>
@@ -108,9 +108,9 @@
                     <div id="dress">&nbsp;</div>
                 </div>
                 <div class="clear">&nbsp;</div>
-                <?php if(!empty($shopsByGroup)): ?>
+                <?php if(!empty($shopsBySchool)): ?>
                     <ul id="allShops">
-                        <?php foreach($shopsByGroup as $shopbygroup): ?>
+                        <?php foreach($shopsBySchool as $shopbygroup): ?>
                             <li><span><?php echo $shopbygroup["numberOFShops"]; ?>x </span><?php echo ucwords($shopbygroup["shop_name"]); ?></li>
                         <?php endforeach; ?>
                     </ul>
@@ -179,12 +179,11 @@
                     </ul>
                     <?php if(!empty($foetsiePicBig)):?>
                     <div id="lostPicContainer">
-                        <figure><img src="upload/mission6/image<?php echo $foetsiePicBig["group_id"]; ?>.png" alt="photo1"/></figure>
+                        <figure><img src="upload/mission6/<?php echo $foetsiePicBig["image_name"]; ?>" alt="photo1"/></figure>
                         <div class="lines">
                             <p class="new">"Dit wordt <?php echo $foetsiePicBig["new"]; ?>"</p>
                             <h4><span>team: </span><?php echo $foetsiePicBig["groupname"]; ?></h4>
                         </div>
-                        <p class="street"><?php echo $foetsiePicBig["street_name"]; ?></p>
                     </div>
                     <?php endif; ?>
                 <?php else: ?>

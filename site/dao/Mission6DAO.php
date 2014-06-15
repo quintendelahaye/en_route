@@ -62,7 +62,7 @@ class Mission6DAO{
                 FROM enroute_opdracht6
                 INNER JOIN enroute_groups
                 ON enroute_opdracht6.group_id = enroute_groups.id
-                WHERE enroute_opdracht6.group_id = :id";
+                WHERE enroute_opdracht6.id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':id', $id);
         if($stmt->execute()){

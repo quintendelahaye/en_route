@@ -46,7 +46,7 @@ class Mission1DAO{
         $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
                 FROM enroute_opdracht1
                 INNER JOIN enroute_groups
-                ON enroute_opdracht1.id = enroute_groups.id
+                ON enroute_opdracht1.group_id = enroute_groups.id
                 ORDER by enroute_groups.created_date DESC";
         $stmt = $this->pdo->prepare($sql);
          if($stmt->execute()){

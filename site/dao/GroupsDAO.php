@@ -117,7 +117,7 @@ class GroupsDAO{
         $sql = "SELECT enroute_groups.id,enroute_groups.groupname, enroute_groups.created_date, enroute_schools.school_name, enroute_schools.visited
                 FROM enroute_groups
                 INNER JOIN enroute_schools
-                ON enroute_groups.created_date = enroute_schools.visited
+                ON CAST(enroute_groups.created_date AS DATE) = CAST(enroute_schools.visited AS DATE)
                 WHERE enroute_schools.visited = :visited";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':visited', $visited);

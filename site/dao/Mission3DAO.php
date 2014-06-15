@@ -54,6 +54,30 @@ class Mission3DAO{
         }
     }
 
+    public function getShopsBySchool($groupids){
+    $sql = "select enroute_opdracht3.shop_name, count(enroute_opdracht3.shop_name)  AS numberOFShops
+            from enroute_opdracht3
+            WHERE ";
+    $arr_length = count($groupids);
+    for ($i = 0; $i < $arr_length; $i++){
+        $sql = $sql."enroute_opdracht3.group_id = ".$groupids[$i];
+        $hulp = $arr_length-1;
+        if ($hulp != $i){
+            $sql = $sql." OR ";
+        }
+    }
+        $sql = $sql." group by enroute_opdracht3.shop_name";
+        $stmt = $this->pdo->prepare($sql);
+        if($stmt->execute()){
+            $shopsBySchool = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if(!empty($shopsBySchool)){
+                return $shopsBySchool;
+            }
+            return false;
+        }
+    }
+
     public function getAllShopsAndAmountByGroup($group_id){
         $sql = "SELECT shop_name,group_id, COUNT(*) AS numberOFShops
                 FROM enroute_opdracht3
