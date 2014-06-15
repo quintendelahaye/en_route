@@ -11,10 +11,12 @@
 #import "TitleView.h"
 #import "MemberView.h"
 #import <AFNetworking.h>
+#import "Mission3delegate.h"
 
 @interface Mission3ViewController : UIViewController
 
 @property (nonatomic, strong) Mission3View *view;
 @property (nonatomic, strong) NSMutableArray *winkels;
+@property (nonatomic, weak) id<Mission3delegate> delegate;
 
 @end
