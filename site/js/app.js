@@ -30,6 +30,8 @@ function init()
     });
 
     $("#txtSearch").on("input change", changeHandler);
+
+    $(".soundImg").click(clickedOnSoundImg);
 }
 
 function changeSound(event){
@@ -58,4 +60,8 @@ function getSearchDataHandler(data){
     }
     $("#search+ol").remove();
     $("#search").after($ol);
+}
+
+function clickedOnSoundImg(e){
+    e.preventDefault();
 }

@@ -46,7 +46,8 @@ class Mission1DAO{
         $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
                 FROM enroute_opdracht1
                 INNER JOIN enroute_groups
-                ON enroute_opdracht1.id = enroute_groups.id";
+                ON enroute_opdracht1.id = enroute_groups.id
+                ORDER by enroute_groups.created_date DESC";
         $stmt = $this->pdo->prepare($sql);
          if($stmt->execute()){
              $collagepictures = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -100,5 +101,23 @@ class Mission1DAO{
             }
             return false;
         }
+    }
+
+    public function getFirstPicturesAndGroupNames($limit){
+        $sql = "SELECT enroute_opdracht1.*, enroute_groups.*
+                FROM enroute_opdracht1
+                INNER JOIN enroute_groups
+                ON enroute_opdracht1.id = enroute_groups.id
+                ORDER by enroute_groups.created_date DESC
+                LIMIT :limit";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':limit', $limit);
+         if($stmt->execute()){
+             $collagepictures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             if(!empty($collagepictures)){
+                 return $collagepictures;
+             }
+         }
+         return false;
     }
 }

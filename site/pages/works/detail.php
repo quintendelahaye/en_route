@@ -51,8 +51,8 @@
                         </div>
                     <?php endif; ?>
                 <?php else: ?>
-                    <div id="detailCollage">
-                        <p>nog niet gemaakt</p>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
                     </div>
                 <?php endif; ?>
             </section>
@@ -61,6 +61,8 @@
                 <header><h4>opdracht dialecten</h4></header>
                 <p class="explaination">De teams krijgen de opdracht om bepaalde <span>trefwoorden</span> uit een Antwerps liedje te laten inspreken door <span>Antwerpenaren</span> met een
                 zeer hard <span>accent</span>, ook moeten ze een <span>achtergrondfoto</span> nemen die perfect past bij hun stukje liedje.</p>
+
+                <?php if(!empty($mission2Sounds)): ?>
                 <ul id="dialectsContainer">
                     <?php foreach($mission2Sounds as $soundAndImage): ?>
                         <li class="dialectContainer">
@@ -75,6 +77,11 @@
                         </li>
                     <?php endforeach; ?>
                 </ul>
+                <?php else: ?>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
+                    </div>
+                <?php endif; ?>
             </section>
             <section class="work">
                 <p class="number">3</p>
@@ -101,11 +108,95 @@
                     <div id="dress">&nbsp;</div>
                 </div>
                 <div class="clear">&nbsp;</div>
-                <ul id="allShops">
-                    <?php foreach($shopsByGroup as $shopbygroup): ?>
-                        <li><span><?php echo $shopbygroup["numberOFShops"]; ?>x </span><?php echo ucwords($shopbygroup["shop_name"]); ?></li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if(!empty($shopsByGroup)): ?>
+                    <ul id="allShops">
+                        <?php foreach($shopsByGroup as $shopbygroup): ?>
+                            <li><span><?php echo $shopbygroup["numberOFShops"]; ?>x </span><?php echo ucwords($shopbygroup["shop_name"]); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php else: ?>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
+                    </div>
+                <?php endif; ?>
+            </section>
+            <section class="work">
+                <p class="number">4</p>
+                <header><h4>opdracht standbeelden</h4></header>
+                <p class="explaination">De stad bevat veel verschillende <span>standbeelden</span>, groot, klein, oud en modern.<br/>De jongeren moeten een <span>groepsfoto</span> maken waarin ze met heel de groep het standbeeld nadoen.</p>
+                <?php if(!empty($groupPictures)): ?>
+                    <ul class="collageContainer">
+                        <?php foreach($groupPictures as $grouppic): ?>
+                            <li class="collagePicContainer">
+                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=4&grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
+                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=4&grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
+                               <figure><img src="upload/mission4/<?php echo $grouppic["image_name"]; ?>" alt="foto3"/></figure>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php if(!empty($groupPic)):?>
+                        <div id="detailGroup">
+                            <p>Foto gemaakt door team: <span><?php echo $groupPic["groupname"]; ?></span></p>
+                            <img src="upload/mission4/<?php echo $groupPic["image_name"]; ?>" alt="<?php echo $groupPic["image_name"]; ?>"/>
+                        </div>
+                    <?php endif; ?>
+
+                <?php else: ?>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
+                    </div>
+                <?php endif; ?>
+            </section>
+            <section class="work">
+                <p class="number">5</p>
+                <header><h4>opdracht vintage</h4></header>
+                <p class="explaination">In Antwerpen lopen er veel mensen rond met een <span>vintage</span> accessoire of kledij.<br/> Neem een foto van de personen en leg de <span>focus</span> op het vintage element.</p>
+                <?php if(!empty($vintagePictures)): ?>
+                    <ul id="vintageContainer">
+                        <?php foreach($vintagePictures as $vintagePicture): ?>
+                            <li class="frame"><img src="upload/mission5/<?php echo $vintagePicture["image_name"]; ?>" alt="group"/></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php else: ?>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
+                    </div>
+                <?php endif; ?>
+            </section>
+            <section class="work">
+                <p class="number">6</p>
+                <header><h4>opdracht foetsie</h4></header>
+                <p class="explaination">De groepen moeten op zoek gaan naar objecten en elementen in de stad die binnenkort zullen <span>verdwijnen</span>.<br/> Ze nemen een foto en <span>verzinnen</span> wat er in de plaats zou kunnen komen.</p>
+                <?php if(!empty($foetsiepics)): ?>
+                    <ul class="collageContainer">
+                        <?php foreach($foetsiepics as $foetsiepic): ?>
+                            <li class="collagePicContainer">
+                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=6&foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><p><?php echo $foetsiepic["groupname"]; ?></p></a></div>
+                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=6&foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($foetsiepic['created_date'])); ?></p></a></div>
+                               <figure><img src="upload/mission6/<?php echo $foetsiepic["image_name"]; ?>" alt="foto3"/></figure>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php if(!empty($foetsiePicBig)):?>
+                    <div id="lostPicContainer">
+                        <figure><img src="upload/mission6/image<?php echo $foetsiePicBig["group_id"]; ?>.png" alt="photo1"/></figure>
+                        <div class="lines">
+                            <p class="new">"Dit wordt <?php echo $foetsiePicBig["new"]; ?>"</p>
+                            <h4><span>team: </span><?php echo $foetsiePicBig["groupname"]; ?></h4>
+                        </div>
+                        <p class="street"><?php echo $foetsiePicBig["street_name"]; ?></p>
+                    </div>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <div class="notReady">
+                        <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
+                    </div>
+                <?php endif; ?>
+                <a href="index.php?page=works" class="btnMore">Bekijk alle werken</a>
             </section>
     </section>
+
+    <div id="topBtn">
+        <a href="index.php?page=home" class="btnTop"><span>top</span></a>
+    </div>
 </article>

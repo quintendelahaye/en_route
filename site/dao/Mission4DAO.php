@@ -45,7 +45,8 @@ class Mission4DAO{
         $sql = "SELECT enroute_opdracht4.*, enroute_groups.*
                 FROM enroute_opdracht4
                 INNER JOIN enroute_groups
-                ON enroute_opdracht4.group_id = enroute_groups.id";
+                ON enroute_opdracht4.group_id = enroute_groups.id
+                ORDER by enroute_groups.created_date DESC";
         $stmt = $this->pdo->prepare($sql);
         if($stmt->execute()){
             $grouppics = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -74,5 +75,51 @@ class Mission4DAO{
            }
            return false;
        }
+    }
+
+
+    public function getGroupPictureBySchool($groupids){
+        $sql = "SELECT enroute_opdracht4.id, enroute_opdracht4.group_id,enroute_opdracht4.member_id,enroute_opdracht4.image_name,enroute_groups.groupname,enroute_groups.created_date
+                FROM enroute_opdracht4
+                INNER JOIN enroute_groups
+                ON enroute_opdracht4.group_id = enroute_groups.id
+                WHERE ";
+        $arr_length = count($groupids);
+        for ($i = 0; $i < $arr_length; $i++){
+            $sql = $sql."enroute_opdracht4.group_id = ".$groupids[$i];
+            $hulp = $arr_length-1;
+            if ($hulp != $i){
+                $sql = $sql." OR ";
+            }
+        }
+            $stmt = $this->pdo->prepare($sql);
+            if($stmt->execute()){
+                $groupPictures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if(!empty($groupPictures)){
+                    return $groupPictures;
+                }
+                return false;
+            }
+        }
+
+
+
+    public function getFirstGroupPics($limit){
+        $sql = "SELECT enroute_opdracht4.*, enroute_groups.*
+                FROM enroute_opdracht4
+                INNER JOIN enroute_groups
+                ON enroute_opdracht4.group_id = enroute_groups.id
+                ORDER by enroute_groups.created_date DESC
+                LIMIT :limit";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':limit', $limit);
+        if($stmt->execute()){
+            $grouppics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($grouppics)){
+                return $grouppics;
+            }
+            return false;
+        }
     }
 }

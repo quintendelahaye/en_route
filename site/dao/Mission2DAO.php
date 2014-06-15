@@ -59,7 +59,8 @@ class Mission2DAO{
 
     public function getAllSounds(){
         $sql = "SELECT *
-                FROM enroute_opdracht2_sound";
+                FROM enroute_opdracht2_sound
+                GROUP by word";
         $stmt = $this->pdo->prepare($sql);
         if($stmt->execute()){
             $sounds = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -90,6 +91,25 @@ class Mission2DAO{
 
             if(!empty($mission2Sounds)){
                 return $mission2Sounds;
+            }
+            return false;
+        }
+    }
+
+    public function getFirstSoundsAndPictures($limit){
+        $sql = "SELECT enroute_opdracht2_sound.*, enroute_groups.*
+                FROM enroute_opdracht2_sound
+                INNER JOIN enroute_groups
+                ON enroute_opdracht2_sound.group_id = enroute_groups.id
+                GROUP BY enroute_opdracht2_sound.group_id
+                ORDER BY enroute_groups.created_date DESC
+                LIMIT :limit";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':limit', $limit);
+        if($stmt->execute()){
+            $soundsAndBgs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($soundsAndBgs)){
+                return $soundsAndBgs;
             }
             return false;
         }

@@ -13,12 +13,6 @@
                 <?php else: ?>
                     <a href="index.php?page=works&mission=all" id="allMissions"><span>alle opdrachten</span></a>
                 <?php endif; ?>
-                <select>
-                  <option value=""> -- kies je school -- </option>
-                    <?php foreach($schools as $school): ?>
-                        <option value="<?php echo $school["id"];?>"><?php echo $school["school_name"];?></option>
-                    <?php endforeach; ?>
-                </select>
             </div>
             <div id="rightNav" class="right">
                 <ul>
@@ -46,7 +40,7 @@
                 <div class="number"><p>1</p></div>
                 <header><h4>opdracht collage</h4></header>
                 <p class="explaination">Voor deze opdracht moesten de jongeren een collage maken uit 3 <span>foto’s</span>, de foto’s tonen een groot contrast tussen <span>oud en nieuw</span>.</p>
-                <ul class="collageContainer">
+                <ul class="collageContainer" id="collages">
                     <?php foreach($collagepictures as $collagepicture): ?>
                         <li class="collagePicContainer">
                            <div class="overimgTop"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
@@ -76,8 +70,8 @@
                         	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
                         	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
                         </audio>
-                        <div class="overimgTop"><a href="#"><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                        <div class="overimgBottom"><a href="#"><p><?php echo $soundAndImage["word"]; ?></p></a></div>
+                        <div class="overimgTop"><a href="index.php?page=works#dialectsContainer" class="soundImg" ><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
+                        <div class="overimgBottom"><a href="index.php?page=works#dialectsContainer" class="soundImg" ><p><?php echo $soundAndImage["word"]; ?></p></a></div>
                         <a class="sound" id="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>" href="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>"><figure><img src="upload/mission2/image<?php echo $soundAndImage["group_id"]; ?>.jpg" alt="foto1"/></figure></a>
                         <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right"><?php echo date('d/m/y', strtotime($soundAndImage['created_date'])); ?></p></div>
                     </li>
@@ -132,7 +126,7 @@
             <p class="number">4</p>
             <header><h4>opdracht standbeelden</h4></header>
             <p class="explaination">De stad bevat veel verschillende <span>standbeelden</span>, groot, klein, oud en modern.<br/>De jongeren moeten een <span>groepsfoto</span> maken waarin ze met heel de groep het standbeeld nadoen.</p>
-            <ul class="collageContainer">
+            <ul class="collageContainer" id="groupContainer">
                 <?php foreach($grouppics as $grouppic): ?>
                     <li class="collagePicContainer">
                        <div class="overimgTop"><a href="index.php?page=works&mission=4&id=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
@@ -158,14 +152,13 @@
                 <?php foreach($vintagepics as $vintagepic): ?>
                     <li class="frame"><img src="upload/mission5/<?php echo $vintagepic["image_name"]; ?>" alt="group"/></li>
                 <?php endforeach; ?>
-
             </ul>
         </section>
         <?php endif; ?>
         <?php if($mission6): ?>
         <section class="work">
             <p class="number">6</p>
-            <header><h4>opdracht verdwijnen</h4></header>
+            <header><h4>opdracht foetsie</h4></header>
             <p class="explaination">De groepen moeten op zoek gaan naar objecten en elementen in de stad die binnenkort zullen <span>verdwijnen</span>.<br/> Ze nemen een foto en <span>verzinnen</span> wat er in de plaats zou kunnen komen.</p>
                 <ul class="collageContainer">
                     <?php foreach($oldvsnewpics as $oldvsnewpic): ?>

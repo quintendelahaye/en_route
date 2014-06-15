@@ -1190,16 +1190,6 @@ footer #footerContent ul .twtricon {
 #missionNav #leftNav #allMissions span {
   visibility: hidden;
 }
-#missionNav #leftNav select {
-  border: none;
-  background-color: white;
-  width: 148px;
-  height: 30px;
-  margin-top: 10px;
-  font-family: bebas-neue;
-  color: #558178;
-  font-size: 1.9em;
-}
 #missionNav #rightNav {
   width: 500px;
 }
@@ -1320,8 +1310,15 @@ footer #footerContent ul .twtricon {
   margin-top: 10px;
 }
 #groups #members li {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #34524c;
+}
+
+.notReady {
+  text-align: center;
+  color: #558178;
+  font-family: bebas-neue;
+  font-size: 3em;
 }
 
 @media only screen and (max-width: 1300px) {

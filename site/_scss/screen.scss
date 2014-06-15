@@ -1132,16 +1132,6 @@ footer{
         visibility: hidden;
       }
     }
-    select{
-      border: none;
-      background-color: white;
-      width: 148px;
-      height: 30px;
-      margin-top: 10px;
-      font-family: bebas-neue;
-      color: $darkBlueColor;
-      font-size: 1.9em;
-    }
   }
   #rightNav{
     width: 500px;
@@ -1222,10 +1212,17 @@ footer{
   #members{
     margin-top: 10px;
     li{
-      font-size: 2em;
+      font-size: 1.8em;
       color: $darkerBlueColor;
     }
   }
+}
+
+.notReady{
+  text-align: center;
+  color: $darkBlueColor;
+  font-family: bebas-neue;
+  font-size: 3em;
 }
 
 //----------- media ---------------------------------------------------------------------------------------------------------

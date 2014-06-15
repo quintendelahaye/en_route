@@ -191,6 +191,8 @@
 
             $mission1 = false;
             $collage = "";
+            $groupPic = "";
+            $foetsiePicBig = "";
 
             if(!empty($_GET["mission"]))
             {
@@ -215,9 +217,26 @@
             $shopsByGroup = $this->mission3DAO->getAllShopsAndAmountByGroup($_GET['id']);
             $this->set("shopsByGroup", $shopsByGroup);
 
+            $groupPictures = $this->mission4DAO->getGroupPictureBySchool($arrGroups);
+            $this->set('groupPictures', $groupPictures);
+            if(!empty($_GET["grouppicid"])){
+                $groupPic = $this->mission4DAO->getGroupPicByGroup($_GET["grouppicid"]);
+            }
+
+            $vintagePictures = $this->mission5DAO->getVintagePictureBySchool($arrGroups);
+            $this->set('vintagePictures', $vintagePictures);
+
+            $foetsiepics = $this->mission6DAO->getAllPicsBySchool($arrGroups);
+            $this->set('foetsiepics', $foetsiepics);
+            if(!empty($_GET["foetsie"])){
+                $foetsiePicBig = $this->mission6DAO->getAllPicsByPictureId($_GET["foetsie"]);
+            }
+
             $this->set('arrGroups', $arrGroups);
 
             $this->set("mission1", $mission1);
             $this->set("collage", $collage);
+            $this->set("groupPic", $groupPic);
+            $this->set("foetsiePicBig", $foetsiePicBig);
         }
     }

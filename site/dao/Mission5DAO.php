@@ -43,7 +43,8 @@ class Mission5DAO{
 
     public function getAllVintagePics(){
         $sql = "SELECT *
-                FROM enroute_opdracht5";
+                FROM enroute_opdracht5
+                ORDER by id DESC";
         $stmt = $this->pdo->prepare($sql);
         if($stmt->execute()){
             $vintagepics = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -53,4 +54,45 @@ class Mission5DAO{
             return false;
         }
     }
+
+    public function getVintagePictureBySchool($groupids){
+        $sql = "SELECT enroute_opdracht5.id, enroute_opdracht5.group_id,enroute_opdracht5.member_id,enroute_opdracht5.image_name,enroute_groups.groupname,enroute_groups.created_date
+                FROM enroute_opdracht5
+                INNER JOIN enroute_groups
+                ON enroute_opdracht5.group_id = enroute_groups.id
+                WHERE ";
+        $arr_length = count($groupids);
+        for ($i = 0; $i < $arr_length; $i++){
+            $sql = $sql."enroute_opdracht5.group_id = ".$groupids[$i];
+            $hulp = $arr_length-1;
+            if ($hulp != $i){
+                $sql = $sql." OR ";
+            }
+        }
+            $stmt = $this->pdo->prepare($sql);
+            if($stmt->execute()){
+                $vintagePictures = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if(!empty($vintagePictures)){
+                    return $vintagePictures;
+                }
+                return false;
+            }
+        }
+
+    public function getFirstVintagePics($limit){
+        $sql = "SELECT *
+                FROM enroute_opdracht5
+                ORDER by id DESC
+                LIMIT :limit";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":limit",$limit);
+        if($stmt->execute()){
+            $vintagepics = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(!empty($vintagepics)){
+                return $vintagepics;
+            }
+            return false;
+        }
+    }
+
 }
