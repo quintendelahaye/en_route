@@ -36,6 +36,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    [self.resultView addGestureRecognizer:tap];
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
@@ -50,6 +55,11 @@
     [self.resultView.redo addTarget:self action:@selector(startChallenge:) forControlEvents:UIControlEventTouchUpInside];
     [self.resultView.ok  addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)dismissKeyboard {
+    [self.resultView.txtElement resignFirstResponder];
+}
+
 
 -(void) startChallenge:(id)sender{
     NSLog(@"[OverviewVC] Show camera");
@@ -90,6 +100,10 @@
     if (self.resultAccepted) {
         //controleren als textfield leeg is of niet
         //upload
+        if ([self.resultView.txtElement.text length] != 0 && ![self.resultView.txtElement.text  isEqual: @""])
+        {
+            [self upload];
+        }
     } else {
         [self.resultView mission3];
         [self.resultView.ok  addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
@@ -135,6 +149,17 @@
     [body appendData:[parameterValue2 dataUsingEncoding:NSUTF8StringEncoding]];
     [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
+    NSString *new = @"";
+    if ([self.resultView.txtElement.text  isEqual: @""]) {
+        new = @"opdracht mislukt";
+    } else {
+        new = self.resultView.txtElement.text;
+    }
+    
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"new\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[new dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     
     [request setHTTPBody:body];
@@ -164,6 +189,9 @@
     
     if (self.secondsLeft == 0) {
         square = [self createFailwithImage:square];
+        [self.view addSubview:self.resultView];
+        self.resultView.imageView.image = square;
+        [self upload];
     }
     
     [self.view addSubview:self.resultView];
@@ -250,7 +278,9 @@
     }
     if (self.secondsLeft < 0) {
         //failstamp toevoegen
-        //[self done:self];
+        if (!self.resultAccepted) {
+            [self done:self];
+        }
         
         [self.timer invalidate];
         self.timer = nil;

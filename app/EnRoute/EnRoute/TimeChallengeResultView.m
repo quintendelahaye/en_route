@@ -48,6 +48,8 @@
         
         self.ok = [UIElementFactory createButtonWithImageName:@"btn_ok" andPoint:CGPointMake(205, 432)];
         [self addSubview:self.ok];
+        
+        self.txtElement = [[UITextField alloc]initWithFrame:CGRectMake(20, 432, 203, 50)];
     }
     return self;
 }

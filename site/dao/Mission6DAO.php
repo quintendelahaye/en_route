@@ -11,6 +11,37 @@ class Mission6DAO{
         $this->pdo = DatabasePDO::getInstance();
     }
 
+    public function insertPicture($group_id, $member_id, $image_name, $new){
+        $sql = "INSERT INTO enroute_opdracht6(group_id, member_id, image_name, new)
+                VALUES (:group_id,:member_id,:image_name, :new)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":group_id",$group_id);
+        $stmt->bindValue(":member_id",$member_id);
+        $stmt->bindValue(":image_name",$image_name);
+        $stmt->bindValue(":new",$new);
+        if($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getPicturesByAmount()
+    {
+        $sql = "SELECT id, COUNT(*) AS NumberOfPictures
+                        FROM enroute_opdracht6";
+        $stmt = $this->pdo->prepare($sql);
+        if($stmt->execute())
+        {
+            $pictures = $stmt->fetch(PDO::FETCH_ASSOC);
+            if(!empty($pictures))
+            {
+                return $pictures;
+            }
+        }
+        return false;
+    }
+
     public function getAllPics(){
         $sql = "SELECT enroute_opdracht6.*, enroute_groups.*
                 FROM enroute_opdracht6
