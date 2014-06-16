@@ -10,10 +10,12 @@
 #import "Mission3ExplanationView.h"
 #import "TitleView.h"
 #import "Mission3ViewController.h"
+#import "Mission3delegate.h"
 
-@interface Mission3ExplanationViewController : UIViewController
+@interface Mission3ExplanationViewController : UIViewController<Mission3delegate>
 
 @property (nonatomic, strong) Mission3ExplanationView *view;
 @property (nonatomic, strong) Mission3ViewController *mission3VC;
+@property (nonatomic, weak) id<Mission3delegate> delegate;
 
 @end

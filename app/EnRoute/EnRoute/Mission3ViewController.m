@@ -93,9 +93,8 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager POST:[NSString stringWithFormat:@"%@mission3",API] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"success: %@",responseObject);
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
-        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
-        [self.navigationController popToRootViewControllerAnimated:NO];
+        [self.delegate Mission3Finished];
+        [self.navigationController popViewControllerAnimated:NO];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

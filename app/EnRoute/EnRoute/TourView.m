@@ -73,22 +73,22 @@
         [self.mapView addAnnotation:annotation1];
         
         
-        RMAnnotation *annotation2 = [[RMAnnotation alloc] initWithMapView:self.mapView
+        self.annotion2 = [[RMAnnotation alloc] initWithMapView:self.mapView
                                                                coordinate:CLLocationCoordinate2DMake(51.2199838,4.4021755)
                                                                  andTitle:@"opdracht1_marker"];
-        [self.mapView addAnnotation:annotation2];
+        [self.mapView addAnnotation:self.annotion2];
         
         
-        RMAnnotation *annotation3 = [[RMAnnotation alloc] initWithMapView:self.mapView
+        self.annotion3 = [[RMAnnotation alloc] initWithMapView:self.mapView
                                                                coordinate:CLLocationCoordinate2DMake(51.2161293,4.3980323)
                                                                  andTitle:@"opdracht2_marker"];
-        [self.mapView addAnnotation:annotation3];
+        [self.mapView addAnnotation:self.annotion3];
         
         
-        RMAnnotation *annotation4 = [[RMAnnotation alloc] initWithMapView:self.mapView
+        self.annotion4 = [[RMAnnotation alloc] initWithMapView:self.mapView
                                                                coordinate:CLLocationCoordinate2DMake(51.2181592,4.4100586)
                                                                  andTitle:@"opdracht3_marker"];
-        [self.mapView addAnnotation:annotation4];
+        [self.mapView addAnnotation:self.annotion4];
         
         self.mapView.zoom = 15;
     }
@@ -100,7 +100,7 @@
     NSLog(@"LOUD NOISES");
     if ([annotation.title  isEqual: @"opdracht1"] || [annotation.title  isEqual: @"opdracht2"] || [annotation.title  isEqual: @"opdracht3"]) {
         RMShape *shape = [[RMShape alloc]initWithView:self.mapView];
-        if ([annotation.title  isEqual: @"opdracht1"]) {
+        if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]]) {
             //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
             shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon_unlocked"]];
             shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
@@ -124,14 +124,12 @@
         if ([annotation.title  isEqual: @"kavka"]) {
             marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"kavka"]];
         }
-        if ([annotation.title  isEqual: @"opdracht1_marker"]) {
-            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_unlocked"]];
-        }
-        if ([annotation.title  isEqual: @"opdracht2_marker"]) {
-            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
-        }
-        if ([annotation.title  isEqual: @"opdracht3_marker"]) {
-            marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+        if ([annotation.title  isEqual: @"opdracht1_marker"] || [annotation.title  isEqual: @"opdracht2_marker"] || [annotation.title  isEqual: @"opdracht3_marker"]){
+            if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@_marker",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]]) {
+                marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_unlocked"]];
+            } else {
+                marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+            }
         }
         return marker;
     }
@@ -142,9 +140,22 @@
 }
 
 - (void)mapView:(RMMapView *)mapView didSelectAnnotation:(RMAnnotation *)annotation{
-    NSLog(@"dklsmjqdlsmk");
-    NSLog(@"%@",annotation.title);
-    [self.delegate annotationSelected:annotation.title];
+    if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]] || [annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@_marker",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]]) {
+        [self.delegate annotationSelected:[NSString stringWithFormat:@"opdracht%@",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]];
+    }
+}
+
+- (void)removeAllPinsButUserLocation
+{
+    NSLog(@"removing");
+    id userLocation = [self.mapView userLocation];
+    NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self.mapView annotations]];
+    if ( userLocation != nil ) {
+        [pins removeObject:userLocation]; // avoid removing user location off the map
+    }
+    
+    [self.mapView removeAnnotations:pins];
+    [self.mapView addAnnotations:pins];
 }
 
 

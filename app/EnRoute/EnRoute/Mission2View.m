@@ -80,9 +80,10 @@
 }
 
 - (void)moviePlayerLoadStateChanged:(id)sender{
-    NSLog(@"ti gelukt");
-    [self.videoController play];
-    [self.delegate videoPlaying];
+    if (self.videoController.loadState == 3) {
+        [self.videoController play];
+        [self.delegate videoPlaying];
+    }
 }
 
 /*

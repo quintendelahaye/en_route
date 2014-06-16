@@ -20,9 +20,12 @@
 @interface TourView : UIView <RMMapViewDelegate,CLLocationManagerDelegate>
 
 @property (nonatomic, strong) RMMapView *mapView;
-@property (nonatomic, strong) RMAnnotation *annotion;
 @property (nonatomic, strong) RMAnnotation *annotion2;
+@property (nonatomic, strong) RMAnnotation *annotion3;
+@property (nonatomic, strong) RMAnnotation *annotion4;
 @property (nonatomic, weak) id<TourDelegate> delegate;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+
+- (void)removeAllPinsButUserLocation;
 
 @end

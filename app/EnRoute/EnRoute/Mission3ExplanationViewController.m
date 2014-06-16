@@ -52,6 +52,12 @@
     NSLog(@"Start Opdracht3");
     self.mission3VC = [[Mission3ViewController alloc]initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:self.mission3VC animated:YES];
+    self.mission3VC.delegate = self;
+}
+
+-(void)Mission3Finished{
+    [self.delegate Mission3Finished];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
