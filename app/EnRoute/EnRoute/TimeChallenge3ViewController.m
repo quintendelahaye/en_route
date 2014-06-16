@@ -20,7 +20,8 @@
     if (self) {
         // Custom initialization
         self.navigationItem.backBarButtonItem = nil;
-        self.secondsLeft = 10;
+        //voor het debuggen worden de timers op 2 minuten ingesteld
+        self.secondsLeft = 120;
         self.resultVisible = NO;
         self.resultAccepted = NO;
     }
@@ -91,7 +92,7 @@
     self.picker.delegate = self;
     self.resultVisible = NO;
     
-    if (self.secondsLeft == 10) {
+    if (self.secondsLeft == 120) {
         NSLog(@"bla");
         self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
     }

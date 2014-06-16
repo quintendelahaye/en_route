@@ -38,7 +38,7 @@
         self.bgTime = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"timerbg"]];
         self.bgTime.center = CGPointMake(self.frame.size.width/2, 287);
         [self addSubview:self.bgTime];
-        self.lblTime = [UIElementFactory createLabelWithFont:CORKI andSize:22 andText:@"05:00" andFrame:CGRectMake(0, 0, 60, 0) andColor:[UIColor lightYellowColor] andTextalignment:NSTextAlignmentCenter];
+        self.lblTime = [UIElementFactory createLabelWithFont:CORKI andSize:22 andText:@"02:00" andFrame:CGRectMake(0, 0, 60, 0) andColor:[UIColor lightYellowColor] andTextalignment:NSTextAlignmentCenter];
         self.lblTime.frame = CGRectMake(0, 0, 60, 33);
         self.lblTime.center = CGPointMake(self.frame.size.width/2, 287);
         [self addSubview:self.lblTime];

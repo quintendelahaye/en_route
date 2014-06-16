@@ -93,8 +93,8 @@
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     [manager POST:[NSString stringWithFormat:@"%@mission3",API] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"success: %@",responseObject);
-        [self.delegate Mission3Finished];
         [self.navigationController popViewControllerAnimated:NO];
+        [self.delegate Mission3Finished];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

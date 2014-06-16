@@ -19,8 +19,10 @@
     #define CORKI @"Corki-Rounded"
     #define BEBAS @"BebasNeue"
     //#define API @"http://student.howest.be/zoe.van.kuyk/20132014/MAIV/ENROUTE/api/"
-    #define API @"http://169.254.216.138/MAIV/en_route/site/api/"
+    //#define API @"http://169.254.216.138/MAIV/en_route/site/api/"
+    #define API @"http://localhost/MAIV/en_route/site/api/"
     //#define UPLOAD @"http://student.howest.be/zoe.van.kuyk/20132014/MAIV/ENROUTE/upload/"
-    #define UPLOAD @"http://169.254.216.138/MAIV/en_route/site/upload/"
+    //#define UPLOAD @"http://169.254.216.138/MAIV/en_route/site/upload/"
+    #define UPLOAD @"http://localhost/MAIV/en_route/site/upload/"
 
 #endif

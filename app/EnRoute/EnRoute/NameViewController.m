@@ -125,6 +125,10 @@
     NSLog(@"miauw");
     [[NSUserDefaults standardUserDefaults]setObject:[NSString stringWithFormat:@"%d",self.selectedId] forKey:@"userid"];
     [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
+    [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
+    NSMutableArray *completedMissions = [NSMutableArray array];
+    [[NSUserDefaults standardUserDefaults]setObject:completedMissions forKey:@"completedMissions"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }

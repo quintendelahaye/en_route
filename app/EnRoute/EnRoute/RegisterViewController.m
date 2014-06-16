@@ -89,6 +89,10 @@
                 [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"userid"];
                 [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
                 [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
+                [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
+                [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
+                NSMutableArray *completedMissions = [NSMutableArray array];
+                [[NSUserDefaults standardUserDefaults]setObject:completedMissions forKey:@"completedMissions"];
                 
             }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"Error: %@", error);

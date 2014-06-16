@@ -26,11 +26,12 @@
         UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = barButton;
         //weg
+        
         [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
         [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
         NSMutableArray *completedMissions = [NSMutableArray array];
         [[NSUserDefaults standardUserDefaults]setObject:completedMissions forKey:@"completedMissions"];
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     return self;
 }
@@ -56,7 +57,8 @@
     self.bgTimer.center = CGPointMake(160, 506);
     [self.view addSubview:self.bgTimer];
     
-    self.lblTimer = [UIElementFactory createLabelWithFont:BEBAS andSize:22 andText:@"05:00" andFrame:CGRectMake(0, 0, 60, 0) andColor:[UIColor lightYellowColor] andTextalignment:NSTextAlignmentCenter];
+    //voor het debuggen worden de timers op 2 minuten ingesteld
+    self.lblTimer = [UIElementFactory createLabelWithFont:BEBAS andSize:22 andText:@"00:20" andFrame:CGRectMake(0, 0, 60, 0) andColor:[UIColor lightYellowColor] andTextalignment:NSTextAlignmentCenter];
     self.lblTimer.frame = CGRectMake(0, 0, 60, 33);
     self.lblTimer.center = CGPointMake(33, 507);
     [self.view addSubview:self.lblTimer];
@@ -70,7 +72,8 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     
     //timer starten
-    self.secondsLeft = 10;
+    //voor het debuggen worden de timers op 2 minuten ingesteld
+    self.secondsLeft = 20;
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
 }
 
@@ -123,8 +126,8 @@
     [self.unlockedView.mode addTarget:self action:@selector(mode:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.bgTimer];
     [self.view addSubview:self.lblTimer];
-    self.lblTimer.text = @"00:10";
-    self.secondsLeft = 10;
+    self.lblTimer.text = @"00:20";
+    self.secondsLeft = 20;
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
 }
 
@@ -138,8 +141,8 @@
         NSLog(@"miauw");
         [self.view addSubview:self.bgTimer];
         [self.view addSubview:self.lblTimer];
-        self.lblTimer.text = @"00:10";
-        self.secondsLeft = 10;
+        self.lblTimer.text = @"00:20";
+        self.secondsLeft = 20;
         self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
         
         //add unlockedview
@@ -151,8 +154,11 @@
     } else {
         UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_end_screen"];
         self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Je hebt alle opdrachten voltooid, wandel terug naar het Kavka." andLast:YES];
+        self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
         [self.view addSubview:self.unlockedView];
         [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
+        [self updateCompletedMissions:@"2"];
+        [self.view removeAllPinsButUserLocation];
     }
 }
 
@@ -165,8 +171,8 @@
         [self.view removeAllPinsButUserLocation];
         [self.view addSubview:self.bgTimer];
         [self.view addSubview:self.lblTimer];
-        self.lblTimer.text = @"00:10";
-        self.secondsLeft = 10;
+        self.lblTimer.text = @"00:20";
+        self.secondsLeft = 20;
         self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
         
         UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
@@ -176,8 +182,11 @@
     } else {
         UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_end_screen"];
         self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Je hebt alle opdrachten voltooid, wandel terug naar het Kavka." andLast:YES];
+        self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
         [self.view addSubview:self.unlockedView];
         [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
+        [self updateCompletedMissions:@"3"];
+        [self.view removeAllPinsButUserLocation];
     }
 }
 
@@ -210,12 +219,9 @@
         [self.bgTimer removeFromSuperview];
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]  isEqual: @"1"]) {
             //eerste opdracht
-            //self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
-            //self.timeChallenge1VC.delegate = self;
-            //[self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
-            self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];
-            self.timeChallenge3VC.delegate = self;
-            [self.navigationController pushViewController:self.timeChallenge3VC animated:YES];
+            self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
+            self.timeChallenge1VC.delegate = self;
+            [self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
         } else if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"lastMission"]  isEqual: @"YES"]){
             //laatste opdracht
             self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];

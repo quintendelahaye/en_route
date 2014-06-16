@@ -56,8 +56,9 @@
 }
 
 -(void)Mission3Finished{
+    NSLog(@"test");
+    [self.navigationController popViewControllerAnimated:NO];
     [self.delegate Mission3Finished];
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
