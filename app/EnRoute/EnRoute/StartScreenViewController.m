@@ -31,6 +31,7 @@
         NSLog(@"is logged in --> %hhd",[[NSUserDefaults standardUserDefaults]boolForKey:@"isUserLoggedIn"]);
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(logout:) name:@"LOGOUT_TAPPED" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginChanged:) name:@"LOGIN_CHANGED" object:nil];
+        
     }
     return self;
 }
@@ -40,17 +41,19 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
     [self.view.btnStart addTarget:self action:@selector(startTour:) forControlEvents:UIControlEventTouchUpInside];
     [self.view.btnHandleiding addTarget:self action:@selector(startTutorial:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.menuVC = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+    [self addChildViewController:self.menuVC];
+    [self.view addSubview:self.menuVC.view];
+    [self.menuVC didMoveToParentViewController:self];
 }
 
 -(void)menuTapped:(id)sender{
-    //[self.view showMenu];
-    
-    MenuViewController *menuVC = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
-    //[self.navigationController pushViewController:menuVC animated:NO];
-    //[self presentViewController:menuVC animated:YES completion:^{}];
-    [self addChildViewController:menuVC];
-    [self.view addSubview:menuVC.view];
-    [menuVC didMoveToParentViewController:self];
+    if (self.menuVC.zichtbaar) {
+        [self.menuVC hideView];
+    }else{
+        [self.menuVC showView];
+    }
 }
 
 -(void)logout:(id)sender{
@@ -78,6 +81,11 @@
 - (void)startTutorial:(id)sender{
     TutorialViewController *tutorialVC = [[TutorialViewController alloc] initWithNibName:nil bundle:nil];
     [self.navigationController pushViewController:tutorialVC animated:NO];
+    tutorialVC.delegate = self;
+}
+
+-(void)tutorialFinished{
+    [self startTour:self];
 }
 
 - (void)didReceiveMemoryWarning

@@ -125,6 +125,7 @@
     NSLog(@"miauw");
     [[NSUserDefaults standardUserDefaults]setObject:[NSString stringWithFormat:@"%d",self.selectedId] forKey:@"userid"];
     [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 

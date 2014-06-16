@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "StartScreenView.h"
-#import "MenuView.h"
 #import "MainViewController.h"
 #import "TourViewController.h"
 #import "MenuViewController.h"
 #import "TutorialViewController.h"
 
-@interface StartScreenViewController : UIViewController
+@interface StartScreenViewController : UIViewController <TutorialDelegate>
 
 @property (strong,nonatomic)StartScreenView *view;
-@property (strong,nonatomic)MenuView *menu;
+@property (strong,nonatomic)MenuViewController *menuVC;
 
 @end

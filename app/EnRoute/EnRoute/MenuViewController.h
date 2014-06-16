@@ -9,9 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MenuView.h"
 #import "TitleView.h"
+#import "TutorialViewController.h"
+#import "LegendeViewController.h"
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <TutorialDelegate>
 
 @property (strong,nonatomic)MenuView *view;
+
+@property (nonatomic, assign) BOOL zichtbaar;
+
+- (void)hideView;
+- (void)showView;
 
 @end

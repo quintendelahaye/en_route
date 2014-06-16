@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "TutorialView.h"
 #import "TitleView.h"
-#import "TourViewController.h"
+#import "TutorialDelegate.h"
 
 @interface TutorialViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) TutorialView *view;
+
+@property (nonatomic, weak) id<TutorialDelegate> delegate;
 
 @end

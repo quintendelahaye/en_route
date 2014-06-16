@@ -16,7 +16,6 @@
 
 @property(nonatomic, strong)UIButton *btnMap;
 @property(nonatomic, strong)UIButton *btnHandleiding;
-@property(nonatomic, strong)UIButton *btnWerken;
 @property(nonatomic, strong)UIButton *btnstop;
 
 @end

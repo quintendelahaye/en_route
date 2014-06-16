@@ -16,6 +16,7 @@
 #import "TimeChallenge1ViewController.h"
 #import "TimeChallenge3ViewController.h"
 #import "UIElementFactory.h"
+#import "MenuViewController.h"
 
 @interface TourViewController : UIViewController <TourDelegate,Mission1Delegate,Mission2Delegate,Mission3delegate,ChallengeDelegate>
 
@@ -26,7 +27,7 @@
 @property (nonatomic, strong) TimeChallenge1ViewController *timeChallenge1VC;
 @property (nonatomic, strong) TimeChallenge1ViewController *timeChallenge2VC;
 @property (nonatomic, strong) TimeChallenge3ViewController *timeChallenge3VC;
-
+@property (nonatomic, strong) MenuViewController *menuVC;
 @property (nonatomic, strong) UnlockedView *unlockedView;
 
 @property (nonatomic, strong) UIImageView *bgTimer;

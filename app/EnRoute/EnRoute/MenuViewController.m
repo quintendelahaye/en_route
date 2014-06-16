@@ -24,7 +24,7 @@
 }
 
 -(void)loadView{
-    CGRect bounds = CGRectMake(0, 0, 320, 403);
+    CGRect bounds = CGRectMake(0, 0, 320, 250);
     self.view = [[MenuView alloc] initWithFrame:bounds];
 }
 
@@ -34,11 +34,51 @@
     // Do any additional setup after loading the view.
 
     //title ---------
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
     TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"menu"];
     [self.view addSubview:title];
+    
+    [self.view.btnHandleiding addTarget:self action:@selector(startTutorial:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view.btnMap addTarget:self action:@selector(showLegende:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.view.frame = CGRectMake(0, -250, 320, 250);
+    self.zichtbaar = NO;
+}
+
+- (void)hideView{
+    NSLog(@"yes");
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
+    [UIView animateWithDuration:1 animations:^{
+        self.view.frame = CGRectMake(0, -250, 320, 250);
+    }];
+    self.zichtbaar = NO;
+}
+- (void)showView{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
+    [UIView animateWithDuration:1 animations:^{
+        self.view.frame = CGRectMake(0, 0, 320, 250);
+    }];
+    self.zichtbaar = YES;
+}
+
+-(void)showLegende:(id)sender{
+    LegendeViewController *legendeVC = [[LegendeViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:legendeVC animated:YES];
+    [self hideMenu];
+}
+
+- (void)startTutorial:(id)sender{
+    TutorialViewController *tutorialVC = [[TutorialViewController alloc] initWithNibName:nil bundle:nil];
+    [self.navigationController pushViewController:tutorialVC animated:YES];
+    [self hideMenu];
+}
+
+-(void)hideMenu{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navController"] forBarMetrics:UIBarMetricsDefault];
+    self.view.frame = CGRectMake(0, -250, 320, 250);
+    self.zichtbaar = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,6 +86,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+    
 
 /*
 #pragma mark - Navigation

@@ -76,6 +76,8 @@
                 NSLog(@"DEUTSCHLAND");
                 NSLog(@"JSON: %@", responseObject);
                 [[NSUserDefaults standardUserDefaults]setObject:[responseObject objectForKey:@"id"] forKey:@"userid"];
+                [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
+                [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
                 
             }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 NSLog(@"Error: %@", error);
@@ -150,6 +152,7 @@
         NSLog(@"success: %@",responseObject);
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"isUserLoggedIn"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [self.navigationController popToRootViewControllerAnimated:NO];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

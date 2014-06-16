@@ -15,18 +15,21 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        [self createButtons];
-        
         self.backgroundColor = [UIColor colorWithRed:230/250.0f green:234/250.0f blue:198/250.0f alpha:1];
         
         UIImage *logOutImage = [UIImage imageNamed:@"afmeldKnop"];
-        self.afmeldKnop = [[UIButton alloc] init];
-        [self.afmeldKnop setImage:logOutImage forState:UIControlStateNormal];
-        self.afmeldKnop.frame = CGRectMake(0, self.frame.size.height - logOutImage.size.height, logOutImage.size.width, logOutImage.size.height);
+        self.afmeldKnop = [UIElementFactory createButtonWithImageName:@"afmeldKnop" andPoint:CGPointMake(0, self.frame.size.height - logOutImage.size.height)];
         [self addSubview:self.afmeldKnop];
         
         [self.afmeldKnop addTarget:self action:@selector(logOutTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIImage *menuTutorial = [UIImage imageNamed:@"menu_tutorial"];
+        self.btnHandleiding = [UIElementFactory createButtonWithImageName:@"menu_tutorial" andPoint:CGPointMake(0, self.afmeldKnop.frame.origin.y - menuTutorial.size.height +4)];
+        [self addSubview:self.btnHandleiding];
+        
+        UIImage *legende = [UIImage imageNamed:@"menu_legende"];
+        self.btnMap = [UIElementFactory createButtonWithImageName:@"menu_legende" andPoint:CGPointMake(0, self.self.btnHandleiding.frame.origin.y - legende.size.height +4)];
+        [self addSubview:self.btnMap];
         
     }
     return self;
@@ -40,11 +43,6 @@
                                           cancelButtonTitle:@"Nee"
                                           otherButtonTitles:@"Ja",nil];
     [alert show];
-}
-
--(void)createButtons{
-    self.btnMap = [UIElementFactory createButtonWithImageName:@"btnMenuMap" andPoint:CGPointMake(20, 30 )];
-    [self addSubview:self.btnMap];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex

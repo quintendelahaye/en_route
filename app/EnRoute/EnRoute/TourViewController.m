@@ -25,8 +25,12 @@
         [button setFrame:CGRectMake(0, 0, 25, 31)];
         UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = barButton;
+        //weg
         [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"upcomingMission"];
         [[NSUserDefaults standardUserDefaults]setObject:@"NO" forKey:@"lastMission"];
+        NSMutableArray *completedMissions = [NSMutableArray array];
+        [[NSUserDefaults standardUserDefaults]setObject:completedMissions forKey:@"completedMissions"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
     }
     return self;
 }
@@ -58,9 +62,24 @@
     self.lblTimer.center = CGPointMake(33, 507);
     [self.view addSubview:self.lblTimer];
     
+    //menu toevoegen
+    self.menuVC = [[MenuViewController alloc] initWithNibName:nil bundle:nil];
+    [self addChildViewController:self.menuVC];
+    [self.view addSubview:self.menuVC.view];
+    [self.menuVC didMoveToParentViewController:self];
+    
     //timer starten
     self.secondsLeft = 10;
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+}
+
+-(void)menuTapped:(id)sender{
+    if (self.menuVC.zichtbaar) {
+        [self.menuVC hideView];
+    }else{
+        [self.menuVC showView];
+    }
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)annotationSelected:(NSString *)title{
@@ -84,8 +103,18 @@
     }
 }
 
+-(void)updateCompletedMissions:(NSString*)mission{
+    NSMutableArray *completedMissions = [NSMutableArray array];
+    completedMissions = [[[NSUserDefaults standardUserDefaults]objectForKey:@"completedMissions"]mutableCopy];
+    [completedMissions addObject:mission];
+    [[NSUserDefaults standardUserDefaults]setObject:completedMissions forKey:@"completedMissions"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 - (void)Mission1Finished{
     //UnlockedView
+    [self updateCompletedMissions:@"1"];
+    
     UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
     self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Jullie kunnen kiezen welk deel jullie nu eerst gaan bezoeken." andLast:NO];
     [self.view addSubview:self.unlockedView];
@@ -102,6 +131,8 @@
     if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"lastMission"]  isEqual: @"NO"]) {
         [[NSUserDefaults standardUserDefaults]setObject:@"3" forKey:@"upcomingMission"];
         [[NSUserDefaults standardUserDefaults]setObject:@"YES" forKey:@"lastMission"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self updateCompletedMissions:@"2"];
         [self.view removeAllPinsButUserLocation];
         NSLog(@"miauw");
         [self.view addSubview:self.bgTimer];
@@ -113,10 +144,14 @@
         //add unlockedview
         UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
         self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"De laatste buurt die jullie gaan bezoeken is de modebuurt." andLast:YES];
+        self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
         [self.view addSubview:self.unlockedView];
         [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     } else {
-        NSLog(@"show einde niggertje");
+        UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_end_screen"];
+        self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Je hebt alle opdrachten voltooid, wandel terug naar het Kavka." andLast:YES];
+        [self.view addSubview:self.unlockedView];
+        [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -124,6 +159,8 @@
     if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"lastMission"]  isEqual: @"NO"]) {
         [[NSUserDefaults standardUserDefaults]setObject:@"2" forKey:@"upcomingMission"];
         [[NSUserDefaults standardUserDefaults]setObject:@"YES" forKey:@"lastMission"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self updateCompletedMissions:@"3"];
         [self.view removeAllPinsButUserLocation];
         [self.view addSubview:self.bgTimer];
         [self.view addSubview:self.lblTimer];
@@ -136,7 +173,10 @@
         
         [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     } else {
-        NSLog(@"show einde niggertje");
+        UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_end_screen"];
+        self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"Je hebt alle opdrachten voltooid, wandel terug naar het Kavka." andLast:YES];
+        [self.view addSubview:self.unlockedView];
+        [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
@@ -146,12 +186,14 @@
 
 - (void)kunst:(id)sender{
     [[NSUserDefaults standardUserDefaults]setObject:@"2" forKey:@"upcomingMission"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self.unlockedView removeFromSuperview];
     [self.view removeAllPinsButUserLocation];
 }
 
 - (void)mode:(id)sender{
     [[NSUserDefaults standardUserDefaults]setObject:@"3" forKey:@"upcomingMission"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self.unlockedView removeFromSuperview];
     [self.view removeAllPinsButUserLocation];
 }

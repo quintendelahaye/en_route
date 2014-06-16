@@ -17,13 +17,13 @@
         // Initialization code
         NSLog(@"[LogoView] init");
         [self drawBackGround];
-        [self drawLogo];
+        //[self drawLogo];
     }
     return self;
 }
 
 -(void)drawBackGround{
-    self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"kader"]];
+    self.background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeHead"]];
     self.background.center = CGPointMake(0, 0);
     [self addSubview:self.background];
 }

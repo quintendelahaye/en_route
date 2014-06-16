@@ -108,11 +108,26 @@
                 [shape addLineToCoordinate:location.coordinate];
             }
         }else{
-            //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
-            shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon"]];
-            shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
-            for (CLLocation *location in annotation.userInfo){
-                [shape addLineToCoordinate:location.coordinate];
+            BOOL found = NO;
+            NSMutableArray *completedMissions = [NSMutableArray array];
+            completedMissions = [[[NSUserDefaults standardUserDefaults]objectForKey:@"completedMissions"]mutableCopy];
+            for (NSString *mission in completedMissions) {
+                if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@",mission]]) {
+                    shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon_unlocked"]];
+                    shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
+                    found = YES;
+                    for (CLLocation *location in annotation.userInfo){
+                        [shape addLineToCoordinate:location.coordinate];
+                    }
+                }
+            }
+            if (!found) {
+                //shape.fillColor= [UIColor colorWithRed:248/255.0f green:200/255.0f blue:200/255.0f alpha:0.8];
+                shape.fillColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"patroon"]];
+                shape.lineColor= [UIColor colorWithRed:248/255.0f green:247/255.0f blue:237/255.0f alpha:0];
+                for (CLLocation *location in annotation.userInfo){
+                    [shape addLineToCoordinate:location.coordinate];
+            }
             }
         }
         return shape;
@@ -128,7 +143,18 @@
             if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@_marker",[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]]]) {
                 marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_unlocked"]];
             } else {
-                marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+                BOOL found = NO;
+                NSMutableArray *completedMissions = [NSMutableArray array];
+                completedMissions = [[[NSUserDefaults standardUserDefaults]objectForKey:@"completedMissions"]mutableCopy];
+                for (NSString *mission in completedMissions) {
+                    if ([annotation.title  isEqual: [NSString stringWithFormat:@"opdracht%@_marker",mission]]) {
+                        marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"done_marker"]];
+                        found = YES;
+                    }
+                }
+                if (!found) {
+                    marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"marker_locked"]];
+                }
             }
         }
         return marker;

@@ -43,6 +43,7 @@
 		A04FF4F6194CD6D400570BB3 /* Mission3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04FF4F5194CD6D400570BB3 /* Mission3ViewController.m */; };
 		A04FF4F9194CD6EC00570BB3 /* Mission3View.m in Sources */ = {isa = PBXBuildFile; fileRef = A04FF4F8194CD6EC00570BB3 /* Mission3View.m */; };
 		A05129A71945ED8A00709BCB /* UnlockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = A05129A61945ED8A00709BCB /* UnlockedView.m */; };
+		A065113C194F3961005D71D7 /* LegendeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A065113B194F3961005D71D7 /* LegendeViewController.m */; };
 		A09FB5C719467476000E0A54 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A09FB5C619467476000E0A54 /* MenuViewController.m */; };
 		A0A0BC811942EBF2004158EA /* Mission1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC801942EBF2004158EA /* Mission1ViewController.m */; };
 		A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0BC831942EC1A004158EA /* Mission1IntroductionView.m */; };
@@ -152,6 +153,9 @@
 		A05129A51945ED8A00709BCB /* UnlockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnlockedView.h; sourceTree = "<group>"; };
 		A05129A61945ED8A00709BCB /* UnlockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnlockedView.m; sourceTree = "<group>"; };
 		A05129A81945EF1C00709BCB /* Mission1Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission1Delegate.h; sourceTree = "<group>"; };
+		A0651139194F2A60005D71D7 /* TutorialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialDelegate.h; sourceTree = "<group>"; };
+		A065113A194F3961005D71D7 /* LegendeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegendeViewController.h; sourceTree = "<group>"; };
+		A065113B194F3961005D71D7 /* LegendeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegendeViewController.m; sourceTree = "<group>"; };
 		A06DAF8F194E347C00ABE69B /* Mission3delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mission3delegate.h; sourceTree = "<group>"; };
 		A09FB5C519467476000E0A54 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		A09FB5C619467476000E0A54 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 				814735441940B71F003B23CC /* MenuView.m */,
 				A09FB5C519467476000E0A54 /* MenuViewController.h */,
 				A09FB5C619467476000E0A54 /* MenuViewController.m */,
+				A065113A194F3961005D71D7 /* LegendeViewController.h */,
+				A065113B194F3961005D71D7 /* LegendeViewController.m */,
 			);
 			name = menu;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				A0CE70A019489A6500652565 /* TutorialViewController.m */,
 				A0CE70A219489A7C00652565 /* TutorialView.h */,
 				A0CE70A319489A7C00652565 /* TutorialView.m */,
+				A0651139194F2A60005D71D7 /* TutorialDelegate.h */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -705,6 +712,7 @@
 				A0CE70D2194A018200652565 /* WordView.m in Sources */,
 				A0B9F77519472B2A008D2DD2 /* MemberView.m in Sources */,
 				A0A0BC841942EC1A004158EA /* Mission1IntroductionView.m in Sources */,
+				A065113C194F3961005D71D7 /* LegendeViewController.m in Sources */,
 				815C3007193BA47D004E3C5C /* RegisterViewController.m in Sources */,
 				A0D76E9D194DA06100247CEC /* TimeChallenge3ViewController.m in Sources */,
 				A0CE70A119489A6500652565 /* TutorialViewController.m in Sources */,
