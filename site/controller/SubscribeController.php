@@ -55,6 +55,9 @@
                 }
             }
 
+            $dates = $this->groupsDAO->getAllChosenDates();
+            $this->set('dates', $dates);
+
             $this->set('txtGroup', $txtGroup);
             $this->set('txtEmail', $txtEmail);
             $this->set('txtName', $txtName);

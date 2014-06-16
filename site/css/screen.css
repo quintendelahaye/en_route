@@ -324,7 +324,7 @@ footer #footerContent ul .twtricon {
 }
 .worksContainer #homeheader p {
   font-size: 2em;
-  color: #e95c54;
+  color: #558178;
   text-align: left;
   padding-top: 10px;
   padding-left: 36px;
@@ -1372,6 +1372,34 @@ iframe {
 }
 #subscribe .error {
   background-color: #e95c54;
+}
+
+.peetje {
+  background: url("../images/peetje.png") no-repeat;
+  width: 106px;
+  height: 46px;
+  position: absolute;
+  top: 680px;
+  left: -106px;
+}
+
+.hand {
+  background: url("../images/hand.png") no-repeat;
+  width: 92px;
+  height: 55px;
+  position: absolute;
+  top: 680px;
+  left: -92px;
+}
+
+#booked {
+  width: 700px;
+  margin: 20px auto 20px auto;
+}
+#booked li {
+  display: inline-block;
+  color: #e95c54;
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 1300px) {

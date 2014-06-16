@@ -45,6 +45,17 @@
                          </div>
                 </fieldset>
             </form>
+            <section class="work">
+                <header><h4>reeds geboekte datums</h4></header>
+                <?php if(!empty($dates)): ?>
+                    <ul id="booked">
+                        <?php foreach($dates as $date): ?>
+                            <li><?php echo date('d/m/y', strtotime($date["visited"])); ?><span> / </span></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </section>
         <?php endif; ?>
     </section>
+    <div class="hand" data-0="left:-92px; opacity:1" data-300="left:1300px; opacity:0">&nbsp;</div>
 </article>

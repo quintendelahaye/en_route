@@ -157,4 +157,16 @@ class GroupsDAO{
         $stmt->bindValue(":visited",$visited);
         if($stmt->execute());
     }
+
+    public function getAllChosenDates(){
+        $sql = "select visited from enroute_schools";
+        $stmt = $this->pdo->prepare($sql);
+         if($stmt->execute()){
+             $dates = $stmt->fetchAll(PDO::FETCH_ASSOC);
+             if(!empty($dates)){
+                 return $dates;
+             }
+         }
+         return false;
+    }
 }

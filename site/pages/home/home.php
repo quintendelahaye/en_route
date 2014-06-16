@@ -120,4 +120,6 @@
     <div id="topBtn">
         <a href="index.php?page=home" class="btnTop"><span>top</span></a>
     </div>
+
+    <div class="peetje" data-0="left:-106px; opacity:1" data-300="left:1300px; opacity:0">&nbsp;</div>
 </article>
