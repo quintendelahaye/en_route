@@ -298,7 +298,7 @@ footer{
         }
       }
       #groups{
-        width: 300px;
+        //width: 300px;
       }
       .notReady{
         font-size: 2em;
@@ -1380,32 +1380,35 @@ iframe{
   }
 }
 
-@media only screen and (max-width: 640px) {
+@media  only screen and (max-width: 824px) {
   h1{
     a{
       background-size: 80%;
       margin-top: 10px;
-      left: 310px;
+      left: 410px;
+      margin-left: -110px;
+    }
+  }
+  .worksContainer{
+      width: 780px;
+  }
+
+}
+
+
+
+@media  only screen and (max-width: 778px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 385px;
       margin-left: -110px;
     }
   }
 
-  .peetje, .hand{
-    display: none;
-  }
-
-  .searchField{
-  margin: 124px 20px 0px 0px;
-    form{
-      input[type=text]{
-        width:100px;
-        height:20px;
-      }
-    }
-  }
-
   .worksContainer{
-  width: 590px;
+    width: 700px;
     #homeheader{
         p{
           font-size: 1.7em;
@@ -1415,8 +1418,20 @@ iframe{
       iframe{
         margin: 20px auto 30px auto;
 
-        width: 430px;
-        height: 285px;
+        width: 700px;
+        height: 351px;
+      }
+      #collage{
+        width: 700px;
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
       }
       #booked{
         margin-bottom: 30px;
@@ -1429,18 +1444,23 @@ iframe{
     }
   }
 
+  .collageContainer{
+    width: 700px;
+    margin-left: 30px;
+    .collagePicContainer{
+      margin-bottom: 20px;
+    }
+  }
+
   .explaination{
-    width: 90%;
+    width: 98%;
     margin-left: 20px;
   }
 
   #dialectsContainer{
-      width: 590px;
-      font-size: 90%;
-
+    margin-left: 60px;
     .dialectContainer{
-      margin-left: 26px;
-      margin-bottom: 40px;
+      margin-left: 20px;
       .overimgBottom{
         font-size: 1.6;
       }
@@ -1449,105 +1469,235 @@ iframe{
       font-size: 1.3em;
     }
   }
-  #fashionContainer{
-    margin: 0;
-    display: block;
-    min-height: 250px;
-    width: 140px;
-    #dress{
-      top: 180px;
-      left: 280px;
-    }
-    #textContainer{
-      margin-top: 40px;
-      width: 120px;
-      top: -70px;
-      #labels{
-        top: 80px;
-        left:-55px;
-      }
-      #amountOfShops{
-        width: 320px;
-        top: 200px;
-        left: 43px;
-      }
 
-      #shops{
-        width: 320px;
-        top: 250px;
-        left: 25px;
+  footer{
+    #footerContent{
+      width: 778px;
+    }
+  }
+}
+
+@media  only screen and (max-width: 768px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 380px;
+      margin-left: -110px;
+    }
+  }
+
+  .searchField{
+  margin: 33px 20px 0px 0px;
+    form{
+      input[type=text]{
+        width:120px;
+        height:20px;
+        font-size: 0.9em;
       }
     }
   }
 
-  #vintageContainer{
-    width: 370px;
-    .bigFrame{
-      top: 165px;
-      left: 30px;
+  .explaination{
+    width: 98%;
+    margin-left: 20px;
+  }
+
+  .worksContainer{
+    width: 700px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 700px;
+        height: 351px;
+      }
+      #collage{
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
     }
   }
 
-  #lostPicContainer{
-    width: 280px;
-    margin: 0;
-    padding: 0;
-    figure{
-      img{
-        margin-left: 40px;
-        margin-bottom: 20px;
-
-        width: 248px;
-        height: 187px;
+  #dialectsContainer{
+    margin-left: 60px;
+    .dialectContainer{
+      margin-left: 20px;
+      .overimgBottom{
+        font-size: 1.6;
       }
     }
-    .lines{
-      top: 90px;
-      left: -15px;
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
 
-      -webkit-transform: rotate(-10deg) scale(.7);
-      -moz-transform: rotate(-10deg) scale(.7);
-      -ms-transform: rotate(-10deg) scale(.7);
-      -o-transform: rotate(-10deg) scale(.7);
-      transform: rotate(-10deg) scale(.7);
+  .collageContainer{
+    width: 600px;
+    margin: 0px auto 0px auto;
+    .collagePicContainer{
+      margin-bottom: 20px;
+    }
+  }
 
+}
 
-      p{
-        font-size: 2.7em;
-        top: -20px;
-      }
-
-      h4{
-        font-size: 3em;
-        font-family: bebas-neue;
-        top: 15px;
-      }
+@media  only screen and (max-width: 700px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 345px;
+      margin-left: -110px;
     }
   }
 
   #soundBoard{
-    width: 380px;
-    margin-left: 50px;
-     li{
-       margin-top: 20px;
-     }
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #allShops{
+    width: 650px;
+  }
+
+  .worksContainer{
+    width: 650px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 650px;
+        height: 351px;
+      }
+      #collage{
+        width: 650px;
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
+    }
   }
 
   #topBtn{
-    width: 430px;
-    margin-top: 80px;
+    width: 650px;
+  }
+
+  #lostPicContainer{
+      width: 650px;
+      .lines{
+        top: 80px;
+        left: 70px;
+      }
+    }
+
+  .collageContainer{
+    width: 650px;
+    .collagePicContainer{
+      margin-bottom: 20px;
+    }
+  }
+
+  .explaination{
+    width: 98%;
+    margin-left: 10px;
+  }
+
+  #dialectsContainer{
+    margin-left: 30px;
+    .dialectContainer{
+      margin-left: 20px;
+      .overimgBottom{
+        font-size: 1.6;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+
+  #vintageContainer{
+    width: 650px;
   }
 
   footer{
-    width: 100%;
     #footerContent{
-      width: 430px;
+      width: 700px;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 310px;
+      margin-left: -110px;
+    }
+  }
+
+  #groups{
+    width: 600px;
+  }
+
+  #topBtn{
+    width: 600px;
+    margin-top: 80px;
+  }
+
+  .peetje, .hand{
+    display: none;
+  }
+
+  footer{
+    width: 640px;
+    #footerContent{
+      width: 600px;
       h4{
-        top: -32px;
-        left: -3px;
+        left: 20px;
       }
       ul{
-        margin-left: 5px;
         li{
           font-size: 1.3em;
           margin-right: 30px;
@@ -1556,14 +1706,131 @@ iframe{
     }
   }
 
+  .searchField{
+  margin: 33px 20px 0px 0px;
+    form{
+      input[type=text]{
+        width:120px;
+        height:20px;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .explaination{
+    width: 98%;
+    margin-left: 20px;
+  }
+
+  .worksContainer{
+    width: 600px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 600px;
+        height: 251px;
+      }
+      #collage{
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  #allShops{
+    width: 600px;
+  }
+
+  #dialectsContainer{
+    margin-left: 20px;
+    .dialectContainer{
+      margin-left: 20px;
+      .overimgBottom{
+        font-size: 1.6;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+
+  #vintageContainer{
+    width: 600px;
+  }
+
+  #fashionContainer{
+    #textContainer{
+      #amountOfShops{
+        width: 310px;
+        margin-right: 0px;
+        left: 165px;
+        li{
+          width: 10px;
+          margin-left: 85px;
+          margin-right: 0px;
+        }
+      }
+      #shops{
+        width: 320px;
+        top: 130px;
+        left: 220px;
+      }
+    }
+  }
+
+  #lostPicContainer{
+    width: 600px;
+    .lines{
+      top: 80px;
+      left: 70px;
+    }
+  }
+
+  .collageContainer{
+    width: 600px;
+    margin: 0px auto 0px auto;
+    .collagePicContainer{
+      margin-bottom: 20px;
+    }
+  }
+
+  #soundBoard{
+    width: 600px;
+    margin-left: 50px;
+     li{
+       margin-top: 20px;
+     }
+  }
+
   #missionNav{
     margin: 0px 0px 20px 10px;
-    width: 330px;
+    width: 380px;
     #rightNav{
       margin-top: 20px;
       width: 380px;
       ul{
-        margin-left: 40px;
+        margin-left: 0px;
         li{
           width: 150px;
           margin-left: 5px;
@@ -1573,32 +1840,116 @@ iframe{
     }
   }
 
+}
+
+@media  only screen and (max-width: 600px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 295px;
+      margin-left: -110px;
+    }
+  }
+
+  #soundBoard{
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   #allShops{
-    width: 440px;
-    margin-top: 20px;
-    margin-left: 15px;
-    li{
-      margin-bottom: 10px;
+    width: 550px;
+  }
+
+  .worksContainer{
+    width: 550px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 550px;
+        height: 351px;
+      }
+      #collage{
+        width: 550px;
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
     }
   }
 
-  #detailGroup{
-    margin: 20px 0px 0px 0px;
-    width: 445px;
-    img{
-      width: 425px;
-      height: 425px;
-      margin: 0;
+  #fashionContainer{
+    width: 550px;
+  }
+
+  #topBtn{
+    width: 550px;
+  }
+
+  #lostPicContainer{
+      width: 550px;
+      .lines{
+        top: 100px;
+        left: 37px;
+      }
     }
-    p{
-      width: 445px;
-      margin-bottom: 5px;
+
+  .collageContainer{
+    width: 400px;
+    .collagePicContainer{
+      margin-bottom: 20px;
     }
   }
 
-  #subscribe{
-    width: 223px;
-    margin: 20px auto 0px auto;
+  .explaination{
+    width: 98%;
+    margin-left: 10px;
+  }
+
+  #dialectsContainer{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    .dialectContainer{
+      margin-left: 0px;
+      .overimgBottom{
+        font-size: 1.6;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+
+  #vintageContainer, #groups{
+    width: 550px;
+  }
+
+  footer{
+    #footerContent{
+      width: 600px;
+    }
   }
 }
 
@@ -1640,6 +1991,10 @@ iframe{
         width: 430px;
         height: 285px;
       }
+      #collage{
+        width: 300px;
+
+      }
       #booked{
         margin-bottom: 30px;
         width: 300px;
@@ -1659,6 +2014,8 @@ iframe{
   #dialectsContainer{
       width: 100px;
       font-size: 90%;
+      margin-left: 0px;
+    margin-bottom: 10px;
 
     .dialectContainer{
       margin-left: 80px;
@@ -1691,7 +2048,7 @@ iframe{
       #amountOfShops{
         width: 320px;
         top: 200px;
-        left: 43px;
+        left: -34px;
       }
 
       #shops{
@@ -1704,10 +2061,6 @@ iframe{
 
   #vintageContainer{
     width: 370px;
-    .bigFrame{
-      top: 165px;
-      left: 30px;
-    }
   }
 
   #lostPicContainer{
@@ -1827,11 +2180,20 @@ iframe{
 @media  only screen and (max-width: 400px) {
   h1{
     a{
-      background-size: 60%;
+      background-size: 70%;
       margin-top: 10px;
-      left: 200px;
-      margin-left: -90px;
+      left: 205px;
+      margin-left: -110px;
     }
+  }
+
+  #soundBoard{
+    width: 350px;
+    margin: 0;
+     li{
+       margin-top: 20px;
+       margin-left: 0px;
+     }
   }
 
   .introTextBg{
@@ -1854,14 +2216,11 @@ iframe{
         height: 205px;
       }
       #collage{
+        width: 350px;
+        margin: 0;
          #detailCollage{
            width: 350px;
            margin: 30px auto 30px auto;
-           img{
-             width: 300px;
-             height: 300px;
-             margin: 10px 0px 0px 15px;
-           }
          }
       }
       #booked{
@@ -1881,26 +2240,22 @@ iframe{
   }
 
   .collageContainer{
+    width: 280px;
+    margin-left: 70px;
     .collagePicContainer{
-      padding: 0px 10px 10px 10px;
-    }
-    .overimgTop a, .overimgBottom a{
-      left:14px;
-    }
-    .overimgBottom a{
-      bottom: 16px;
+      margin-bottom: 20px;
+      margin-right: 10px;
     }
   }
 
   #dialectsContainer{
-      width: 140px;
-      font-size: 90%;
-
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
     .dialectContainer{
-      margin-left: 30px;
-      margin-bottom: 30px;
+      margin-left: 0px;
       .overimgBottom{
-        font-size: 1.8em;
+        font-size: 1.6;
       }
     }
     .dateDialects{
@@ -1928,7 +2283,7 @@ iframe{
       #amountOfShops{
         width: 320px;
         top: 200px;
-        left: 43px;
+        left: -30px;
       }
 
       #shops{
@@ -1937,6 +2292,10 @@ iframe{
         left: 25px;
       }
     }
+  }
+
+  #groups{
+    width: 300px;
   }
 
   #imageContainer{
@@ -2046,7 +2405,7 @@ iframe{
   margin: 124px 20px 0px 0px;
     form{
       input[type=text]{
-        width:50px;
+        width:28px;
         height:20px;
       }
     }
@@ -2066,13 +2425,6 @@ iframe{
           }
       }
     }
-  }
-
-  #soundBoard{
-    width: 360px;
-     li{
-       margin-top: 20px;
-     }
   }
 
   #allShops{
@@ -2115,231 +2467,274 @@ iframe{
 
 @media  only screen and (max-width: 320px) {
   h1{
-    a{
-      margin-top: 25px;
-      left: 230px;
-      margin-left: -180px;
-    }
-  }
-
-  nav{
-    #menuNav{
-      width: 200px;
-    }
-  }
-
-  .introTextBg{
-   p{
-     font-size: 1.6em;
-   }
-  }
-  .worksContainer{
-    width: 300px;
-    #homeheader{
-      p{
-        font-size: 1.7em;
-      }
-    }
-    #works{
-      iframe{
-        margin: 20px auto 30px auto;
-
-        width: 300px;
-        height: 255px;
-      }
-      #collage{
-         #detailCollage{
-           width: 250px;
-           margin: 0px auto 30px auto;
-           img{
-             width: 250px;
-             height: 250px;
-             margin: 0;
-           }
-           p{
-             width: 250px;
-           }
-         }
-      }
-      #booked{
-        margin-bottom: 30px;
-        width: 280px;
-      }
-    }
-  }
-
-  .explaination{
-    width: 80%;
-    margin-left: 20px;
-  }
-
-  .collageContainer{
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    .overimgTop a, .overimgBottom a{
-      left:14px;
-    }
-    .overimgBottom a{
-      bottom: 16px;
-    }
-  }
-
-  #dialectsContainer{
-      width: 140px;
-      font-size: 90%;
-
-    .dialectContainer{
-      margin: 0px auto 40px auto;
-      .overimgBottom{
-        font-size: 1.8em;
-      }
-    }
-    .dateDialects{
-      font-size: 1.3em;
-    }
-  }
-
-  #fashionContainer{
-    margin: 0;
-    display: block;
-    min-height: 250px;
-    width: 140px;
-    #dress{
-      top: 180px;
-      left: 140px;
-    }
-    #textContainer{
-      margin-top: 40px;
-      width: 120px;
-      top: -70px;
-      #labels{
-        left:-80px;
-      }
-      #amountOfShops{
-        width: 310px;
-        margin-right: 0px;
-        left: -60px;
-        li{
-          width: 10px;
-          margin-left: 85px;
-          margin-right: 0px;
-        }
-      }
-
-      #shops{
-        left: -60px;
-        width: 310px;
-        li{
-          width: 20px;
-          margin-left: 80px;
-          margin-right: 0px;
-        }
-      }
-    }
-  }
-
-  #vintageContainer{
-    width: 310px;
-    margin: 0;
-    .frame{
-      margin: 0;
-    }
-  }
-
-  #lostPicContainer{
-    width: 280px;
-    margin: 0;
-    padding: 0;
-    figure{
-      img{
-        margin-left: 20px;
-        margin-bottom: 20px;
-
-        width: 248px;
-        height: 187px;
-      }
-    }
-    .lines{
-      top: 103px;
-      left: -107px;
-    }
-  }
-
-  #topBtn{
-    margin-top: 60px;
-  }
-
-  footer{
-    width: 320px;
-    #footerContent{
-      width: 320px;
-      h4{
-        top: -32px;
-        left: -3px;
-      }
-      ul{
-        margin-left: 5px;
-        li{
-          font-size: 0.9em;
-          margin-right: 5px;
-        }
-      }
-    }
-  }
-
-  .searchField{
-  margin: 124px 20px 0px 0px;
-    form{
-      input[type=text]{
-        width:28px;
-        height:20px;
-      }
-    }
-  }
-
-  #missionNav{
-    margin: 0px 0px 20px 0px;
-    width: 310px;
-    #rightNav{
-      margin-top: 20px;
-      width: 310px;
-      ul{
-        margin-left: 0px;
-        li{
-          width: 150px;
-            margin-left: 0px;
-          }
-      }
-    }
-  }
-
-  #soundBoard{
-    width: 310px;
-    margin-bottom: 20px;
-     li{
-       margin-top: 20px;
-       margin-left: 70px;
+     a{
+       background-size: 70%;
+       margin-top: 10px;
+       left: 205px;
+       margin-left: -110px;
      }
-  }
+   }
 
-  #allShops{
-    width: 310px;
-    margin-left: 0px;
-  }
-
-  #detailGroup{
-    margin: 0;
-    width: 310px;
-    img{
-      width: 290px;
-      height: 290px;
-      margin: 0;
-    }
-    p{
-      width: 300px;
-      font-size: 1.8em;
-      margin-bottom: 5px;
+   #soundBoard{
+     width: 200px;
+     margin: 0;
+      li{
+        margin-top: 20px;
+        margin-left: 0px;
       }
-  }
-}
+   }
+
+   .introTextBg{
+    p{
+      font-size: 1.8em;
+    }
+   }
+   .worksContainer{
+     width: 300px;
+     #homeheader{
+       p{
+         font-size: 1.7em;
+       }
+     }
+     #works{
+       iframe{
+         margin: 20px auto 30px auto;
+
+         width: 300px;
+         height: 205px;
+       }
+       #collage{
+         width: 300px;
+         margin: 0;
+          #detailCollage{
+            width: 180px;
+            height: 180px;
+            margin: 30px 0px 30px 0px;
+          }
+       }
+       #booked{
+         margin-bottom: 30px;
+         width: 300px;
+       }
+       #searchesOl{
+         width: 300px;
+         margin-top: 20px;
+       }
+     }
+   }
+
+   .explaination{
+     width: 90%;
+     margin-left: 20px;
+   }
+
+   .collageContainer{
+     width: 280px;
+     margin-left: 40px;
+     .collagePicContainer{
+       margin-bottom: 20px;
+       margin-right: 10px;
+     }
+   }
+
+   #dialectsContainer{
+     width: 280px;
+     margin-left: auto;
+     margin-right: auto;
+     .dialectContainer{
+       margin-left: 0px;
+       .overimgBottom{
+         font-size: 1.6;
+       }
+     }
+     .dateDialects{
+       font-size: 1.3em;
+     }
+   }
+
+   #fashionContainer{
+     margin: 0;
+     display: block;
+     min-height: 250px;
+     width: 140px;
+     #dress{
+       top: 180px;
+       left: 120px;
+     }
+     #textContainer{
+       margin-top: 40px;
+       width: 120px;
+       top: -70px;
+       #labels{
+         top: 80px;
+         left:-55px;
+       }
+       #amountOfShops{
+         width: 320px;
+         top: 200px;
+         left: -30px;
+       }
+
+       #shops{
+         width: 280px;
+         top: 250px;
+         left: 25px;
+       }
+     }
+   }
+
+   #groups{
+     width: 300px;
+   }
+
+   #imageContainer{
+     width: 300px;
+     h4{
+       width: 100px;
+       font-size: 1.6em;
+     }
+     h4:first-of-type{
+       left: 0px;
+     }
+     h4:last-of-type{
+       text-align: right;
+       color: $redColor;
+       top: 150px;
+       right: 0px;
+       img{
+         padding-right: 10px;
+       }
+     }
+   }
+
+   #vintageContainer{
+     width: 300px;
+   }
+
+   #lostPicContainer{
+     width: 280px;
+     margin: 0;
+     padding: 0;
+     figure{
+       img{
+         margin-left: 40px;
+         margin-bottom: 20px;
+
+         width: 248px;
+         height: 187px;
+       }
+     }
+     .lines{
+       top: 50px;
+       left: -88px;
+
+       -webkit-transform: rotate(-25deg) scale(.6);
+       -moz-transform: rotate(-25deg) scale(.6);
+       -ms-transform: rotate(-25deg) scale(.6);
+       -o-transform: rotate(-25deg) scale(.6);
+       transform: rotate(-25deg) scale(.6);
+
+
+       p{
+         font-size: 2.7em;
+         top: -20px;
+       }
+
+       h4{
+         font-size: 3em;
+         font-family: bebas-neue;
+         top: 15px;
+       }
+     }
+   }
+
+   #topBtn{
+     width: 300px;
+     margin-top: 30px;
+   }
+
+   footer{
+     width: 320px;
+     #footerContent{
+       width: 400px;
+       h4{
+         top: -32px;
+         left: -3px;
+       }
+       ul{
+         margin-left: 10px;
+         li{
+           font-size: 1.1em;
+           margin-right: 10px;
+         }
+
+         .fbicon,.twtricon{
+           top: -30px;
+         }
+       }
+     }
+   }
+
+   .searchField{
+   margin: 124px 20px 0px 0px;
+     form{
+       input[type=text]{
+         width:28px;
+         height:20px;
+       }
+     }
+   }
+
+   #missionNav{
+     margin: 0px 0px 20px 40px;
+     width: 150px;
+     #rightNav{
+       margin-top: 20px;
+       width: 150px;
+       ul{
+         margin-left: 10px;
+         li{
+           width: 150px;
+             margin-left: 5px;
+           }
+       }
+     }
+   }
+
+   #allShops{
+     width: 300px;
+     margin-top: 20px;
+     margin-left: 10px;
+     li{
+       margin-bottom: 10px;
+     }
+   }
+
+   #detailGroup{
+     margin: 0;
+     width: 300px;
+     img{
+       width: 300px;
+       height: 300px;
+       margin: 0;
+     }
+     p{
+       width: 300px;
+       font-size: 1.8em;
+       margin-bottom: 5px;
+       }
+   }
+
+   .peetje, .hand{
+     display: none;
+   }
+
+   #topBtn{
+     margin-top: 90px;
+   }
+
+   #subscribe{
+     width: 223px;
+     margin: 20px auto 0px auto;
+   }
+ }

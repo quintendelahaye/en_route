@@ -351,9 +351,6 @@ footer #footerContent ul .twtricon {
   font-family: bebas-neue;
   color: #e95c54;
 }
-.worksContainer #works .work #groups {
-  width: 300px;
-}
 .worksContainer #works .work .notReady {
   font-size: 2em;
 }
@@ -1447,36 +1444,48 @@ iframe {
     margin-left: -90px;
   }
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 824px) {
   h1 a {
     background-size: 80%;
     margin-top: 10px;
-    left: 310px;
+    left: 410px;
     margin-left: -110px;
   }
 
-  .peetje, .hand {
-    display: none;
+  .worksContainer {
+    width: 780px;
   }
-
-  .searchField {
-    margin: 124px 20px 0px 0px;
-  }
-  .searchField form input[type=text] {
-    width: 100px;
-    height: 20px;
+}
+@media only screen and (max-width: 778px) {
+  h1 a {
+    background-size: 80%;
+    margin-top: 10px;
+    left: 385px;
+    margin-left: -110px;
   }
 
   .worksContainer {
-    width: 590px;
+    width: 700px;
   }
   .worksContainer #homeheader p {
     font-size: 1.7em;
   }
   .worksContainer #works iframe {
     margin: 20px auto 30px auto;
-    width: 430px;
-    height: 285px;
+    width: 700px;
+    height: 351px;
+  }
+  .worksContainer #works #collage {
+    width: 700px;
+  }
+  .worksContainer #works #collage #detailCollage {
+    width: 350px;
+    margin: 30px auto 30px auto;
+  }
+  .worksContainer #works #collage #detailCollage img {
+    width: 300px;
+    height: 300px;
+    margin: 10px 0px 0px 15px;
   }
   .worksContainer #works #booked {
     margin-bottom: 30px;
@@ -1487,18 +1496,24 @@ iframe {
     margin-top: 20px;
   }
 
+  .collageContainer {
+    width: 700px;
+    margin-left: 30px;
+  }
+  .collageContainer .collagePicContainer {
+    margin-bottom: 20px;
+  }
+
   .explaination {
-    width: 90%;
+    width: 98%;
     margin-left: 20px;
   }
 
   #dialectsContainer {
-    width: 590px;
-    font-size: 90%;
+    margin-left: 60px;
   }
   #dialectsContainer .dialectContainer {
-    margin-left: 26px;
-    margin-bottom: 40px;
+    margin-left: 20px;
   }
   #dialectsContainer .dialectContainer .overimgBottom {
     font-size: 1.6;
@@ -1507,148 +1522,432 @@ iframe {
     font-size: 1.3em;
   }
 
-  #fashionContainer {
-    margin: 0;
-    display: block;
-    min-height: 250px;
-    width: 140px;
+  footer #footerContent {
+    width: 778px;
   }
-  #fashionContainer #dress {
-    top: 180px;
-    left: 280px;
+}
+@media only screen and (max-width: 768px) {
+  h1 a {
+    background-size: 80%;
+    margin-top: 10px;
+    left: 380px;
+    margin-left: -110px;
   }
-  #fashionContainer #textContainer {
-    margin-top: 40px;
+
+  .searchField {
+    margin: 33px 20px 0px 0px;
+  }
+  .searchField form input[type=text] {
     width: 120px;
-    top: -70px;
-  }
-  #fashionContainer #textContainer #labels {
-    top: 80px;
-    left: -55px;
-  }
-  #fashionContainer #textContainer #amountOfShops {
-    width: 320px;
-    top: 200px;
-    left: 43px;
-  }
-  #fashionContainer #textContainer #shops {
-    width: 320px;
-    top: 250px;
-    left: 25px;
+    height: 20px;
+    font-size: 0.9em;
   }
 
-  #vintageContainer {
-    width: 370px;
-  }
-  #vintageContainer .bigFrame {
-    top: 165px;
-    left: 30px;
+  .explaination {
+    width: 98%;
+    margin-left: 20px;
   }
 
-  #lostPicContainer {
-    width: 280px;
-    margin: 0;
-    padding: 0;
+  .worksContainer {
+    width: 700px;
   }
-  #lostPicContainer figure img {
-    margin-left: 40px;
+  .worksContainer #homeheader p {
+    font-size: 1.7em;
+  }
+  .worksContainer #works iframe {
+    margin: 20px auto 30px auto;
+    width: 700px;
+    height: 351px;
+  }
+  .worksContainer #works #collage #detailCollage {
+    width: 350px;
+    margin: 30px auto 30px auto;
+  }
+  .worksContainer #works #collage #detailCollage img {
+    width: 300px;
+    height: 300px;
+    margin: 10px 0px 0px 15px;
+  }
+  .worksContainer #works #booked {
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  .worksContainer #works #searchesOl {
+    width: 450px;
+    margin-top: 20px;
+  }
+
+  #dialectsContainer {
+    margin-left: 60px;
+  }
+  #dialectsContainer .dialectContainer {
+    margin-left: 20px;
+  }
+  #dialectsContainer .dialectContainer .overimgBottom {
+    font-size: 1.6;
+  }
+  #dialectsContainer .dateDialects {
+    font-size: 1.3em;
+  }
+
+  .collageContainer {
+    width: 600px;
+    margin: 0px auto 0px auto;
+  }
+  .collageContainer .collagePicContainer {
     margin-bottom: 20px;
-    width: 248px;
-    height: 187px;
   }
-  #lostPicContainer .lines {
-    top: 90px;
-    left: -15px;
-    -webkit-transform: rotate(-10deg) scale(0.7);
-    -moz-transform: rotate(-10deg) scale(0.7);
-    -ms-transform: rotate(-10deg) scale(0.7);
-    -o-transform: rotate(-10deg) scale(0.7);
-    transform: rotate(-10deg) scale(0.7);
-  }
-  #lostPicContainer .lines p {
-    font-size: 2.7em;
-    top: -20px;
-  }
-  #lostPicContainer .lines h4 {
-    font-size: 3em;
-    font-family: bebas-neue;
-    top: 15px;
+}
+@media only screen and (max-width: 700px) {
+  h1 a {
+    background-size: 80%;
+    margin-top: 10px;
+    left: 345px;
+    margin-left: -110px;
   }
 
   #soundBoard {
-    width: 380px;
-    margin-left: 50px;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  #soundBoard li {
+
+  #allShops {
+    width: 650px;
+  }
+
+  .worksContainer {
+    width: 650px;
+  }
+  .worksContainer #homeheader p {
+    font-size: 1.7em;
+  }
+  .worksContainer #works iframe {
+    margin: 20px auto 30px auto;
+    width: 650px;
+    height: 351px;
+  }
+  .worksContainer #works #collage {
+    width: 650px;
+  }
+  .worksContainer #works #collage #detailCollage {
+    width: 350px;
+    margin: 30px auto 30px auto;
+  }
+  .worksContainer #works #collage #detailCollage img {
+    width: 300px;
+    height: 300px;
+    margin: 10px 0px 0px 15px;
+  }
+  .worksContainer #works #booked {
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  .worksContainer #works #searchesOl {
+    width: 450px;
     margin-top: 20px;
   }
 
   #topBtn {
-    width: 430px;
+    width: 650px;
+  }
+
+  #lostPicContainer {
+    width: 650px;
+  }
+  #lostPicContainer .lines {
+    top: 80px;
+    left: 70px;
+  }
+
+  .collageContainer {
+    width: 650px;
+  }
+  .collageContainer .collagePicContainer {
+    margin-bottom: 20px;
+  }
+
+  .explaination {
+    width: 98%;
+    margin-left: 10px;
+  }
+
+  #dialectsContainer {
+    margin-left: 30px;
+  }
+  #dialectsContainer .dialectContainer {
+    margin-left: 20px;
+  }
+  #dialectsContainer .dialectContainer .overimgBottom {
+    font-size: 1.6;
+  }
+  #dialectsContainer .dateDialects {
+    font-size: 1.3em;
+  }
+
+  #vintageContainer {
+    width: 650px;
+  }
+
+  footer #footerContent {
+    width: 700px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  h1 a {
+    background-size: 80%;
+    margin-top: 10px;
+    left: 310px;
+    margin-left: -110px;
+  }
+
+  #groups {
+    width: 600px;
+  }
+
+  #topBtn {
+    width: 600px;
     margin-top: 80px;
   }
 
+  .peetje, .hand {
+    display: none;
+  }
+
   footer {
-    width: 100%;
+    width: 640px;
   }
   footer #footerContent {
-    width: 430px;
+    width: 600px;
   }
   footer #footerContent h4 {
-    top: -32px;
-    left: -3px;
-  }
-  footer #footerContent ul {
-    margin-left: 5px;
+    left: 20px;
   }
   footer #footerContent ul li {
     font-size: 1.3em;
     margin-right: 30px;
   }
 
+  .searchField {
+    margin: 33px 20px 0px 0px;
+  }
+  .searchField form input[type=text] {
+    width: 120px;
+    height: 20px;
+    font-size: 0.9em;
+  }
+
+  .explaination {
+    width: 98%;
+    margin-left: 20px;
+  }
+
+  .worksContainer {
+    width: 600px;
+  }
+  .worksContainer #homeheader p {
+    font-size: 1.7em;
+  }
+  .worksContainer #works iframe {
+    margin: 20px auto 30px auto;
+    width: 600px;
+    height: 251px;
+  }
+  .worksContainer #works #collage #detailCollage {
+    width: 350px;
+    margin: 30px auto 30px auto;
+  }
+  .worksContainer #works #collage #detailCollage img {
+    width: 300px;
+    height: 300px;
+    margin: 10px 0px 0px 15px;
+  }
+  .worksContainer #works #booked {
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  .worksContainer #works #searchesOl {
+    width: 450px;
+    margin-top: 20px;
+  }
+
+  #allShops {
+    width: 600px;
+  }
+
+  #dialectsContainer {
+    margin-left: 20px;
+  }
+  #dialectsContainer .dialectContainer {
+    margin-left: 20px;
+  }
+  #dialectsContainer .dialectContainer .overimgBottom {
+    font-size: 1.6;
+  }
+  #dialectsContainer .dateDialects {
+    font-size: 1.3em;
+  }
+
+  #vintageContainer {
+    width: 600px;
+  }
+
+  #fashionContainer #textContainer #amountOfShops {
+    width: 310px;
+    margin-right: 0px;
+    left: 165px;
+  }
+  #fashionContainer #textContainer #amountOfShops li {
+    width: 10px;
+    margin-left: 85px;
+    margin-right: 0px;
+  }
+  #fashionContainer #textContainer #shops {
+    width: 320px;
+    top: 130px;
+    left: 220px;
+  }
+
+  #lostPicContainer {
+    width: 600px;
+  }
+  #lostPicContainer .lines {
+    top: 80px;
+    left: 70px;
+  }
+
+  .collageContainer {
+    width: 600px;
+    margin: 0px auto 0px auto;
+  }
+  .collageContainer .collagePicContainer {
+    margin-bottom: 20px;
+  }
+
+  #soundBoard {
+    width: 600px;
+    margin-left: 50px;
+  }
+  #soundBoard li {
+    margin-top: 20px;
+  }
+
   #missionNav {
     margin: 0px 0px 20px 10px;
-    width: 330px;
+    width: 380px;
   }
   #missionNav #rightNav {
     margin-top: 20px;
     width: 380px;
   }
   #missionNav #rightNav ul {
-    margin-left: 40px;
+    margin-left: 0px;
   }
   #missionNav #rightNav ul li {
     width: 150px;
     margin-left: 5px;
     margin-right: 10px;
   }
+}
+@media only screen and (max-width: 600px) {
+  h1 a {
+    background-size: 80%;
+    margin-top: 10px;
+    left: 295px;
+    margin-left: -110px;
+  }
+
+  #soundBoard {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   #allShops {
-    width: 440px;
+    width: 550px;
+  }
+
+  .worksContainer {
+    width: 550px;
+  }
+  .worksContainer #homeheader p {
+    font-size: 1.7em;
+  }
+  .worksContainer #works iframe {
+    margin: 20px auto 30px auto;
+    width: 550px;
+    height: 351px;
+  }
+  .worksContainer #works #collage {
+    width: 550px;
+  }
+  .worksContainer #works #collage #detailCollage {
+    width: 350px;
+    margin: 30px auto 30px auto;
+  }
+  .worksContainer #works #collage #detailCollage img {
+    width: 300px;
+    height: 300px;
+    margin: 10px 0px 0px 15px;
+  }
+  .worksContainer #works #booked {
+    margin-bottom: 30px;
+    width: 300px;
+  }
+  .worksContainer #works #searchesOl {
+    width: 450px;
     margin-top: 20px;
-    margin-left: 15px;
-  }
-  #allShops li {
-    margin-bottom: 10px;
   }
 
-  #detailGroup {
-    margin: 20px 0px 0px 0px;
-    width: 445px;
-  }
-  #detailGroup img {
-    width: 425px;
-    height: 425px;
-    margin: 0;
-  }
-  #detailGroup p {
-    width: 445px;
-    margin-bottom: 5px;
+  #fashionContainer {
+    width: 550px;
   }
 
-  #subscribe {
-    width: 223px;
-    margin: 20px auto 0px auto;
+  #topBtn {
+    width: 550px;
+  }
+
+  #lostPicContainer {
+    width: 550px;
+  }
+  #lostPicContainer .lines {
+    top: 100px;
+    left: 37px;
+  }
+
+  .collageContainer {
+    width: 400px;
+  }
+  .collageContainer .collagePicContainer {
+    margin-bottom: 20px;
+  }
+
+  .explaination {
+    width: 98%;
+    margin-left: 10px;
+  }
+
+  #dialectsContainer {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #dialectsContainer .dialectContainer {
+    margin-left: 0px;
+  }
+  #dialectsContainer .dialectContainer .overimgBottom {
+    font-size: 1.6;
+  }
+  #dialectsContainer .dateDialects {
+    font-size: 1.3em;
+  }
+
+  #vintageContainer, #groups {
+    width: 550px;
+  }
+
+  footer #footerContent {
+    width: 600px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1682,6 +1981,9 @@ iframe {
     width: 430px;
     height: 285px;
   }
+  .worksContainer #works #collage {
+    width: 300px;
+  }
   .worksContainer #works #booked {
     margin-bottom: 30px;
     width: 300px;
@@ -1699,6 +2001,8 @@ iframe {
   #dialectsContainer {
     width: 100px;
     font-size: 90%;
+    margin-left: 0px;
+    margin-bottom: 10px;
   }
   #dialectsContainer .dialectContainer {
     margin-left: 80px;
@@ -1733,7 +2037,7 @@ iframe {
   #fashionContainer #textContainer #amountOfShops {
     width: 320px;
     top: 200px;
-    left: 43px;
+    left: -34px;
   }
   #fashionContainer #textContainer #shops {
     width: 320px;
@@ -1743,10 +2047,6 @@ iframe {
 
   #vintageContainer {
     width: 370px;
-  }
-  #vintageContainer .bigFrame {
-    top: 165px;
-    left: 30px;
   }
 
   #lostPicContainer {
@@ -1857,10 +2157,19 @@ iframe {
 }
 @media only screen and (max-width: 400px) {
   h1 a {
-    background-size: 60%;
+    background-size: 70%;
     margin-top: 10px;
-    left: 200px;
-    margin-left: -90px;
+    left: 205px;
+    margin-left: -110px;
+  }
+
+  #soundBoard {
+    width: 350px;
+    margin: 0;
+  }
+  #soundBoard li {
+    margin-top: 20px;
+    margin-left: 0px;
   }
 
   .introTextBg p {
@@ -1878,14 +2187,13 @@ iframe {
     width: 350px;
     height: 205px;
   }
+  .worksContainer #works #collage {
+    width: 350px;
+    margin: 0;
+  }
   .worksContainer #works #collage #detailCollage {
     width: 350px;
     margin: 30px auto 30px auto;
-  }
-  .worksContainer #works #collage #detailCollage img {
-    width: 300px;
-    height: 300px;
-    margin: 10px 0px 0px 15px;
   }
   .worksContainer #works #booked {
     margin-bottom: 30px;
@@ -1901,26 +2209,25 @@ iframe {
     margin-left: 20px;
   }
 
+  .collageContainer {
+    width: 280px;
+    margin-left: 70px;
+  }
   .collageContainer .collagePicContainer {
-    padding: 0px 10px 10px 10px;
-  }
-  .collageContainer .overimgTop a, .collageContainer .overimgBottom a {
-    left: 14px;
-  }
-  .collageContainer .overimgBottom a {
-    bottom: 16px;
+    margin-bottom: 20px;
+    margin-right: 10px;
   }
 
   #dialectsContainer {
-    width: 140px;
-    font-size: 90%;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
   }
   #dialectsContainer .dialectContainer {
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin-left: 0px;
   }
   #dialectsContainer .dialectContainer .overimgBottom {
-    font-size: 1.8em;
+    font-size: 1.6;
   }
   #dialectsContainer .dateDialects {
     font-size: 1.3em;
@@ -1948,12 +2255,16 @@ iframe {
   #fashionContainer #textContainer #amountOfShops {
     width: 320px;
     top: 200px;
-    left: 43px;
+    left: -30px;
   }
   #fashionContainer #textContainer #shops {
     width: 320px;
     top: 250px;
     left: 25px;
+  }
+
+  #groups {
+    width: 300px;
   }
 
   #imageContainer {
@@ -2055,7 +2366,7 @@ iframe {
     margin: 124px 20px 0px 0px;
   }
   .searchField form input[type=text] {
-    width: 50px;
+    width: 28px;
     height: 20px;
   }
 
@@ -2073,13 +2384,6 @@ iframe {
   #missionNav #rightNav ul li {
     width: 150px;
     margin-left: 5px;
-  }
-
-  #soundBoard {
-    width: 360px;
-  }
-  #soundBoard li {
-    margin-top: 20px;
   }
 
   #allShops {
@@ -2121,17 +2425,23 @@ iframe {
 }
 @media only screen and (max-width: 320px) {
   h1 a {
-    margin-top: 25px;
-    left: 230px;
-    margin-left: -180px;
+    background-size: 70%;
+    margin-top: 10px;
+    left: 205px;
+    margin-left: -110px;
   }
 
-  nav #menuNav {
+  #soundBoard {
     width: 200px;
+    margin: 0;
+  }
+  #soundBoard li {
+    margin-top: 20px;
+    margin-left: 0px;
   }
 
   .introTextBg p {
-    font-size: 1.6em;
+    font-size: 1.8em;
   }
 
   .worksContainer {
@@ -2143,51 +2453,50 @@ iframe {
   .worksContainer #works iframe {
     margin: 20px auto 30px auto;
     width: 300px;
-    height: 255px;
+    height: 205px;
   }
-  .worksContainer #works #collage #detailCollage {
-    width: 250px;
-    margin: 0px auto 30px auto;
-  }
-  .worksContainer #works #collage #detailCollage img {
-    width: 250px;
-    height: 250px;
+  .worksContainer #works #collage {
+    width: 300px;
     margin: 0;
   }
-  .worksContainer #works #collage #detailCollage p {
-    width: 250px;
+  .worksContainer #works #collage #detailCollage {
+    width: 180px;
+    height: 180px;
+    margin: 30px 0px 30px 0px;
   }
   .worksContainer #works #booked {
     margin-bottom: 30px;
-    width: 280px;
+    width: 300px;
+  }
+  .worksContainer #works #searchesOl {
+    width: 300px;
+    margin-top: 20px;
   }
 
   .explaination {
-    width: 80%;
+    width: 90%;
     margin-left: 20px;
   }
 
   .collageContainer {
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 280px;
+    margin-left: 40px;
   }
-  .collageContainer .overimgTop a, .collageContainer .overimgBottom a {
-    left: 14px;
-  }
-  .collageContainer .overimgBottom a {
-    bottom: 16px;
+  .collageContainer .collagePicContainer {
+    margin-bottom: 20px;
+    margin-right: 10px;
   }
 
   #dialectsContainer {
-    width: 140px;
-    font-size: 90%;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
   }
   #dialectsContainer .dialectContainer {
-    margin: 0px auto 40px auto;
+    margin-left: 0px;
   }
   #dialectsContainer .dialectContainer .overimgBottom {
-    font-size: 1.8em;
+    font-size: 1.6;
   }
   #dialectsContainer .dateDialects {
     font-size: 1.3em;
@@ -2201,7 +2510,7 @@ iframe {
   }
   #fashionContainer #dress {
     top: 180px;
-    left: 140px;
+    left: 120px;
   }
   #fashionContainer #textContainer {
     margin-top: 40px;
@@ -2209,34 +2518,46 @@ iframe {
     top: -70px;
   }
   #fashionContainer #textContainer #labels {
-    left: -80px;
+    top: 80px;
+    left: -55px;
   }
   #fashionContainer #textContainer #amountOfShops {
-    width: 310px;
-    margin-right: 0px;
-    left: -60px;
-  }
-  #fashionContainer #textContainer #amountOfShops li {
-    width: 10px;
-    margin-left: 85px;
-    margin-right: 0px;
+    width: 320px;
+    top: 200px;
+    left: -30px;
   }
   #fashionContainer #textContainer #shops {
-    left: -60px;
-    width: 310px;
+    width: 280px;
+    top: 250px;
+    left: 25px;
   }
-  #fashionContainer #textContainer #shops li {
-    width: 20px;
-    margin-left: 80px;
-    margin-right: 0px;
+
+  #groups {
+    width: 300px;
+  }
+
+  #imageContainer {
+    width: 300px;
+  }
+  #imageContainer h4 {
+    width: 100px;
+    font-size: 1.6em;
+  }
+  #imageContainer h4:first-of-type {
+    left: 0px;
+  }
+  #imageContainer h4:last-of-type {
+    text-align: right;
+    color: #e95c54;
+    top: 150px;
+    right: 0px;
+  }
+  #imageContainer h4:last-of-type img {
+    padding-right: 10px;
   }
 
   #vintageContainer {
-    width: 310px;
-    margin: 0;
-  }
-  #vintageContainer .frame {
-    margin: 0;
+    width: 300px;
   }
 
   #lostPicContainer {
@@ -2245,36 +2566,54 @@ iframe {
     padding: 0;
   }
   #lostPicContainer figure img {
-    margin-left: 20px;
+    margin-left: 40px;
     margin-bottom: 20px;
     width: 248px;
     height: 187px;
   }
   #lostPicContainer .lines {
-    top: 103px;
-    left: -107px;
+    top: 50px;
+    left: -88px;
+    -webkit-transform: rotate(-25deg) scale(0.6);
+    -moz-transform: rotate(-25deg) scale(0.6);
+    -ms-transform: rotate(-25deg) scale(0.6);
+    -o-transform: rotate(-25deg) scale(0.6);
+    transform: rotate(-25deg) scale(0.6);
+  }
+  #lostPicContainer .lines p {
+    font-size: 2.7em;
+    top: -20px;
+  }
+  #lostPicContainer .lines h4 {
+    font-size: 3em;
+    font-family: bebas-neue;
+    top: 15px;
   }
 
   #topBtn {
-    margin-top: 60px;
+    width: 300px;
+    margin-top: 30px;
   }
 
   footer {
     width: 320px;
   }
   footer #footerContent {
-    width: 320px;
+    width: 400px;
   }
   footer #footerContent h4 {
     top: -32px;
     left: -3px;
   }
   footer #footerContent ul {
-    margin-left: 5px;
+    margin-left: 10px;
   }
   footer #footerContent ul li {
-    font-size: 0.9em;
-    margin-right: 5px;
+    font-size: 1.1em;
+    margin-right: 10px;
+  }
+  footer #footerContent ul .fbicon, footer #footerContent ul .twtricon {
+    top: -30px;
   }
 
   .searchField {
@@ -2286,47 +2625,55 @@ iframe {
   }
 
   #missionNav {
-    margin: 0px 0px 20px 0px;
-    width: 310px;
+    margin: 0px 0px 20px 40px;
+    width: 150px;
   }
   #missionNav #rightNav {
     margin-top: 20px;
-    width: 310px;
+    width: 150px;
   }
   #missionNav #rightNav ul {
-    margin-left: 0px;
+    margin-left: 10px;
   }
   #missionNav #rightNav ul li {
     width: 150px;
-    margin-left: 0px;
-  }
-
-  #soundBoard {
-    width: 310px;
-    margin-bottom: 20px;
-  }
-  #soundBoard li {
-    margin-top: 20px;
-    margin-left: 70px;
+    margin-left: 5px;
   }
 
   #allShops {
-    width: 310px;
-    margin-left: 0px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  #allShops li {
+    margin-bottom: 10px;
   }
 
   #detailGroup {
     margin: 0;
-    width: 310px;
+    width: 300px;
   }
   #detailGroup img {
-    width: 290px;
-    height: 290px;
+    width: 300px;
+    height: 300px;
     margin: 0;
   }
   #detailGroup p {
     width: 300px;
     font-size: 1.8em;
     margin-bottom: 5px;
+  }
+
+  .peetje, .hand {
+    display: none;
+  }
+
+  #topBtn {
+    margin-top: 90px;
+  }
+
+  #subscribe {
+    width: 223px;
+    margin: 20px auto 0px auto;
   }
 }
