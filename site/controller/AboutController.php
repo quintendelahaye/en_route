@@ -12,8 +12,6 @@
 
         }
 
-        public function about()
-        {
-
+        public function about(){
         }
     }

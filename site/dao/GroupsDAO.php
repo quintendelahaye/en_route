@@ -146,4 +146,15 @@ class GroupsDAO{
         }
         return false;
     }
+
+    public function insertNewSchoolOrGroup($school_name, $email, $name, $visited){
+        $sql = "INSERT INTO enroute_schools(school_name, email, name, visited)
+                VALUES (:school_name, :email, :name, :visited)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(":school_name",$school_name);
+        $stmt->bindValue(":email",$email);
+        $stmt->bindValue(":name",$name);
+        $stmt->bindValue(":visited",$visited);
+        if($stmt->execute());
+    }
 }

@@ -191,7 +191,6 @@
                         <p>Jullie hebben deze opdracht (nog) niet gemaakt</p>
                     </div>
                 <?php endif; ?>
-                <a href="index.php?page=works" class="btnMore">Bekijk alle werken</a>
             </section>
     </section>
 

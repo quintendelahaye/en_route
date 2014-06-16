@@ -32,6 +32,10 @@ function init()
     $("#txtSearch").on("input change", changeHandler);
 
     $(".soundImg").click(clickedOnSoundImg);
+
+    $("#txtGroup").on("keyup blur change", checkThreeCharacters);
+    $("#txtEmail").on("keyup blur change", checkIfEmail);
+    $("#txtName").on("keyup blur change", checkThreeCharacters);
 }
 
 function changeSound(event){
@@ -64,4 +68,57 @@ function getSearchDataHandler(data){
 
 function clickedOnSoundImg(e){
     e.preventDefault();
+}
+
+function checkThreeCharacters(){
+    if(!Modernizr.input.required || !Modernizr.input.pattern){
+        var $el = $(this);
+        if($el.val().length < 3){
+            showInValid($el)
+        }
+        else{
+            showValid($el);
+        }
+    }
+}
+
+function checkIfEmail(){
+    if(!Modernizr.inputtypes.email){
+        var email = $(this);
+
+        var emailregex = new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+
+        if(!emailregex.test(email.val())){
+            showInValid(email,email.next(), "gelieve een emailadres in te vullen" );
+        }
+        else{
+            showValid(email,email.next() );
+        }
+    }
+}
+
+function showInValid($el){
+    $el.addClass("error");
+}
+
+function showValid($el){
+    $el.removeClass("error");
+}
+
+function getTodaysDate (val) {
+    var t = new Date, day, month, year = t.getFullYear();
+    if (t.getDate() < 10) {
+        day = "0" + t.getDate();
+    }
+    else {
+        day = t.getDate();
+    }
+    if ((t.getMonth() + 1) < 10) {
+        month = "0" + (t.getMonth() + 1 - val);
+    }
+    else {
+        month = t.getMonth() + 1 - val;
+    }
+
+    return (day + '/' + month + '/' + year);
 }

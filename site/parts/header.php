@@ -13,6 +13,7 @@
 	<title>En Route - oud en nieuw in Antwerpen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="js/skrollr/skrollr.js"></script>
+    <script type="text/javascript" src="js/vendor/modernizr/modernizr.js"></script>
     <link href="css/screen.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
@@ -20,7 +21,7 @@
 
 <article id="container">
     <div class="skyline">&nbsp;</div>
-    <header id="header" <?php if($activeItem == "home"){ echo 'class=home'; }else{ echo 'class=other'; } ?>>
+    <header id="header" <?php if($activeItem == "home" || $activeItem == "subscribe"){ echo 'class=home'; }else{ echo 'class=other'; } ?>>
         <h1><a href="index.php?page=home" data-0="transform: scale(1, 1);
                 -ms-transform: scale(1, 1);
                 -webkit-transform: scale(1, 1);
@@ -53,12 +54,12 @@
         <div class="searchField" data-0="margin-top:33px;" data-100="margin-top:10px;">
             <form method="post" action="index.php?page=search" id="search" autoComplete="off">
                 <a href="#" class="search"><span>search</span></a>
-                <input type="text" placeholder="zoek je team of school" id="txtSearch" name="txtSearch"/>
+                <input type="text" placeholder="zoek je organisatie of school" id="txtSearch" name="txtSearch"/>
                 <div><input type="submit" name="btnSubmitZoek" id="btnSubmitZoek" value="Zoek" /></div>
             </form>
         </div>
     </nav>
-    <?php if($activeItem == "home"): ?>
+    <?php if($activeItem == "home" || $activeItem == "subscribe"): ?>
         <section class="introTextBg" data-0="top:100px;" data-200="top:-230px;">
             <header><h3><span>intro</span></h3></header>
             <p>Een <mark>kunstproject</mark> voor jongeren uit het secundair onderwijs <br/> om hen op een originele manier een stad te laten ontdekken.</p>
