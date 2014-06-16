@@ -14,6 +14,8 @@
 @property (nonatomic, strong) UIButton *mode;
 @property (nonatomic, strong) UIButton *kunst;
 
+@property (nonatomic, strong) UIButton *gaverder;
+
 - (id)initWithFrame:(CGRect)frame andText:(NSString*)text andLast:(BOOL)last;
 
 @end

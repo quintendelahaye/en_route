@@ -222,6 +222,7 @@
 		A0F12C3D194AF8C200BE8798 /* RecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		A0F2768019485ABC008AB4E6 /* DropItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropItemButton.h; sourceTree = "<group>"; };
 		A0F2768119485ABC008AB4E6 /* DropItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropItemButton.m; sourceTree = "<group>"; };
+		A0F9F005194E77AD0020C0AA /* ChallengeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengeDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -469,6 +470,7 @@
 			children = (
 				A0BB4A8C194D00790061EEAA /* TimeChallenge1ViewController.h */,
 				A0BB4A8D194D00790061EEAA /* TimeChallenge1ViewController.m */,
+				A0F9F005194E77AD0020C0AA /* ChallengeDelegate.h */,
 			);
 			name = "TimeChallenge1&2";
 			sourceTree = "<group>";

@@ -11,6 +11,7 @@
 #import "TimeChallengeResultView.h"
 #import "TitleView.h"
 #import "Mission1CameraView.h"
+#import "ChallengeDelegate.h"
 
 @interface TimeChallenge3ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -24,5 +25,6 @@
 
 @property (nonatomic, assign) BOOL resultVisible;
 @property (nonatomic, assign) BOOL resultAccepted;
+@property (nonatomic, weak) id<ChallengeDelegate> delegate;
 
 @end

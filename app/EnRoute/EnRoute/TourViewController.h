@@ -17,7 +17,7 @@
 #import "TimeChallenge3ViewController.h"
 #import "UIElementFactory.h"
 
-@interface TourViewController : UIViewController <TourDelegate,Mission1Delegate,Mission2Delegate,Mission3delegate>
+@interface TourViewController : UIViewController <TourDelegate,Mission1Delegate,Mission2Delegate,Mission3delegate,ChallengeDelegate>
 
 @property (nonatomic, strong) TourView *view;
 @property (nonatomic, strong) Mission1ViewController *mission1VC;

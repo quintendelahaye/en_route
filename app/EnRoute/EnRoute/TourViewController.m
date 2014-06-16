@@ -80,9 +80,6 @@
             self.mission3ExplanationVC = [[Mission3ExplanationViewController alloc]initWithNibName:nil bundle:nil];
             self.mission3ExplanationVC.delegate = self;
             [self.navigationController pushViewController:self.mission3ExplanationVC animated:YES];
-            
-            //self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];
-            //[self.navigationController pushViewController:self.timeChallenge3VC animated:YES];
         }
     }
 }
@@ -96,6 +93,7 @@
     [self.unlockedView.mode addTarget:self action:@selector(mode:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.bgTimer];
     [self.view addSubview:self.lblTimer];
+    self.lblTimer.text = @"00:10";
     self.secondsLeft = 10;
     self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
 }
@@ -108,8 +106,15 @@
         NSLog(@"miauw");
         [self.view addSubview:self.bgTimer];
         [self.view addSubview:self.lblTimer];
+        self.lblTimer.text = @"00:10";
         self.secondsLeft = 10;
         self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+        
+        //add unlockedview
+        UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
+        self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"De laatste buurt die jullie gaan bezoeken is de modebuurt." andLast:YES];
+        [self.view addSubview:self.unlockedView];
+        [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     } else {
         NSLog(@"show einde niggertje");
     }
@@ -122,11 +127,21 @@
         [self.view removeAllPinsButUserLocation];
         [self.view addSubview:self.bgTimer];
         [self.view addSubview:self.lblTimer];
+        self.lblTimer.text = @"00:10";
         self.secondsLeft = 10;
         self.timer = [NSTimer scheduledTimerWithTimeInterval: 1.0 target:self selector:@selector(updateCountdown) userInfo:nil repeats: YES];
+        
+        UIImage *unlockedBg = [UIImage imageNamed:@"unlocked_screen"];
+        self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"De laatste buurt die jullie gaan bezoeken is de kunstbuurt." andLast:YES];
+        
+        [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
     } else {
         NSLog(@"show einde niggertje");
     }
+}
+
+- (void)gaverder:(id)sender{
+    [self.unlockedView removeFromSuperview];
 }
 
 - (void)kunst:(id)sender{
@@ -152,15 +167,33 @@
         [self.bgTimer removeFromSuperview];
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]  isEqual: @"1"]) {
             //eerste opdracht
+            self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
+            self.timeChallenge1VC.delegate = self;
+            [self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
         } else if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"lastMission"]  isEqual: @"YES"]){
             //laatste opdracht
+            self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];
+            self.timeChallenge3VC.delegate = self;
+            [self.navigationController pushViewController:self.timeChallenge3VC animated:YES];
         } else {
             //tweede opdracht
+            self.timeChallenge2VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:5];
+            self.timeChallenge2VC.delegate = self;
+            [self.navigationController pushViewController:self.timeChallenge2VC animated:YES];
         }
     }
     minutes = (self.secondsLeft % 3600) / 60;
     seconds = (self.secondsLeft %3600) % 60;
     self.lblTimer.text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+}
+
+-(void)challengeFinished{
+    NSLog(@"testerdetesttest");
+    UIImage *unlockedBg = [UIImage imageNamed:@"unlockedChallenge"];
+    self.unlockedView = [[UnlockedView alloc]initWithFrame:CGRectMake(20, 110, unlockedBg.size.width, unlockedBg.size.height) andText:@"De tijdsopdracht is voorbij ga verder naar de aangeduide buurt." andLast:YES];
+    self.unlockedView.backgroundColor = [UIColor colorWithPatternImage:unlockedBg];
+    [self.unlockedView.gaverder addTarget:self action:@selector(gaverder:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.unlockedView];
 }
 
 - (void)didReceiveMemoryWarning

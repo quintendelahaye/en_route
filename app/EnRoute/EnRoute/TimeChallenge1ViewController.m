@@ -140,6 +140,7 @@
     NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
     
     NSLog(@"Image Return String: %@", returnString);
+    [self.delegate challengeFinished];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
