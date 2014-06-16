@@ -44,7 +44,13 @@
                 }
 
                 if(!empty($_POST['txtDate']) && $_POST["txtDate"] && $_POST["txtDate"] > date("Y-m-d")){
-                    $txtDate = $_POST['txtDate'];
+                    $dates = $this->groupsDAO->getAllChosenDates();
+                    foreach ($dates as $key => $date) {
+                        if (date_format(new DateTime($date["visited"]), "Y-m-d") == $_POST['txtDate']) {
+                            $arrErrors['txtDate'] = 'Datum al ingenomen';
+                        }
+                        $txtDate = $_POST['txtDate'];
+                    }
                 }
                 else{
                     $arrErrors['txtDate'] = 'Vul een datum in';
