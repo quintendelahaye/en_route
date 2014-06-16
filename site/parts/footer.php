@@ -2,7 +2,7 @@
 
 <footer>
     <section id="footerContent">
-        <header><h4>contact</h4></header>
+        <h4>contact</h4>
         <ul>
             <li><img src="images/icon_contact.png" alt="contact"><a href="mailto:info@hetpaleis.be">info@hetpaleis.be</a>, T +32 (0)3 202 83 11</li>
             <li><img src="images/icon_adres.png" alt="adres">HETPALEIS , Meistraat 2, 2000 Antwerpen</li>

@@ -9,18 +9,18 @@
         <div id="missionNav">
             <div id="leftNav" class="left">
                 <?php if(($activeMission == "all")&& !empty($activeMission)): ?>
-                    <a href="index.php?page=works&mission=all" id="allMissionsActive"><span>alle opdrachten</span></a>
+                    <a href="index.php?page=works&amp;mission=all" id="allMissionsActive"><span>alle opdrachten</span></a>
                 <?php else: ?>
-                    <a href="index.php?page=works&mission=all" id="allMissions"><span>alle opdrachten</span></a>
+                    <a href="index.php?page=works&amp;mission=all" id="allMissions"><span>alle opdrachten</span></a>
                 <?php endif; ?>
             </div>
             <div id="rightNav" class="right">
                 <ul>
                     <?php foreach($missions as $mission): ?>
                         <?php if(($mission["id"] == $activeMission)&& !empty($activeMission)): ?>
-                            <li><a href="index.php?page=works&mission=<?php echo $mission["id"];?>" class="activeMission<?php echo $mission["id"];?>"><span><?php echo $mission["name"];?></span></a></li>
+                            <li><a href="index.php?page=works&amp;mission=<?php echo $mission["id"];?>" class="activeMission<?php echo $mission["id"];?>"><span><?php echo $mission["name"];?></span></a></li>
                         <?php else: ?>
-                            <li><a href="index.php?page=works&mission=<?php echo $mission["id"];?>" id="mission<?php echo $mission["id"];?>"><span><?php echo $mission["name"];?></span></a></li>
+                            <li><a href="index.php?page=works&amp;mission=<?php echo $mission["id"];?>" id="mission<?php echo $mission["id"];?>"><span><?php echo $mission["name"];?></span></a></li>
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </ul>
@@ -43,8 +43,8 @@
                 <ul class="collageContainer" id="collages">
                     <?php foreach($collagepictures as $collagepicture): ?>
                         <li class="collagePicContainer">
-                           <div class="overimgTop"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
-                           <div class="overimgBottom"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
+                           <div class="overimgTop"><a href="index.php?page=works&amp;mission=1&amp;id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
+                           <div class="overimgBottom"><a href="index.php?page=works&amp;mission=1&amp;id=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
                            <figure><img src="upload/mission1/<?php echo $collagepicture["image_name"]; ?>" alt="foto3"/></figure>
                         </li>
                     <?php endforeach; ?>
@@ -67,8 +67,8 @@
                 <?php foreach($soundsAndBgs as $soundAndImage): ?>
                     <li class="dialectContainer">
                         <audio>
-                        	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
-                        	<source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
+                            <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
+                            <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
                         </audio>
                         <div class="overimgTop"><a href="index.php?page=works#dialectsContainer" class="soundImg" ><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
                         <div class="overimgBottom"><a href="index.php?page=works#dialectsContainer" class="soundImg" ><p><?php echo $soundAndImage["word"]; ?></p></a></div>
@@ -79,11 +79,13 @@
             </ul>
             <ul id="soundBoard">
                 <?php foreach($sounds as $sound): ?>
-                    <audio>
-                        <source src="upload/mission2/<?php echo $sound["sound_name"]; ?>.mp3"/>
-                        <source src="upload/mission2/<?php echo $sound["sound_name"]; ?>.ogg"/>
-                    </audio>
-                    <li><a id="<?php echo $sound["word"].$sound["group_id"]; ?>" href="upload/mission2/<?php echo $sound["word"].$sound["group_id"]; ?>.mp3" class="btnSound"><?php echo $sound["word"]; ?></a></li>
+                    <li>
+                        <audio>
+                            <source src="upload/mission2/<?php echo $sound["sound_name"]; ?>.mp3"/>
+                            <source src="upload/mission2/<?php echo $sound["sound_name"]; ?>.ogg"/>
+                        </audio>
+                        <a id="<?php echo $sound["word"].$sound["group_id"]; ?>" href="upload/mission2/<?php echo $sound["word"].$sound["group_id"]; ?>.mp3" class="btnSound"><?php echo $sound["word"]; ?></a>
+                    </li>
                 <?php endforeach; ?>
             </ul>
         </section>
@@ -107,7 +109,7 @@
                     </ul>
                     <ul id="shops">
                         <?php foreach($topShops as $topshop): ?>
-                            <li><?php echo ucwords($topshop["shop_name"]); ?></li>
+                            <li><?php echo htmlentities($topshop["shop_name"]); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -116,7 +118,7 @@
             <div class="clear">&nbsp;</div>
             <ul id="allShops">
                 <?php foreach($shops as $shop): ?>
-                    <li><span><?php echo $shop["numberOFShops"]; ?>x </span><?php echo ucwords($shop["shop_name"]); ?></li>
+                    <li><span><?php echo $shop["numberOFShops"]; ?>x </span><?php echo htmlentities($shop["shop_name"]); ?></li>
                 <?php endforeach; ?>
             </ul>
         </section>
@@ -129,8 +131,8 @@
             <ul class="collageContainer" id="groupContainer">
                 <?php foreach($grouppics as $grouppic): ?>
                     <li class="collagePicContainer">
-                       <div class="overimgTop"><a href="index.php?page=works&mission=4&id=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
-                       <div class="overimgBottom"><a href="index.php?page=works&mission=4&id=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
+                       <div class="overimgTop"><a href="index.php?page=works&amp;mission=4&amp;id=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
+                       <div class="overimgBottom"><a href="index.php?page=works&amp;mission=4&amp;id=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
                        <figure><img src="upload/mission4/<?php echo $grouppic["image_name"]; ?>" alt="foto3"/></figure>
                     </li>
                 <?php endforeach; ?>
@@ -163,8 +165,8 @@
                 <ul class="collageContainer">
                     <?php foreach($oldvsnewpics as $oldvsnewpic): ?>
                         <li class="collagePicContainer">
-                           <div class="overimgTop"><a href="index.php?page=works&mission=6&id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><p><?php echo $oldvsnewpic["groupname"]; ?></p></a></div>
-                           <div class="overimgBottom"><a href="index.php?page=works&mission=6&id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($oldvsnewpic['created_date'])); ?></p></a></div>
+                           <div class="overimgTop"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><p><?php echo $oldvsnewpic["groupname"]; ?></p></a></div>
+                           <div class="overimgBottom"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($oldvsnewpic['created_date'])); ?></p></a></div>
                            <figure><img src="upload/mission6/<?php echo $oldvsnewpic["image_name"]; ?>" alt="foto3"/></figure>
                         </li>
                     <?php endforeach; ?>

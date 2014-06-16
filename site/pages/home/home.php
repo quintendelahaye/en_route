@@ -15,13 +15,13 @@
             <ul class="collageContainer">
                 <?php foreach($collagepictures as $collagepicture): ?>
                     <li class="collagePicContainer">
-                       <div class="overimgTop"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
-                       <div class="overimgBottom"><a href="index.php?page=works&mission=1&id=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
+                       <div class="overimgTop"><a href="index.php?page=works&amp;mission=1&amp;id=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
+                       <div class="overimgBottom"><a href="index.php?page=works&amp;mission=1&amp;id=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
                        <figure><img src="upload/mission1/<?php echo $collagepicture["image_name"]; ?>" alt="foto3"/></figure>
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <a href="index.php?page=works&mission=1#collages" class="btnMore">Bekijk meer collages</a>
+            <a href="index.php?page=works&amp;mission=1#collages" class="btnMore">Bekijk meer collages</a>
         </section>
         <section class="work">
             <p class="number">2</p>
@@ -42,7 +42,7 @@
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <a href="index.php?page=works&mission=2#soundBoard" class="btnMore">Bekijk soundboard</a>
+            <a href="index.php?page=works&amp;mission=2#soundBoard" class="btnMore">Bekijk soundboard</a>
         </section>
         <section class="work">
             <p class="number">3</p>
@@ -62,14 +62,14 @@
                     </ul>
                     <ul id="shops">
                         <?php foreach($topShops as $topshop): ?>
-                            <li><?php echo ucwords($topshop["shop_name"]); ?></li>
+                            <li><?php echo htmlentities($topshop["shop_name"]); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
                 <div id="dress">&nbsp;</div>
             </div>
             <div class="clear">&nbsp;</div>
-            <a href="index.php?page=works&mission=3#allShops" class="btnMore">Bekijk alle resultaten</a>
+            <a href="index.php?page=works&amp;mission=3#allShops" class="btnMore">Bekijk alle resultaten</a>
         </section>
         <section class="work">
             <p class="number">4</p>
@@ -78,8 +78,8 @@
             <ul class="collageContainer">
                 <?php foreach($grouppics as $grouppic): ?>
                     <li class="collagePicContainer">
-                       <div class="overimgTop"><a href="index.php?page=works&mission=4&id=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
-                       <div class="overimgBottom"><a href="index.php?page=works&mission=4&id=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
+                       <div class="overimgTop"><a href="index.php?page=works&amp;mission=4&amp;id=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
+                       <div class="overimgBottom"><a href="index.php?page=works&amp;mission=4&amp;id=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
                        <figure><img src="upload/mission4/<?php echo $grouppic["image_name"]; ?>" alt="foto3"/></figure>
                     </li>
                 <?php endforeach; ?>
@@ -90,7 +90,7 @@
                     <img src="upload/mission4/<?php echo $group["image_name"]; ?>" alt="<?php echo $group["image_name"]; ?>"/>
                 </div>
             <?php endif; ?>
-            <a href="index.php?page=works&mission=4#groupContainer" class="btnMore">Bekijk de groepsfoto's</a>
+            <a href="index.php?page=works&amp;mission=4#groupContainer" class="btnMore">Bekijk de groepsfoto's</a>
         </section>
         <section class="work">
             <p class="number">5</p>
@@ -101,7 +101,7 @@
                     <li class="frame"><img src="upload/mission5/<?php echo $vintagepic["image_name"]; ?>" alt="group"/></li>
                 <?php endforeach; ?>
             </ul>
-            <a href="index.php?page=works&mission=5#vintageContainer" class="btnMore">Bekijk alle foto's</a>
+            <a href="index.php?page=works&amp;mission=5#vintageContainer" class="btnMore">Bekijk alle foto's</a>
         </section>
         <section class="work">
             <p class="number">6</p>
@@ -114,7 +114,7 @@
                     <h4><span>team: </span>de abrikoosjes</h4>
                 </div>
             </div>
-            <a href="index.php?page=works&mission=6&id=1#lostPicContainer" class="btnMore">Bekijk de vervangingen</a>
+            <a href="index.php?page=works&amp;mission=6&amp;id=1#lostPicContainer" class="btnMore">Bekijk de vervangingen</a>
         </section>
     </section>
     <div id="topBtn">

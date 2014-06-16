@@ -41,11 +41,11 @@
         <ul id="menuNav" data-0="margin-top:40px;" data-100="margin-top:15px;">
             <?php foreach($arrMenu as $key=>$value): ?>
                 <?php if($key == $activeItem): ?>
-                    <li id="nav<?php echo $value; ?>">
+                    <li id="nav<?php echo $key; ?>">
                         <a href="index.php?page=<?php echo $key; ?>" class="active"><span><?php echo $value; ?></span></a>
                     </li>
                 <?php else: ?>
-                    <li id="nav<?php echo $value; ?>">
+                    <li id="nav<?php echo $key; ?>">
                         <a href="index.php?page=<?php echo $key; ?>"><span><?php echo $value; ?></span></a>
                     </li>
                 <?php endif; ?>
