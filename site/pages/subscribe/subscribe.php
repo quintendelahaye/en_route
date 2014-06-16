@@ -24,7 +24,7 @@
 
                             <div>
                                 <label for="txtEmail" class="block">E-mailadres <span> (*)</span></label>
-                                <input type="text"  id="txtEmail" name="txtEmail"required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="e-mailadres van de verantwoordelijke" value="<?php echo $txtEmail; ?>" <?php if(!empty($arrErrors["txtEmail"])){ echo 'class="error"';} ?>/>
+                                <input type="text"  id="txtEmail" name="txtEmail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="e-mailadres van de verantwoordelijke" value="<?php echo $txtEmail; ?>" <?php if(!empty($arrErrors["txtEmail"])){ echo 'class="error"';} ?>/>
                             </div>
 
                         </div>
@@ -36,7 +36,10 @@
 
                             <div>
                                 <label for="txtDate" class="block">Datum van bezoek<span> (*)</span></label>
-                                <input type="date" id="txtDate" name="txtDate" size="5" maxlength="5" value="<?php echo $txtDate; ?>" <?php if(!empty($arrErrors["txtDate"])){ echo 'class="error"';} ?>/>
+                                <input type="date" id="txtDate" name="txtDate" value="<?php echo $txtDate; ?>" <?php if(!empty($arrErrors["txtDate"])){ echo 'class="error"';} ?>/>
+                                <?php if(!empty($arrErrors['txtDate'])):?>
+                                    <div class="dateError"><p><?php echo $arrErrors['txtDate']; ?></p></div>
+                                <?php endif; ?>
                             </div>
 
                             <div>

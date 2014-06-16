@@ -19,13 +19,13 @@
                                 </a>
                             </li>
                         <?php endforeach; ?>
-                        <ul id="members">
-                            <?php if(!empty($members)): ?>
-                                <?php foreach($members as $member): ?>
-                                    <li><?php echo $member["member_name"]; ?></li>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </ul>
+                    </ul>
+                    <ul id="members">
+                        <?php if(!empty($members)): ?>
+                            <?php foreach($members as $member): ?>
+                                <li><?php echo $member["member_name"]; ?></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
                     </ul>
                 <?php endif; ?>
             </section>
@@ -38,8 +38,8 @@
                         <?php foreach($mission1Collages as $collagepicture): ?>
                             <li class="collagePicContainer">
                                <div class="overimgTop">
-                                   <a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=1&picid=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
-                               <div class="overimgBottom"><a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=1&picid=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
+                                   <a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=1&amp;picid=<?php echo $collagepicture["id"]; ?>#detailCollage"><p><?php echo $collagepicture["groupname"]; ?></p></a></div>
+                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=1&amp;picid=<?php echo $collagepicture["id"]; ?>#detailCollage"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($collagepicture['created_date'])); ?></p></a></div>
                                <figure><img src="upload/mission1/<?php echo $collagepicture["image_name"]; ?>" alt="foto3"/></figure>
                             </li>
                         <?php endforeach; ?>
@@ -70,8 +70,8 @@
                                 <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.mp3"/>
                                 <source src="upload/mission2/<?php echo $soundAndImage["sound_name"]; ?>.ogg"/>
                             </audio>
-                            <div class="overimgTop"><a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=2#dialectsContainer" class="soundImg" ><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
-                            <div class="overimgBottom"><a href="index.php?page=detail&id=<?php echo $school['id'];?>&mission=2#dialectsContainer"><p><?php echo $soundAndImage["groupname"]; ?></p></a></div>
+                            <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=2#dialectsContainer" class="soundImg" ><img src="images/2_dialecten/speakers.png" alt="speaker"></a></div>
+                            <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=2#dialectsContainer"><p><?php echo $soundAndImage["groupname"]; ?></p></a></div>
                             <a class="sound" id="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>" href="<?php echo $soundAndImage["word"].$soundAndImage["group_id"]; ?>"><figure><img src="upload/mission2/image<?php echo $soundAndImage["group_id"]; ?>.jpg" alt="foto1"/></figure></a>
                             <div class="dateDialects"><img class="left" src="images/2_dialecten/icon_calender.png" alt="icon"/><p class="right"><?php echo date('d/m/y', strtotime($soundAndImage['created_date'])); ?></p></div>
                         </li>
@@ -101,7 +101,7 @@
                         </ul>
                         <ul id="shops">
                             <?php foreach($mission3Shops as $topshop): ?>
-                                <li><?php echo ucwords($topshop["shop_name"]); ?></li>
+                                <li><?php echo htmlentities($topshop["shop_name"]); ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
@@ -111,7 +111,7 @@
                 <?php if(!empty($shopsBySchool)): ?>
                     <ul id="allShops">
                         <?php foreach($shopsBySchool as $shopbygroup): ?>
-                            <li><span><?php echo $shopbygroup["numberOFShops"]; ?>x </span><?php echo ucwords($shopbygroup["shop_name"]); ?></li>
+                            <li><span><?php echo $shopbygroup["numberOFShops"]; ?>x </span><?php echo htmlentities($shopbygroup["shop_name"]); ?></li>
                         <?php endforeach; ?>
                     </ul>
                 <?php else: ?>
@@ -128,8 +128,8 @@
                     <ul class="collageContainer">
                         <?php foreach($groupPictures as $grouppic): ?>
                             <li class="collagePicContainer">
-                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=4&grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
-                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=4&grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
+                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=4&amp;grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><p><?php echo $grouppic["groupname"]; ?></p></a></div>
+                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=4&amp;grouppicid=<?php echo $grouppic["id"]; ?>#detailGroup"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($grouppic['created_date'])); ?></p></a></div>
                                <figure><img src="upload/mission4/<?php echo $grouppic["image_name"]; ?>" alt="foto3"/></figure>
                             </li>
                         <?php endforeach; ?>
@@ -171,8 +171,8 @@
                     <ul class="collageContainer">
                         <?php foreach($foetsiepics as $foetsiepic): ?>
                             <li class="collagePicContainer">
-                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=6&foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><p><?php echo $foetsiepic["groupname"]; ?></p></a></div>
-                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&mission=6&foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp</div><p><?php echo date('d/m/y', strtotime($foetsiepic['created_date'])); ?></p></a></div>
+                               <div class="overimgTop"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=6&amp;foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><p><?php echo $foetsiepic["groupname"]; ?></p></a></div>
+                               <div class="overimgBottom"><a href="index.php?page=detail&amp;id=<?php echo $school['id'];?>&amp;mission=6&amp;foetsie=<?php echo $foetsiepic["id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($foetsiepic['created_date'])); ?></p></a></div>
                                <figure><img src="upload/mission6/<?php echo $foetsiepic["image_name"]; ?>" alt="foto3"/></figure>
                             </li>
                         <?php endforeach; ?>

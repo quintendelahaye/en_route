@@ -18,7 +18,7 @@
             $txtGroup = "";
             $txtEmail = "";
             $txtName = "";
-            $txtDate = date("n/j/y");
+            $txtDate = date("Y-m-d");
             $arrErrors = array();
             $added = false;
 
@@ -47,7 +47,7 @@
                     $dates = $this->groupsDAO->getAllChosenDates();
                     foreach ($dates as $key => $date) {
                         if (date_format(new DateTime($date["visited"]), "Y-m-d") == $_POST['txtDate']) {
-                            $arrErrors['txtDate'] = 'Datum al ingenomen';
+                            $arrErrors['txtDate'] = 'Helaas, datum al ingenomen!';
                         }
                         $txtDate = $_POST['txtDate'];
                     }
