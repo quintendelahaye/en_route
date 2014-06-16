@@ -91,7 +91,7 @@
                     $mission5 = true;
                 }
                 elseif($activeMission == 6){
-                    $title = "opdracht verdwijnen";
+                    $title = "opdracht foetsie";
                     $mission6 = true;
                     if(!empty($_GET["id"])){
                         $oldvsnew = $this->mission6DAO->getAllPicsByPictureId($_GET["id"]);

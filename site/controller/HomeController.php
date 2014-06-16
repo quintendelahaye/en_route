@@ -37,7 +37,7 @@
             $collagepictures = $this->mission1DAO->getFirstPicturesAndGroupNames(4);
             $this->set("collagepictures", $collagepictures);
 
-            $soundsAndBgs = $this->mission2DAO->getFirstSoundsAndPictures(3);
+            $soundsAndBgs = $this->mission2DAO->getFirstSoundsAndPictures(4);
             $this->set("soundsAndBgs", $soundsAndBgs);
 
             $topShops = $this->mission3DAO->getTop3Shops();

@@ -255,9 +255,9 @@ footer{
     span{
       color: $darkBlueColor;
     }
-    ol{
+    #searchesOl{
       width: 720px;
-      margin: 30px auto 0px auto;
+      margin: 30px auto 30px auto;
       li{
         margin-bottom: 10px;
         a{
@@ -297,6 +297,12 @@ footer{
           color: $redColor;
         }
       }
+      #groups{
+        width: 300px;
+      }
+      .notReady{
+        font-size: 2em;
+      }
     }
 
     #collage{
@@ -318,7 +324,7 @@ footer{
           text-align: center;
           font-size: 2.2em;
           width: 300px;
-          padding: 0px;
+          padding: 10px;
         }
       }
     }
@@ -450,6 +456,8 @@ footer{
 
 #dialectsContainer{
   @include box-sizing("border-box");
+  margin-left: auto;
+  margin-right: auto;
   .dateDialects{
     width: 80px;
     height: 20px;
@@ -531,7 +539,7 @@ footer{
 
   .overimgBottom a{
     background: url("../images/2_dialecten/over_bottom.png");
-    bottom: 6px;
+    bottom: 5px;
     z-index: 8;
     height: 39px;
     font-size: 2em;
@@ -549,8 +557,7 @@ footer{
 #soundBoard{
   @include box-sizing("border-box");
   width: 740px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto 0px auto;
    li{
      width: 157px;
      height: 39px;
@@ -813,15 +820,6 @@ footer{
       -o-background-clip: border-box;
     }
   }
-  .street{
-    position: absolute;
-    bottom: 10px;
-    left: 195px;
-    text-align: right;
-    color: white;
-    font-family: bebas-neue;
-    font-size: 2.4em;
-  }
   .lines{
     background: url("../images/6_verdwijnen/lines.png")no-repeat;
     width: 507px;
@@ -1035,6 +1033,7 @@ iframe{
 }
 
 #subscribe{
+  @include box-sizing("border-box");
   margin-top: 20px;
   width: 500px;
   .left, .right{
@@ -1253,7 +1252,6 @@ iframe{
   width: 700px;
   height: 50px;
   margin: 80px auto 20px auto;
-  position: relative;
   display: block;
 
   .btnTop{
@@ -1261,9 +1259,8 @@ iframe{
     width: 43px;
     height: 49px;
     display: block;
-    position: absolute;
-    top: -25px;
-    left: 330px;
+    margin-left: auto;
+    margin-right: auto;
     span{
       visibility: hidden;
     }
@@ -1297,34 +1294,7 @@ iframe{
 
 // --- styled content --- //
 
-// --- media --- //
-
-@media  only screen and (max-width: 320px) {
-
-}
-
-@media  only screen and (max-width: 400px) {
-
-}
-
-@media  only screen and (max-width: 480px) {
-
-}
-
-@media  only screen and (max-width: 640px) {
-
-}
-
-@media  only screen and (max-width: 768px) {
-
-}
-
-@media  only screen and (max-width: 960px) {
-
-}
-
-/*
-//----------- media ---------------------------------------------------------------------------------------------------------
+// --- media --- //------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 @media  only screen and (max-width: 1300px) {
   nav ul li a{
@@ -1345,7 +1315,6 @@ iframe{
   }
 }
 
-//ipad
 @media  only screen and (max-width: 1024px) {
   .searchField{
   margin: 33px 20px 0px 0px;
@@ -1360,7 +1329,10 @@ iframe{
 }
 
 
-@media  only screen and (max-width: 980px) {
+@media  only screen and (max-width: 960px) {
+  .peetje, .hand{
+    display: none;
+  }
 
   h1{
     a{
@@ -1390,7 +1362,7 @@ iframe{
         }
       }
       li{
-        display: none; /* hide all <li> items
+        display: none;
         margin-top: 0;
       }
       li:first-child{
@@ -1408,47 +1380,447 @@ iframe{
   }
 }
 
-@media  only screen and (max-width: 700px) {
+@media only screen and (max-width: 640px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 310px;
+      margin-left: -110px;
+    }
+  }
+
+  .peetje, .hand{
+    display: none;
+  }
+
+  .searchField{
+  margin: 124px 20px 0px 0px;
+    form{
+      input[type=text]{
+        width:100px;
+        height:20px;
+      }
+    }
+  }
 
   .worksContainer{
-    width: 700px;
+  width: 590px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
 
-
-    iframe{
-    		width: 420px;
-    		height: 226px;
-    	}
+        width: 430px;
+        height: 285px;
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
+    }
   }
-}
 
-@media only screen and (max-width: 640px) {
-  .searchField{
-    margin: 124px 20px 0px 0px;
-      form{
-        input[type=text]{
-          width:80px;
-          height:20px;
+  .explaination{
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  #dialectsContainer{
+      width: 590px;
+      font-size: 90%;
+
+    .dialectContainer{
+      margin-left: 26px;
+      margin-bottom: 40px;
+      .overimgBottom{
+        font-size: 1.6;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+  #fashionContainer{
+    margin: 0;
+    display: block;
+    min-height: 250px;
+    width: 140px;
+    #dress{
+      top: 180px;
+      left: 280px;
+    }
+    #textContainer{
+      margin-top: 40px;
+      width: 120px;
+      top: -70px;
+      #labels{
+        top: 80px;
+        left:-55px;
+      }
+      #amountOfShops{
+        width: 320px;
+        top: 200px;
+        left: 43px;
+      }
+
+      #shops{
+        width: 320px;
+        top: 250px;
+        left: 25px;
+      }
+    }
+  }
+
+  #vintageContainer{
+    width: 370px;
+    .bigFrame{
+      top: 165px;
+      left: 30px;
+    }
+  }
+
+  #lostPicContainer{
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    figure{
+      img{
+        margin-left: 40px;
+        margin-bottom: 20px;
+
+        width: 248px;
+        height: 187px;
+      }
+    }
+    .lines{
+      top: 90px;
+      left: -15px;
+
+      -webkit-transform: rotate(-10deg) scale(.7);
+      -moz-transform: rotate(-10deg) scale(.7);
+      -ms-transform: rotate(-10deg) scale(.7);
+      -o-transform: rotate(-10deg) scale(.7);
+      transform: rotate(-10deg) scale(.7);
+
+
+      p{
+        font-size: 2.7em;
+        top: -20px;
+      }
+
+      h4{
+        font-size: 3em;
+        font-family: bebas-neue;
+        top: 15px;
+      }
+    }
+  }
+
+  #soundBoard{
+    width: 380px;
+    margin-left: 50px;
+     li{
+       margin-top: 20px;
+     }
+  }
+
+  #topBtn{
+    width: 430px;
+    margin-top: 80px;
+  }
+
+  footer{
+    width: 100%;
+    #footerContent{
+      width: 430px;
+      h4{
+        top: -32px;
+        left: -3px;
+      }
+      ul{
+        margin-left: 5px;
+        li{
+          font-size: 1.3em;
+          margin-right: 30px;
         }
       }
     }
-
-  .worksContainer{
-    width: 600px;
   }
 
   #missionNav{
-    width: 550px;
+    margin: 0px 0px 20px 10px;
+    width: 330px;
     #rightNav{
-      margin-top: 0px;
-      width: 390px;
+      margin-top: 20px;
+      width: 380px;
       ul{
-        margin-left: 20px;
+        margin-left: 40px;
         li{
-          width: 180px;
-            margin: 0px 0px 15px 0px;
-          }
+          width: 150px;
+          margin-left: 5px;
+          margin-right: 10px;
+        }
       }
     }
+  }
+
+  #allShops{
+    width: 440px;
+    margin-top: 20px;
+    margin-left: 15px;
+    li{
+      margin-bottom: 10px;
+    }
+  }
+
+  #detailGroup{
+    margin: 20px 0px 0px 0px;
+    width: 445px;
+    img{
+      width: 425px;
+      height: 425px;
+      margin: 0;
+    }
+    p{
+      width: 445px;
+      margin-bottom: 5px;
+    }
+  }
+
+  #subscribe{
+    width: 223px;
+    margin: 20px auto 0px auto;
+  }
+}
+
+@media  only screen and (max-width: 480px) {
+  h1{
+    a{
+      background-size: 80%;
+      margin-top: 10px;
+      left: 235px;
+      margin-left: -110px;
+    }
+  }
+
+  .peetje, .hand{
+    display: none;
+  }
+
+  .searchField{
+  margin: 124px 20px 0px 0px;
+    form{
+      input[type=text]{
+        width:28px;
+        height:20px;
+      }
+    }
+  }
+
+  .worksContainer{
+  width: 430px;
+    #homeheader{
+        p{
+          font-size: 1.7em;
+        }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 430px;
+        height: 285px;
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 450px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .explaination{
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  #dialectsContainer{
+      width: 100px;
+      font-size: 90%;
+
+    .dialectContainer{
+      margin-left: 80px;
+      margin-bottom: 40px;
+      .overimgBottom{
+        font-size: 1.6;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+  #fashionContainer{
+    margin: 0;
+    display: block;
+    min-height: 250px;
+    width: 140px;
+    #dress{
+      top: 180px;
+      left: 280px;
+    }
+    #textContainer{
+      margin-top: 40px;
+      width: 120px;
+      top: -70px;
+      #labels{
+        top: 80px;
+        left:-55px;
+      }
+      #amountOfShops{
+        width: 320px;
+        top: 200px;
+        left: 43px;
+      }
+
+      #shops{
+        width: 320px;
+        top: 250px;
+        left: 25px;
+      }
+    }
+  }
+
+  #vintageContainer{
+    width: 370px;
+    .bigFrame{
+      top: 165px;
+      left: 30px;
+    }
+  }
+
+  #lostPicContainer{
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    figure{
+      img{
+        margin-left: 40px;
+        margin-bottom: 20px;
+
+        width: 248px;
+        height: 187px;
+      }
+    }
+    .lines{
+      top: 90px;
+      left: -15px;
+
+      -webkit-transform: rotate(-10deg) scale(.7);
+      -moz-transform: rotate(-10deg) scale(.7);
+      -ms-transform: rotate(-10deg) scale(.7);
+      -o-transform: rotate(-10deg) scale(.7);
+      transform: rotate(-10deg) scale(.7);
+
+
+      p{
+        font-size: 2.7em;
+        top: -20px;
+      }
+
+      h4{
+        font-size: 3em;
+        font-family: bebas-neue;
+        top: 15px;
+      }
+    }
+  }
+
+  #soundBoard{
+    width: 380px;
+    margin-left: 50px;
+     li{
+       margin-top: 20px;
+     }
+  }
+
+  #topBtn{
+    width: 430px;
+    margin-top: 80px;
+  }
+
+  footer{
+    width: 100%;
+    #footerContent{
+      width: 430px;
+      h4{
+        top: -32px;
+        left: -3px;
+      }
+      ul{
+        margin-left: 5px;
+        li{
+          font-size: 1.3em;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+  #missionNav{
+    margin: 0px 0px 20px 10px;
+    width: 330px;
+    #rightNav{
+      margin-top: 20px;
+      width: 380px;
+      ul{
+        margin-left: 40px;
+        li{
+          width: 150px;
+          margin-left: 5px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  #allShops{
+    width: 440px;
+    margin-top: 20px;
+    margin-left: 15px;
+    li{
+      margin-bottom: 10px;
+    }
+  }
+
+  #detailGroup{
+    margin: 20px 0px 0px 0px;
+    width: 445px;
+    img{
+      width: 425px;
+      height: 425px;
+      margin: 0;
+    }
+    p{
+      width: 445px;
+      margin-bottom: 5px;
+    }
+  }
+
+  #subscribe{
+    width: 223px;
+    margin: 20px auto 0px auto;
   }
 }
 
@@ -1456,7 +1828,9 @@ iframe{
   h1{
     a{
       background-size: 60%;
-      margin-top: 20px;
+      margin-top: 10px;
+      left: 200px;
+      margin-left: -90px;
     }
   }
 
@@ -1467,6 +1841,38 @@ iframe{
   }
   .worksContainer{
     width: 350px;
+    #homeheader{
+      p{
+        font-size: 1.7em;
+      }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 350px;
+        height: 205px;
+      }
+      #collage{
+         #detailCollage{
+           width: 350px;
+           margin: 30px auto 30px auto;
+           img{
+             width: 300px;
+             height: 300px;
+             margin: 10px 0px 0px 15px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 300px;
+      }
+      #searchesOl{
+        width: 300px;
+        margin-top: 20px;
+      }
+    }
   }
 
   .explaination{
@@ -1535,16 +1941,6 @@ iframe{
 
   #imageContainer{
     width: 350px;
-    #statuePic{
-      padding-left: 85px;
-      img{
-        width: 223px;
-        height: 288px;
-        width: 180px;
-        height: 180px;
-         border: $border;
-       }
-    }
     h4{
       width: 100px;
       font-size: 1.6em;
@@ -1565,8 +1961,6 @@ iframe{
 
   #vintageContainer{
     width: 370px;
-    //min-height: 600px;
-    margin-bottom: -100px;
     .bigFrame{
       top: 165px;
       left: 30px;
@@ -1590,15 +1984,16 @@ iframe{
     padding: 0;
     figure{
       img{
-        margin-left: 30px;
+        margin-left: 40px;
+        margin-bottom: 20px;
 
-        width: 208px;
-        height: 147px;
+        width: 248px;
+        height: 187px;
       }
     }
     .lines{
       top: 50px;
-      left: -100px;
+      left: -88px;
 
       -webkit-transform: rotate(-25deg) scale(.6);
       -moz-transform: rotate(-25deg) scale(.6);
@@ -1623,10 +2018,6 @@ iframe{
   #topBtn{
     width: 300px;
     margin-top: 30px;
-    .btnTop{
-      top: -25px;
-      left: 130px;
-    }
   }
 
   footer{
@@ -1662,16 +2053,16 @@ iframe{
   }
 
   #missionNav{
-    margin: 0px 0px 20px 30px;
-    width: 370px;
+    margin: 0px 0px 20px 10px;
+    width: 330px;
     #rightNav{
       margin-top: 20px;
-      width: 390px;
+      width: 350px;
       ul{
         margin-left: 20px;
         li{
-          width: 180px;
-            margin: 5px 0px 15px 0px;
+          width: 150px;
+            margin-left: 5px;
           }
       }
     }
@@ -1694,14 +2085,261 @@ iframe{
   }
 
   #detailGroup{
-    width: 400px;
+    margin: 0;
+    width: 360px;
     img{
       width: 350px;
       height: 350px;
+      margin: 0;
     }
     p{
-      width: 400px;
+      width: 300px;
+      font-size: 1.8em;
+      margin-bottom: 5px;
+      }
+  }
+
+  .peetje, .hand{
+    display: none;
+  }
+
+  #topBtn{
+    margin-top: 90px;
+  }
+
+  #subscribe{
+    width: 223px;
+    margin: 20px auto 0px auto;
+  }
+}
+
+@media  only screen and (max-width: 320px) {
+  h1{
+    a{
+      margin-top: 25px;
+      left: 230px;
+      margin-left: -180px;
     }
   }
 
-}*/
+  nav{
+    #menuNav{
+      width: 200px;
+    }
+  }
+
+  .introTextBg{
+   p{
+     font-size: 1.6em;
+   }
+  }
+  .worksContainer{
+    width: 300px;
+    #homeheader{
+      p{
+        font-size: 1.7em;
+      }
+    }
+    #works{
+      iframe{
+        margin: 20px auto 30px auto;
+
+        width: 300px;
+        height: 255px;
+      }
+      #collage{
+         #detailCollage{
+           width: 250px;
+           margin: 0px auto 30px auto;
+           img{
+             width: 250px;
+             height: 250px;
+             margin: 0;
+           }
+           p{
+             width: 250px;
+           }
+         }
+      }
+      #booked{
+        margin-bottom: 30px;
+        width: 280px;
+      }
+    }
+  }
+
+  .explaination{
+    width: 80%;
+    margin-left: 20px;
+  }
+
+  .collageContainer{
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    .overimgTop a, .overimgBottom a{
+      left:14px;
+    }
+    .overimgBottom a{
+      bottom: 16px;
+    }
+  }
+
+  #dialectsContainer{
+      width: 140px;
+      font-size: 90%;
+
+    .dialectContainer{
+      margin: 0px auto 40px auto;
+      .overimgBottom{
+        font-size: 1.8em;
+      }
+    }
+    .dateDialects{
+      font-size: 1.3em;
+    }
+  }
+
+  #fashionContainer{
+    margin: 0;
+    display: block;
+    min-height: 250px;
+    width: 140px;
+    #dress{
+      top: 180px;
+      left: 140px;
+    }
+    #textContainer{
+      margin-top: 40px;
+      width: 120px;
+      top: -70px;
+      #labels{
+        left:-80px;
+      }
+      #amountOfShops{
+        width: 310px;
+        margin-right: 0px;
+        left: -60px;
+        li{
+          width: 10px;
+          margin-left: 85px;
+          margin-right: 0px;
+        }
+      }
+
+      #shops{
+        left: -60px;
+        width: 310px;
+        li{
+          width: 20px;
+          margin-left: 80px;
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  #vintageContainer{
+    width: 310px;
+    margin: 0;
+    .frame{
+      margin: 0;
+    }
+  }
+
+  #lostPicContainer{
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    figure{
+      img{
+        margin-left: 20px;
+        margin-bottom: 20px;
+
+        width: 248px;
+        height: 187px;
+      }
+    }
+    .lines{
+      top: 103px;
+      left: -107px;
+    }
+  }
+
+  #topBtn{
+    margin-top: 60px;
+  }
+
+  footer{
+    width: 320px;
+    #footerContent{
+      width: 320px;
+      h4{
+        top: -32px;
+        left: -3px;
+      }
+      ul{
+        margin-left: 5px;
+        li{
+          font-size: 0.9em;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .searchField{
+  margin: 124px 20px 0px 0px;
+    form{
+      input[type=text]{
+        width:28px;
+        height:20px;
+      }
+    }
+  }
+
+  #missionNav{
+    margin: 0px 0px 20px 0px;
+    width: 310px;
+    #rightNav{
+      margin-top: 20px;
+      width: 310px;
+      ul{
+        margin-left: 0px;
+        li{
+          width: 150px;
+            margin-left: 0px;
+          }
+      }
+    }
+  }
+
+  #soundBoard{
+    width: 310px;
+    margin-bottom: 20px;
+     li{
+       margin-top: 20px;
+       margin-left: 70px;
+     }
+  }
+
+  #allShops{
+    width: 310px;
+    margin-left: 0px;
+  }
+
+  #detailGroup{
+    margin: 0;
+    width: 310px;
+    img{
+      width: 290px;
+      height: 290px;
+      margin: 0;
+    }
+    p{
+      width: 300px;
+      font-size: 1.8em;
+      margin-bottom: 5px;
+      }
+  }
+}

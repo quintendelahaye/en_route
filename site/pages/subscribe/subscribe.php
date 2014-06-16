@@ -26,7 +26,6 @@
                                 <label for="txtEmail" class="block">E-mailadres <span> (*)</span></label>
                                 <input type="text"  id="txtEmail" name="txtEmail" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="e-mailadres van de verantwoordelijke" value="<?php echo $txtEmail; ?>" <?php if(!empty($arrErrors["txtEmail"])){ echo 'class="error"';} ?>/>
                             </div>
-
                         </div>
                         <div class="right">
                             <div>

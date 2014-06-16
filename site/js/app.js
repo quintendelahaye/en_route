@@ -6,16 +6,15 @@ var arrHoverSounds = [];
 var sound;
 var arrSounds = [];
 
+var $window;
+
 function init()
 {
-	var backToTop = jQuery('#container').offset().top;
-
-	jQuery('.btnTop').click(function()
-    {
-		jQuery('html, body').animate({scrollTop:backToTop}, 'slow');
-
-		return false;
-	});
+    var backToTop = jQuery('#container').offset().top;
+   	jQuery('.btnTop').click(function(){
+   		jQuery('html, body').animate({scrollTop:backToTop}, 'slow');
+   		return false;
+   	});
 
     hoverSound = $('.dialectContainer audio')[0];
     $('.sound').each(function(data){
@@ -36,6 +35,11 @@ function init()
     $("#txtGroup").on("keyup blur change", checkThreeCharacters);
     $("#txtEmail").on("keyup blur change", checkIfEmail);
     $("#txtName").on("keyup blur change", checkThreeCharacters);
+
+    $window = $(window);
+    checkWidth();
+    $(window).resize(checkWidth);
+
 }
 
 function changeSound(event){
@@ -121,4 +125,9 @@ function getTodaysDate (val) {
     }
 
     return (day + '/' + month + '/' + year);
+}
+
+function checkWidth() {
+    var windowsize = $window.width();
+    console.log(windowsize);
 }

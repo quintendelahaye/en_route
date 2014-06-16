@@ -18,21 +18,25 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
 </head>
 <body>
-
+    <h1><a href="index.php?page=home" data-0="transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        -moz-transform: scale(1, 1);
+        -o-transform: scale(1, 1); top: 20px;"
+        data-100="transform: scale(0.6, 0.6);
+        -ms-transform: scale(0.6, 0.6);
+        -webkit-transform: scale(0.6, 0.6);
+        -moz-transform: scale(0.6, 0.6);
+        -o-transform: scale(0.6, 0.6); top: -28px;">
+        <span>En Route</span>
+        </a>
+    </h1>
 <article id="container">
+    <header>
+        <h2><span>enroute container</span></h2>
+    </header>
     <div class="skyline">&nbsp;</div>
     <header id="header" <?php if($activeItem == "home" || $activeItem == "subscribe"){ echo 'class=home'; }else{ echo 'class=other'; } ?>>
-        <h1><a href="index.php?page=home" data-0="transform: scale(1, 1);
-                -ms-transform: scale(1, 1);
-                -webkit-transform: scale(1, 1);
-                -moz-transform: scale(1, 1);
-                -o-transform: scale(1, 1); top: 20px;"
-                data-100="transform: scale(0.6, 0.6);
-                -ms-transform: scale(0.6, 0.6);
-                -webkit-transform: scale(0.6, 0.6);
-                -moz-transform: scale(0.6, 0.6);
-                -o-transform: scale(0.6, 0.6); top: -28px;">
-            <span>En Route</span></a></h1>
         <div id="headBorder" data-0="height:100px;" data-100="height:50px;">&nbsp;</div>
     </header>
 
@@ -54,7 +58,7 @@
         <div class="searchField" data-0="margin-top:33px;" data-100="margin-top:10px;">
             <form method="post" action="index.php?page=search" id="search" autoComplete="off">
                 <a href="#" class="search"><span>search</span></a>
-                <input type="text" placeholder="zoek je organisatie of school" id="txtSearch" name="txtSearch"/>
+                <input type="text" placeholder="zoek je groep of school" id="txtSearch" name="txtSearch"/>
                 <div><input type="submit" name="btnSubmitZoek" id="btnSubmitZoek" value="Zoek" /></div>
             </form>
         </div>

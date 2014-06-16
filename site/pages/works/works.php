@@ -165,15 +165,15 @@
                 <ul class="collageContainer">
                     <?php foreach($oldvsnewpics as $oldvsnewpic): ?>
                         <li class="collagePicContainer">
-                           <div class="overimgTop"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><p><?php echo $oldvsnewpic["groupname"]; ?></p></a></div>
-                           <div class="overimgBottom"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["group_id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($oldvsnewpic['created_date'])); ?></p></a></div>
+                           <div class="overimgTop"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["id"]; ?>#lostPicContainer"><p><?php echo $oldvsnewpic["groupname"]; ?></p></a></div>
+                           <div class="overimgBottom"><a href="index.php?page=works&amp;mission=6&amp;id=<?php echo $oldvsnewpic["id"]; ?>#lostPicContainer"><div class="iconCalender">&nbsp;</div><p><?php echo date('d/m/y', strtotime($oldvsnewpic['created_date'])); ?></p></a></div>
                            <figure><img src="upload/mission6/<?php echo $oldvsnewpic["image_name"]; ?>" alt="foto3"/></figure>
                         </li>
                     <?php endforeach; ?>
                 </ul>
                 <?php if(!empty($oldvsnew)):?>
                 <div id="lostPicContainer">
-                    <figure><img src="upload/mission6/image<?php echo $oldvsnew["group_id"]; ?>.png" alt="photo1"/></figure>
+                    <figure><img src="upload/mission6/<?php echo $oldvsnew["image_name"]; ?>" alt="photo1"/></figure>
                     <div class="lines">
                         <p class="new">"Dit wordt <?php echo $oldvsnew["new"]; ?>"</p>
                         <h4><span>team: </span><?php echo $oldvsnew["groupname"]; ?></h4>

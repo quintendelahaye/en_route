@@ -14,7 +14,7 @@
         </header>
 
         <?php if(!empty($schools)): ?>
-            <ol>
+            <ol id="searchesOl">
                 <?php foreach($schools as $school): ?>
                 <li><a href="index.php?page=detail&amp;id=<?php echo $school['id']; ?>"><?php echo htmlentities($school['school_name']); ?></a></li>
                 <?php endforeach; ?>

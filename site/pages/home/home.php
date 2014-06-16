@@ -101,6 +101,7 @@
                     <li class="frame"><img src="upload/mission5/<?php echo $vintagepic["image_name"]; ?>" alt="group"/></li>
                 <?php endforeach; ?>
             </ul>
+            <div class="clear">&nbsp;</div>
             <a href="index.php?page=works&amp;mission=5#vintageContainer" class="btnMore">Bekijk alle foto's</a>
         </section>
         <section class="work">

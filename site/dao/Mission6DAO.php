@@ -43,7 +43,7 @@ class Mission6DAO{
     }
 
     public function getAllPics(){
-        $sql = "SELECT enroute_opdracht6.*, enroute_groups.*
+        $sql = "SELECT enroute_opdracht6.id, enroute_opdracht6.group_id,enroute_opdracht6.member_id,enroute_opdracht6.image_name,enroute_groups.groupname,enroute_groups.created_date
                 FROM enroute_opdracht6
                 INNER JOIN enroute_groups
                 ON enroute_opdracht6.group_id = enroute_groups.id";
