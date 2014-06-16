@@ -16,8 +16,6 @@
 @property (strong,nonatomic)UITextField *txtPassword;
 @property (strong,nonatomic)UIButton *btnLogin;
 
-@property (nonatomic, strong) UIImageView *feedbackMessage;
-
 -(void)showTextfieldFeedback;
 
 @end

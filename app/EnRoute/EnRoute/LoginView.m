@@ -19,7 +19,6 @@
         [self createTextfields];
         [self createButton];
         [self createBackground];
-        [self createErrorMessage];
     }
     return self;
 }
@@ -67,22 +66,6 @@
     [self.btnLogin setImage:loginImage forState:UIControlStateNormal];
     [self addSubview:self.btnLogin];*/
 }
-
--(void)createErrorMessage{
-    self.feedbackMessage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"feedbackBg"]];
-    self.feedbackMessage.center = self.txtUsername.center;
-    [self addSubview:self.feedbackMessage];
-    
-    [self sendSubviewToBack:self.feedbackMessage];
-}
-
--(void)showTextfieldFeedback{
-    [UIView animateWithDuration:.2 animations:^{
-        self.feedbackMessage.center = CGPointMake(self.txtUsername.center.x, self.txtUsername.center.y + (self.feedbackMessage.frame.size.height)+12);
-    }];
-
-}
-
 
 /*-(void)showError{
     [UIView animateWithDuration:.2 animations:^{

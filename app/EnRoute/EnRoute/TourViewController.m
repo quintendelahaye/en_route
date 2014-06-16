@@ -45,7 +45,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.delegate = self;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     CGRect bounds = [UIScreen mainScreen].bounds;
     
     //title
@@ -67,6 +66,8 @@
     [self addChildViewController:self.menuVC];
     [self.view addSubview:self.menuVC.view];
     [self.menuVC didMoveToParentViewController:self];
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navControllerTitel"] forBarMetrics:UIBarMetricsDefault];
     
     //timer starten
     self.secondsLeft = 10;
@@ -209,9 +210,12 @@
         [self.bgTimer removeFromSuperview];
         if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"upcomingMission"]  isEqual: @"1"]) {
             //eerste opdracht
-            self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
-            self.timeChallenge1VC.delegate = self;
-            [self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
+            //self.timeChallenge1VC = [[TimeChallenge1ViewController alloc]initWithNibName:nil bundle:nil andPart:4];
+            //self.timeChallenge1VC.delegate = self;
+            //[self.navigationController pushViewController:self.timeChallenge1VC animated:YES];
+            self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];
+            self.timeChallenge3VC.delegate = self;
+            [self.navigationController pushViewController:self.timeChallenge3VC animated:YES];
         } else if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"lastMission"]  isEqual: @"YES"]){
             //laatste opdracht
             self.timeChallenge3VC = [[TimeChallenge3ViewController alloc]initWithNibName:nil bundle:nil];

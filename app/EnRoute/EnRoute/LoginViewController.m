@@ -46,12 +46,7 @@
     TitleView *title = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"aanmelden"];
     [self.view addSubview:title];
     
-    [self.view.txtUsername addTarget:self action:@selector(textFieldUserNameActive:) forControlEvents:UIControlEventEditingDidBegin];
-}
-
--(void)textFieldUserNameActive:(id)sender{
-    NSLog(@"typing");
-    [self.view showTextfieldFeedback];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,7 +105,6 @@
         [[NSUserDefaults standardUserDefaults]setBool:NO forKey:@"isUserLoggedIn"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"LOGIN_CHANGED" object:self];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.view feedbackMessage];
     }
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

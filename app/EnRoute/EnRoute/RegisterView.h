@@ -12,8 +12,6 @@
 
 @interface RegisterView : UIView
 
-@property (strong,nonatomic)UIImageView *background;
-
 @property (strong,nonatomic)UITextField *txtUsername;
 @property (strong,nonatomic)UITextField *txtPassword;
 @property (strong,nonatomic)UITextField *txtGroupName;
@@ -25,7 +23,17 @@
 @property (nonatomic, strong) UIButton *btnStart;
 @property (nonatomic, strong) UIScrollView *scrollView;
 
--(void)showError;
+
+@property (nonatomic, strong) UIView *feedbackMessage1;
+@property (nonatomic, strong) UIView *feedbackMessage2;
+@property (nonatomic, strong) UIView *feedbackMessage3;
+
+-(void)hideGroup;
+-(void)showGroup;
+-(void)hideUser;
+-(void)showUser;
+-(void)hidePw;
+-(void)showPw;
 -(void)showAddMembersWithGroupname:(NSString*)name;
 
 

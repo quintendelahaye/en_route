@@ -57,6 +57,9 @@
 }
 
 -(void)dismissKeyboard {
+    [UIView animateWithDuration:.2 animations:^{
+        self.resultView.center = CGPointMake(160,284);
+    }];
     [self.resultView.txtElement resignFirstResponder];
 }
 
@@ -109,9 +112,16 @@
         [self.resultView.ok  addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
         [self.resultView.bgTime removeFromSuperview];
         [self.resultView.lblTime removeFromSuperview];
+        [self.resultView.txtElement addTarget:self action:@selector(textFieldActive:) forControlEvents:UIControlEventEditingDidBegin];
     }
     
     self.resultAccepted = YES;
+}
+
+- (void)textFieldActive:(id)sender{
+    [UIView animateWithDuration:.2 animations:^{
+        self.resultView.center = CGPointMake(160,100);
+    }];
 }
 
 -(void)upload{
@@ -191,11 +201,17 @@
     if (self.secondsLeft == 0) {
         square = [self createFailwithImage:square];
         [self.view addSubview:self.resultView];
+        CGRect bounds = [UIScreen mainScreen].bounds;
+        TitleView *titleResult = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"opdracht foetsie"];
+        [self.view addSubview:titleResult];
         self.resultView.imageView.image = square;
         [self upload];
     }
     
     [self.view addSubview:self.resultView];
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    TitleView *titleResult = [[TitleView alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 29) andTitle:@"opdracht foetsie"];
+    [self.view addSubview:titleResult];
     self.resultView.imageView.image = square;
     
     [picker dismissViewControllerAnimated:YES completion:^{}];

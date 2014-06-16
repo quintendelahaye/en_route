@@ -48,6 +48,14 @@
     self.lblTitel.font = [UIFont fontWithName:CORKI size:50];
     [self addSubview:self.lblTitel];
     
+    CGFloat xPos = 25;
+    for(int i = 0; i < 2; i++){
+        UIImageView *block = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"block"]];
+        block.frame = CGRectMake(xPos, self.lblTitel.frame.origin.y + 10, block.frame.size.width, block.frame.size.height);
+        [self addSubview:block];
+        xPos += 250;
+    }
+    
     self.lblTeamName = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - startImg.frame.size.width/2, startImg.frame.origin.y + startImg.frame.size.height/2 + 46, startImg.frame.size.width, 50)];
     self.lblTeamName.text = @"teamnaam enzo";
     self.lblTeamName.textAlignment = NSTextAlignmentCenter;

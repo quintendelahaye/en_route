@@ -54,11 +54,22 @@
 }
 
 
-
 -(void)registTapped:(id)sender{
 //    NSLog(@"[LoginViewController] login tapped");
     
-    if([self.view.txtUsername.text length] != 0 && [self.view.txtPassword.text length] != 0 && [self.view.txtGroupName.text length] != 0){
+    NSMutableDictionary *dicErrors = [NSMutableDictionary dictionary];
+    
+    if ([self.view.txtGroupName.text length] < 6) {
+        [dicErrors setObject:@"Groupname" forKey:@"Groupname"];
+    }
+    if ([self.view.txtUsername.text length] < 2) {
+        [dicErrors setObject:@"Username" forKey:@"Username"];
+    }
+    if ([self.view.txtPassword.text length] < 4) {
+        [dicErrors setObject:@"Password" forKey:@"Password"];
+    }
+    
+    if(dicErrors.count == 0){
         
         NSLog(@"[RegisterViewController] login correct");
         
@@ -105,7 +116,17 @@
         
     }else{
         NSLog(@"[RegisterViewController] login incorrect");
-//        [self.view showError];
+        for (NSString *error in dicErrors) {
+            if ([error  isEqual: @"Groupname"]) {
+                [self.view showGroup];
+            }
+            if ([error  isEqual: @"Username"]) {
+                [self.view showUser];
+            }
+            if ([error  isEqual: @"Password"]) {
+                [self.view showPw];
+            }
+        }
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -160,6 +181,10 @@
 }
 
 -(void)dismissKeyboard {
+        [self.view hideGroup];
+        [self.view hideUser];
+        [self.view hidePw];
+    
     [self.view.txtPassword resignFirstResponder];
     [self.view.txtGroupName resignFirstResponder];
     [self.view.txtUsername resignFirstResponder];
